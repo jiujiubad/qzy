@@ -2,7 +2,8 @@
 growthschool-github：https://github.com/growthschool
 
 ## 用法
-clone 项目，修改文件夹 `/git` 为 `/.git`
+* clone 项目，修改文件夹 `git` 为 `.git`
+* 每次修改项目后，修改文件夹 `.git` 为 `git` 
 
 ## 项目
 programming-exercise，https://github.com/growthschool/programming-exercise
