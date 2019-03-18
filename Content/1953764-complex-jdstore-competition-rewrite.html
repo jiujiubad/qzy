@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/hottest_articles/69'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"8d5b66bcc5","applicationID":"19028431","transactionName":"e1cLFUpbX18DFE5IWEtMFk5LXFxE","queueTime":4,"applicationTime":138,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>JDStore 大赛复盘（重写） « lihui's Blog</title>
+<meta name="description" content="为什么要复盘？
+xdite说大家复盘做的不好，我相信有我一份。反思一下，其实是懒惰，反思和总结是痛苦的，总想要逃避。总是逃避这些困难却重要的事情，就是我之所以不牛逼的原因。
+
+复盘的目的不是为了...">
+<meta property="og:title" content="text/html; charset=utf-8">
+<meta property="og:description" content="为什么要复盘？
+xdite说大家复盘做的不好，我相信有我一份。反思一下，其实是懒惰，反思和总结是痛苦的，总想要逃避。总是逃避这些困难却重要的事情，就是我之所以不牛逼的原因。
+
+复盘的目的不是为了...">
+<meta property="og:url" content="http://lihui-blog.logdown.com/posts/1953764-complex-jdstore-competition-rewrite">
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/25504/og_image/5plush_2.jpg">
+  <meta charset="utf-8">
+  <meta name="author" content="lihui">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="screen.css">
+
+  <script src="zepto.1.0.min.js"></script>
+  <script src="modernizr.custom.32405.js"></script>
+  <script src="main.js"></script>
+
+  <!-- Fallback fonts from Google Webfonts -->
+  <link href="css.css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic,700italic%7CSource+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<meta name="robots" content="INDEX,FOLLOW">
+<link rel="image_src" href="http://logdown.com/images/og_plain.jpg">
+
+
+<link rel="alternate" type="application/rss+xml" title="lihui's Blog" href="/posts.rss">
+<link rel="alternate" type="application/atom+xml" title="lihui's Blog" href="/posts.atom">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  
+  _gaq.push(['_setAccount', 'UA-41764280-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['userblog._setAccount', 'UA-98666073-1']);
+  _gaq.push(['userblog._trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="site-header">
+        <a href="http://lihui-blog.logdown.com" class="header-link">
+          <div class="site-cover">
+            <img src="5plush_2.jpg">
+          </div>
+          <h1 class="site-title">lihui's Blog</h1>
+        </a>
+
+        <div class="site-navbar">
+          <nav role="navigation">
+            <h3 class="hide">Blog Navigation</h3>
+            <div class="site-nav-shadow"></div>
+            <ul class="inline-list site-nav-links">
+              <li><a href="http://lihui-blog.logdown.com">Home</a></li>
+              <li><a href="http://lihui-blog.logdown.com/archives">Archives</a></li>
+              <li><a href="http://lihui-blog.logdown.com/posts.atom" target="_self">RSS</a></li>
+              <li class="search-toggle"><a href="http://lihui-blog.logdown.com/posts/search">Search</a></li>
+
+              
+                
+                  <li><a href="http://lihui-blog.logdown.com/pages/about-me">About Me</a></li>
+                
+              
+            </ul>
+
+            <form class="site-search" accept-charset="UTF-8" action="http://lihui-blog.logdown.com/posts/search" method="get" role="search">
+
+              <button class="btn-cancel" type="button" title="Cancel Search">
+                <i class="icon-remove"></i>
+                <span class="hide">Cancel Search</span>
+              </button>
+
+              <input class="site-search-field" name="q" type="search" placeholder="Search blog..." x-webkit-speech>
+
+              <button class="btn-search" type="submit" title="Search">
+                <i class="icon-search"></i>
+                <span class="hide">Search</span>
+              </button>
+            </form>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content" role="main">
+      
+
+      
+
+      
+
+      
+
+
+      
+        <article class="blog-post" role="article">
+          <div class="post-header">
+            <h2 class="post-title">
+              <a href="http://lihui-blog.logdown.com/posts/1953764-complex-jdstore-competition-rewrite">
+                
+                  JDStore 大赛复盘（重写）
+                
+
+                
+              </a>
+            </h2>
+          </div>
+          <div class="post-content">
+            
+
+            
+
+            
+              <h2>为什么要复盘？</h2>
+<p>xdite说大家复盘做的不好，我相信有我一份。反思一下，其实是懒惰，反思和总结是痛苦的，总想要逃避。总是逃避这些困难却重要的事情，就是我之所以不牛逼的原因。</p>
+
+<p>复盘的目的不是为了记日记或者流水账，不是交作业应付差事，不是为了跟别人炫耀，不是为了指导别人（那是教程，但是好的复盘自然会帮到别人）。复盘是为了通过回顾，反思，找到自己做的好和不好的地方，强化对的，改正错的，指导未来的自己做得更好。</p>
+
+<p>就像每天都应该写的ORID，这是每日的复盘:记录客观事件-&gt;情绪-&gt;反思-&gt;下一步，不停的迭代循环，可惜我没有做到。</p>
+<h2>反思哪里做得不好，如何改进？</h2>
+<h4>1.目标／动机不清晰</h4>
+<p>比赛结束后，Jimmy问了我一个让我思考了很久的问题：“你来全栈营的目的是什么？”。我当时的回答是：“嗯，就想学个新技能吧。。。哦，其实也想学会学习的方法，学了元学习课想实践一下。”。回答完我就感觉到，这是多么不清晰的目标啊，之所以说不清晰是因为目标的动机不明确，没有动机就没有办法给目标赋予意义，没有意义还谈什么执行力。</p>
+
+<p>反观所有参赛名列前茅的同学都有非常明确的目标，或者说强烈的动机。刘传志在第一；潘鹏工作遇到天花板，寻找突破；jimmy，韵儿爸爸，anndo都是开始或者中途辞职学习。他们都是有强烈学习动机的，因此结果绝不会太差。而强烈的学习动机和目标一定是来自于清晰的思考，而不是盲目的选择。</p>
+
+<p>其实如果当初我多问过自己几个why／what／how，就可以让自己的目标更清晰，挖掘出自己内心深处的动机，并且给目标赋予重大意义，比如：</p>
+
+<ul>
+<li>为什么想要学个新技能？是为了找工作， 创业，提升自信，提升工资，还是解决自己的某个问题？</li>
+</ul>
+
+<blockquote>
+<p>答：工作7年职业遇到瓶颈，深刻的感觉工作已经没有成长，却又没有办法找到更好的突破点。如果学会编程，对于我目前的产品经理工作会是很大的加分项。</p>
+</blockquote>
+
+<ul>
+<li>为什么想要学会学习的方法？你之前的学习方法哪里不好，让你感到了什么阻碍，学会了学习的方法还要去学什么？</li>
+</ul>
+
+<blockquote>
+<p>答：我曾经是个学霸，但是是中国高考教育制度下的学霸，所以理论上讲是被可能错误的学习方法戕害的最深的那一批人，因为我不但方法可能是错误的，还花费了大量的时间刻意练习这个可能错误的方法。我深刻的感觉到，进入了大学之后的人生像是失去了方向和目标，就这样浑浑噩噩过去了14年（两辈子啊我的妈），虽然算不上彻底失败，但是如果你用“高考就是你人生的巅峰啊”这样的话来戳一下我，我也只能哑口无言。而每个人都希望自己的人生越来越好，今天的自己好过昨天的，所以这句话对我具有很大的杀伤力，请你默默想就好了不要当面对我说。</p>
+
+<p>从大学开始，我就一路变成学渣，上课觉得没意思就开始逃课（因为学校的教学法根本就是登山啊），考前熬夜临时抱佛脚（这倒像是拼图），竟然每次都考得还不错就更助长了我的气焰（说明老师说的迅速入门完整框架很有效，可惜考完书本就丢了，再也不会看了）。这样的恶性循环导致后面觉得越来越难，越来越懵逼，因此离开学校的时候深深的厌恶自己的电子学专业，后悔没有选择我貌似更喜欢的金融专业，后来终于明白兴趣是怎么产生的时候就知道其实学金融也是一样的，唯一的区别是我会厌恶金融而已。</p>
+
+<p>离开学校进入工作，迫于生计／随大流，曾经自学过投资，CFA，机器学习，deep learning，java，r，每一样都买来一堆书慢慢啃，每一样都从入门到放弃，学了跟没学一样，加之大学也没学到啥，这14年我的个人技能积累几乎为0. 耗费的这些时间不如愉快玩耍好了。</p>
+
+<p>明显能够看到，我不是不想学，我是不会学。而我却竟然一直都没有察觉到这一点，因为我明明是学霸啊！（傲慢就是全知遮蔽，多么痛的领悟）</p>
+</blockquote>
+
+<p><strong>下一步要做些什么？</strong> 写完这些，终于明白，我来全栈根本就是拯救已经浪费掉的14年人生的。我要学会学习，要学会学习再去学习自己想学的那些技能，摆脱这么多年来的傻上进，找回一点对自己的自信。瞬间我觉得动力满满，虽然只剩下一个月，我也一定要全力以赴的完成每一个作业和练习，就像刚刚开始一样。</p>
+
+<p><strong>这个道理可以用在什么其他地方？</strong>同样，今后在做任何决定之前，先花时间想清楚动机，确认自己足够清楚自己想要得到什么结果，找到内心的驱动力，再去行动，才会有执行力，否则无法全力以赴。</p>
+<h4>2. 傲慢</h4>
+<p>这个词对我来说在全栈出现过两次，第一次我以为是说别人，第二次我知道是说自己。</p>
+
+<p><strong>第一次：</strong><br>
+xdite老师在课程最开始就有一篇文章，<a href="https://fullstack.xinshengdaxue.com/posts/250">放下你的无效学习方式</a>。这篇让我们打印出来并且放在电脑旁的文章，不知道有多少人记得，反正我是忘记了，准确的说是忘记具体内容了，回头再看一遍，会脊背发凉，道理写得清清楚楚，我也看过好几遍，但是回头再看发现自己很多都没有做到，不信你试试看。</p>
+
+<p>xdite说：”成败的根本在于你是否因为绝望，而放下傲慢，而专心听从教练指示，走上最好的学习模式，建立最好的学习习惯。”。其实能看出，放下傲慢是多么难的一件事，一般人大抵需要先绝望才行。我竟然看的时候觉得：”嗯，我明白了，我一定不会傲慢的。“。这么轻松的就以为自己能够克制傲慢的天性，然后一头跌进傲慢的深坑，作业拖拖拉拉，重复练习次数不够，经常偷看其他教程补充“基础”，schedule上也经常出现一些不相关事项（比如研究投资）。最重要的是，完全没在想这就是老师所说的傲慢啊。</p>
+
+<p>傲慢最妙的地方是，几乎没有人知道自己傲慢，也没有人认为自己傲慢，就好像没有人吵架时候会觉得自己错了一样。觉得自己傲慢就不会傲慢了，真的觉得自己错了也就不会吵架了，这是个悖论，需要强大的元认知去识别和纠正。</p>
+
+<p><strong>第二次</strong>(跟学习全栈本身无关）<br>
+全栈过程中，有过一个栈友推荐的好的工作机会，刚好符合我对于未来的规划，于是栈友热心帮忙递了简历。由于算是推荐的，很顺利的得到了面试机会，当然仅仅是电话面试。但是我竟然抱着“反正我也没在找工作，就是随便试试”的草率心态完成了面试，事先没有任何准备，不了解岗位需求，甚至没好好总结自己这一份工作做了什么，聊了一个小时之后就石沉大海。</p>
+
+<p>后来栈友帮忙要反馈，人家非常认真的写了评语，其他的都在意料之中，因为自己准备不足，也都能感觉到问题出在哪，但是有个词很刺眼“傲娇”。这是我完全没有自我察觉的，就是所谓的盲区，很感谢面试的人肯写中肯的评语让我有机会看到自己身上存在的我都不知道的问题。而我反思了很久，终于知道傲娇其实就是来自于我不够绝望，如果我急需这份工作，特别渴望，就一定会认真准备，面试的时候整个人的状态会完全不一样。因此做事真的不应该有“随便”这个状态，这样很容易傲慢，不管是否真的绝望，一定要给自己制造绝望的感觉，才能拿出100%的努力。</p>
+<h4>3.忘记了身体这件事</h4>
+<p>jdstore比赛一结束就病了1周，虽然不是重病，但是已经达到影响生产力的地步，每天昏昏沉沉，毫无效率，身体处于非常疲劳时刻想睡的状态，却由于工作忙碌和宝宝需要照顾而无法好好休息，一直无法调整过来。复盘，重复练习jdstore课程或者学习新的课程都没能开始做，几乎是完全荒废的一周，心里很着急。回想起来这几乎是必然，因为比赛最后一周的状态是每天熬夜+早上5点被宝宝叫醒，宝宝中间生病导致我夜里需要多次哄睡，自己缺乏锻炼和休息，过度负载的身体果然就反抗起来。老师一次直播说过，程序员最怕生病，特别是发烧感冒这种，不要过度熬夜，以免生病反而低效，这条建议早应该拿出来排在第一优先级，没有了好的身体真的什么都没有办法做。</p>
+
+<p>锻炼身体也很重要，不能因为忙就忽略这一点。最明显的感觉是，之前坚持每天keep运动20分钟或者去游个泳，一整天都会精神很好，而最近一阵出于课程跟不上的愧疚感放弃了锻炼，虽然省下来20分钟可以学习，但是真的一整天的状态都不如从前。</p>
+
+<p><strong>下一步要做些什么？</strong> 恢复每天清晨20分钟锻炼，保证11点入睡，调整身体状态，以最好的身体和精神状态继续全栈之旅。</p>
+
+<p><strong>这个道理可以用在什么其他地方？</strong>做事要有长远眼光，看短期是一个策略，看长期就会发现更重要的东西被自己忽略。考虑问题不能光看眼前利弊，比如这20分钟我可以学习，就放弃锻炼，编程到凌晨2点多做了1个功能上线或者解了1个bug很有成就感，看起来是符合短期收益的，但是长期不可持续，弊大于利。身体是最重要的本钱，没有理由在这件事上随意。</p>
+<h2>从同学身上学到了什么？</h2>
+<h4>1.专注的力量</h4>
+<p>跟上一期同学“乌龙明月”的《超级行动力课程》学到的最重要的道理是：“最重要的事只有一件，贪心每一样都想拿到，就像同时追好几只兔子，一只也抓不到。” 。这次比赛，我观察到所有脱颖而出的作品，参赛的同学都投注了100%的专注，心无旁骛的死磕作品，死磕自己。专注的力量很可怕，专注的人自带光芒，我相信只要哪怕有一次这样死磕自己的经历，整个人都会改变。反思自己，我好像一直都很贪心，总是处于抓一窝兔子的状态，最后得到的非常有限。</p>
+<h4>2.刻意练习</h4>
+<p>在全战营比赛过程中，观察到一个规律，印证了刻意练习非常重要。不单是通过刻意练习学到的的技能本身有价值，而是这个方法一旦掌握就像是有了葵花宝典，似乎人生可以上升到另外一个高度。<br>
+我的观察是，非常牛b的人大多有一个共性，他们都在很小的时候通过某一项技能的训练熟悉了刻意练习的方法，潜意识中知道了大量重复练习形成的肌肉记忆有多么重要，并且对于重复练习的容忍度和耐心比常人要高很多。他们做起事来很疯狂，但就是这种疯狂决定了他们跟普通人差距。举例如下：</p>
+
+<ol>
+<li>xdite老师（练习跆拳道多年）：xdite老师在一次直播中透露自己是如何刻意练习编程的，一年会做多少个project，听完让人汗颜，也瞬间明白自己不牛b的原因。</li>
+<li>刘传同学（练习跆拳道多年）：此次比赛中有多疯狂大家也看到。</li>
+<li>全栈二期线下班的朱英楠（加拿大皇家音乐协会钢琴十级）：多次创业，线下版最后几天作出简历黑客雏形，现在已经成为创业项目。
+也许年少的经历和后来的发展并不具有因果关系，也许他们原本就是天才。但我宁愿相信，人生来没有很大不同，后天的际遇造就了不同。（否则我也不用努力了。。。）</li>
+</ol>
+
+<p><strong>下一步要做些什么？</strong> 现在我参加的铁血训练营正在带领大家进行刻意练习，这点很棒，下一步一定要好好按照要求，每天进行提取练习，才能真正学到东西。而不是大赛完了，就当学习结束了。</p>
+
+<p><strong>这个道理可以用在什么其他地方？</strong> 我似乎已经无法补上儿时的这一课。我的宝宝，我会希望她在成长过程中也爱上一个乐器或者某项技能，不管是什么，我希望她能够痴迷、享受、热爱并且通过这项技能学会刻意练习，受益终生。</p>
+<h4>3.教是最好的学</h4>
+<p>元学习课强调教是最好的学，因为只有经过提取练习，才能把记忆焊在大脑里。但是非常可惜，我没有实践，但是仍然通过观察别人的实践深刻的认同这个道理。所有非常棒的作品，都有很多教程分享，他们不但通过分享教程，帮助别人解决问题获得了大家的支持，更重要的是他们自己真的获得了深刻的成长。分享和教别人的这种体验，我相信已经成为他们人生中谁也拿不走的宝贵财富。我也会在今后的学习中实践这一个方法，之前理解不够深刻，所以没有行动。</p>
+<h2>我做对了什么？以后如何做得更好？</h2>
+<p>这次比赛很意外的拿到了优秀作品奖，激动之余，觉得自己应该也做对了什么，这些做对的地方以后要继续努力。</p>
+<h4>1.逼着自己两次都参赛</h4>
+<p><strong>背景：</strong> 1.我的确有些忙。工作需要每天加班非常忙碌，有一个1岁多的宝宝需要陪伴，工作日每天能用于全栈的时间不可能超过2小时，有时甚至没有。另外jdstore的比赛中我的队友也非常忙，经常连周末都要值班，没有办法有时间做比赛。</p>
+
+<p>但是好在我给自己定了底线，无论如何都必须参赛！</p>
+
+<p>虽然有了这个目标在心里，客观情况却是两次比赛都在比赛开始一周后才完成教材的基础练习（比如rails 101的3遍，和jdstore的至少一遍）。如果持续这样工作和生活太过忙碌的节奏就一定不可能参赛，因此我唯一的选择就是果断停止工作，因此两次比赛的最后一周我都请了一整周的年假。要知道，以我工作的忙碌程度，请1整周年假老板已经要杀人，连续两个月都请一周的年假是要面临非常大的心理压力的，后来证明我请假后还债也还的很辛苦，不过我仍然觉得这是我做的最正确的决定。</p>
+
+<p>也是由于“必须参赛”的自我要求，当“铁血训练营”的广告一打出，我就毫不犹豫的加入。后来铁血训练营提出”已参赛同学要寻找援助对象，帮助未参赛的同学“的计划时，我虽然比较自卑且内向，但是还是第一时间鼓起勇气找到我心目中最牛的队伍”Jimmy&amp;Anndo“来援助我。Jimmy和Anndo的帮助和鼓励给了我极大的信心，是最后我和yoona的作品能够在时间极度有限的情况下还算完整，并且完成多次迭代的关键。</p>
+
+<p>有了必须参赛的底限，让我在几乎没有条件能够参赛并且获奖的情况下创造出了条件，因此给自己在关键的地方定一个底线这件事真的很重要。</p>
+<h4>2.正确的方式提问，不做伸手党。</h4>
+<p>不做伸手党这个原则也帮到了我的成长。之前看过“<a href="http://www.catb.org/esr/faqs/smart-questions.html">How to ask questions the smart way</a>”这篇文章，在程序员的世界里，要学会提问，才更有可能会第一时间得到帮助，而一个懒惰的伸手党，一定会损失自己的信用从而害到自己。</p>
+
+<p>因此在学习过程中，我遇到任何问题，第一件事绝对不会是直接上slack提问助教，而是自己寻找答案。方法包括，认真看错误提示，使用binding.pry在rails console里面寻找可能的原因，google问题等等。但是一旦在这个问题上耗费太久，也绝对不会过度纠结浪费时间，可以听老师建议去睡觉，或者再去slack上提问。但是即使是slack上求助的过程中，也要求自己不断思考可能的问题，google老师给出的解法，通常都会在助教的几步提示之后就又自己找到了问题。在解决问题之后，都会及时记录一篇logdown，记录错误症状，解决思路和解决方法，如果解决方法并不能理解，也不会要求助教花时间解释，而是自己自行google找解答，这样的原则帮助我迅速提高了解决问题的能力，并且避免重复犯错，受益匪浅。这个原则我相信运用在今后其他的学习中甚至工作中都很有价值。</p>
+
+            
+          </div>
+
+          
+            <div class="post-social-share">
+              
+                <a href="https://twitter.com/share?" class="twitter-share-button">Tweet</a>
+              
+
+              
+                <div class="g-plusone" data-size="medium"></div>
+              
+
+              
+                <div class="fb-like" data-href="http://lihui-blog.logdown.com/posts/1953764-complex-jdstore-competition-rewrite" data-layout="button_count" data-send="false" data-show-faces="false" data-width="90"></div>
+              
+            </div>
+
+            <div class="group post-footer">
+              <footer>
+                <span class="post-meta pull-left">
+                  <time datetime="2017-06-16 04:31:00 UTC" pubdate>
+                    June 16, 2017
+                  </time>
+                </span>
+
+                
+              </footer>
+            </div>
+          
+
+        </article>
+
+        
+
+          
+                  <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'lihuis-blog'; // required: replace example with your forum shortname
+        var disqus_identifier = 'http://lihui-blog.logdown.com/posts/1953764-complex-jdstore-competition-rewrite';
+        var disqus_url = 'http://lihui-blog.logdown.com/posts/1953764-complex-jdstore-competition-rewrite';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+          
+
+          <div class="group pagination">
+            
+              <a class="prev" href="http://lihui-blog.logdown.com/posts/1930683-an-error-record-rails-server-shut-down-restart-error">
+                ← 【报错记录】rails server强行关闭，重启报错
+              </a>
+            
+
+            
+          </div>
+
+        
+
+      
+
+      
+    </div>
+
+    <div class="site-footer">
+      <footer>
+        <p>
+          © 2013 lihui.
+          <span class="powered-by">
+            Powered by <a href="http://logdown.com/">Logdown</a>.
+          </span>
+          <span class="theme-credit">
+            Theme Frankies by <a href="http://about.me/zhusee">Zhusee</a>.
+          </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="logdown_blog.js"></script>
+
+<iframe src="top_controls.html" width="81" height="26" frameborder="0" scrolling="no" style="position: fixed; z-index: 2147483647; border: 0px; background-color: transparent; overflow: hidden; top: 0px; right: 0px;"></iframe>
+
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=146125455579724";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+    extensions: ["jsMath2jax.js"]
+  });
+</script>
+<script src="MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+disqus_shortname = 'lihuis-blog'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"KOI0g1aYS500G0", domain:"logdown.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="atrk.gif?account=KOI0g1aYS500G0" style="display:none" height="1" width="1" alt=""></noscript>
+<!-- End Alexa Certify Javascript -->
+</body>
+</html>

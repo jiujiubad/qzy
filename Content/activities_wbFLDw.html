@@ -1,0 +1,1411 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/courses/29/activities'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>动态 - Rails 实战：招聘网站 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ttG2USl9ykWzupmjoYHGXwlEnrEpYGi6QDXZXLcQvtlh09l5Qx4rN9T39/aMvynRarv0kAxE+sRO5YjLoiWS8w==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 14:04",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 15:13",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508915623,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="activities activities-index">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default activities-index-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">Rails 实战：招聘网站</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/29/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/29">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/29/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="index-content">
+          <div class="row">
+              <div class="qa-message-list answer-whole-section" id="wallmessages">
+    <div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>14 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            实作招聘网站第四部分
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg">http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64522">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64522"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>14 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            实作招聘网站第三部分
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg">http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64521">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64521"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>14 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            实作招聘网站第三部分
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>![图片链接](<a target="_self" href="http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg">http://ojjhaj1wp.bkt.clouddn.com/2017-09-24-4.jpg</a>)</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64521">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64521"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>15 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三周作业
+            -
+            参赛赢奖品
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/EpyQEhX9STysFv1g7p7Q" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":73117,"height":535,"href":"https://www.filepicker.io/api/file/EpyQEhX9STysFv1g7p7Q","url":"https://www.filepicker.io/api/file/EpyQEhX9STysFv1g7p7Q","width":920}'><figure class="attachment attachment-preview png"><img src="image_jyGr5H.png" width="920" height="535"><figcaption class="caption">image.png <span class="size">71.4 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64512">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64512"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/402">Floria</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>18 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/quanzhanying/job-listing/pull/1926">https://github.com/quanzhanying/job-listing/pull/1926</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="47091">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-47091"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/402">Floria</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>18 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            拆解招聘网站任务
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/qhoaKVqaQeTORJiVh4JJ" data-trix-attachment='{"contentType":"image/jpeg","filename":"拆解招聘网站.jpg","filesize":1713163,"height":3024,"href":"https://www.filepicker.io/api/file/qhoaKVqaQeTORJiVh4JJ","url":"https://www.filepicker.io/api/file/qhoaKVqaQeTORJiVh4JJ","width":4032}'><figure class="attachment attachment-preview jpg"><img src="æe§£æec½c«.jpeg" width="4032" height="3024"><figcaption class="caption">拆解招聘网站.jpg <span class="size">1.63 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64455">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64455"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            实作招聘网站第二部分
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/TyKFqNZnQid6PmaJ7Sl3" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":245419,"height":1626,"href":"https://www.filepicker.io/api/file/TyKFqNZnQid6PmaJ7Sl3","url":"https://www.filepicker.io/api/file/TyKFqNZnQid6PmaJ7Sl3","width":1202}'><figure class="attachment attachment-preview png"><img src="image_6ZD6Ix.png" width="1202" height="1626"><figcaption class="caption">image.png <span class="size">239.67 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64384">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64384"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            实作招聘网站第一部分
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/mgQsgye5QSesVv4T6Q3T" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":245419,"height":1626,"href":"https://www.filepicker.io/api/file/mgQsgye5QSesVv4T6Q3T","url":"https://www.filepicker.io/api/file/mgQsgye5QSesVv4T6Q3T","width":1202}'><figure class="attachment attachment-preview png"><img src="image_6BT17N.png" width="1202" height="1626"><figcaption class="caption">image.png <span class="size">239.67 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64383">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64383"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            完成网站框架雏形
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/AZyKm0bjSc60tUQCS32w" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":245419,"height":1626,"href":"https://www.filepicker.io/api/file/AZyKm0bjSc60tUQCS32w","url":"https://www.filepicker.io/api/file/AZyKm0bjSc60tUQCS32w","width":1202}'><figure class="attachment attachment-preview png"><img src="image_L51rHa.png" width="1202" height="1626"><figcaption class="caption">image.png <span class="size">239.67 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64382">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64382"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://github.com/quanzhanying/job-listing/compare/master...liubingjei:version-1">https://github.com/quanzhanying/job-listing/compare/master...liubingjei:version-1</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64371">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64371"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            Fork 第一个专案 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://github.com/liubingjei/job-listing.git">https://github.com/liubingjei/job-listing.git</a><br><a href="https://github.com/liubingjei/job-listing-2">https://github.com/liubingjei/job-listing-2</a><br><a href="https://github.com/liubingjei/job-listing-4">https://github.com/liubingjei/job-listing-4</a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="46384">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-46384"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            上传你的用户故事
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/J1XjM9mnRMF9UxOc4B7Q" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":195686,"height":1360,"href":"https://www.filepicker.io/api/file/J1XjM9mnRMF9UxOc4B7Q","url":"https://www.filepicker.io/api/file/J1XjM9mnRMF9UxOc4B7Q","width":1158}'><figure class="attachment attachment-preview png"><img src="image_0tyz2s.png" width="1158" height="1360"><figcaption class="caption">image.png <span class="size">191.1 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64370">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64370"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_7ecf2c4c-7e10-424b-af80-33cba32736ad.jpeg" alt="Thumb 7ecf2c4c 7e10 424b af80 33cba32736ad" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2940">柯子</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三周作业
+            -
+            大赛心得
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="http://kerzzi.logdown.com/posts/1960237">http://kerzzi.logdown.com/posts/1960237</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64367">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64367"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9045-Edit-2.jpg" alt="Thumb img 9045 edit 2" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/225">刘冰杰</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            拆解招聘网站任务
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>must hava 应聘者能够看到工作需求，招聘者能够发布职缺，应聘者能够给招聘者投送简历</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64366">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64366"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/599">zhoujin</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>23 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/kingzhoujin/job-listing/pull/2">https://github.com/kingzhoujin/job-listing/pull/2</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64350">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64350"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/402">Floria</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>24 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/quanzhanying/job-listing/pull/1412">https://github.com/quanzhanying/job-listing/pull/1412</a><br><a target="_self" href="https://github.com/Floria-Huang/job-listing-2/pull/1">https://github.com/Floria-Huang/job-listing-2/pull/1</a><br><a target="_self" href="https://github.com/Floria-Huang/job-listing002/pull/1">https://github.com/Floria-Huang/job-listing002/pull/1</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="47091">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-47091"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>27 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://github.com/quanzhanying/job-listing/pull/1537">https://github.com/quanzhanying/job-listing/pull/1537</a><br><a target="_self" href="https://github.com/quanzhanying/job-listing/pull/1912">https://github.com/quanzhanying/job-listing/pull/1912</a><br>第三次作业，留念</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="49071">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-49071"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/487">Robert</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>28 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            试试TryGit
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/DMySXjj9SvCqMwjvUtY4" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-27 下午9.58.15.png","filesize":665546,"height":1800,"href":"https://www.filepicker.io/api/file/DMySXjj9SvCqMwjvUtY4","url":"https://www.filepicker.io/api/file/DMySXjj9SvCqMwjvUtY4","width":3200}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-27_a¸a9.58.15.png" width="3200" height="1800"><figcaption class="caption">屏幕快照 2017-09-27 下午9.58.15.png <span class="size">649.95 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64288">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64288"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>29 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二周作业
+            -
+            Step 7: 应征者可以上传简历
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>已然穿了代码，但是服务器不行，打算把教程做5遍以上，回头改这个作业。</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64270">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64270"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/487">Robert</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>29 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            试试TryRuby
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/RRm2zmA6TkiYdUT1qFCk" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-26 下午7.08.08.png","filesize":2422860,"height":1800,"href":"https://www.filepicker.io/api/file/RRm2zmA6TkiYdUT1qFCk","url":"https://www.filepicker.io/api/file/RRm2zmA6TkiYdUT1qFCk","width":3200}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-26_a¸a7.08.08.png" width="3200" height="1800"><figcaption class="caption">屏幕快照 2017-09-26 下午7.08.08.png <span class="size">2.31 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64265">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64265"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二周作业
+            -
+            Step 6: 过滤心仪工作
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>真的做了，但是rails s 打不开。。。</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64223">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64223"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            复制 pull request 网址交作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/quanzhanying/job-listing/pull/1914">https://github.com/quanzhanying/job-listing/pull/1914</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64211">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64211"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            Fork 第一个专案 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/dakkai123/job-listing">https://github.com/dakkai123/job-listing</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64210">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64210"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            上传你的用户故事
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/vSmzxniRfCLryWTYQOZw" data-trix-attachment='{"contentType":"image/jpeg","filename":"2D6C93FC0306813B62F617E25268D66E.jpg","filesize":92038,"height":1001,"href":"https://www.filepicker.io/api/file/vSmzxniRfCLryWTYQOZw","url":"https://www.filepicker.io/api/file/vSmzxniRfCLryWTYQOZw","width":1334}'><figure class="attachment attachment-preview jpg"><img src="2D6C93FC0306813B62F617E25268D66E.jpeg" width="1334" height="1001"><figcaption class="caption">2D6C93FC0306813B62F617E25268D66E.jpg <span class="size">89.88 KB</span></figcaption></figure></a><a href="https://www.filepicker.io/api/file/1hS1uHfbS2yhVPhXMzsh" data-trix-attachment='{"contentType":"image/jpeg","filename":"C9F723349645333219F9808E5CE105A9.jpg","filesize":84209,"height":1001,"href":"https://www.filepicker.io/api/file/1hS1uHfbS2yhVPhXMzsh","url":"https://www.filepicker.io/api/file/1hS1uHfbS2yhVPhXMzsh","width":1334}'><figure class="attachment attachment-preview jpg"><img src="C9F723349645333219F9808E5CE105A9.jpeg" width="1334" height="1001"><figcaption class="caption">C9F723349645333219F9808E5CE105A9.jpg <span class="size">82.24 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64208">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64208"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            拆解招聘网站任务
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/b1Om1LmoTORuDPnaVew8" data-trix-attachment='{"contentType":"image/jpeg","filename":"312E18CA688D99658C4F72D3FA593FA3.jpg","filesize":127873,"height":1001,"href":"https://www.filepicker.io/api/file/b1Om1LmoTORuDPnaVew8","url":"https://www.filepicker.io/api/file/b1Om1LmoTORuDPnaVew8","width":1334}'><figure class="attachment attachment-preview jpg"><img src="312E18CA688D99658C4F72D3FA593FA3.jpeg" width="1334" height="1001"><figcaption class="caption">312E18CA688D99658C4F72D3FA593FA3.jpg <span class="size">124.88 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64207">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64207"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            上传你的任务清单
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/GV8gT99Q3aC5RUTM0ElM" data-trix-attachment='{"contentType":"image/jpeg","filename":"5779A2FEFE77F981ABED3589917A1032.jpg","filesize":121231,"height":1001,"href":"https://www.filepicker.io/api/file/GV8gT99Q3aC5RUTM0ElM","url":"https://www.filepicker.io/api/file/GV8gT99Q3aC5RUTM0ElM","width":1334}'><figure class="attachment attachment-preview jpg"><img src="5779A2FEFE77F981ABED3589917A1032.jpeg" width="1334" height="1001"><figcaption class="caption">5779A2FEFE77F981ABED3589917A1032.jpg <span class="size">118.39 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64206">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64206"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二周作业
+            -
+            第二周应聘者用户故事
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>观看机制——应征者可以过滤理想工作（薪资下限，薪资上限，发表时间）</div><div>应征系统——可以上传简历</div><div>Ø  （网址：/jobs/resumes/new）</div><div>Ø  （需要登录才能提交简历）</div><div>Ø  （简历可以上传PDF，使用attachment栏位）</div><div>Ø  （不得提交空简历）<br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64191">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64191"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            CSS 自学作业
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/KxCLJF3AQkaPgAicilJy" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":135209,"height":1048,"href":"https://www.filepicker.io/api/file/KxCLJF3AQkaPgAicilJy","url":"https://www.filepicker.io/api/file/KxCLJF3AQkaPgAicilJy","width":1028}'><figure class="attachment attachment-preview png"><img src="image_JD3aAq.png" width="1028" height="1048"><figcaption class="caption">image.png <span class="size">132.04 KB</span></figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/SEloJCMcTPKToYrvfsES" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":191903,"height":978,"href":"https://www.filepicker.io/api/file/SEloJCMcTPKToYrvfsES","url":"https://www.filepicker.io/api/file/SEloJCMcTPKToYrvfsES","width":1690}'><figure class="attachment attachment-preview png"><img src="image_jgp9Z0.png" width="1690" height="978"><figcaption class="caption">image.png <span class="size">187.41 KB</span></figcaption></figure></a><br><br><br>Ø  margin 与 padding 的差异；</div><div>
+<br>Ø   CSS padding 属性定义元素的内边距。padding 属性接受长度值或百分比值，但不允许使用负值。</div><div>
+<br>Ø   例如，如果您希望所有 h1 元素的各边都有 10 像素的内边距，只需要这样：</div><pre>Ø   h1 {padding: 10px;}</pre><div>
+<br>Ø   您还可以按照上、右、下、左的顺序分别设置各边的内边距，各边均可以使用不同的单位或百分比值：</div><pre>Ø   h1 {padding: 10px 0.25em 2ex 20%;}</pre><div> </div><div> </div><div> </div><div>Ø  什么是 box model；</div><div> </div><div> </div><div>Ø  为何要使用 em 而非 px 来定义字的大小；</div><div>PX 是像素的意思</div><div><strong><br>使用 em 来设置字体大小</strong></div><div>
+<br>如果要避免在 Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替 pixels。</div><div>
+<br>W3C 推荐使用 em 尺寸单位。</div><div>
+<br>1em 等于当前的字体尺寸。如果一个元素的 font-size 为 16 像素，那么对于该元素，1em 就等于 16 像素。在设置字体大小时，em 的值会相对于父元素的字体大小改变。</div><div>
+<br>浏览器中默认的文本大小是 16 像素。因此 1em 的默认尺寸是 16 像素。</div><div>可以使用下面这个公式将像素转换为 em：<em>pixels</em>/16=<em>em</em>
+</div><div>（注：16 等于父元素的默认字体大小，假设父元素的 font-size 为 20px，那么公式需改为：<em>pixels</em>/20=<em>em</em>）</div><div><strong><br>实例</strong></div><pre>h1 {font-size:3.75em;} /* 60px/16=3.75em */h2 {font-size:2.5em;}  /* 40px/16=2.5em */p {font-size:0.875em;} /* 14px/16=0.875em */</pre><div> </div><div>Ø  h1 {margin : 10px 0px 15px 5px;} 的</div><div> </div><pre>margin: top right bottom left</pre><div> </div><div>Ø  margin-top、</div><div> </div><div> </div><div>Ø  margin-right、</div><div> </div><div> </div><div>Ø  margin-left、</div><div> </div><div> </div><div>Ø  margin-bottom 各是多少？</div><div> </div><div> </div><div> </div><div> </div><div>
+<br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64190">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64190"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/6065/thumb_16e537ac-bdbd-47ec-8494-de5d6a0511e0.jpeg" alt="Thumb 16e537ac bdbd 47ec 8494 de5d6a0511e0" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6065">陈芊璇</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一周作业
+            -
+            HTML 自学作业 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>1.     Div 和 span 的不同</div><div><strong>HTML 块元素</strong></div><div>
+<br>大多数 HTML 元素被定义为块级元素或内联元素。</div><div>
+<br>编者注：“块级元素”译为 block level element，“内联元素”译为 inline element。</div><div>
+<br>块级元素在浏览器显示时，通常会以新行来开始（和结束）。</div><div>
+<br>例子：&lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;</div><div> </div><div><strong>HTML 内联元素</strong></div><div>
+<br>内联元素在显示时通常不会以新行开始。</div><div>
+<br>例子：&lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;</div><div> </div><div><strong>HTML &lt;div&gt; 元素</strong></div><div>
+<br>HTML &lt;div&gt; 元素是块级元素，它是可用于组合其他 HTML 元素的容器。</div><div>
+<br>&lt;div&gt; 元素没有特定的含义。除此之外，由于它属于块级元素，浏览器会在其前后显示折行。</div><div>
+<br>如果与 CSS 一同使用，&lt;div&gt; 元素可用于对大的内容块设置样式属性。</div><div>
+<br>&lt;div&gt; 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。使用 &lt;table&gt; 元素进行文档布局不是表格的正确用法。&lt;table&gt; 元素的作用是显示表格化的数据。</div><div> </div><div><strong>HTML &lt;span&gt; 元素</strong></div><div>
+<br>HTML &lt;span&gt; 元素是内联元素，可用作文本的容器。</div><div>
+<br>&lt;span&gt; 元素也没有特定的含义。</div><div>
+<br>当与 CSS 一同使用时，&lt;span&gt; 元素可用于为部分文本设置样式属性。</div><div><strong>HTML 分组标签</strong></div><div> | <strong>标签</strong> | <strong>描述</strong><br> | <a href="http://www.w3school.com.cn/tags/tag_div.asp">&lt;div&gt;</a> | 定义文档中的分区或节（division/section）。<br> | <a href="http://www.w3school.com.cn/tags/tag_span.asp">&lt;span&gt;</a> | 定义 span，用来组合文档中的行内元素。</div><div> </div><div> </div><div> </div><div>2.     Class 和 id 的不同</div><div> | class | <em>classname</em> | 规定元素的类名（classname）<br> | id | <em>id</em> | 规定元素的唯一 id<br> | style | <em>style_definition</em> | 规定元素的行内样式（inline style）<br> | title | <em>text</em> | 规定元素的额外信息（可在工具提示中显示）</div><div> </div><div> </div><div>3.     P 和 br 的不同</div><div>HTML是通过&lt;P&gt;来定义的。</div><div>
+<br>&lt;p&gt;This is a paragraph.&lt;/p&gt;</div><div>
+<br>&lt;p&gt;This is another paragraph.&lt;/p&gt;</div><div> </div><div>
+<br>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</div><div>
+<br>&lt;br&gt; 就是没有关闭标签的空元素（&lt;br&gt; 标签定义换行）。</div><div>
+<br>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</div><div>
+<br>在开始标签中添加斜杠，比如 &lt;br /&gt;，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</div><div>
+<br>即使 &lt;br&gt; 在所有浏览器中都是有效的，但使用 &lt;br /&gt; 其实是更长远的保障。</div><div> </div><div> </div><div>4.     如何使用table 排版</div><div><strong>表格</strong></div><div>
+<br>表格由 &lt;table&gt; 标签来定义。每个表格均有若干行（由 &lt;tr&gt; 标签定义），每行被分割为若干单元格（由 &lt;td&gt; 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。</div><div>
+<br>&lt;table border="1"&gt;</div><div>
+<br>&lt;tr&gt;</div><div>
+<br>&lt;td&gt;row 1, cell 1&lt;/td&gt;</div><div>
+<br>&lt;td&gt;row 1, cell 2&lt;/td&gt;</div><div>
+<br>&lt;/tr&gt;</div><div>
+<br>&lt;tr&gt;</div><div>
+<br>&lt;td&gt;row 2, cell 1&lt;/td&gt;</div><div>
+<br>&lt;td&gt;row 2, cell 2&lt;/td&gt;</div><div>
+<br>&lt;/tr&gt;</div><div>
+<br>&lt;/table&gt;</div><div>
+<br>在浏览器显示如下：</div><div> | row 1, cell 1 | row 1, cell 2<br> | row 2, cell 1 | row 2, cell 2</div><div> </div><div><strong>表格的表头</strong></div><div>
+<br>表格的表头使用 &lt;th&gt; 标签进行定义。</div><div>
+<br>大多数浏览器会把表头显示为粗体居中的文本：</div><pre>&lt;table border="1"&gt;&lt;tr&gt;&lt;th&gt;Heading&lt;/th&gt;&lt;th&gt;Another Heading&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;row 1, cell 1&lt;/td&gt;&lt;td&gt;row 1, cell 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;row 2, cell 1&lt;/td&gt;&lt;td&gt;row 2, cell 2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</pre><div>
+<br>在浏览器显示如下：</div><div> | <strong>Heading</strong> | <strong>Another Heading</strong><br> | row 1, cell 1 | row 1, cell 2<br> | row 2, cell 1 | row 2, cell 2</div><div> </div><div><strong>表格中的空单元格</strong></div><div>
+<br>在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。</div><pre>&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;row 1, cell 1&lt;/td&gt;&lt;td&gt;row 1, cell 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;row 2, cell 2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</pre><div>
+<br>浏览器可能会这样显示：</div><div><figure class="attachment attachment-preview" data-trix-attachment='{"contentType":"image","height":42,"url":"file:////Users/apple/Library/Group%20Containers/UBF8T346G9.Office/msoclip1/01/clip_image002.png","width":126}'><img width="126" height="42"><figcaption class="caption"></figcaption></figure></div><div> </div><div> </div><div> </div><div> </div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="52230">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-52230"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/169">胡豫苏</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三周作业
+            -
+            为你喜欢的作品投票
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/cTDZbFfnSnySGamvO3fI" data-trix-attachment='{"contentType":"image/png","filename":"Snip20170923_2.png","filesize":1325365,"height":920,"href":"https://www.filepicker.io/api/file/cTDZbFfnSnySGamvO3fI","url":"https://www.filepicker.io/api/file/cTDZbFfnSnySGamvO3fI","width":1826}'><figure class="attachment attachment-preview png"><img src="Snip20170923_2.png" width="1826" height="920"><figcaption class="caption">Snip20170923_2.png <span class="size">1.26 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64187">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64187"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="text-center">
+      <ul class="pagination pagination"><li class="prev disabled"><span>&#60;</span></li> <li class="active"><span>1</span></li> <li><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=2">2</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=3">3</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=4">4</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=5">5</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=6">6</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=7">7</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=8">8</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=9">9</a></li> <li class="disabled"><span>&hellip;</span></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=238">238</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=239">239</a></li> <li class="next"><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/29/activities?page=2">&#62;</a></li></ul>
+    </div>
+  </div>
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="activities-index-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("动态 - Rails 实战：招聘网站 | 新生大学全栈营")
+    </script>
+
+      
+
+  </body>
+</html>

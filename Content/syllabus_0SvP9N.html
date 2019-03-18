@@ -1,0 +1,1635 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/courses/29/syllabus'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>教材目录 - Rails 实战：招聘网站 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="JMSx7gMNJb4fDUVq2/tLyC1OqSKhfwI6Pzz6Oey4TQTO7k5LdEQu73j+qh6FQ+UrTn/VS6NDuFr4EUG/feIvEw==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 14:04",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 14:07",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508911639,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="syllabus syllabus-index">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default syllabus-index-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard?category=optional">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">Rails 实战：招聘网站</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/29/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/29">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="index-content">
+          <div class="row">
+            <!-- 算出taks总数与confirmed的数量 -->
+
+<a href="https://fullstack.xinshengdaxue.com/courses/29/assignments">
+  <div class="assignment-content" style="border-bottom: 1px solid #dedede;">
+    <h1>当前进度</h1>
+    <p>总共23个作业，已完成22个。</p>
+    <div class="small-progress-bar">
+        <div class="progress sh-progress-whole"><div class="progress-bar sh-progress-contents" style="width: 96%">96%</div></div>
+    </div>
+  </div>
+</a>
+<div class="group">
+  <div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            开学第一课
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时半以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/513">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月5日 开学第一课</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/935">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        开学介绍</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/936">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        未来课表</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            1-Computational Thinking
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 半小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/514">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+         1-1 Computational Thinking - Part 1</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/514#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/515">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span> 1-2 Computational Thinking - Part 2</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/516">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        1-3 Computational Thinking - Part 3</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            2-自救教学
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 2小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/517">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        2-1 如何自救？</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/518">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月7日 编程英语</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1087">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月10日 MVP 是如何练成的 xdite  </a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            3-拆解任务
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/519">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-1 拆解任务 - Part 1</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/520">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-2 拆解任务  - Part 2</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/521">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-3 拆解任务 - Part 3</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/522">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-4 拆解任务 - Part 4</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/522#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/523">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-5 拆解任务 - Part 5</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/524">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-6 拆解任务  - Part 6</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/525">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        3-7 拆解任务 - Part 7</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/525#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            4-用户故事
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/526">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-1 用户故事 - Part 1</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/527">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-2 用户故事 - Part 2</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/528">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-3 用户故事 - Part 3</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/529">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-4 用户故事 - Part 4</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/530">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-5 用户故事 - Part 5</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/531">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-6 用户故事 - Part 6 </a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/532">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        4-7 用户故事 - Part 7</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/532#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            5-招聘网站 - 实作
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 2小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/533">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-1 Fork 教学</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/533#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/534">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-2 Pull Request 教学</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/534#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/535">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>操作示范视频 - Fork &amp; Pull Request </a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/536">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-3 招聘网站 - 实作提示</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/537">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-4 招聘网站 - 代码提示</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/538">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-5 招聘网站 - 学习方法</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共5个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/538#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/539">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        5-6 使用 LICEcap Demo 演示网页（录制成gif动画）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            6-招聘网站 - （管理员）解答
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 2小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/542">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        6-0（解答）穿衣服（以下内容无需记忆）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/544">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        6-1（解答）招聘网站第一部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/546">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        6-2（解答）招聘网站第二部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/548">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        6-3（解答）招聘网站第三部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/550">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        6-4（解答）招聘网站第四部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            7-基础知识补充
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 2小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/552">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-1 本章节目标</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/553">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-2 Terminal</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/554">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-3 rails console / IRB</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/554#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/555">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-4 Git</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/555#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/556">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-5 Github / Heroku</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/557">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-6  Rails 项目架构扫盲</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/558">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-7 哪里有好用的 Gems（仅供参考）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/559">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        7-8 HTML / ERB</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共2个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/559#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/560">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月13日 Nic 基础知识补充与开发技巧</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            8 - 应征者 - 加分习题
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/562">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        8-1 加分习题</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/563">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        8-2 （解答）招聘网站第五部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            9 - 用戶故事 - 应征者
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/566">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        9-1 应征者用户故事 Part 1</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/566#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/567">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        9-2 应聘者用户故事 Part 2</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/568">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        9-3 应聘者用户故事Part 3</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/568#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            10 - 招聘网站 - （应征者）提示 
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/569">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        10-1 实作章节 - 应聘者  - 学习方法</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/570">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        10-2 实作章节 - 应聘者 - 提示 Part 1</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/571">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        10-3 实作章节 - 应征者 - 提示 Part 2</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/571#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/572">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        10-4 实作章节 - 应征者 - 提示 Part 3</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/572#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            11 - 招聘网站 - （应征者）解答
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 2小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/573">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        11-1（解答）招聘网站第六部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/575">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        11-2（解答）招聘网站第七部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            12 - Admin履历后台 - 加分习题
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 1小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/577">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        12-1 加分习题</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/578">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        12-2（解答）招聘网站第八部分</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="syllabus">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <td id="section-name" colspan="2">
+          <h3 class="pull-left">
+            13 - 招聘网站 PK 魔改大赛
+            <div class="syllabus-study-time"><div class="fa fa-clock-o"> 预计学习时间: 3小时以内 </div></div>
+          </h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1123">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        Job Listing 魔改大赛（第二季）参赛指南</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1122">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月17日 Nic 如何参加魔改大赛</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/583">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        魔改大赛（初级）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共2个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/583#task"><i class="fa fa-star-o"></i><span> 未完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1118">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        魔改大赛（中级 Part 1）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1119">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        魔改大赛（中级 Part 2）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1120">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        魔改大赛（中级 Part 3）</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/1120#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/585">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        制作登录弹窗</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1124">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月20日 Xdite 冲破人生天花板，从魔改大赛做起</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1125">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月24日 Nic 与 Bootstrap 做朋友</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1142">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]4月27日 xdite 教你克服情绪 &amp;amp; Nic ...</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1143">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]5月1日 Nic Git 入门篇</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1173">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]5月4日 Xdite 学一遍就能把知识焊入大脑的技法</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+        </td>
+</tr>
+<tr>
+  <td class="post post-link">
+    <div style="height: 35px; overflow:hidden;">
+      <a href="https://fullstack.xinshengdaxue.com/posts/1174">        <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp
+        <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>[直播回放]5月7日 Nic拉你出坑， CRUD以及RESTful，X...</a>      <span>
+              </span>
+      <span>
+              </span>
+    </div>
+  </td>
+  <td class="option">
+    <div class="syllabus-task-area">
+            <span class="hidden-xs task-count">
+                共1个作业 |
+      </span>
+      <span class="task-btn">
+        <a class="btn btn-default btn-sm" href="https://fullstack.xinshengdaxue.com/posts/1174#task"><i class="fa fa-star"></i><span> 已完成</span></a>      </span>
+    </div>
+      </td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="syllabus-index-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("教材目录 - Rails 实战：招聘网站 | 新生大学全栈营")
+    </script>
+
+      
+
+  </body>
+</html>

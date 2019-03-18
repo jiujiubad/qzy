@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/249'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>（延伸阅读）领悟 “学习的黄金通道” - Rails 第一课：环境建置 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ig/yftHUyaBdZACRRFKtxuiPXuF4JwhgCum8K2W3UFevPyfgCRL9uN+fJzeQY0pHpZVnAUFq5Ve/gqhmVCub5A==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 15:09",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 15:41",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508917304,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="posts posts-show">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default posts-show-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/1/syllabus">Rails 第一课：环境建置</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/1/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/1">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/1/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/1/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/1/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/1/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>            <li><a href="https://fullstack.xinshengdaxue.com/courses/1/leaderboard">
+            <i class="fa fa-star-o"></i>
+            积分榜
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="show-content">
+          <div class="row">
+            <div class="post-visitor">
+  <div class="des-text">
+    <h4>所属章节：2-开始之前</h4>
+    <p><p>本章预计学习时间: 40分钟</p></p>
+    <p><p>再学习2节就可以完成本章了</p></p>
+  </div>
+</div>
+<div class="view-count">
+  共 494 位第二期同学学习了本节
+</div>
+
+<div class="course-post">
+  <div class="post-title-h1 markdown">
+    <h1 >
+      （延伸阅读）领悟 “学习的黄金通道”
+    </h1>
+    <div id="favorite" class="favorite-icon-block">
+        <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=249">
+    <span class="fa fa-bookmark-o"></span>
+</a>
+    </div>
+  </div>
+
+  <div class="post group">
+    <div class="post-content markdown">
+      <p>我是怎么想通黄金通道这件事的？<br>
+要真的讲起来是一个很长的旅程。<br>
+本来要真说，我也不算上是一个学什么，就可以马上学习出效果的人。比如说某些程式语言，或某些才艺，怎么想学就是学不会。</p>
+
+<p>所以长久以来，我一直在思索一件事情，如何想学什么，一下子就能学得七七八八。</p>
+
+<p>想是这样想，问题是做不到。因为这个背后的问题在，在于我不知道控制变因是什么，何况如何设计实验。所以这个问题，就一直摆在我心中 10 年。</p>
+
+<p>从大概 2006 年刚出社会就在思索了。</p>
+
+<p>这 10 年间，我观察到几个 pattern：</p>
+<h3>1.付大钱去上的课程肯定学得会。</h3>
+<p>我发现我愿意付大钱（就是会肉痛）的事，几乎学得会的机率高达 80%。<br>
+几个关键：</p>
+
+<ul>
+<li>能收贵的老师，教学技巧 或 教材 肯定是好的</li>
+<li>我愿意认真对待这门课</li>
+<li>认真愿意对待这门课下，老师叫我怎么练，我就怎么练，不会想要走岔路或乱调进度</li>
+<li>下课必定练习，总结，实作</li>
+</ul>
+<h3>2.练习够多的主题，肯定学得会。</h3>
+<p>我在学习 Ruby on Rails 的初期，很多知识肯定是不熟的。但是我逼自己起码要能用到熟练。特别是在新人期，老人是很不愿意写 CRUD 的，这工作就我做，所以一直重复写这些后台程式码，让我写东西几乎写到不加思索。<br>
+而且在写作过中，突然知道原理。</p>
+
+<p>后来我发现我的徒弟们与学生们，也具备同样的现象。<br>
+而后来我在一门学习英文口音的课，老师会三十几种多国语言，发现他的方式也是类似的。大量讲，由大量讲去习得法则。这是“肌肉的记忆”的由来。后来几个医师也佐证科学上有这样的说法。</p>
+<h3>3.够多例子可以模仿的主题，肯定学得会。</h3>
+<p>这里我做了很多的 A/B Testing。我试着去学程式，学我完全 “不是兴趣” 的东西。</p>
+
+<ul>
+<li>从一个例子走到透，模仿做东西，模仿改东西 成功率高达 80%</li>
+<li>熟读 RuleBook 然后自己做东西 成功率高达.....好吧是 0</li>
+<li>同时乱读一堆书，试着要硬凑一个自己想要的东西...机率是 15%</li>
+</ul>
+
+<p>这件事让我非常震撼。<br>
+我更发现一件事情。要学会，一定得跟同一套教材走。因为你起码得用 “已知解释已知”。试着用 “未知解释未知”。铁定脑袋扭到完蛋。</p>
+<h3>4.有成就感的主题，肯定学得会。</h3>
+<p>还有一个问题，一直放在我的心里很久：“ 能够<strong>学会</strong>一门技术是否与天赋与热情有关? ”</p>
+
+<p>在我以前的想法看来，我肯定觉得是与天赋、热情有关的。</p>
+
+<p>但后来我越来越体会到，好像不能这样看。更精确地说法是，我开始认知到天赋不是单<strong>一个东西</strong>，而是<strong>“一组东西”</strong>。比如说要变成程式开发高手（“变好”），可能要 “坐得住，逻辑通，懂得表达自己” 。</p>
+
+<p>不能 “坐得住，逻辑通，懂得表达自己”，一样可以 “学会” 程式开发。</p>
+
+<p>但是就是无法登峰造极。</p>
+
+<p>但是 <strong>“学会”</strong> 的门槛，与 <strong>“天赋”</strong> 无关。</p>
+
+<p>是跟这篇文章以上我谈的法则有关。</p>
+
+<p>举个例子来说好了， “电玩” 。不是每个人都懂一款新游戏的玩法，对吧。但是很多热门的电玩，都是从引导模仿（onboarding），练习，有成就感，然后让人沉迷进去的。</p>
+
+<p>这些想法与结论一直放在我心里面，有些有发表，有些没发表。</p>
+
+<p>最近我在学习钢琴。我一直很疑惑钢琴要怎么学成，感觉这是一个巨难的主题。所以我开始拆解 Simply Piano 怎么做。因为这鬼玩意竟然让我 3 天内学会了双手弹和弦 ...</p>
+
+<p>原理竟然一模一样：</p>
+
+<ul>
+<li>step by step follow</li>
+<li>模仿</li>
+<li>重复练习</li>
+<li>成就感</li>
+</ul>
+
+<p>这就是 “学习的黄金通道” 一文的由来。</p>
+
+    </div>
+  </div>
+
+  <div class="panic-panel">
+  <div class="row panic-panel-title">
+    <h4>对本页内容的感受如何？</h4>
+    <div class="complain-btn">
+      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
+        📣 &nbsp我要吐槽
+      </button>
+    </div>
+  </div>
+
+  <!-- new feeling's UI -->
+
+  <div class="panic-panel-body" id="selectable" data-post-id="249">
+    <div class="item " value="good" >
+      <div class="ui-widget-content"><span class="emoji">😄</span><span class="text">So easy</span></div>
+    </div>
+    <div class="item " value="normal" >
+      <div class="ui-widget-content"><span class="emoji">😐</span><span class="text">还OK</span></div>
+    </div>
+    <div class="item " value="bad" >
+      <div class="ui-widget-content"><span class="emoji">😭</span><span class="text">崩溃了</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <span id="status-area" class="feeling-submit-tips"></span>
+  </div>
+
+</div>
+
+
+
+<!-- 吐槽Modal -->
+<div class="modal fade modal-draggable message-modal-style" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="complainModalLabel">您对本篇教程有什么想说的？</h4>
+      </div>
+      <form class="simple_form new_complain" id="new_complain" enctype="multipart/form-data" action="https://fullstack.xinshengdaxue.com/complains" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="modal-body">
+          <div class="input-block">
+            <div class="form-group hidden complain_post_id"><input class="form-control hidden" value="249" type="hidden" name="complain[post_id]" id="complain_post_id" /></div>
+            <div class="form-group text optional complain_content"><label class="control-label text optional" for="complain_content">槽点/反馈(如果遇到课程技术问题，请直接到Slack向助教提问)</label><textarea class="form-control text optional" name="complain[content]" id="complain_content">
+</textarea></div>
+            <div class="file-upload-block complain-img">
+              <div class="form-group file optional complain_image"><label class="control-label file optional" for="complain_image">上传截图(可选)</label><input class="file optional" type="file" name="complain[image]" id="complain_image" /></div>
+            </div>
+            <div class="message-modal-footer">
+              <div class="row">
+                <span id="complain-submit-status-srea" class="pull-left"></span>
+              </div>
+              <a href="#" data-dismiss="modal">取消</a>
+              <input type="submit" name="commit" value="吐槽" class="btn btn-primary" id="complain-submit-btn" disabled="disabled" data-disable-with="吐槽" />
+            </div>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+
+
+    <div class="group post-nav-btn">
+      
+<ul class="pager-custom">
+  <li class="previous"> <a id="previous" href="https://fullstack.xinshengdaxue.com/posts/250"><i class="fa fa-arrow-left"></i><span> 上一页</span></a></li>
+  <li class="keyboard-tips"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页</li>
+  <li class="next"><a href="https://fullstack.xinshengdaxue.com/posts/245">下一页<span class="fa fa-arrow-right" id="next"></span></a> </li>
+</ul>
+
+    </div>
+
+
+    <div class="post-task-block" id="task">
+      <h4><i class="fa fa-file-code-o"></i>本节作业</h4>
+      <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <div class="post-task-name">
+            <h5>
+                <a href="https://fullstack.xinshengdaxue.com/assignments/1">Rails 环境建置作业</a>：<a href="https://fullstack.xinshengdaxue.com/tasks/3">读两篇文章</a>
+            </h5>
+            <p class="count">
+            <span class="num">已有 480 个第二期同学提交了这个作业</span>
+            <span class="answer-link">
+            <a target="_self" href="https://fullstack.xinshengdaxue.com/tasks/3/other_answers?order=recent">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>看看同学怎么做
+</a>            </span>
+        </p>
+        </div>
+        <div class="post-task-option">
+              <a class="opt-btn" href="https://fullstack.xinshengdaxue.com/tasks/3"><i class=""></i><span> 修改作业</span></a>
+
+
+        </div>
+    </div>
+    <div class="pannel-body">
+    <div class="post-task-descripiton">
+        <p>放下你的无效学习方式 <a href="https://fullstack.xinshengdaxue.com/posts/250" target="_self"></a><a href="https://fullstack.xinshengdaxue.com/posts/250" rel="nofollow" target="_self">https://fullstack.xinshengdaxue.com/posts/250</a></p>
+
+<p>领悟“学习的黄金通道  <a href="https://fullstack.xinshengdaxue.com/posts/249" target="_self"></a><a href="https://fullstack.xinshengdaxue.com/posts/249" rel="nofollow" target="_self">https://fullstack.xinshengdaxue.com/posts/249</a><br>
+请阅读这两篇文章，全部读完后请在提交作业的时候回复“阅”。</p>
+
+    </div>
+
+    <div class="group">
+        <div class="answer trix-content">
+            <div>阅</div>
+        </div>
+        
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+
+</div>
+
+
+
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="posts-show-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.course-post .next a', 'Clicked next post btn');
+mixpanel.track_links('.course-post .previous a', 'Clicked previous post btn');
+mixpanel.track_links('#backtotop .btn-backtotop', 'Clicked back to top btn');
+</script>
+<script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("（延伸阅读）领悟 “学习的黄金通道” - Rails 第一课：环境建置 | 新生大学全栈营")
+    </script>
+
+      <script type="text/javascript">
+var metadata = {
+  post_id: '249',
+  post_title: '（延伸阅读）领悟 “学习的黄金通道”',
+  post_url: 'https://fullstack.xinshengdaxue.com/posts/249'
+};
+Intercom('trackEvent', 'watched_post', metadata);
+</script>
+
+
+  </body>
+</html>

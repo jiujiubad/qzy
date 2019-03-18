@@ -1,0 +1,1490 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/courses/64/activities'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>动态 - 编程语言 第二集 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="3TDbcT/LD/zHQKU1peZd+JFM7jHk/crb+hxhXMawDvU3GiTUSIIEraCzSkH7XvMb8n2SWObBcLs9MdraV+ps4g==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 14:04",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 14:57",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508914622,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="activities activities-index">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default activities-index-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/64/syllabus">编程语言 第二集</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/64/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/64">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/64/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/64/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/64/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/64/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="index-content">
+          <div class="row">
+              <div class="qa-message-list answer-whole-section" id="wallmessages">
+    <div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2731">huangpuxiang</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 小时前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>ruby:</div><div>每个缩排层级使用两个空格，不要使用制表符：个人常用制表符号</div><div>(、[ 之后，]、) 之前，不要添加任何空格，在 { 前后，在 } 之前添加空格：括号和中括号需要包紧，而大括号不需要</div><div>在各个方法定义之间添加空行，并且将方法分成若干合乎逻辑的段落：不能在方法间添加两个空行</div><div>在各个段落之间，使用一个空行分隔</div><div>在属性修饰器之后，使用一个空行分隔：书写存取器之后需要空格</div><div>在不同缩进的代码之间，不要使用空行分隔：已经有缩进区分开就不在需要空格了</div><div>当方法调用参数过长时，将它们排列在多行并对齐：这种情况经常碰见，以前不知道该如何处理，尤其是参数的缩进</div><div>永远不要使用 for，除非你很清楚为什么：for是由each实现的，所以尽量使用迭代器。</div><div>永远不要使用 and 与 or 关键字。使用 &amp;&amp; 与 || 来替代</div><div>优先考虑简短的自我赋值语法。</div><div><br></div><div>倾向使用 map 而不是 collect，find 而不是 detect，select 而不是 find_all，reduce 而不是 inject 以及 size 而不是 length。这不是一个硬性要求，如果使用别名可以增强可读性，使用它也没关系。这些别名方法继承自 Smalltalk 语言，但在别的语言并不通用。鼓励使用 select 而不是 find_all 的理由是前者与 reject 搭配起来一目了然。</div><div><br></div><div><br></div><div>rails</div><div>控制器：</div><div>控制器应该保持苗条―它们应该只为视图层提供数据，不应包含任何业务逻辑（所有业务逻辑都应当放在模型里）</div><div>每个控制器的动作（理论上）应当只调用一个除了初始的 find 或 new 之外的方法。</div><div>视图：</div><div>不要直接从视图调用模型层。</div><div>应使用 partial 模版与布局来减少代码重复</div><div>复杂的格式化不应放在视图中，而应提取为视图 helper 或模型中的方法</div><div><br></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64709">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64709"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2731">huangpuxiang</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>23 小时前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>require "date"<br><br>class Car<br>	attr_accessor :name, :modal, :year<br>	<br>	def initialize(name, modal, year)<br>		@name = name<br>		@modal = modal<br>		@year = year<br>	end<br>	<br>  def info<br>    puts "#{@year}, #{modal}, #{name}"<br>  end <br>  <br>	def age<br>    puts Time.new.year - @year<br>	end 	<br>end<br><br>w = Car.new("baoma", "x1", 1989)<br><br>w.info<br>w.age</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64708">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64708"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2731">huangpuxiang</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>3 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>people = [<br>  { name: "Person 1", :age =&gt; 21 },<br>  { name: "Person 2", :age =&gt; 15 },<br>  { name: "Person 3", :age =&gt; 13 },<br>  { name: "Person 4", :age =&gt; 30 },<br>  { name: "Person 5", :age =&gt; 45 },<br>]<br><br>result = people.select{ |p| p[:age] &gt; 20 }.map{ |n| n[:name]}<br>puts result</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64696">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64696"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2731">huangpuxiang</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>3 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><ul>
+<li>SyntaxError：语法错误</li>
+<li>NoMethodError：对象没有相关的方法</li>
+<li>NameError：名字错误</li>
+<li>ActiveRecord::RecordNotFound：没有找到相关记录</li>
+<li>ActiveRecord::ForbiddenAttributesError：使用了对象没有的属性或栏位</li>
+<li>ActiveRecord::RecordInvalid：保存到数据库的数据不符合规范，无效</li>
+<li>ActionController::Routing Error：路由错误</li>
+<li>ActionController::UrlGenerationError：产生的路径时错误的，比如link_to()产生的网址在路由中没有声明或者错误</li>
+<li>AbstractController::DoubleRenderError：多次渲染，action渲染时指向不同的view</li>
+</ul><div><br></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64695">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64695"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5966">Segue</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>4 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><ul>
+<li>SyntaxError 语法错误</li>
+<li>NoMethodError 找不到方法错误</li>
+<li>NameError 名称错误</li>
+<li>ActiveRecord::RecordNotFound 找不到数据记录错误</li>
+<li>ActiveRecord::ForbiddenAttributesError 访问禁止访问属性错误</li>
+<li>ActiveRecord::RecordInvalid 数据验证错误</li>
+<li>ActionController::Routing Error 路由错误</li>
+<li>ActionController::UrlGenerationError url路径错误</li>
+<li>AbstractController::DoubleRenderError 重复渲染错误</li>
+</ul><div><br></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64664">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64664"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5966">Segue</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>5 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/6WqCPMe5TJql9dRa58qW" data-trix-attachment='{"contentType":"image/png","filename":"Snip20171020_10.png","filesize":57932,"height":477,"href":"https://www.filepicker.io/api/file/6WqCPMe5TJql9dRa58qW","url":"https://www.filepicker.io/api/file/6WqCPMe5TJql9dRa58qW","width":542}'><figure class="attachment attachment-preview png"><img src="Snip20171020_10.png" width="542" height="477"><figcaption class="caption">Snip20171020_10.png <span class="size">56.57 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64661">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64661"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5966">Segue</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>5 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/0osbsDKVSUaGyQgqeZJl" data-trix-attachment='{"contentType":"image/png","filename":"Snip20171020_7.png","filesize":13082,"height":66,"href":"https://www.filepicker.io/api/file/0osbsDKVSUaGyQgqeZJl","url":"https://www.filepicker.io/api/file/0osbsDKVSUaGyQgqeZJl","width":510}'><figure class="attachment attachment-preview png"><img src="Snip20171020_7.png" width="510" height="66"><figcaption class="caption">Snip20171020_7.png <span class="size">12.78 KB</span></figcaption></figure></a><a href="https://www.filepicker.io/api/file/aMa7wiQpmz91JIk4Rdqw" data-trix-attachment='{"contentType":"image/png","filename":"Snip20171020_6.png","filesize":45235,"height":280,"href":"https://www.filepicker.io/api/file/aMa7wiQpmz91JIk4Rdqw","url":"https://www.filepicker.io/api/file/aMa7wiQpmz91JIk4Rdqw","width":602}'><figure class="attachment attachment-preview png"><img src="Snip20171020_6.png" width="602" height="280"><figcaption class="caption">Snip20171020_6.png <span class="size">44.17 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64660">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64660"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/979/thumb_9870c84f-1867-4ff3-838f-0b8922701f97.jpg" alt="Thumb 9870c84f 1867 4ff3 838f 0b8922701f97" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/979">张行知</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>9 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>几个 <a href="https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md">Ruby 风格指南转码风格技巧</a>：</div><ol>
+<li>定义方法时，避免单行写法；</li>
+<li>操作符前后适当添加空格，在逗号(,)、冒号(:)及分号(;)之后；特别注意在指数操作符后面不加空格，如：'a**2'；</li>
+<li>( 、[ 之后，] 、) 之前，不添加任何空格。在 { 前后，在 } 之前添加空格。需注意 { 与 }，对于哈希字面量，{ 之后 与 } 之前有无空格都可以，保持一致性就好，在Ruby社区用空格更流行；对于插值表达式，括号内”#{user.last_name}"两端不要添加空格;</li>
+<li>! 之后，不要添加任何空格；</li>
+<li>在属性修饰器之后，使用一个空行分隔。</li>
+</ol><div>几个<a href="https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md">Rails 风格指南</a>转码风格技巧：</div><ol>
+<li>将所有环境下都通用的配置放在 config/application.rb 文件中；</li>
+<li>当需要为一个RESTful资源添加动作时，应使用member路由和collection路由；</li>
+<li>控制器应该保持苗条－他们应该只为试图层提供数据，不应包含任何业务逻辑；</li>
+<li>模型的命名应有意义（但简短）且不含缩写；</li>
+<li>自定义验证规则应放在app/validators目录下；</li>
+<li>不要在查询中使用字符串插值，它会使你的代码有被SQL注入攻击的风险；</li>
+<li>应使用版本控制工具记录 schema.rb (或 structure.sql)的变化；</li>
+<li>应使用partial模板与布局涞减少代码重复；</li>
+<li>有缺陷的gem，rmagick(minimagick替代)、autotest(guard/watchr替代)、rock(SimpleCov替代)、therubyracer(node.js替代)。</li>
+</ol></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64600">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64600"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/979/thumb_9870c84f-1867-4ff3-838f-0b8922701f97.jpg" alt="Thumb 9870c84f 1867 4ff3 838f 0b8922701f97" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/979">张行知</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>9 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>操作符前后适当添加空格，在逗号 ', '、冒号(:)及分号(;)之后；特别注意在指数操作符后面不加空格，如：'a**2'；</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64600">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64600"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/979/thumb_9870c84f-1867-4ff3-838f-0b8922701f97.jpg" alt="Thumb 9870c84f 1867 4ff3 838f 0b8922701f97" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/979">张行知</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>9 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><ul>
+<li>SyntaxError  语法错误；</li>
+<li>NoMethodError 没有找到对应的方法错误；</li>
+<li>NameError 名称错误；</li>
+<li>ActiveRecord::RecordNotFound 数据库中未找到相应的资料；</li>
+<li>ActiveRecord::ForbiddenAttributesError 使用了某些被禁止的属性；</li>
+<li>ActiveRecord::RecordInvalid 数据无效的错误；</li>
+<li>ActionController::Routing Error 路径错误；</li>
+<li>ActionController::UrlGenerationError 未找到对应的路径错误；</li>
+<li>AbstractController::DoubleRenderError 两次渲染的错误；</li>
+</ul></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64596">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64596"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="https://quanzhan-production.s3.amazonaws.com/uploads/user/image/979/thumb_9870c84f-1867-4ff3-838f-0b8922701f97.jpg" alt="Thumb 9870c84f 1867 4ff3 838f 0b8922701f97" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/979">张行知</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>14 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>result = people.select{ |a| a[:age] &gt; 20 }.map{ |t| t[:name] }</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64531">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64531"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_2.pic.jpg" alt="Thumb 2.pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5915">Lucia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>看rails风格指南的时候，很有感触，对比bad, good两种风格的写法，很快就发现老师从一开始就在培养我们良好的编码风格，赞！！说说几个我觉得自己需要更换的编码风格：<br>- 循环部分，尽量用find_each, 而不是all.each／each<br>- 在model中，添加has_many 和 has_one的 associations时，不要忘记加上dependent: :destroy<br>- Time，使用Time.current, not Time.now<br>- (、[ 之后，]、) 之前，不要添加任何空格。在 { 前后，在 } 之前添加空格<br>- 把 when 与 case 缩排在同一层级<br>- 使用 _ 语法改善大数的数值字面量的可读性【不知道竟然还有这种表示方法】<br>- 不要使用 for<br>- 利用“if 与 case 是表达式”的这个特性<br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64412">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64412"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_2.pic.jpg" alt="Thumb 2.pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5915">Lucia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>一些常见的 Rails/Ruby 异常</div><ul>
+<li>SyntaxError</li>
+<li><blockquote>语法错误</blockquote></li>
+<li>NoMethodError</li>
+<li><blockquote> 找不到method</blockquote></li>
+<li>NameError</li>
+<li><blockquote>某个常量或者变量没有定义或者无效</blockquote></li>
+<li>ActiveRecord::RecordNotFound</li>
+<li><blockquote>当ActiveRecord根据给定的id或者id集合是，无法找到记录</blockquote></li>
+<li>ActiveRecord::ForbiddenAttributesError</li>
+<li><blockquote>赋值时，使用了禁止的属性，报ActiveModel::ForbiddenAttributesError</blockquote></li>
+<li>ActiveRecord::RecordInvalid</li>
+<li><blockquote>使用create!或者save!去创建或者保存某个无效的record</blockquote></li>
+<li>ActionController::Routing Error</li>
+<li><blockquote>路径错误</blockquote></li>
+<li>ActionController::UrlGenerationError</li>
+<li><blockquote>Url生成出错，no route matches</blockquote></li>
+<li>AbstractController::DoubleRenderError</li>
+<li><blockquote>一次Action中，多次调用render或者redirect</blockquote></li>
+</ul></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64409">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64409"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_2.pic.jpg" alt="Thumb 2.pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5915">Lucia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>class Car<br>  attr_accessor :name, :modal, :year<br><br>  def initialize(name, modal, year)<br>    @name = name<br>    @modal = modal<br>    @year = year<br>  end<br><br>  def name<br>    @name<br>  end<br><br>  def modal<br>    @modal<br>  end<br><br>  def year<br>    @year<br>  end<br><br>  def age<br>    Time.now.year - @year<br>  end<br><br>  def info<br>    puts "出场年份：#{@year}\n型号：#{@modal} \n名称：#{@name}"<br>  end<br><br>end<br><br># instance<br>c = Car.new("Audi", "A5", 2016)<br>puts "车龄: #{c.age}"<br>c.info<br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64407">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64407"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_2.pic.jpg" alt="Thumb 2.pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5915">Lucia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>results = people.select{|a| a[:age] &gt; 20}.map{|t| t[:name]}</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64401">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64401"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_05c9f15d-eb9e-4c42-aff9-312bf0f7ea91.jpg" alt="Thumb 05c9f15d eb9e 4c42 aff9 312bf0f7ea91" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/651">王静如</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>25 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/2ERe16k4R4uvXyLX5PYz" data-trix-attachment='{"contentType":"image/png","filename":"Snip20170930_105.png","filesize":102686,"height":950,"href":"https://www.filepicker.io/api/file/2ERe16k4R4uvXyLX5PYz","url":"https://www.filepicker.io/api/file/2ERe16k4R4uvXyLX5PYz","width":698}'><figure class="attachment attachment-preview png"><img src="Snip20170930_105.png" width="698" height="950"><figcaption class="caption">Snip20170930_105.png <span class="size">100.28 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64327">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64327"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_05c9f15d-eb9e-4c42-aff9-312bf0f7ea91.jpg" alt="Thumb 05c9f15d eb9e 4c42 aff9 312bf0f7ea91" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/651">王静如</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>25 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>几个主要的《 <a href="https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md">Ruby 风格指南</a>》的影响：</div><ul>
+<li>每个缩排层级使用两个<strong>空格</strong>。不要使用制表符。</li>
+<li>不要使用 ; 隔开语句与表达式。推论：一行一条语句。 </li>
+<li>(、[ 之后，]、) 之前，不要添加任何空格。在 { 前后，在 } 之前添加空格。</li>
+<li>除个别情况外方法调用应当使用括号包裹参数，尤其是第一个参数以 ( 开头时，比如 f((3 + 2) + 1)；</li>
+<li>三元操作符的每个分支只写一个表达式。即不要嵌套三元操作符。嵌套情况请使用 if/else 结构。</li>
+<li>...</li>
+</ul><div>几个主要的《 <a href="https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md">Rails 风格指南</a>》的影响：</div><ul>
+<li>当需要为一个 RESTful 资源添加动作时（你真的需要吗？），应使用 member 路由和 collection 路由。</li>
+<li>当需要定义多个 member/collection 路由时，应使用块结构。</li>
+<li>控制器应该保持苗条 ― 它们应该只为视图层提供数据，不应包含任何业务逻辑（所有业务逻辑都应当放在模型里）。</li>
+<li>当只需要通过属性查询单个记录时，优先使用 find_by 而不是 where</li>
+<li>当需要处理多条记录时，应使用 find_each。</li>
+<li>...</li>
+</ul></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64326">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64326"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_05c9f15d-eb9e-4c42-aff9-312bf0f7ea91.jpg" alt="Thumb 05c9f15d eb9e 4c42 aff9 312bf0f7ea91" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/651">王静如</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>25 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/gWxlVXEyTLWkypn04aR2" data-trix-attachment='{"contentType":"image/png","filename":"Snip20170930_104.png","filesize":313272,"height":368,"href":"https://www.filepicker.io/api/file/gWxlVXEyTLWkypn04aR2","url":"https://www.filepicker.io/api/file/gWxlVXEyTLWkypn04aR2","width":1572}'><figure class="attachment attachment-preview png"><img src="Snip20170930_104.png" width="1572" height="368"><figcaption class="caption">Snip20170930_104.png <span class="size">305.93 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64325">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64325"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_05c9f15d-eb9e-4c42-aff9-312bf0f7ea91.jpg" alt="Thumb 05c9f15d eb9e 4c42 aff9 312bf0f7ea91" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/651">王静如</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>25 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/FJ8dk4edRvqEBtkby8Iq" data-trix-attachment='{"contentType":"image/png","filename":"Snip20170930_103.png","filesize":26456,"height":164,"href":"https://www.filepicker.io/api/file/FJ8dk4edRvqEBtkby8Iq","url":"https://www.filepicker.io/api/file/FJ8dk4edRvqEBtkby8Iq","width":1098}'><figure class="attachment attachment-preview png"><img src="Snip20170930_103.png" width="1098" height="164"><figcaption class="caption">Snip20170930_103.png <span class="size">25.84 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64323">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64323"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1223">杨磊</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>28 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>person= people.select{|a| a&gt;=20}.map{|x|  x[:name]}</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64279">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64279"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1223">杨磊</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>28 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>person= people.select{|a| a&gt;=20}.map{|x|  x[:age]}</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64279">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64279"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1223">杨磊</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>28 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>person= people.map{ |t| t[:age] }.select{|a| a&gt;=20}.reduce{|x, y| (x&gt;y)? x : y }</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64279">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64279"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_341542529767837841.jpg" alt="Thumb 341542529767837841" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2854">Liudezheng</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>SyntaxError：语法错误<br>NoMethodError：使用了未定义的语法，方法名或错误不存在<br>NameError：view 中使用的变量名，与controller中定义不一致。@variable；无效或没有定义的名称，比如没有定义的一个变量、常数首字母没有大写<br>ActiveRecord::RecordNotFound：数据库中没有找到相应的记录<br>ActiveRecord::ForbiddenAttributesError：使用了某些禁止使用的属性，eg: params<br>ActionController::Routing Error：使用的routing没有在route.rb 中定义，rake routes 结果中不含使用的routing<br>ActionController::UrlGenerationError：link_to代码错误，系统不知道目的URL是什么<br>AbstractController::DoubleRenderError：在同一个action内，render和（或者）redirect执行了多次<br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64017">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64017"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_341542529767837841.jpg" alt="Thumb 341542529767837841" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2854">Liudezheng</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/92ACtWoERX29091J5d24" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-12 16.27.17.png","filesize":132145,"height":894,"href":"https://www.filepicker.io/api/file/92ACtWoERX29091J5d24","url":"https://www.filepicker.io/api/file/92ACtWoERX29091J5d24","width":810}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-12_16.27.17.png" width="810" height="894"><figcaption class="caption">屏幕快照 2017-09-12 16.27.17.png <span class="size">129.05 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64012">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64012"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_341542529767837841.jpg" alt="Thumb 341542529767837841" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2854">Liudezheng</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/Btvb2mqFRelAJwvzoF1a" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-11 10.49.57.png","filesize":99636,"height":558,"href":"https://www.filepicker.io/api/file/Btvb2mqFRelAJwvzoF1a","url":"https://www.filepicker.io/api/file/Btvb2mqFRelAJwvzoF1a","width":760}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-11_10.49.57.png" width="760" height="558"><figcaption class="caption">屏幕快照 2017-09-11 10.49.57.png <span class="size">97.3 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63993">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63993"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9129.jpeg" alt="Thumb img 9129" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2751">张伟1989</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>ruby风格指南：<br>1.(、[ 之后，]、) 之前，不要添加任何空格。在 { 前后，在 } 之前添加空格。<br>2.避免在不需要的情况下使用 self。（只有在调用 self 的修改器、以保留字命名的方法、重载的运算符时才需要）</div><pre># 差
+def ready?
+  if self.last_reviewed_at &gt; self.last_updated_at
+    self.worker.update(self.content, self.options)
+    self.status = :in_progress
+  end
+  self.status == :verified
+end
+
+# 好
+def ready?
+  if last_reviewed_at &gt; last_updated_at
+    worker.update(content, options)
+    self.status = :in_progress
+  end
+  status == :verified
+end</pre><div>3.通过使用范围或 Comparable#between? 来替代复杂的比较逻辑。</div><pre># 差
+do_something if x &gt;= 1000 &amp;&amp; x &lt;= 2000
+
+# 好
+do_something if (1000..2000).include?(x)
+
+# 好
+do_something if x.between?(1000, 2000)</pre><div>4.根据注解的不同标题标记不同类型的代码。<br><br>rails风格指南：<br>1.控制器应该保持苗条 ― 它们应该只为视图层提供数据，不应包含任何业务逻辑（所有业务逻辑都应当放在模型里）。<br>2.应使用 find_each 来迭代一系列 ActiveRecord 对象。用循环来处理数据库中的记录集（如 all 方法）是非常低效率的，因为循环试图一次性得到所有对象。而批处理方法允许一批批地处理记录，因此需要占用的内存大幅减少。<br>3.不要在查询中使用字符串插值，它会使你的代码有被 SQL 注入攻击的风险。</div><pre># 差——插值的参数不会被转义
+Client.where("orders_count = #{params[:orders]}")
+
+# 好——参数会被适当转义
+Client.where('orders_count = ?', params[:orders])</pre><div>4.当查询中有超过 1 个占位符时，应考虑使用名称占位符，而非位置占位符。</div><pre># 一般般
+Client.where(
+  'created_at &gt;= ? AND created_at &lt;= ?',
+  params[:start_date], params[:end_date]
+)
+
+# 好
+Client.where(
+  'created_at &gt;= :start_date AND created_at &lt;= :end_date',
+  start_date: params[:start_date], end_date: params[:end_date]
+)</pre><div>
+<br><br><br><br>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63931">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63931"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9129.jpeg" alt="Thumb img 9129" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2751">张伟1989</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业三
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><ul>
+<li>SyntaxError: 语法错误；</li>
+<li>NoMethodError：没有找到方法的错误；</li>
+<li>NameError：名称错误；</li>
+<li>ActiveRecord::RecordNotFound：没有发现相应资料的错误；</li>
+<li>ActiveRecord::ForbiddenAttributesError：model中被禁止的栏位属性错误；</li>
+<li>ActiveRecord::RecordInvalid：数据无效的错误；</li>
+<li>ActionController::Routing Error：路径错误；</li>
+<li>ActionController::UrlGenerationError：没有对应路径的错误；</li>
+<li>AbstractController::DoubleRenderError：两次渲染页面的错误。</li>
+</ul><div><br></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63927">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63927"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9129.jpeg" alt="Thumb img 9129" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2751">张伟1989</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业二
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/6ZQjPeyhQq69RKpHwN9m" data-trix-attachment='{"contentType":"image/png","filename":"Screen Shot 2017-09-07 at 7.07.11 PM.png","filesize":140128,"height":637,"href":"https://www.filepicker.io/api/file/6ZQjPeyhQq69RKpHwN9m","url":"https://www.filepicker.io/api/file/6ZQjPeyhQq69RKpHwN9m","width":1018}'><figure class="attachment attachment-preview png"><img src="Screen_Shot_2017-09-07_at_7.07.11_PM.png" width="1018" height="637" title="" style><figcaption class="caption">Screen Shot 2017-09-07 at 7.07.11 PM.png <span class="size">136.84 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63926">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63926"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_IMG_9129.jpeg" alt="Thumb img 9129" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2751">张伟1989</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业一
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/yqC9QVUmRAebHZTnTLsu" data-trix-attachment='{"contentType":"image/png","filename":"Screen Shot 2017-09-07 at 11.59.44 AM.png","filesize":122889,"height":508,"href":"https://www.filepicker.io/api/file/yqC9QVUmRAebHZTnTLsu","url":"https://www.filepicker.io/api/file/yqC9QVUmRAebHZTnTLsu","width":881}'><figure class="attachment attachment-preview png"><img src="Screen_Shot_2017-09-07_at_11.59.44_AM.png" width="881" height="508"><figcaption class="caption">Screen Shot 2017-09-07 at 11.59.44 AM.png <span class="size">120.01 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63923">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63923"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb_90b0d53e-033a-4a2c-887a-9fd18d03fa61.jpg" alt="Thumb 90b0d53e 033a 4a2c 887a 9fd18d03fa61" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/6311">imtinge</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            作业
+            -
+            作业四
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content">没有</div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63736">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 1</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63736"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="text-center">
+      <ul class="pagination pagination"><li class="prev disabled"><span>&#60;</span></li> <li class="active"><span>1</span></li> <li><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/64/activities?page=2">2</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/64/activities?page=3">3</a></li> <li class="next"><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/64/activities?page=2">&#62;</a></li></ul>
+    </div>
+  </div>
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="activities-index-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("动态 - 编程语言 第二集 | 新生大学全栈营")
+    </script>
+
+      
+
+  </body>
+</html>

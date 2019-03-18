@@ -1,0 +1,754 @@
+﻿<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="iem7"><![endif]--><!--[if lt IE 9]><html class="lte-ie8"><![endif]--><!--[if (gt IE 8)|(gt IEMobile 7)|!(IE)]><!--><html>
+<!--<![endif]-->
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/hottest_articles/67'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"8d5b66bcc5","applicationID":"19028431","transactionName":"e1cLFUpbX18DFE5IWEtMFk5LXFxE","queueTime":3,"applicationTime":151,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>[分享] JD Store 魔改大賽複盤 — 協作經驗、各類領悟 « Anndo 全棧營紀錄</title>
+<meta name="description" content="前言
+如果說上一次 Job Listing 大賽 教會了我：「心態建立」：
+
+
+
+拋開虛榮心、妄念，只關注自己的成長，並認清比賽的真正目的：
+
+
+
+知識遷移：把基礎技能和知識，實際運用在真實項目...">
+<meta property="og:title" content="text/html; charset=utf-8">
+<meta property="og:description" content="前言
+如果說上一次 Job Listing 大賽 教會了我：「心態建立」：
+
+
+
+拋開虛榮心、妄念，只關注自己的成長，並認清比賽的真正目的：
+
+
+
+知識遷移：把基礎技能和知識，實際運用在真實項目...">
+<meta property="og:url" content="http://anndo-blog.logdown.com/posts/1948933">
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/22728/og_image/11828648_10206209653912354_1262763681788822636_n.jpg">
+    <meta charset="utf-8">
+    <meta name="author" content="Anndo">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css_ow0i77.css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
+    <link href="font-awesome.min_73VNpH.css" media="screen, projection" rel="stylesheet">
+    <link href="screen_AO0sMc.css" media="screen, projection" rel="stylesheet">
+    <script async src="slash.js"></script>
+    <link href="default_code_highlight.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <meta name="robots" content="INDEX,FOLLOW">
+<link rel="image_src" href="http://logdown.com/images/og_plain.jpg">
+
+
+<link rel="alternate" type="application/rss+xml" title="Anndo 全棧營紀錄" href="/posts.rss">
+<link rel="alternate" type="application/atom+xml" title="Anndo 全棧營紀錄" href="/posts.atom">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  
+  _gaq.push(['_setAccount', 'UA-41764280-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['userblog._setAccount', 'UA-96567701-1']);
+  _gaq.push(['userblog._trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+  <body>
+    <!--[if (lt IE 9)|(lt IEMobile 8)]><div class="legacy-browser">Sorry, your browser or device is not supported.<br>Please use Chrome, Firefox, Safari or Internet Explorer 9 (or higher).</div><![endif]-->
+
+    <!--[if (gt IE 8)|(gt IEMobile 7)|!(IE)]><!-->
+
+    <header class="inner page-header" id="header">
+      <div class="logo">
+        <h1><a href="http://anndo-blog.logdown.com/">Anndo 全棧營紀錄</a></h1>
+      </div>
+
+      <div class="menubar">
+        <nav class="header-menu" id="header-menu">
+          <a class="toggle-menu">Menu</a>
+
+          <ul>
+            <li class="about-me">
+              <a class="menu-item" href="">About</a>
+            </li>
+
+            <li class="archives">
+              <a class="menu-item" href="http://anndo-blog.logdown.com/archives">Archives</a>
+            </li>
+          </ul>
+        </nav>
+
+        <form action="http://anndo-blog.logdown.com/posts/search" class="search" method="get">
+          <input required class="search-field" name="q" placeholder="Search blog..." x-webkit-speech><a class="button"></a>
+        </form>
+
+        <nav class="follow-me">
+          <a class="icon-github" href="" title="GitHub"></a>
+
+          <a class="icon-facebook" href="" title="Facebook"></a>
+
+          <a class="icon-google-plus" href="" title="Google+"></a>
+
+          <a class="icon-twitter" href="" title="Twitter"></a>
+
+          <a class="icon-rss" href="http://anndo-blog.logdown.com/posts.atom" title="RSS"></a>
+        </nav>
+      </div>
+    </header>
+
+    <div id="content" class="inner content">
+      
+
+      
+      <div>
+      
+
+        
+
+        
+
+        
+
+        <!-- main post list -->
+        
+        <article>
+          <header class="entry-header">
+            <h2 class="title">
+              <a href="http://anndo-blog.logdown.com/posts/1948933">
+                
+                </a><a href="http://anndo-blog.logdown.com/posts/1948933">[分享] JD Store 魔改大賽複盤 — 協作經驗、各類領悟</a>
+                
+
+                
+              
+            </h2>
+          </header>
+
+          <div class="entry-content">
+            
+
+            
+
+            
+            <h2><strong><span style="color:#1A237E">前言</span></strong></h2>
+<p>如果說上一次 <a href="https://fullstack.xinshengdaxue.com/works/300" target="_self">Job Listing 大賽</a> 教會了我：「心態建立」：</p>
+
+<ul>
+<li>
+<p><strong>拋開虛榮心、妄念，只關注自己的成長，並認清比賽的真正目的：</strong></p>
+
+<ul>
+<li>
+<strong>知識遷移：</strong>把基礎技能和知識，實際運用在真實項目上。</li>
+<li>
+<strong>逼出潛能：</strong>老師和助教給了你魚竿後，你能釣到小魚還是大魚？或是自己開外掛把魚竿升級？</li>
+<li>
+<strong>完成一個完整的項目：</strong>大賽是我們「讓點子落地」的最好機會。</li>
+</ul>
+</li>
+<li><p><strong>如何面對競爭</strong></p></li>
+<li><p><strong>擺脫完美主義</strong></p></li>
+</ul>
+
+<p><em>※ Anndo 的 Job Listing 大賽的完整心得請見：<a href="http://anndo-blog.logdown.com/posts/1798278" target="_self"><b>[分享] 魔改大賽 — 調適心態、持續迭代</b></a>。</em></p>
+
+<p>​</p>
+
+<p>這一次的 JD Store 則是截然不同的一次經驗：</p>
+
+<ul>
+<li>一方面， JD Store 大賽多了很多新的要素：協作、牽涉更多技術的項目主題（購物網站）；我們藉此提高了與人溝通、合作的軟實力，以及實現各種前後端功能的硬實力。</li>
+<li>另一方面，新的規則跟投票機制，大幅牽動了大賽氛圍。混戰之中，無可避免會掉入情緒坑，但因此得到的全新領悟，也是相當寶貴的一次經驗。</li>
+</ul>
+
+<p>​</p>
+
+<p>從 5/7 正式敲定了隊友人選，到 6/12 比賽結束，一晃眼就是一個多月過去了。<strong>回過頭，才發現已經走了這麼遠；往前看，才知道未來的道路還很長，大賽不過是學習路上的一小個關卡。</strong>在進行下一個 Hard 模式關卡之前，藉這篇分享文，作一次 JD Store 魔改大賽心得複盤！</p>
+
+<p>​</p>
+
+<p><figure><img src="006tKfTcgy1fgkp77lykhj31kw1e7npf.jpg" title=""></figure></p>
+
+<p><br></p>
+
+<hr>
+<h2><strong><span style="color:#1A237E">我是怎麼找到我的神隊友 Jimmy Wang？</span></strong></h2>
+<p>回憶大賽，最幸運的事情莫過於是我有一個神隊友，也就是大家公認的學霸：<a href="http://xbearx1987-blog.logdown.com/" target="_self">Jimmy Wang（吉米王 ）</a>。過去我從來不敢想像自己能與前段班的學霸學員合作，更不用說是吉米了。然而，現在回想起來，<strong>這份「幸運」也許是有跡可循的。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">過去的積累、表現，會形塑別人眼中的「你」。</span></strong></h3>
+<p>在討論組隊時，吉米有提到我的「認真」，說道：「在微信群的發言、文章，誰認真，都看得出來，誰頭腦清楚也是。」。而我自己在挑選隊友、評估組隊邀請時，則是會在意對方對於細節的講究與要求。</p>
+
+<p>​</p>
+
+<p>綜合我們兩人的標準，歸納出下面幾點：</p>
+
+<ul>
+<li>
+<strong>學習態度：</strong>是不是伸手黨？如何實踐全棧營的學習（教材練習、ORID、教程、其他分享）？</li>
+<li>
+<strong>大腦清晰：</strong>你問問題的方式具體與否、發言和文章內容的邏輯、脈絡。</li>
+<li>
+<strong>平時習慣：</strong>產出的代碼、文字整潔與否、易讀性高嗎？Commit 習慣如何？重視這些細節的人，一般來說自我要求相對高。確保日後合作時，不會因為亂無章法的代碼或個人習慣而卡關。</li>
+</ul>
+
+<p>​</p>
+
+<p><strong>平日的展現出來的學習態度跟成果、人品，會在關鍵時刻（例如：找隊友），大大地推你一把，讓你獲得你夢寐以求的機會。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">積極交流、勇於爭取機會。</span></strong></h3>
+<p>Xdite 老師曾經這樣描述全棧營：<strong>「你參加的是高品質的 MBA。要去和其他人交流，否則就是浪費自己的機會。要抓住機會啊！」</strong>，文班長、吉米也曾多次跟我講到這樣的觀念：「要直接，想要什麼就去爭取。失敗就學取經驗，繼續下一次。」，也因此，我在全棧營的作風，一反常態，不再是過去那個怯生生、總是擔心熱臉貼屁股的自己，盡可能地去爭取自己想要的機會。</p>
+
+<p>​</p>
+
+<p>更何況，「以程序員的身份，與他人協作，完成一個編程項目」是多麼難得的體驗，眼前又是各方面都可作為學習典範的吉米，我知道自己如果放棄嘗試，事後回憶起來，絕對會後悔莫及。</p>
+
+<p><br></p>
+<h2><strong><span style="color:#1A237E">協作經驗 — J &amp; A 是怎麼將溝通成本降至最低？</span></strong></h2>
+<h3><strong><span style="color:#0D47A1">目標明確，便能快速決策。</span></strong></h3>
+<p>我們在討論時，會先把「目標」確立下來，以此為根據去作決定。<strong>當雙方有明確、清晰的共同目標時，便能有效討論，並且快速達成共識。</strong></p>
+
+<p>​</p>
+
+<p>舉例來說，我們最初各自搜羅購物網站的主題靈感，寫了共 8 個左右的主題，在正式開始討論之前，吉米就寫下了「主題評選標準」。這個標準一出來，基本上一半以上的選項就先篩去了，再就剩下選擇稍加討論，大賽準備期最重要的事項之一：「挑選主題」便立即達成！</p>
+
+<p>​</p>
+
+<p><figure><img src="006tKfTcgy1fgkpqd6pjqj318i0e6gn2.jpg" title=""></figure></p>
+
+<p>​</p>
+
+<p>無論是挑選主題，還是腦內風暴、發想功能、排版的討論，在進入正題之前，花短短幾分鐘<strong>「設立目標、討論事項」</strong>，這個動作大大提升了我們的討論效率跟決策速度；而最後作出的決定，因為符合我們的目的和檢視標準，日後也不易生變。</p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">溝通 — 不帶情緒，不隱瞞實際想法和意見。</span></strong></h3>
+<p>跟一些同學聊到「協作」遇到的坑時，聽到很多<strong>「我想如何如何，但我不知道他是怎麼想的。」</strong>這樣的句型，這也讓我回憶了一下我跟吉米之間的協作過程，似乎一次也沒有過這樣的念頭。</p>
+
+<p>​</p>
+
+<p><strong>最好的溝通，就是「將內心的想法，直接表達出來」</strong>；把話憋在心裡，隊友永遠不會知道你的看法是什麼，久了也會憋出內傷，產生一些不必要的情緒。而接受意見的一方，千萬不要將反饋視為「批評」或是「不滿」；如果你的作的東西真的是完美無缺，隊友不會閒閒沒事、刻意找碴。</p>
+
+<p>​</p>
+
+<p>如果溝通中，反饋的內容<strong>「具體、有料」</strong>，不但能讓你的意見更容易得到採納，兩人都能因此受益。例如說，可以像這樣建議：</p>
+
+<ul>
+<li>
+<p><strong>前端視覺：</strong></p>
+
+<ul>
+<li>手繪排版，或是在 <a href="https://uk.pinterest.com/" target="blank">Pinterest</a> 上找貼近自己想像的範例、真實網站的樣式，提供給對方。並說明為什麼你覺得這樣子好，試著分析、描述理想樣貌跟目前作品之間的差異。</li>
+<li>有想法的人，直接動手調出一個版本，再給對方看，尋求意見和同意。</li>
+</ul>
+</li>
+<li>
+<p><strong>後端功能：</strong></p>
+
+<ul>
+<li>Models 的欄位、關聯如何設計，未來會較好維護及擴充。</li>
+<li>以「真實項目」的網站體驗流程、後台管理需求去思考、檢視目前成品，有沒有什麼功能設計是可以加強，讓整體更貼近現實生活中的需求。</li>
+</ul>
+</li>
+<li>
+<p><strong>編寫教程：</strong></p>
+
+<ul>
+<li>教程的架構、文字易懂與否，重點內容的標題可以再用 <a href="https://github.com/anndoko/templates" target="_self">Markdown、HTML 語法</a> 加粗或上色以達到強調效果。</li>
+<li>是不是可以加入一些前言（大家常遇到的狀況、這篇教程要解決什麼樣的需求）？讓讀的人有共鳴、能想像運用情境。</li>
+</ul>
+</li>
+<li>
+<p><strong>個人狀態：</strong></p>
+
+<ul>
+<li>如果狀態不好，我們有什麼調整方式？冥想、深呼吸、切換任務，或是放自己一、兩天假。</li>
+</ul>
+</li>
+</ul>
+
+<p>​</p>
+
+<p>簡單來說，就是：<strong>大膽提出意見，虛心接受指教；同時不斷迭代自己的表達能力。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">行動力</span></strong></h3>
+<p>從項目推進、上線，到後期的撰寫教程，我們可以說是「J &amp; A 兩人同心，其利斷金」，合力完成了很多事情，過程非常流暢。這樣的協作默契，與其說是來自兩人本身就很合拍（總不能歸因於我們都是台灣同鄉！），不如說是因為<strong>「行動力」</strong>；<strong>意識到任何項目需求，就立即提出，兩人主動安排自己可以負責的任務、分頭執行，並互相照應。</strong></p>
+
+<p>​</p>
+
+<p>像是 5/21 上線當天：</p>
+
+<ul>
+<li>吉米：快手快腳地幫第一版作品進行功能和頁面的收尾、修正（神隊友簡直在閃閃發亮啊！），寫 Logdown 簽名檔用的 HTML，幫網站截圖、準備 JD Store 大賽作品頁面會用到的截圖和敘述。</li>
+<li>我：完成文案最終潤飾、推上 Heroku 後，緊接著處理正式端的網站內容；代碼的部分則改一些新發現的 bug、確認語系 yml 檔。開賽前一小時，負責寫 <a href="http://anndo-blog.logdown.com/posts/1862623" target="_self">J&amp;A SELECT 作品介紹</a> 的文字部分，以及 <a href="https://github.com/anndoko/j-and-a-select" target="_self">GitHub 專案</a> 頁面會顯示的 README.md。</li>
+</ul>
+
+<p>​</p>
+
+<p>上線前的準備工作如此繁雜、細鎖，但只要<strong>彼此執行力夠、積極採取行動</strong>，即使事前完全沒有討論或刻意分派的任務，也還是能高效完成。還要有一份<strong>「為隊友設想」</strong>的心情，不斷問自己：</p>
+
+<ul>
+<li>「現階段，我該怎麼參與、能作些什麼貢獻？」</li>
+<li>「圖 / 文案 / 技術支援，隊友有什麼需求？」</li>
+</ul>
+
+<p>​</p>
+
+<p><strong>當雙方都採取主動參與的姿勢、設身處境的心態，就能很直覺地找到各自當前的任務，項目的推進自然水到渠成，解決「永遠在等對方」的窘境。</strong></p>
+
+<p><br></p>
+<h2><strong><span style="color:#1A237E">自身成長</span></strong></h2>
+<h3><strong><span style="color:#0D47A1">Job Listing 大賽留下的遺憾，透過 JD Store 大賽來彌補。</span></strong></h3>
+<p>上一次大賽，雖然收穫很大，得到很多支持跟讚美，甚至對於當時的實力跟招聘網站的作品水平來說，是有點多得太多了，也因此我最後陷入莫名的低落。<strong>這樣「心虛」的情緒，是源自於「成長不夠」。</strong>除了開發便宜行事，很多標配功能沒作，也不完全滿意自己的作品（主題、完整度），所以就算得到好的名次、獎品，也開心不起來。</p>
+
+<p>​</p>
+
+<p>JD Store 魔改大賽 5/22 00:00，上傳系統開放當晚，發現自己心態有很大的轉變。原本我跟吉米都希望能秒上傳、當第一個上線的作品，後來因為 VPN 上傳速度太慢而重來，沒達成頭香的成就；但意外的是，我竟然絲毫不以為意，腦中想的都是：「沒關係，我很滿意我們共同完成的 J &amp; A SELECT 第一版樣貌！」。心情莫名輕鬆、滿足，將比賽的事情徹底拋到腦後，因為我知道我已經了結了前次大賽留下來的很多遺憾，跟著神隊友吉米，我們一起作到：</p>
+
+<ul>
+<li>挑了一個彼此都喜歡、有想法的主題。</li>
+<li>靠著明確的目標和分工，即便兩人的狀態都不好，還是達成了將「比賽一開始就發佈一個完整的作品」的階段性目標。</li>
+<li>克服曾經懼怕的技術難題，實現當初沒作成的標配功能。</li>
+</ul>
+
+<p>​</p>
+
+<p><strong>自己貢獻了什麼、如何協作、從隊友的態度和代碼中學到什麼、作品有沒有朝著目標演進，這些經驗跟體悟才能讓心裡真正踏實和滿足。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">硬實力成長。</span></strong></h3>
+<p><strong><span style="color:#1565C0">後端功能 — 脫離教材、獨立實作。</span></strong></p>
+
+<p>Job Listing 魔改大賽，我尚無法完全擺脫對教材的依賴，網站基本框架也是遵照教程、按步驟開發。這一次魔改大賽，我跟吉米在腦內風暴、發想功能時，便針對每一個部分，把 Models、Gems、實作方向，通通寫下。<strong>這樣簡單的一個討論環節，卻讓我腦中多了一張全新的「功能實作藍圖」，而不再是參照教材，一個指令、一個動作。</strong></p>
+
+<p>​</p>
+
+<p><strong><span style="color:#1565C0">前端排版 — 「觀察/吸收」、「刻意練習」、「遷移技能」，三階段克服弱項。</span></strong></p>
+
+<p>第一次大賽結束後，我對於「如何利用 Boostrap 的網格系統（Grid System）達到自適應」、「CSS 屬性」，都還是一知半解，多半是腦袋一片懵、靠土法煉鋼弄出自己想要的版面。JD Store 大賽前期有大半時間都在搭建作品的毛胚屋，前端交給吉米去裝修；直到我們切換任務、撰寫模板教程時，我才真正把前端的能力建立起來。</p>
+
+<p>​</p>
+
+<p>我的學習套路是這樣：</p>
+
+<ul>
+<li>
+<p><strong>階段一：「觀察/吸收」；小幅修改細節，改改看、玩玩看，熟悉前端代碼、觀察變化。</strong></p>
+
+<p>在神隊友已經建立的 CSS/HTML 基礎上去作改動；如果你跟隊友的前端能力都尚未成熟，先別絕望，你還是可以將前端高手（如吉米、一期的陳俊鴻學長）的專案 Clone 至本地進行修改。在作品上線之前，我陸續調整了一些前端細節：Navbar/footer 的顏色及樣式、Hover 的文字顏色/底色和效果統一、重新設計 Logo（替換字型、利用 CSS 加圓框）。雖然只是針對小地方微幅調整，但其實這是很好的前端入門方式：</p>
+
+<ul>
+<li>在前端強者的代碼基礎上修改，用「只是玩玩」的心態去修改，不易產生挫敗感或抗拒。</li>
+<li>
+<strong>閱讀代碼，觀察前端套路及訣竅：</strong>
+
+<ul>
+<li>Views 檔案中的 HTML 架構安排。</li>
+<li>CSS 屬性命名規則。</li>
+<li>如何設置通用樣式以達到 DRY（Don't repeat yourself），讓 CSS Class 易於維護、使用。</li>
+<li>熟悉常用 CSS 屬性。</li>
+</ul>
+</li>
+<li>
+<p>過程中，了解<strong>「輸入什麼會得到什麼」</strong>。</p>
+
+<p><em>※ Nic 過去在直播中有叮嚀幾個前端學習心態，「『輸入什麼會得到什麼』才是學習的重點，有過多的糾結會絆倒自己。」便是其一；如果你忘記了、再次陷入糾結，可以利用這篇直播筆記：<a href="http://anndo-blog.logdown.com/posts/1718564" target="_self">[筆記生肉][圖解] 如何參加魔改大賽（主講：Nic）</a>。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>​</p>
+
+<ul>
+<li>
+<p><strong>階段二：「刻意練習」；練就如何從 0 開始，兜出自己要的排版、樣式。</strong></p>
+
+<p>有了階段一的 HTML/CSS 前置知識後，再進一步挑戰自己，從 HTML 到 CSS，一步一步組構一個頁面：</p>
+
+<ul>
+<li>
+<strong>HTML 佈局：</strong>規劃頁面主要板塊、自適應，預先寫下 Class 名稱。</li>
+<li>
+<strong>CSS 樣式：</strong>用佈局時就規劃好的 Class 名稱，撰寫 Class 的 CSS 樣式內容。</li>
+<li>
+<strong>客製細節：</strong>類似階段一。</li>
+</ul>
+
+<p>​</p>
+
+<p>你可以替自己安排一些練習方式跟限制：</p>
+
+<ul>
+<li>
+<p>練習作一個只用到 HTML/CSS 代碼的靜態頁面。強調「只用到 HTML/CSS」，是因為練習重點在「前端」，所以把後端代碼的需求降至最低。以製作「商品列表」的前端模板為例：</p>
+
+<p>① 終端機執行 <code>$ rails g controller products</code> 後，在 app/controllers/products_controller.rb 中加入 index 的 action，<br>
+② config/routes.rb 中用 <code>get "/products/index" =&gt; "products#index"</code> 設置路徑。<br>
+③ 在 app/views/products 裡新增 index.html.erb，就可以動手作一個簡單的靜態頁面了。</p>
+</li>
+<li><p><strong>抄其他作品的前端代碼時，限制自己不能整段複製貼上；強制自己按照上述的：「HTML 佈局 → CSS 樣式 → 客製細節」</strong>逐步添加。才能避免「我感覺自己一直在抄代碼，但不知道自己在抄什麼。」、「抄完就忘。」這類狀況（Xdite 老師、Nic 直播常被問到的高頻問題）。</p></li>
+</ul>
+</li>
+</ul>
+
+<p>​   </p>
+
+<p><a href="https://github.com/xbearx1987/jdstore-theme-simple" target="_self"><figure><img src="006tNbRwgy1fgn38bv9p3j31kw1iaqg3.jpg" title=""></figure></a></p>
+
+<p>​   </p>
+
+<ul>
+<li>
+<p><strong>階段三：「遷移技能」；回答問題、教人，驗證所學。</strong></p>
+
+<p>作品好看，或是有產出前端相關的教程，自然會吸引一些同學來問問題；或是逛逛交流論壇、Slack、參加 Global Team 的線上 Meetup，主動尋找問題。當面對同學問問題，比起提供大致方向，我會傾向<strong>「利用問題，再作一次練習」</strong>；<strong>把被問及的每一個「問題」當作機不可失的「練習機會」。</strong></p>
+
+<p>​</p>
+
+<p>例如 <a href="http://maxismgrowth.logdown.com/" target="_self">Max</a> 之前傳來他想要的商品列表的樣式，說在實作前端頁面時遇到問題，我便利用 <a href="https://gist.github.com/anndoko" target="_self">Gist</a> 寫了一個簡單的架構給他、附帶註解說明。練習、實作時，人往往會不自覺選擇自己熟悉的佈局、樣式。<strong>因為如此，來自其他同學的問題，成了寶貴的「練習題」；把握每一次機會，分析問題、思考解決方案，讓自己充分調動技能，並檢查自己有無知識盲點。</strong></p>
+</li>
+</ul>
+
+<p>​</p>
+
+<p><a href="https://gist.github.com/anndoko/16995a0d680a117e69386106618de3f4" target="_self"><figure><img src="006tNbRwgy1fgn5aajjx7j31k00i277m.jpg" title=""></figure></a></p>
+
+<p>​</p>
+
+<p><strong><span style="color:#1565C0">教程撰寫能力 — 寫一篇「傻瓜都能懂」的教程，是最好的學習方式之一。</span></strong></p>
+
+<p>我跟吉米對<strong>「教程」</strong>有幾個共同的標準，我認為是這樣的自我要求，讓「提取練習」成效更顯著，而寫出來的教程也獲得不錯的評價。</p>
+
+<p>​</p>
+
+<p>我們在撰寫教程時，一定會考量：<strong>「無論程度，只要照著教程，一定能懂、跟著步驟實現。」</strong>。前端效果、後端功能，在自己的項目實現後，為了確保所有人（或至少全棧營的學員）能跟著實作，我們的習慣是：利用教材範圍的基礎框架，重新實作一次，或甚至在教程寫出來後，再按照自己寫的步驟作一遍；藉此確認教程中的步驟、指示是否明確。</p>
+
+<p>​</p>
+
+<p><strong>為了達到「教程可操作性高」而養成的習慣，讓我們多了一至兩遍的練習，形成很深刻的記憶；而這樣作，也是對使用教程的讀者負責。</strong></p>
+
+<p>​</p>
+
+<p><em>※ 整個全棧營的學習期間，我撰寫的系列教程、資源、筆記，請見：</em></p>
+
+<ul>
+<li>
+<p><em>教程</em></p>
+
+<p><em>&lt; 教材相關 &gt;</em></p>
+
+<ul>
+<li><a href="http://anndo-blog.logdown.com/posts/1680769" target="_self">[分享] 我們該如何想像 HTML/CSS？用生動比喻、滿滿範例帶你入門</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1714674" target="_self">[分享] 如何解決教材中「訪客以網址進入 admin/jobs 出現錯誤」</a></li>
+</ul>
+
+<p><em>&lt; Job Listing 魔改大賽 &gt;</em></p>
+
+<ul>
+<li><a href="http://anndo-blog.logdown.com/posts/1748236" target="_self">[分享] 幫網站實現多國語系支援</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1779923" target="_self">[分享] 讓網站支援 Google Map 顯示</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1756138">[分享] flash 提示訊息 — 顯示位置問題解決辦法</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1730933" target="_self">[分享] Font Awesome 還可以這樣用</a></li>
+</ul>
+
+<p><em>&lt; JD Store 魔改大賽 &gt;</em></p>
+
+<ul>
+<li><a href="http://anndo-blog.logdown.com/posts/1924946" target="_self">【JA魔改秘笈】十分鐘搞定商品列表、商品詳情頁面！</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1869450" target="_self">【JA魔改秘笈】實作「用戶中心」 &amp; 訂單欄位自動填入用戶資料</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1927297" target="_self">【JA魔改秘笈】Heroku 實用指令彙整（緊急狀況必用的復原版本、多人協作）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1930065" target="_self">【JA魔改秘笈】Seeds.rb 越來越肥怎麼辦？兩個步驟實現「執行指定檔案，生成數據」</a></li>
+</ul>
+</li>
+<li>
+<p><em>工具資源</em></p>
+
+<ul>
+<li><a href="https://github.com/anndoko/templates" target="_self">[GitHub 開源] 各類筆記模板</a></li>
+<li><a href="https://github.com/anndoko/templates/blob/master/markdown.md" target="_self">[GitHub 開源] 實用 Markdown/HTML 語法</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1667494" target="_self">[圖解] 使用 Google Analytics 追蹤你的 Logdown 流量</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1672070" target="_self">[圖解] Slack 筆記術</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1765962" target="_self">[分享] Global Team Online Meetup 參與方式及 zoom.us 基本操作</a></li>
+</ul>
+</li>
+<li>
+<p><em>歷程紀錄、心得分享</em></p>
+
+<ul>
+<li><a href="http://anndo-blog.logdown.com/posts/1727679" target="_self">[分享] Job Listing 第二期魔改大賽 - 歷程紀錄</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1798278" target="_self">[分享] Job Listing 魔改大賽 — 調適心態、持續迭代
+</a></li>
+</ul>
+</li>
+<li>
+<p><em>直播筆記</em></p>
+
+<ul>
+<li><a href="http://anndo-blog.logdown.com/posts/1675220" target="_self">[筆記生肉] 開學第一周直播（主講：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1705122" target="_self">[筆記生肉] MVP 與 PMF（主講：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1703531" target="_self">[筆記生肉] 基礎知識補充與開發技巧（主講：Nic）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1718564" target="_self">[筆記生肉] 如何參加魔改大賽，附圖解。（主講：Nic）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1790227">[筆記生肉] 學一遍就能把知識焊入大腦的技法（主講：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1804767">[筆記生肉] 敏捷項目管理（主講：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1840181">[筆記生肉] 商店開發實戰技巧（主講人：Nic）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1850784">[筆記生肉] 教你如何使用 User Story、Tower 、 Github 進行協作開發（主講人：ihower）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1864643">[直播筆記] 如何長期維持超人一般的高效模式？（Xdite 老師的 Q&amp;A 時間）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1906584">[直播筆記] 刻意練習（主講人：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1936528">[直播筆記] 你應該掌握哪些基本功（主講人：Xdite）</a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1946340">[直播筆記] 比完賽的你該如何再次成長？（主講人：Nic）</a></li>
+</ul>
+</li>
+</ul>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">透過幫助別人、解決別人的需求，產生滿滿的動力與自信。</span></strong></h3>
+<p>文班長開設的全棧營鐵血群，讓我跟吉米有機會與其他同學（我們的協助對象：<a href="http://lihui-blog.logdown.com/" target="_self">李慧</a>）接觸，幫助她的隊伍將 <a href="https://fullstack.xinshengdaxue.com/works/671" target="_self">作品</a> 推上線。搭上線後，我們馬上開了一次線上會議，討論時意外發現，我跟吉米習以為常的「協作方式」，是可以幫助到其他人的。</p>
+
+<p>​</p>
+
+<p>而當我們苦思教程主題時，也從跟協助對象的聊天中，了解到大部分同學可能會有的<strong>「需求」</strong>，這其中，又以「前端」的需求最為迫切：「作品醜，但又不知道該如何寫出漂亮的前端，所以遲遲不敢發佈作品。」。所以吉米立刻提議製作一套前端模板，將購物網站的三大主要頁面，供大家使用；兩人分頭製作了 Landing Page 以及商品列表、商品資訊頁，J &amp; A 的最受歡迎教程就此誕生：</p>
+
+<ul>
+<li><a href="http://xbearx1987-blog.logdown.com/posts/1915835" target="_self"><b>【JA魔改秘笈】教你如何第一次做 Landing Page 就上手！</b></a></li>
+<li><a href="http://anndo-blog.logdown.com/posts/1924946" target="_self"><b>【JA魔改秘笈】十分鐘搞定商品列表、商品詳情頁面！</b></a></li>
+</ul>
+
+<p><em>※ 我跟吉米所寫的系列教程，請見：<a href="http://anndo-blog.logdown.com/posts/1798278" target="_self"><b>【JA魔改秘笈】實用秘笈列表</b></a>。</em></p>
+
+<p>​</p>
+
+<p>我們其實不自覺地實踐了 Xdite 老師在 <a href="http://anndo-blog.logdown.com/posts/1705122" target="_self">&lt; MVP 與 PMF &gt; 直播</a> 所說的：<strong>「做一個關心他人需求的人，在幫助的過程中就能尋覓到『剛需』。」</strong></p>
+
+<p>​</p>
+
+<p>也許在外人眼中，我跟吉米都算是不差的學員（吉米是大家一致認同的學霸），但事實上，我們常常缺乏自信；都太理性，自我認知過於清晰（知道哪裡不會或作得不夠好），所以經常自信不足；旁人如果給我們的評分是 85 - 90 分，我們自己東減西扣，可能會覺得自己只有 65 -70 分。也正因為如此，<strong>「與人產生聯繫、產生價值」</strong>這件事對我們來說格外重要。<strong>多多去找人交流、伸出援手，才會發現自己是有能力幫別人解決問題，也才能建立信心。</strong></p>
+
+<p>​</p>
+
+<p>藉著這次魔改大賽，重新領悟了<strong>「『教』是最好的『學』」</strong>這個道理。<strong>「教人」、「寫教程幫助別人」，不僅僅是最好的提取練習，也是最好的自信來源。</strong></p>
+
+<p><br></p>
+
+<p><figure><img src="006tKfTcgy1fgkpcvh0ybj30sg0f1ajs.jpg" title=""></figure></p>
+
+<p><br></p>
+<h2><strong><span style="color:#1A237E">比賽心態總結 — 關於名次、投票和拉票。</span></strong></h2>
+<h3><strong><span style="color:#0D47A1">只關注「操之在己」的事。</span></strong></h3>
+<p>在萬維鋼的得到專欄讀到一篇文章 &lt; 日課 196 | 斯多葛派哲學的安心之法 &gt;，裡面提到的心態控制，非常適用於兩次大賽。</p>
+
+<p>​</p>
+
+<p>斯多葛控制二分法指的是：<strong>將事情分成「能控制的」、「不能控制的」兩種；我們應該只關注「能控制的」，也就是那些操之在己的事。</strong>個人的目標，同樣可以分為「外界目標（不能控制的）」和「內部目標（能控制的）」：</p>
+
+<ul>
+<li>
+<strong>外界目標：</strong>設立的目標有過多自己無法控制的因素，把希望寄託在外界目標，容易產生各種焦慮不安的情緒。以大賽來看：「拿到第一名」、「得到獎品」，這其中可能就牽涉到：規則異動（前面幾天不開放投票、微信一鍵投票）、VIP 學員的投票等等，各種你無法掌控的變因。</li>
+<li>
+<strong>內部目標：</strong>自己可以控制的。魔改大賽，我們最能把握的是什麼？不就是<strong>「協作，作一個完整的作品。」</strong>這個老師反覆提醒的最終目標嗎？</li>
+</ul>
+
+<p>​</p>
+
+<p>既然都參加大賽了，誰不想贏？誰能夠完全沒有得失心？我們無法徹底根除慾望和好勝的心，但我們可以轉換心態：<strong>「消除慾望這個要求實在太高了。並不是沒有慾望，你想要什麼，可以！但是你要把注意力全部集中在自己能控制的這部分上。」</strong>。</p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">反思自己的投票心態。</span></strong></h3>
+<p>上一次 Job Listing 大賽，留下遺憾的部分其實還包括了：「我有票，卻沒有投給我很欣賞的實力作品。」。例如當時韵兒爸爸的 <a href="" target="_self">&lt;尋找匠人&gt;</a> 和黃鴻亮的 <a href="" target="blank">&lt;全職小夥伴求職網&gt;</a> 都是非常出色、前後端面面俱到的高水平作品，眾人有目共睹；然而，我最後還是把票留給了其他學員。前陣子，重新反省了當時的心態；不敢把票投出去，其中一個原因也是因為<strong>「競爭激烈、怕票數被超越」</strong>，而因此不敢去肯定好作品。這是什麼弱者的小人心態？相當可恥、不堪，真想狠狠賞當時的自己幾個巴掌。</p>
+
+<p>​</p>
+
+<p>這一次魔改大賽，果斷投票。這不是因為上一次沒有投，而這一次「補投票」；是打從心裡激賞韵兒爸爸的自虐精神跟過人的設計品味，以及黃鴻亮的技術硬底子（這樣的死嗑精神何嘗不是一種自虐精神？）。</p>
+
+<p>​</p>
+
+<p>好作品，沒有道理不給予實質的支持！投完票後，心情都莫名愉快，因為這一票對得起良心。往後與這些優秀同學的互動交流，也讓我更確信這個道理：<strong>面對實力之作，選擇「肯定」、「交流」得到的收穫，絕對比選擇「敵視」或「忽視」來得太多、太多了，心裡也舒坦。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">重視手上的每一張票，將票的價值最大化。</span></strong></h3>
+<p>VIP 學員的 1 票等同於「5 票」，而每位 VIP 可以投給 10 個作品。把票留著，跟別人「換票」，當然可以，但這無形之中也會錯失一些東西。</p>
+
+<p>​</p>
+
+<p>就以上一次 Job Listing 大賽為例，起初我也是不敢看學霸吉米的作品，生怕玻璃心碎裂；然而，看了他的作品 <a href="https://fullstack.xinshengdaxue.com/works/288" target="_self">職贏網</a>，再看看 <a href="https://github.com/xbearx1987/job_win" target="_self">GitHub 代碼</a>，頓時佩服得五體投地！不但瞬間得到了很多功能實作上的思路、解決了自己遇到的問題，還收穫了清楚的註解方式。太震撼了，馬上奉上手上的一票，加了微信、誠心討教，就此開始了與吉米的交流。<strong>如果我當時選擇的把票留著、與其他學員換票，我錯失的恐怕有一個兆那麼多。</strong>（借用 Nic 的梗）</p>
+
+<p>​</p>
+
+<p>慎重投票，你可以：</p>
+
+<ul>
+<li>藉投票，與學霸或你欣賞的學員交流（技術類的問題或思路，學習方式、心態），絕對獲益良多！</li>
+<li>鼓勵優質教程，或甚至許願想要知道的主題。J &amp; A 魔改秘笈的主題，很多都是取自支持群眾的反饋。</li>
+<li>鼓勵踏實迭代的認真學員。</li>
+</ul>
+
+<p>​</p>
+
+<p><strong>與人「換票」這個行為所得到的，終究就是票而已。</strong></p>
+
+<p><br></p>
+<h3><strong><span style="color:#0D47A1">韵兒爸爸：「成為真正的大神後，再去接受更多鮮花和掌聲吧。」</span></strong></h3>
+<p>比賽後期，我們採用的拉票策略是：</p>
+
+<ul>
+<li>持續產出<a href="http://xbearx1987-blog.logdown.com/posts/1935655" target="_self">【JA魔改秘笈】魔改秘笈系列教程</a>。</li>
+<li>答疑，微信、Slack 上幫助同學解決問題。</li>
+<li>社群方面只有，吉米發微信群，我到 Facebook 的全棧營同學會社團發文。</li>
+</ul>
+
+<p>​</p>
+
+<p>這樣的策略，就大賽期間的票數增長跟最後的比賽結果來看，成果相當有限，兩人都感受到很強烈的無力感。比賽最後兩天，索性放寬心，不再積極拉票；就在這時，看到韵兒爸爸的微信寫到：<strong>「成為真正的大神後，再去接受更多鮮花和掌聲吧。」</strong>，更是徹底釋懷了！</p>
+
+<p>​</p>
+
+<p>因為作品品質、教程、平時的幫助，而真正打從心裡認可我們作品的學員、親友已經給予投票支持了，這樣的票拿得心安理得。至於沒有投票的學員，或是素昧平生的人，就無須強求了。況且，現階段，無論是實力，還是作品，都還有一些不足之處（部分功能還是會有難解的技術難題、各種可以讓體驗更好的優化項目）；把注意力拉回自己身上，<strong>「不讓未來的妄念影響當下，我只純粹關注當下的目標」</strong>。成長、銳變後，升等至更高的水平後，還怕得不到鮮花與掌聲嗎？</p>
+
+<p><br></p>
+<h2><strong><span style="color:#1A237E">結語</span></strong></h2>
+<p><a href="https://forum.qzy.camp/t/show-vip/859/133" target="_self">二期 VIP 學員自我介紹的帖子</a> 中，我在 3/25 這天留下了自己的學習目標：</p>
+
+<ul>
+<li>透過全棧營的學習讓自己脫胎換骨；我所想實現的「脫胎換骨」，指的是：用正確的學習姿勢、心態，紮實地收穫一門專業（Ruby on Rails），讓邁向的 30 歲的最後一哩路上，充滿更多可能性。而這陣子在閱讀過去的學員分享的全棧營心得，很多人都有提到 60 天帶來的「自信」，這也是我所欠缺的，所以我想貪心地在「脫胎換骨」的定義上多加一個：成為一個自信的人。</li>
+</ul>
+
+<p>​</p>
+
+<p>經歷了全棧營的一切：兩次魔改大賽的歷練，與神隊友以及眾多優秀且真誠的學員交流；藉著師長、前輩的提點，一次又一次用力地刷洗三觀，提起勇氣跨出自己的小世界。我敢說，我確確實實地實現了自己的學習目標。</p>
+
+<p>​</p>
+
+<hr>
+
+<p>最後，感謝我的神隊友吉米，願意包容我在技術、心態上的不足；總是能在我身陷情緒大坑時，伸出最關鍵的援手。跟你組隊，是我在全棧營最大的收穫。</p>
+
+            
+          </div>
+
+          <footer class="entry-footer">
+            <span class="byline author vcard">Posted by <span class="fn">Anndo</span></span>
+            <time datetime="2017-06-13 15:52:00 UTC" pubdate data-updated="true">June 13, 2017</time>
+            <div class="tags"></div>
+          </footer>
+        </article>
+        
+        <!-- end main post list -->
+
+        
+        <section>
+          <h1>Comments</h1>
+                <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'anndo-logdown'; // required: replace example with your forum shortname
+        var disqus_identifier = 'http://anndo-blog.logdown.com/posts/1948933';
+        var disqus_url = 'http://anndo-blog.logdown.com/posts/1948933';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </section>
+        
+
+        
+
+      </div> <!-- end content -->
+    </div>
+
+    <footer class="inner page-footer" id="footer">
+      © 2013 Anndo.
+      <div class="credit">
+        Theme "Slash" by <a href="https://github.com/tommy351/Octopress-Theme-Slash">tommy351</a>, customized by <a href="http://chrisyip.im/">Chris Yip</a><a>.
+      </a>
+</div>
+    </footer>
+
+  <!--<![endif]-->
+  
+<iframe src="top_controls.html" width="81" height="26" frameborder="0" scrolling="no" style="position: fixed; z-index: 2147483647; border: 0px; background-color: transparent; overflow: hidden; top: 0px; right: 0px;"></iframe>
+
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=146125455579724";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+    extensions: ["jsMath2jax.js"]
+  });
+</script>
+<script src="MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+disqus_shortname = 'anndo-logdown'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"KOI0g1aYS500G0", domain:"logdown.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="atrk.gif?account=KOI0g1aYS500G0" style="display:none" height="1" width="1" alt=""></noscript>
+<!-- End Alexa Certify Javascript -->
+</body>
+</html>

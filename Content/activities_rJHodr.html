@@ -1,0 +1,1367 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/courses/3/activities'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>动态 - Rails 第三课：Rails 101 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="MSEP+78bUgi7N7vZNnnA3XD5YHzHWDTyGBNsDVEXaY7mI2DT1Xizetx61YwbRy9TEwYKXeJ8powWwz2aRCJFpA==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 14:04",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 15:13",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508915623,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="activities activities-index">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default activities-index-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/3/syllabus">Rails 第三课：Rails 101</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/3/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/3">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/3/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/3/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/3/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/3/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>            <li><a href="https://fullstack.xinshengdaxue.com/courses/3/leaderboard">
+            <i class="fa fa-star-o"></i>
+            积分榜
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="index-content">
+          <div class="row">
+              <div class="qa-message-list answer-whole-section" id="wallmessages">
+    <div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>10 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/HOtGaukMQiuTXetpwUww" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-10-15 下午7.51.38.png","filesize":45903,"height":387,"href":"https://www.filepicker.io/api/file/HOtGaukMQiuTXetpwUww","url":"https://www.filepicker.io/api/file/HOtGaukMQiuTXetpwUww","width":1914}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-10-15_a¸a7.51.38.png" width="1914" height="387"><figcaption class="caption">屏幕快照 2017-10-15 下午7.51.38.png <span class="size">44.83 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64582">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64582"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>10 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/upgradingio/rails101-2">https://github.com/upgradingio/rails101-2</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64581">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64581"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>10 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            背起来，再十分钟“手”写完 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/vnwMr3SPRWGStTrEBAJq" data-trix-attachment='{"contentType":"image/jpeg","filename":"IMG_20171015_151301R.jpg","filesize":3393773,"height":5480,"href":"https://www.filepicker.io/api/file/vnwMr3SPRWGStTrEBAJq","url":"https://www.filepicker.io/api/file/vnwMr3SPRWGStTrEBAJq","width":4110}'><figure class="attachment attachment-preview jpg"><img src="IMG_20171015_151301R.jpeg" width="4110" height="5480"><figcaption class="caption">IMG_20171015_151301R.jpg <span class="size">3.24 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64578">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64578"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>13 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            上传 heroku
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/DG99eoImR2OpIQIo9aZn" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-10-12 下午8.42.12.png","filesize":47618,"height":480,"href":"https://www.filepicker.io/api/file/DG99eoImR2OpIQIo9aZn","url":"https://www.filepicker.io/api/file/DG99eoImR2OpIQIo9aZn","width":1282}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-10-12_a¸a8.42.12.png" width="1282" height="480"><figcaption class="caption">屏幕快照 2017-10-12 下午8.42.12.png <span class="size">46.5 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64558">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64558"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>13 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/upgradingio/rails101-1">https://github.com/upgradingio/rails101-1</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64557">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64557"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/41">shellkid</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>16 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            手抄一份 CRUD 并上传截图 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/kUhyranRfm0bdf2LpsVg" data-trix-attachment='{"contentType":"image/jpeg","filename":"IMG_20171009_215058R.jpg","filesize":3322746,"height":5480,"href":"https://www.filepicker.io/api/file/kUhyranRfm0bdf2LpsVg","url":"https://www.filepicker.io/api/file/kUhyranRfm0bdf2LpsVg","width":4110}'><figure class="attachment attachment-preview jpg"><img src="IMG_20171009_215058R.jpeg" width="4110" height="5480"><figcaption class="caption">IMG_20171009_215058R.jpg <span class="size">3.17 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64504">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64504"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5104">damo1223</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>17 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            背起来，再十分钟“手”写完 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/e6E8jW7QoCy4RvnziNiD" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":199236,"height":1446,"href":"https://www.filepicker.io/api/file/e6E8jW7QoCy4RvnziNiD","url":"https://www.filepicker.io/api/file/e6E8jW7QoCy4RvnziNiD","width":1338}'><figure class="attachment attachment-preview png"><img src="image_2aYiDW.png" width="1338" height="1446"><figcaption class="caption">image.png <span class="size">194.57 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64492">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64492"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5104">damo1223</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>17 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/iPVwtgySQpKBAEFI6iWe" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":129728,"height":792,"href":"https://www.filepicker.io/api/file/iPVwtgySQpKBAEFI6iWe","url":"https://www.filepicker.io/api/file/iPVwtgySQpKBAEFI6iWe","width":2368}'><figure class="attachment attachment-preview png"><img src="image_LChrcy.png" width="2368" height="792"><figcaption class="caption">image.png <span class="size">126.69 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64491">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64491"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/5104">damo1223</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>17 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/Damo1223/rails103">https://github.com/Damo1223/rails103</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64488">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64488"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb____-_____.jpg" alt="Thumb          " />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1138">王梦浩</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>20 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://sheltered-meadow-74894.herokuapp.com">https://sheltered-meadow-74894.herokuapp.com</a><br><br><a href="https://www.filepicker.io/api/file/CUtyNCKkRd6LuN1uRLms" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-10-05 06.54.53.png","filesize":154511,"height":880,"href":"https://www.filepicker.io/api/file/CUtyNCKkRd6LuN1uRLms","url":"https://www.filepicker.io/api/file/CUtyNCKkRd6LuN1uRLms","width":2880}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-10-05_06.54.53.png" width="2880" height="880"><figcaption class="caption">屏幕快照 2017-10-05 06.54.53.png <span class="size">150.89 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64417">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64417"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://stormy-mesa-76552.herokuapp.com">https://stormy-mesa-76552.herokuapp.com</a><br><a href="https://www.filepicker.io/api/file/0qh2YvtXSFihmBiCyb8b" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-10-04 下午10.34.45.png","filesize":144237,"height":1000,"href":"https://www.filepicker.io/api/file/0qh2YvtXSFihmBiCyb8b","url":"https://www.filepicker.io/api/file/0qh2YvtXSFihmBiCyb8b","width":1662}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-10-04_a¸a10.34.45.png" width="1662" height="1000"><figcaption class="caption">屏幕快照 2017-10-04 下午10.34.45.png <span class="size">140.86 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64416">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64416"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>21 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/gaomingzhen/rails101-3">https://github.com/gaomingzhen/rails101-3</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64415">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64415"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>22 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            背起来，再十分钟“手”写完 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/At3wYJevQJiAf5NQ8wdw" data-trix-attachment='{"contentType":"image/jpeg","filename":"1143512255.jpg","filesize":65797,"height":1440,"href":"https://www.filepicker.io/api/file/At3wYJevQJiAf5NQ8wdw","url":"https://www.filepicker.io/api/file/At3wYJevQJiAf5NQ8wdw","width":1080}'><figure class="attachment attachment-preview jpg"><img src="1143512255.jpeg" width="1080" height="1440"><figcaption class="caption">1143512255.jpg <span class="size">64.25 KB</span></figcaption></figure></a><a href="https://www.filepicker.io/api/file/2M8WGX4QNGKQUgAVzSWc" data-trix-attachment='{"contentType":"image/jpeg","filename":"868501477.jpg","filesize":74831,"height":1080,"href":"https://www.filepicker.io/api/file/2M8WGX4QNGKQUgAVzSWc","url":"https://www.filepicker.io/api/file/2M8WGX4QNGKQUgAVzSWc","width":1440}'><figure class="attachment attachment-preview jpg"><img src="868501477.jpeg" width="1440" height="1080"><figcaption class="caption">868501477.jpg <span class="size">73.08 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64389">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64389"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>23 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            上传 heroku
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/Tk2dumo1Ttuq49o446Gi" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-10-02 下午12.15.19.png","filesize":162580,"height":996,"href":"https://www.filepicker.io/api/file/Tk2dumo1Ttuq49o446Gi","url":"https://www.filepicker.io/api/file/Tk2dumo1Ttuq49o446Gi","width":1850}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-10-02_a¸a12.15.19.png" width="1850" height="996"><figcaption class="caption">屏幕快照 2017-10-02 下午12.15.19.png <span class="size">158.77 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64349">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64349"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>23 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/gaomingzhen/rails101-2">https://github.com/gaomingzhen/rails101-2</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64348">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64348"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb____-_____.jpg" alt="Thumb          " />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+        <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1138">王梦浩</a>
+        <b>修改了作业</b>
+        
+        <span class="time"><i class="glyphicon glyphicon-time"></i>24 天前</span>
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            背起来，再十分钟“手”写完 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>花了一个半小时的时间，把Group Controller的CRUD抄写一遍，默写3遍，在电脑上重新打出来一遍。<a target="_self" href="http://wangmhao.logdown.com/posts/2017/10/01/2645105">http://wangmhao.logdown.com/posts/2017/10/01/2645105</a><br><br><a href="https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写1:3.jpeg","filesize":69496,"height":1280,"href":"https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw","url":"https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa1_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写1/3</figcaption></figure></a><a href="https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写2:3.jpeg","filesize":68735,"height":1280,"href":"https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH","url":"https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa2_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写2/3</figcaption></figure></a><br><a href="https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写3:3.jpeg","filesize":50458,"height":1280,"href":"https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz","url":"https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa3_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写3/3</figcaption></figure></a><br>---<br><br><a href="https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG5.jpeg","filesize":74475,"height":1280,"href":"https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74","url":"https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG5_riPTPP.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第一遍默写1/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍默写2:2.jpeg","filesize":73210,"height":1280,"href":"https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA","url":"https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸ee»a2_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第一遍默写2/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB" data-trix-attachment='{"contentType":"image/jpeg","filename":"第二遍默写1:2.jpeg","filesize":70695,"height":1280,"href":"https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB","url":"https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬aºee»a1_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第二遍默写1/2</figcaption></figure></a><a href="https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG8.jpeg","filesize":69183,"height":1280,"href":"https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW","url":"https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG8.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第二遍默写2/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG9.jpeg","filesize":70986,"height":1280,"href":"https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM","url":"https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG9_sbLJx1.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第三遍默写1/2</figcaption></figure></a><a href="https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg" data-trix-attachment='{"contentType":"image/jpeg","filename":"第三遍默写2:2.jpeg","filesize":71244,"height":1280,"href":"https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg","url":"https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸ee»a2_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第三遍默写2/2</figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64339">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64339"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb____-_____.jpg" alt="Thumb          " />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1138">王梦浩</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>24 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            背起来，再十分钟“手”写完 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写1:3.jpeg","filesize":69496,"height":1280,"href":"https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw","url":"https://www.filepicker.io/api/file/HXfWt65uSEbtpHvvjQsw","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa1_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写1/3</figcaption></figure></a><a href="https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写2:3.jpeg","filesize":68735,"height":1280,"href":"https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH","url":"https://www.filepicker.io/api/file/evdgB9WuT3eJtIbM9cOH","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa2_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写2/3</figcaption></figure></a><br><a href="https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍抄写3:3.jpeg","filesize":50458,"height":1280,"href":"https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz","url":"https://www.filepicker.io/api/file/nXzYdMaOSN6aBF2lFoCz","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸eæa3_3.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">抄写3/3</figcaption></figure></a><br>---<br><br><a href="https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG5.jpeg","filesize":74475,"height":1280,"href":"https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74","url":"https://www.filepicker.io/api/file/CUghCw8oTIgS0Rjale74","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG5_riPTPP.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第一遍默写1/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA" data-trix-attachment='{"contentType":"image/jpeg","filename":"第一遍默写2:2.jpeg","filesize":73210,"height":1280,"href":"https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA","url":"https://www.filepicker.io/api/file/JWucZpkR2OQKtZiw9rqA","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸ee»a2_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第一遍默写2/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB" data-trix-attachment='{"contentType":"image/jpeg","filename":"第二遍默写1:2.jpeg","filesize":70695,"height":1280,"href":"https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB","url":"https://www.filepicker.io/api/file/OJDU4KuuSUezDbVI0kCB","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬aºee»a1_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第二遍默写1/2</figcaption></figure></a><a href="https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG8.jpeg","filesize":69183,"height":1280,"href":"https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW","url":"https://www.filepicker.io/api/file/5v1Z1MElRgWw8dRm3fuW","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG8.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第二遍默写2/2</figcaption></figure></a><br><br><a href="https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM" data-trix-attachment='{"contentType":"image/jpeg","filename":"WechatIMG9.jpeg","filesize":70986,"height":1280,"href":"https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM","url":"https://www.filepicker.io/api/file/gVIzRHzhTvu1gMWYVVOM","width":960}'><figure class="attachment attachment-preview jpeg"><img src="WechatIMG9_sbLJx1.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第三遍默写1/2</figcaption></figure></a><a href="https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg" data-trix-attachment='{"contentType":"image/jpeg","filename":"第三遍默写2:2.jpeg","filesize":71244,"height":1280,"href":"https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg","url":"https://www.filepicker.io/api/file/a9lwukUQQ4mn3lrAQ0qg","width":960}'><figure class="attachment attachment-preview jpeg"><img src="c¬¬a¸ee»a2_2.jpeg" width="960" height="1280"><figcaption class="caption caption-edited">第三遍默写2/2</figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64339">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64339"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/31418">miaoqingguo</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>25 天前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/6uHsdihWQ7WZPJgEJHVI" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-30 上午9.54.00.png","filesize":43453,"height":494,"href":"https://www.filepicker.io/api/file/6uHsdihWQ7WZPJgEJHVI","url":"https://www.filepicker.io/api/file/6uHsdihWQ7WZPJgEJHVI","width":1041}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-30_a¸a9.54.00.png" width="1041" height="494"><figcaption class="caption">屏幕快照 2017-09-30 上午9.54.00.png <span class="size">42.43 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64312">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64312"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/Yyb0vFLoRwWhvT78vd1M" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-22 下午10.17.35.png","filesize":112773,"height":702,"href":"https://www.filepicker.io/api/file/Yyb0vFLoRwWhvT78vd1M","url":"https://www.filepicker.io/api/file/Yyb0vFLoRwWhvT78vd1M","width":1672}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-22_a¸a10.17.35.png" width="1672" height="702"><figcaption class="caption">屏幕快照 2017-09-22 下午10.17.35.png <span class="size">110.13 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64180">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64180"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/dakkai123/rails-101-4">https://github.com/dakkai123/rails-101-4</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64179">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64179"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/374">zhujia</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            手抄一份 CRUD 并上传截图 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/VctSLou4T7aZGmK5qj8n" data-trix-attachment='{"contentType":"image/jpeg","filename":"132F8E435511B51514AA3B7F17EF20C8.jpg","filesize":149996,"height":1001,"href":"https://www.filepicker.io/api/file/VctSLou4T7aZGmK5qj8n","url":"https://www.filepicker.io/api/file/VctSLou4T7aZGmK5qj8n","width":1334}'><figure class="attachment attachment-preview jpg"><img src="132F8E435511B51514AA3B7F17EF20C8.jpeg" width="1334" height="1001"><figcaption class="caption">132F8E435511B51514AA3B7F17EF20C8.jpg <span class="size">146.48 KB</span></figcaption></figure></a><a href="https://www.filepicker.io/api/file/do7Pc7enTWurCuLzlTmd" data-trix-attachment='{"contentType":"image/jpeg","filename":"3D65D4F1140F351897EA018A5DB04260.jpg","filesize":153177,"height":1001,"href":"https://www.filepicker.io/api/file/do7Pc7enTWurCuLzlTmd","url":"https://www.filepicker.io/api/file/do7Pc7enTWurCuLzlTmd","width":1334}'><figure class="attachment attachment-preview jpg"><img src="3D65D4F1140F351897EA018A5DB04260.jpeg" width="1334" height="1001"><figcaption class="caption">3D65D4F1140F351897EA018A5DB04260.jpg <span class="size">149.59 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64139">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64139"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb____-_____.jpg" alt="Thumb          " />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1138">王梦浩</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://gentle-lake-41199.herokuapp.com">https://gentle-lake-41199.herokuapp.com</a><a href="https://www.filepicker.io/api/file/gicgaoT5R6OLpoyMwnoY" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-17 22.14.27.png","filesize":218372,"height":1262,"href":"https://www.filepicker.io/api/file/gicgaoT5R6OLpoyMwnoY","url":"https://www.filepicker.io/api/file/gicgaoT5R6OLpoyMwnoY","width":2874}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-17_22.14.27.png" width="2874" height="1262"><figcaption class="caption">屏幕快照 2017-09-17 22.14.27.png <span class="size">213.25 KB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64079">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64079"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="thumb____-_____.jpg" alt="Thumb          " />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1138">王梦浩</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第三遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/wangmhao/rails101_201709">https://github.com/wangmhao/rails101_201709</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64078">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64078"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            手抄一份 CRUD 并上传截图 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/wx8IZZv1QWgPwx2rwJwQ" data-trix-attachment='{"contentType":"image/jpeg","filename":"846553902.jpg","filesize":2207772,"height":3120,"href":"https://www.filepicker.io/api/file/wx8IZZv1QWgPwx2rwJwQ","url":"https://www.filepicker.io/api/file/wx8IZZv1QWgPwx2rwJwQ","width":4160}'><figure class="attachment attachment-preview jpg"><img src="846553902.jpeg" width="4160" height="3120"><figcaption class="caption">846553902.jpg <span class="size">2.11 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64075">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64075"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/ito7HRK4QNma2stFr9l3" data-trix-attachment='{"contentType":"image/png","filename":"屏幕快照 2017-09-13 下午10.43.54.png","filesize":217414,"height":1128,"href":"https://www.filepicker.io/api/file/ito7HRK4QNma2stFr9l3","url":"https://www.filepicker.io/api/file/ito7HRK4QNma2stFr9l3","width":2880}'><figure class="attachment attachment-preview png"><img src="a±a¹a¿«c§_2017-09-13_a¸a10.43.54.png" width="2880" height="1128"><figcaption class="caption">屏幕快照 2017-09-13 下午10.43.54.png <span class="size">212.32 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64027">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64027"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+        <img src='vip-member.png' class="active-vip-member"/>
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/1007">莫言轻笑1</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>1 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/gaomingzhen/rails101-1">https://github.com/gaomingzhen/rails101-1</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="64026">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-64026"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/31235">Rideorfat</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 heroku 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/FYyWRdCGQicBs4gtLTgW" data-trix-attachment='{"contentType":"image/png","filename":"螢幕快照 2017-09-09 23.30.45.png","filesize":193110,"height":990,"href":"https://www.filepicker.io/api/file/FYyWRdCGQicBs4gtLTgW","url":"https://www.filepicker.io/api/file/FYyWRdCGQicBs4gtLTgW","width":2544}'><figure class="attachment attachment-preview png"><img src="e¢a¹a¿«c§_2017-09-09_23.30.45.png" width="2544" height="990"><figcaption class="caption">螢幕快照 2017-09-09 23.30.45.png <span class="size">188.58 KB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63960">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63960"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/31235">Rideorfat</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第一遍练习
+            -
+            上传 github 网址 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a target="_self" href="https://github.com/rideorfat/rails101-1">https://github.com/rideorfat/rails101-1</a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63959">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63959"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/31132">Duartisan</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            手抄一份 CRUD 并上传截图 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div>
+<a href="https://www.filepicker.io/api/file/z0GJdVamT7OkwHEfWa0H" data-trix-attachment='{"contentType":"image/jpeg","filename":"1.jpeg","filesize":4156901,"height":4160,"href":"https://www.filepicker.io/api/file/z0GJdVamT7OkwHEfWa0H","url":"https://www.filepicker.io/api/file/z0GJdVamT7OkwHEfWa0H","width":3120}'><figure class="attachment attachment-preview jpeg"><img src="1.jpeg" width="3120" height="4160"><figcaption class="caption">1.jpeg <span class="size">3.96 MB</span></figcaption></figure></a><br><a href="https://www.filepicker.io/api/file/oQj2xRs9QTmz1kDfVCfh" data-trix-attachment='{"contentType":"image/jpeg","filename":"2.jpeg","filesize":4710290,"height":4160,"href":"https://www.filepicker.io/api/file/oQj2xRs9QTmz1kDfVCfh","url":"https://www.filepicker.io/api/file/oQj2xRs9QTmz1kDfVCfh","width":3120}'><figure class="attachment attachment-preview jpeg"><img src="2.jpeg" width="3120" height="4160"><figcaption class="caption">2.jpeg <span class="size">4.49 MB</span></figcaption></figure></a><br><a href="https://www.filepicker.io/api/file/vJY3MCJS02EQUiYZ7eIW" data-trix-attachment='{"contentType":"image/jpeg","filename":"3.jpeg","filesize":3999151,"height":4160,"href":"https://www.filepicker.io/api/file/vJY3MCJS02EQUiYZ7eIW","url":"https://www.filepicker.io/api/file/vJY3MCJS02EQUiYZ7eIW","width":3120}'><figure class="attachment attachment-preview jpeg"><img src="3.jpeg" width="3120" height="4160"><figcaption class="caption">3.jpeg <span class="size">3.81 MB</span></figcaption></figure></a>
+</div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63956">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63956"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="message-item" id="m16">
+  <div class="message-inner">
+    <div class="message-head clearfix">
+      <div class="pull-left active-user-img">
+        <img class="picture" src="user_default_pic.jpg" alt="User default pic" />
+      </div>
+      <div class="user-detail">
+      <a target="_self" href="https://fullstack.xinshengdaxue.com/users/2759">余乐</a>
+        <b>提交了作业</b>
+        <span class="time"><i class="glyphicon glyphicon-time"></i>2 个月前</span>
+        
+        <div class="post-type" style="margin-bottom :10px; margin-top:10px;">
+          <b>
+            第二遍练习
+            -
+            手抄一份 CRUD 并上传截图 
+          </b>
+        </div>
+        <div class="answer-block">
+          <div class="trix-content"><div><a href="https://www.filepicker.io/api/file/tLAatk3jS7qDRaVyTA0N" data-trix-attachment='{"contentType":"image/png","filename":"image.png","filesize":12379081,"height":3648,"href":"https://www.filepicker.io/api/file/tLAatk3jS7qDRaVyTA0N","url":"https://www.filepicker.io/api/file/tLAatk3jS7qDRaVyTA0N","width":2988}'><figure class="attachment attachment-preview png"><img src="image_WX4gty.png" width="2988" height="3648"><figcaption class="caption">image.png <span class="size">11.81 MB</span></figcaption></figure></a></div></div>
+        </div>
+        <div class="vote-answer"   data-answer-id="63870">
+  <div class="pull-left vote-btn" style="margin-right: 40px;">
+    <a class="vote-answer-btn" href="#"><i class="fa fa-thumbs-o-up"></i><span> 赞</span></a>
+  </div>
+    <div class="pull-left voter-info">
+    </div>
+</div>
+<div id="status-63870"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="text-center">
+      <ul class="pagination pagination"><li class="prev disabled"><span>&#60;</span></li> <li class="active"><span>1</span></li> <li><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=2">2</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=3">3</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=4">4</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=5">5</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=6">6</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=7">7</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=8">8</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=9">9</a></li> <li class="disabled"><span>&hellip;</span></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=251">251</a></li> <li><a href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=252">252</a></li> <li class="next"><a rel="next" href="https://fullstack.xinshengdaxue.com/courses/3/activities?page=2">&#62;</a></li></ul>
+    </div>
+  </div>
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="activities-index-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("动态 - Rails 第三课：Rails 101 | 新生大学全栈营")
+    </script>
+
+      
+
+  </body>
+</html>

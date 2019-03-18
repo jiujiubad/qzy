@@ -1,0 +1,282 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/hottest_articles/68'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"8d5b66bcc5","applicationID":"19028431","transactionName":"e1cLFUpbX18DFE5IWEtMFk5LXFxE","queueTime":2,"applicationTime":92,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>【大赛复盘】大赛让我看到了颠覆的力量 « 马静成长部落格</title>
+<meta name="description" content="一、学习全栈的初心
+读研期间，遇到了这样一群朋友，他们有的常飞往非洲最贫瘠的地方，没过多久，就抱回来个非常可爱却闪烁着怯懦眼神的孩子。问过方知，原来，这是她去非洲领养的孤儿。在Brisbane，...">
+<meta property="og:title" content="text/html; charset=utf-8">
+<meta property="og:description" content="一、学习全栈的初心
+读研期间，遇到了这样一群朋友，他们有的常飞往非洲最贫瘠的地方，没过多久，就抱回来个非常可爱却闪烁着怯懦眼神的孩子。问过方知，原来，这是她去非洲领养的孤儿。在Brisbane，...">
+<meta property="og:url" content="http://majing-blog.logdown.com/posts/1951290">
+<meta property="og:image" content="https://s3.amazonaws.com/logdown-production/system/blog/24470/og_image/self_image-head.jpeg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="screen_0bg04y.css" rel="stylesheet" type="text/css">
+  <link href="css_xHQTcL.css?family=Slackey" rel="stylesheet" type="text/css">
+  <link href="css_10FqmG.css?family=Fjalla+One" rel="stylesheet" type="text/css">
+  <link href="css_KpDef3.css?family=Amethysta" rel="stylesheet" type="text/css">
+
+  <script src="jquery.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <!--
+  <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+  -->
+
+    <!-- remove or comment it to disable ajaxification
+    <script src="/javascripts/ajaxify.js"></script>
+    -->
+    <style>
+      body {font-family:Hiragino Sans GB !important;}
+    </style>
+<meta name="robots" content="INDEX,FOLLOW">
+<link rel="image_src" href="http://logdown.com/images/og_plain.jpg">
+
+
+<link rel="alternate" type="application/rss+xml" title="马静成长部落格" href="/posts.rss">
+<link rel="alternate" type="application/atom+xml" title="马静成长部落格" href="/posts.atom">
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-41764280-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+
+<body>
+  <div id="wrapper">
+    <header id="header" class="inner">
+      <h1 class="animated bounceInDown">
+        <div id="headerbg">马静成长部落格</div>
+      </h1>
+
+      <ul id="nav">
+        <li><a href="http://majing-blog.logdown.com">Home</a></li>
+        <li><a href="http://majing-blog.logdown.com/archives">Archives</a></li>
+        <li><a href="http://majing-blog.logdown.com/posts.atom">RSS</a></li>
+
+        
+          
+            <li><a href="http://majing-blog.logdown.com/pages/about-me">About Me</a></li>
+          
+        
+
+        <li>
+          <div id="dark">
+            <form accept-charset="UTF-8" action="http://majing-blog.logdown.com/posts/search" method="get">
+              <input name="q" type="search" placeholder="Search..." x-webkit-speech>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <div id="toload">
+      <div id="content" class="inner">
+
+        
+
+        
+
+        
+
+
+
+
+      
+
+
+        
+          <article class="post">
+            <h2 class="title">
+              <a href="http://majing-blog.logdown.com/posts/1951290">
+                
+                  【大赛复盘】大赛让我看到了颠覆的力量
+                
+
+                
+              </a>
+            </h2>
+
+            <div class="entry-content">
+              <div class="meta">
+                <div class="date">
+                  Published on:
+                  <time datetime="2017-06-14 15:56:00 UTC" pubdate>
+                    June 14, 2017
+                  </time>
+                </div>
+
+                
+              </div>
+
+              
+
+
+              
+
+              
+                <h2><strong>一、学习全栈的初心</strong></h2>
+<p>读研期间，遇到了这样一群朋友，他们有的常飞往非洲最贫瘠的地方，没过多久，就抱回来个非常可爱却闪烁着怯懦眼神的孩子。问过方知，原来，这是她去非洲领养的孤儿。在Brisbane，有这样一所小学，孩子们的家境比较困难，父母疲于奔命忙着赚钱，缺少关心与爱。为了给孩子们过上一个快乐而难忘的圣诞节，我们集体捐款给一千多名孩子买圣诞礼物，并策划了一场非常酷炫有趣的圣诞party。为了节省经费，每一个道具都是我们自己动手精心打造。当孩子们兴奋地看着一个个节目开怀大笑与欢呼时，大家几周的努力付出都觉得是值得的。</p>
+
+<p>后来，由于家人原因回到了故乡徐州，工作在号称全球第二的一家国企，然而，我发现好像什么都做不了。并不是想着要拯救世界，只是想要让真正有需要的人能够幸福一点点，再幸福一点点。可现实却是眼睁睁的看着好姐妹在抑郁的情绪沼泽中弥足深陷，担心着因能力不足无法找到合适的工作而恐慌焦虑。还有一群非常善良可爱又懂得体恤他人的朋友，却因为从小是孤儿，上不起学，没学历没文化没背景，做着各种体力活儿，搬砖、刷碗、打扫卫生或是偶尔做点小本生意，每天每天辛苦地挣扎在生存线上。</p>
+
+<p>如何才能让他们的生活过得更好一点，如何让我们与远在世界各个角落需要帮助的人们紧密连接？这次的大赛，让我看到了这样的可能性，赋予我成为这世界的一束微光，照亮在黑暗中疲惫困乏绝望灵魂的可能性。生命的意义也许就是能够为他人带来一点点幸福与希望吧，所以，我来了，至于是如何翻山越岭找到通往新生之路，请看<a href="http://majing-blog.logdown.com/posts/1649922" target="_self">翻山越岭终于找到通往新生之路——从心理咨询师到生涯规划师再到全栈工程师</a>。</p>
+<h2><strong>二、认知颠覆的力量</strong></h2>
+<h4>1.所有事情都是难的，但要想办法克服</h4>
+<blockquote>
+<p>“真实世界是没有舒适区的，要有一个心理认知：所有事情都是难的，但我要想办法克服。”</p>
+</blockquote>
+
+<p>Xdite老师的这番话点醒了我，也点醒了这位得抑郁症的朋友。“钱多事少离家近，位高权重责任轻。”以这种标准来找工作的大有人在，却忽略了求舒适想安逸，是需要付出高昂代价的，而那代价就是未来的路每一步会走得更加艰难、荆棘遍布。</p>
+<h4>2.一群人远比一个人走的更远</h4>
+<p>由于完美主义和畏难心理，我中途放弃了三周的学习，并且错过了job-listing大赛。以致于在JD store大赛时我还是什么基本技能都不具备的小白，完全跟不上学霸队友<a href="http://wangxing-blog.logdown.com" target="_self">王兴</a>的节奏，着急、自卑、自责、内疚等情绪时不时的就会蹦出来。队友每天强大而稳定的输出进度，逼得我不得不彻底放下骄傲与胆怯，在被问题卡住并研究无果后不会再独自纠结好几天或者干脆放弃，而是勇于找队友找各路大咖，各种请教各种问，也因此认识了不少优秀的学长姐和同学们。尤其感谢队友常常远程操作耐心教我各种前端技能，Anndo熬夜为我看code，韵儿爸爸无私地倾囊相助帮我搞定首页轮播图，潘鹏童鞋每每在slack上主动帮助debug。在大赛快要结束的最后一天，南京meetup的两位队长庄雯、小兵，上届队长马俊楠，以及栈友江帆、李洋宾、小白牺牲自己的VIP票来帮助我们与他人换票，最终才能获得943票的较前排名。当我跑着跑着跌倒在地爬不起来时，他们热心鼓励我不要放弃、拉我归队重新出发，于是又开始了每周日从徐州去南京的征程……从他们每个人那里都学到了很多很多，并提高了与人团队协作、沟通交流的能力。这也是自2012年5月的某次营会中提醒我学习“勇气”的功课，5年后的今天第一次有了明显的突破。由于从这个优秀的团队中汲取了颠覆的力量，我也开始从<strong>表现型心智模式向进取型心智模式转变</strong>。</p>
+<h2><strong>三、行为颠覆的力量</strong></h2>
+<h4>1.你缺的不是能力，而是狠心！</h4>
+<blockquote>
+<p>大家缺的不是能力，而是狠心！你只要行动，只要狠心，就能站在前20%。80%以上的人不行动，这里面再80%的人不狠心，其中再80%的人不想拿第一名。——Xdite</p>
+</blockquote>
+
+<p>xdite老师两年前做一个完整的landing page需要30天，但她不断进行自我挑战，每次都比上次速度快一倍，现在甚至可以在半小时内搞定。这让我深刻认识到对自己实在是太手软了，我得好好面壁思过，好好接受铁血特训！无论哪方面我都过的太安逸了，一定要对自己狠心！</p>
+
+<p>曾经做任何事情都是三分钟热度，也为此尝试三件事打卡400多天，但却用错了方法。因为常常每天的三件事儿都不一样，贪心导致精力被分散到健身、读书、钢琴、吉他、手帐术、心理学、生涯规划、投资理财等各个角落，几乎都是从入门到放弃，学起来断断续续，没有明显成效。现在每天早晨在南京meetup群里晨起打卡，无论昨天晚上多晚睡，都会在5点半前自动醒来。养成了无论去哪儿都随身携带笔记本电脑的习惯，一有空就敲代码，以前可是除了工作，一年都不会打开电脑几次的。学编程成了我每天必不可少、刻意练习的事情，从此我死磕一件事儿——持续编程，并且在队友的帮助下竟然共同做出了<a href="https://fullstack.xinshengdaxue.com/works/609" target="_self">幸福小站</a>这样的作品。另外，我竟然终于开始写作了！并有了自己的blog和公众号，这对于一个从小没有语言天赋、写东西就像挤牙膏般缓慢、困难的我来说简直就像第一次跑完半码时似的奇迹！</p>
+<h4>2.擅用谷歌拒做伸手党</h4>
+<p>大赛前几天，常常一遇到困难就求救助教，明明知道要用google搜索答案，但由于惧怕淹没在海量的信息中，也惧怕失败，所以拒绝花时间去尝试，因而在初期做了好几天的伸手党。然而，现在一遇到bug或不懂的问题，已形成了条件反射，就会直接去StackOverflow或logdown及论坛中寻找答案。当get到Google搜索技能的强大后，我花了一个多小时在网上搜索并且总结了<a href="http://majing-blog.logdown.com/posts/1945739" target="_self">“减肥不要太简单，三周瘦8斤的秘笈”</a>。 曾经尝试过很多种减肥方式，这次是最轻松最成功也是最健康的！有了google搜索技能，大部分问题都可以轻松搞定。</p>
+<h2><strong>四、指数级颠覆的力量</strong></h2>
+<h4>1.幸运model原来长这样</h4>
+<p>笑来老师常说复利的力量，xdite老师所说的幸运model是这样的：<br>
+<figure><img src="http://user-image.logdown.io/user/25486/blog/24470/post/1951290/xghEmZz3QGCvsjJ7esys_WX20170415-232511.png" title=""></figure></p>
+
+<p>这里看起来没有太大差别，但如果用放大镜将其应用到大场景中，则是：<br>
+<figure><img src="http://user-image.logdown.io/user/25486/blog/24470/post/1951290/Y61lBJS4TlyM1vpUBvJc_WX20170415-232529.png" title=""></figure><br>
+非常幸运也很感恩能与队友王兴组队，每天早7点时而晚9点的standup meeting，让我第一次那样近距离地看到了学霸的学习模式，也让我清晰地认识到自己每一次是如何被完美主义和惧怕困难卡死的。这期间的整个过程看的我简直是惊心动魄，队友几乎每一步都按照Xdite老师的要求去做，写User Story、画草图、将大任务拆分成小任务、运用tower协作每天推进项目的部分内容、撰写教程帮助童鞋们...就是这种每天持续推进、每天持续的成长，令我身临其境地体会到了复利的力量，也有着<strong>全栈营内部的一周仿佛是外界一个月</strong>的恍如隔世之感。终于在队友的带领下，我们一路过关斩将，跑到了终点，并拿到了<a href="https://fullstack.xinshengdaxue.com/competitions/4/awards" target="_self">优秀作品奖</a>。</p>
+<h4>2.拥有改变世界一点点的力量</h4>
+<p>明天开始启动新项目，做一个商学院网站。这也是一个真实的项目，方案、师资均已到位，只差产品上线，而商学院的赢利至少有一半用于帮助散落在世界各个地方那些需要帮助的人们。这次大赛，让我看到了只要经过反复地刻意练习，我也可以拥有改变世界一点点的力量，and be the change I wish to see in the world.</p>
+
+              
+            </div>
+
+            <div class="meta"></div>
+          </article>
+
+          
+            <div class="share">
+              
+                <a href="https://twitter.com/share?" class="twitter-share-button">Tweet</a>
+              
+
+              
+                <div class="g-plusone" data-size="medium"></div>
+              
+
+              
+                <div class="fb-like" data-href="http://majing-blog.logdown.com/posts/1951290" data-layout="button_count" data-send="false" data-show-faces="false" data-width="90"></div>
+              
+            </div>
+
+            
+
+            <nav id="pagenavi">
+              
+                <a href="http://majing-blog.logdown.com/posts/1945739" class="prev">减肥不要太简单，三周瘦8斤的秘笈</a>
+              
+              
+                <a href="http://majing-blog.logdown.com/posts/2133730" class="next">全栈学习039:ORID20170803</a>
+              
+            </nav>
+
+          
+
+        
+
+
+
+        
+
+
+
+      </div>
+
+      <footer id="footer">
+        <div style="display:inline">
+          Copyright © 2015 MelindaMa.
+          Powered by <a href="http://logdown.com/">Logdown</a> |
+          Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="logdown_blog.js"></script>
+
+<iframe src="top_controls.html" width="81" height="26" frameborder="0" scrolling="no" style="position: fixed; z-index: 2147483647; border: 0px; background-color: transparent; overflow: hidden; top: 0px; right: 0px;"></iframe>
+
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=146125455579724";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+    extensions: ["jsMath2jax.js"]
+  });
+</script>
+<script src="MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+
+
+
+
+
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"KOI0g1aYS500G0", domain:"logdown.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="atrk.gif?account=KOI0g1aYS500G0" style="display:none" height="1" width="1" alt=""></noscript>
+<!-- End Alexa Certify Javascript -->
+</body>
+</html>

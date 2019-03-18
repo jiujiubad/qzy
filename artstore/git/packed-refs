@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+821f4e26c65b4959da19dd4500345a6355562c37 refs/remotes/origin/master
+76fee7feedb4ccc32977c74e3afc34d55731f629 refs/remotes/origin/store-v1
+fb6af95638cb4b12b75eff9c1140bd3cfb1a8d2b refs/remotes/origin/store-v1-homework
+2392d48d34e13d7f30e4ad5e8f6dcddaeb5f1d25 refs/remotes/origin/week-2
+8f153ae7f2c0c6666dccb0bd85c938c5d59ad7db refs/remotes/origin/week-2-homework
+adc47e0071cc07537922f1d402dab8dac5e5ea56 refs/remotes/origin/week-3
+8649c05e1ed57cbaae97a1ceefcad152d93fd54e refs/remotes/origin/week-3-homework

@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/575'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>11-2（解答）招聘网站第七部分 - Rails 实战：招聘网站 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="UlrMFrlO1+zioTfwH/g3TOf2My+NDFrhy+0rZaWeu6g87D0ZFm82twnWalbWAm/k7tXU6gVjoHbgNSWcwxDWfA==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 15:47",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 16:11",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508919090,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="posts posts-show">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default posts-show-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">Rails 实战：招聘网站</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/29/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/29">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/29/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/29/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="show-content">
+          <div class="row">
+            <div class="post-visitor">
+  <div class="des-text">
+    <h4>所属章节：11 - 招聘网站 - （应征者）解答</h4>
+    <p><p>本章预计学习时间: 2小时以内</p></p>
+    <p><p>学完本节就可以完成本章了</p></p>
+  </div>
+</div>
+<div class="view-count">
+  共 352 位第二期同学学习了本节
+</div>
+
+<div class="course-post">
+  <div class="post-title-h1 markdown">
+    <h1 >
+      11-2（解答）招聘网站第七部分
+    </h1>
+    <div id="favorite" class="favorite-icon-block">
+        <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=575">
+    <span class="fa fa-bookmark-o"></span>
+</a>
+    </div>
+  </div>
+
+  <div class="post group">
+    <div class="post-content markdown">
+      <h2>目标：</h2>
+<ul>
+<li>送出的简历网址是：/jobs/1/resumes/new</li>
+<li>简历内容不能为空 </li>
+<li>使用者得登入才能提交简历</li>
+<li>使用 attachment 栏位</li>
+</ul>
+
+<p><br></p>
+<h2>步骤</h2><h3>Step 0:切出一个新分支</h3>
+<figure class="figure-code code"><div class="highlight"><pre>git checkout -b step7
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 1: 建立投递简历的链接</h3>
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/ePS1x2ScQIWXVSCiWbvD_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%883.15.24.png" title=""></figure></p>
+
+<p>首先呢，我们要在职缺下面建立一个投递简历的链接，在 <code>app/views/jobs/show.html.erb</code> 加入以下代码：</p>
+
+<figure class="figure-code code"><figcaption><span>app/views/jobs/show.html.erb
+</span></figcaption><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"投交履历"</span><span class="p">,</span> <span class="s2">"#"</span><span class="p">,</span> <span class="ss">:style</span> <span class="o">=&gt;</span> <span class="s2">"font-size: 30px; text-decoration: underline;"</span><span class="p">)</span> <span class="cp">%&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 2: 产生简历 Resume 的 model</h3>
+<p>简历 Resume 的 Model 初步构想是，应该要跟 Job 有关，也要跟 User 有关，至少还要一个 content 栏位。所以我们可以根据这样的规划产生 model。</p>
+
+<ul>
+<li>job_id:integer</li>
+<li>user_id:integer</li>
+<li>content:text</li>
+</ul>
+
+<p><code>rails g model resume job_id:integer user_id:integer content:text</code></p>
+
+<p>然后再跑</p>
+
+<p><code>rake db:migrate</code></p>
+
+<p><br></p>
+<h3>Step 3: 将 Resume 与 User / Job 连起来</h3>
+<figure class="figure-code code"><figcaption><span>app/models/resume.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Resume</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">+</span>  <span class="n">belongs_to</span> <span class="ss">:user</span>
+<span class="o">+</span>  <span class="n">belongs_to</span> <span class="ss">:job</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">end</span>
+</pre></div>
+</figure>
+
+<figure class="figure-code code"><figcaption><span>app/models/job.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Job</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">+</span>  <span class="n">has_many</span> <span class="ss">:resumes</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">end</span>
+</pre></div>
+</figure>
+
+<figure class="figure-code code"><figcaption><span>app/models/user.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">+</span>  <span class="n">has_many</span> <span class="ss">:resumes</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">end</span>
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 4: 建立简历表单</h3>
+<p>初步想法：</p>
+
+<ul>
+<li>送出的简历网址是：/jobs/1/resumes/new</li>
+<li>至少简历内容不能为空</li>
+<li>使用者得登入才能提交简历</li>
+</ul>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/BkaQrmHS3K46gA4F99WW_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%883.22.52.png" title=""></figure></p>
+
+<p>产生 resumes_controller</p>
+
+<figure class="figure-code code"><div class="highlight"><pre>rails g controller resumes
+</pre></div>
+</figure>
+
+<p>修改 <code>config/routes.rb</code></p>
+
+<figure class="figure-code code"><figcaption><span>config/routes.rb
+</span></figcaption><div class="highlight"><pre><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">devise_for</span> <span class="ss">:users</span>
+
+  <span class="n">namespace</span> <span class="ss">:admin</span> <span class="k">do</span>
+    <span class="n">resources</span> <span class="ss">:jobs</span> <span class="k">do</span>
+      <span class="n">member</span> <span class="k">do</span>
+        <span class="n">post</span> <span class="ss">:publish</span>
+        <span class="n">post</span> <span class="ss">:hide</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="o">-</span>  <span class="n">resources</span> <span class="ss">:jobs</span>
+<span class="o">+</span>  <span class="n">resources</span> <span class="ss">:jobs</span> <span class="k">do</span>
+<span class="o">+</span>    <span class="n">resources</span> <span class="ss">:resumes</span>
+<span class="o">+</span>  <span class="k">end</span>
+  
+  <span class="n">root</span> <span class="s1">'jobs#index'</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p>然后修改送出简历网址为 <code>new_job_resume_path(@job)</code></p>
+
+<figure class="figure-code code"><figcaption><span>app/views/jobs/show.html.erb
+</span></figcaption><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"投交履历"</span><span class="p">,</span> <span class="n">new_job_resume_path</span><span class="p">(</span><span class="vi">@job</span><span class="p">),</span> <span class="ss">:style</span> <span class="o">=&gt;</span> <span class="s2">"font-size: 30px; text-decoration:underline;"</span><span class="p">)</span> <span class="cp">%&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</figure>
+
+<p>新增 <code>resumes_controller</code> 里的内容</p>
+
+<figure class="figure-code code"><figcaption><span>app/controllers/resumes_controller.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">ResumesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="n">before_action</span> <span class="ss">:authenticate_user!</span>
+
+  <span class="k">def</span> <span class="nf">new</span>
+    <span class="vi">@job</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:job_id</span><span class="p">])</span>
+    <span class="vi">@resume</span> <span class="o">=</span> <span class="no">Resume</span><span class="p">.</span><span class="nf">new</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="vi">@job</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:job_id</span><span class="p">])</span>
+    <span class="vi">@resume</span> <span class="o">=</span> <span class="no">Resume</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">resume_params</span><span class="p">)</span>
+    <span class="vi">@resume</span><span class="p">.</span><span class="nf">job</span> <span class="o">=</span> <span class="vi">@job</span>
+    <span class="vi">@resume</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="n">current_user</span>
+
+    <span class="k">if</span> <span class="vi">@resume</span><span class="p">.</span><span class="nf">save</span>
+      <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"成功提交履历"</span>
+      <span class="n">redirect_to</span> <span class="n">job_path</span><span class="p">(</span><span class="vi">@job</span><span class="p">)</span>
+    <span class="k">else</span>
+      <span class="n">render</span> <span class="ss">:new</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">resume_params</span>
+    <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:resume</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:content</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p>新增 <code>app/views/resumes/new.html.erb</code></p>
+
+<figure class="figure-code code"><figcaption><span>app/views/resumes/new.html.erb
+</span></figcaption><div class="highlight"><pre>
+<span class="nt">&lt;h3&gt;</span> 投交履历到 <span class="cp">&lt;%=</span> <span class="vi">@job</span><span class="p">.</span><span class="nf">title</span> <span class="cp">%&gt;</span> <span class="nt">&lt;/h3&gt;</span>
+
+<span class="nt">&lt;hr&gt;</span>
+
+<span class="cp">&lt;%=</span> <span class="n">simple_form_for</span> <span class="p">[</span><span class="vi">@job</span><span class="p">,</span> <span class="vi">@resume</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:content</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">submit</span> <span class="s2">"送出"</span> <span class="cp">%&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+
+</pre></div>
+</figure>
+
+<p>简历内容不得为空</p>
+
+<figure class="figure-code code"><figcaption><span>app/models/resume.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Resume</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span>
+  <span class="n">belongs_to</span> <span class="ss">:job</span>
+
+  <span class="n">validates</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span>
+<span class="k">end</span>
+
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 5：加入简历上传功能 （安装 carrierwave）</h3>
+<p>这里我们会使用 <a href="https://github.com/carrierwaveuploader/carrierwave">carrierwave</a> 这套 gem 实作上传功能。</p>
+
+<p>安装 carrierwave</p>
+
+<figure class="figure-code code"><figcaption><span>Gemfile
+</span></figcaption><div class="highlight"><pre><span class="n">gem</span> <span class="s1">'carrierwave'</span>
+</pre></div>
+</figure>
+
+<p>然后</p>
+
+<p><code>bundle install</code></p>
+
+<p><br></p>
+<h3>Step 6 ：重开 rails server</h3>
+<p>装完 Gem 后，要重开 rails server</p>
+
+<p><br></p>
+<h3>Step 7 ：新增 attachment 栏位在 resume 这个 model 上</h3>
+<figure class="figure-code code"><div class="highlight"><pre>rails g migration add_attachment_to_resume
+</pre></div>
+</figure>
+
+<p>内容：</p>
+
+<figure class="figure-code code"><figcaption><span>
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">AddAttachmentToResume</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:resumes</span><span class="p">,</span> <span class="ss">:attachment</span><span class="p">,</span> <span class="ss">:string</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p>然后 rake db:migrate</p>
+
+<p><br></p>
+<h3>Step 8：挂上 Attachment Uploader 到 Resume 上</h3>
+<p>carrierwave 使用的是“Uploader”这个机制，因此呢，我们要</p>
+
+<figure class="figure-code code"><div class="highlight"><pre>rails g uploader attachment
+</pre></div>
+</figure>
+
+<p>然后再修改 model，挂上去</p>
+
+<figure class="figure-code code"><figcaption><span>app/models/resume.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Resume</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span>
+  <span class="n">belongs_to</span> <span class="ss">:job</span>
+
+  <span class="n">mount_uploader</span> <span class="ss">:attachment</span><span class="p">,</span> <span class="no">AttachmentUploader</span>
+
+  <span class="n">validates</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p>然后修改 </p>
+
+<figure class="figure-code code"><figcaption><span>app/views/resumes/new.html.erb
+</span></figcaption><div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">simple_form_for</span> <span class="p">[</span><span class="vi">@job</span><span class="p">,</span> <span class="vi">@resume</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:content</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:attachment</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">submit</span> <span class="s2">"送出"</span> <span class="cp">%&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+
+</pre></div>
+</figure>
+
+<p>在上传表单加入“档案上传”栏位。</p>
+
+<p>成果会是这样：</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/kAAq0owTpq7z87LTG3BQ_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%882.21.44.png" title=""></figure></p>
+
+<p><br></p>
+<h3>Step 9 : 别忘了修改 resume_params</h3>
+<p>修改了表单，我们也要记得修改 <code>resume_params</code>，这样才能收到档案。</p>
+
+<p>修改 <code>app/controllers/resumes_controller.rb</code></p>
+
+<figure class="figure-code code"><figcaption><span>app/controllers/resumes_controller.rb
+</span></figcaption><div class="highlight"><pre>  <span class="k">def</span> <span class="nf">resume_params</span>
+    <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:resume</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:content</span><span class="p">,</span> <span class="ss">:attachment</span><span class="p">)</span>
+  <span class="k">end</span>
+  
+</pre></div>
+</figure>
+
+<p>试着提交一份简历</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/k81J5QMESGiMu7I1xCyl_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%882.23.47.png" title=""></figure></p>
+
+<p>这时候如果成功，你切换到 rails server 的 Log 会看到类似这一串：</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/KhK7v50cTduuGZDvdXpv_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%882.24.19.png" title=""></figure></p>
+
+<p>而且，如果你 <code>git status</code> 会看到 <code>public/uploads/</code> 下有东西</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/46pn3Tb4QBLDDka7mEvN_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%882.24.48.png" title=""></figure></p>
+
+<p>这时候如果我们打开这个目录，会看到这个资料夹下已经有 pdf</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/CgrDICbISB2sbtQGA7kh_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%882.25.40.png" title=""></figure></p>
+
+<p><br></p>
+<h3>Step 10 ：使用 .gitignore 屏蔽使用者产生的档案</h3>
+<p>但是问题来了，使用者产生的档案，其实我们不应该在 git 里面对他们做版本控制。<br>
+因此我们要修改 <code>.gitignore</code> 这个档案，在里面记录，屏蔽掉底下所以生成的资源，避免他们被加入版本控制。</p>
+
+<p>修改  <code>.gitignore</code> 加入：</p>
+
+<figure class="figure-code code"><div class="highlight"><pre>public/uploads
+</pre></div>
+</figure>
+
+<p>屏蔽<br>
+如下图所示：</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/CB7L9m4S5CiEq91PnnXP_Screenshot%20at%20Apr%2015%2020-28-50.png" title=""></figure></p>
+
+<p><br></p>
+<h3>Step 11: git 存档</h3>
+<figure class="figure-code code"><div class="highlight"><pre>git add .
+git commit -m "step 7 upload resume"
+</pre></div>
+</figure>
+
+    </div>
+  </div>
+
+  <div class="panic-panel">
+  <div class="row panic-panel-title">
+    <h4>对本页内容的感受如何？</h4>
+    <div class="complain-btn">
+      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
+        📣 &nbsp我要吐槽
+      </button>
+    </div>
+  </div>
+
+  <!-- new feeling's UI -->
+
+  <div class="panic-panel-body" id="selectable" data-post-id="575">
+    <div class="item " value="good" >
+      <div class="ui-widget-content"><span class="emoji">😄</span><span class="text">So easy</span></div>
+    </div>
+    <div class="item " value="normal" >
+      <div class="ui-widget-content"><span class="emoji">😐</span><span class="text">还OK</span></div>
+    </div>
+    <div class="item " value="bad" >
+      <div class="ui-widget-content"><span class="emoji">😭</span><span class="text">崩溃了</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <span id="status-area" class="feeling-submit-tips"></span>
+  </div>
+
+</div>
+
+
+
+<!-- 吐槽Modal -->
+<div class="modal fade modal-draggable message-modal-style" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="complainModalLabel">您对本篇教程有什么想说的？</h4>
+      </div>
+      <form class="simple_form new_complain" id="new_complain" enctype="multipart/form-data" action="https://fullstack.xinshengdaxue.com/complains" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="modal-body">
+          <div class="input-block">
+            <div class="form-group hidden complain_post_id"><input class="form-control hidden" value="575" type="hidden" name="complain[post_id]" id="complain_post_id" /></div>
+            <div class="form-group text optional complain_content"><label class="control-label text optional" for="complain_content">槽点/反馈(如果遇到课程技术问题，请直接到Slack向助教提问)</label><textarea class="form-control text optional" name="complain[content]" id="complain_content">
+</textarea></div>
+            <div class="file-upload-block complain-img">
+              <div class="form-group file optional complain_image"><label class="control-label file optional" for="complain_image">上传截图(可选)</label><input class="file optional" type="file" name="complain[image]" id="complain_image" /></div>
+            </div>
+            <div class="message-modal-footer">
+              <div class="row">
+                <span id="complain-submit-status-srea" class="pull-left"></span>
+              </div>
+              <a href="#" data-dismiss="modal">取消</a>
+              <input type="submit" name="commit" value="吐槽" class="btn btn-primary" id="complain-submit-btn" disabled="disabled" data-disable-with="吐槽" />
+            </div>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+
+
+    <div class="group post-nav-btn">
+      
+<ul class="pager-custom">
+  <li class="previous"> <a id="previous" href="https://fullstack.xinshengdaxue.com/posts/573"><i class="fa fa-arrow-left"></i><span> 上一页</span></a></li>
+  <li class="keyboard-tips"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页</li>
+  <li class="next"><a href="https://fullstack.xinshengdaxue.com/posts/577">下一页<span class="fa fa-arrow-right" id="next"></span></a> </li>
+</ul>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="posts-show-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.course-post .next a', 'Clicked next post btn');
+mixpanel.track_links('.course-post .previous a', 'Clicked previous post btn');
+mixpanel.track_links('#backtotop .btn-backtotop', 'Clicked back to top btn');
+</script>
+<script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("11-2（解答）招聘网站第七部分 - Rails 实战：招聘网站 | 新生大学全栈营")
+    </script>
+
+      <script type="text/javascript">
+var metadata = {
+  post_id: '575',
+  post_title: '11-2（解答）招聘网站第七部分',
+  post_url: 'https://fullstack.xinshengdaxue.com/posts/575'
+};
+Intercom('trackEvent', 'watched_post', metadata);
+</script>
+
+
+  </body>
+</html>

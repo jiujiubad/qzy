@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+<script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/717'} </script>
+<script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>7-2 Github协作指南 - Rails 实战：购物网站 | 新生大学全栈营</title>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" media="all" href="course-c5623f72c0be147234d3f8bfee75e708186d9ec550ac21d0c203a310a.css" data-turbolinks-track="reload" />
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z" />
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="x95ZCGD90HjW08NNefR5Q7mBEyC4hq0UuBtMo/w+oFGpaKgHz9wxIz2knuuwDiHrsKL05TDpV4OTw0JamrDNhQ==" />
+    
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("27446e8dd49fcd78452245388bdc58c6");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+mixpanel.identify("555");
+mixpanel.people.set({
+  "$email": "524945638@qq.com",
+  "$name": "jiujiubad",
+  "$phone": "+8615017226170",
+  "$created": "2016-12-06 22:34",
+  "$last_login": "2017-10-25 15:47",
+  "is_vip": "true",
+  "vip_group": "vip_2st_member",
+  "Real Province": "广东省",
+  "Real City": "汕头市",
+  "Real Area": "龙湖区",
+  "Last Seen Post": "2017-10-25 16:13",
+});
+</script>
+
+
+    <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.xinshengdaxue.com/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1508919206,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a10c974de32695b1445d93ff637492b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <script src="load.sumome.js" data-sumo-site-id="0bc7b08490f106c9932773cf177fbbef4929c65b2ba3ed22f5da8aa2908dd5e7" async="async"></script>
+
+    <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=dljgd6vivmutjpbgnko7rg';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+
+    
+  <script type="text/javascript" src="--op-end-head.js" defer></script>
+</head>
+
+  <body class="posts posts-show">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default posts-show-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.xinshengdaxue.com/dashboard">
+        <span class="logo"><img src='logo.png'>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.xinshengdaxue.com/meetup_groups?from=navbar">Meetup</a></li>
+      <li>
+        
+        <a href="https://fullstack.xinshengdaxue.com/live">直播室</a>
+      </li>
+
+  <li><a href="https://fullstack.xinshengdaxue.com/competitions">编程比赛</a></li>
+      <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+    <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.xinshengdaxue.com/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbspjiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_self" class="tracking" href="https://fullstack.xinshengdaxue.com/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/users">我的账户</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/orders">我的订单</a></li>
+      <li><a class="tracking" href="https://fullstack.xinshengdaxue.com/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.xinshengdaxue.com/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.xinshengdaxue.com/courses/31/syllabus">Rails 实战：购物网站</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.xinshengdaxue.com/courses/31/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.xinshengdaxue.com/courses/31">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.xinshengdaxue.com/courses/31/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/31/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/31/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="https://fullstack.xinshengdaxue.com/courses/31/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="show-content">
+          <div class="row">
+            <div class="post-visitor">
+  <div class="des-text">
+    <h4>所属章节：7-如何组队共同成长</h4>
+    <p><p>本章预计学习时间: 1小时以内</p></p>
+    <p><p>再学习4节就可以完成本章了</p></p>
+  </div>
+</div>
+<div class="view-count">
+  共 298 位第二期同学学习了本节
+</div>
+
+<div class="course-post">
+  <div class="post-title-h1 markdown">
+    <h1 >
+      7-2 Github协作指南
+    </h1>
+    <div id="favorite" class="favorite-icon-block">
+        <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=717">
+    <span class="fa fa-bookmark-o"></span>
+</a>
+    </div>
+  </div>
+
+  <div class="post group">
+    <div class="post-content markdown">
+      <h2>目标</h2>
+<p>使用Github进行代码协作</p>
+<h2>注意</h2>
+<p>本篇指南区分为，「主程篇」、「副程篇」以及「共同遵守篇」，除了共同遵守篇一定需要阅读，请针对自己在团队里的角色进行阅读就可以了，避免过多的资讯导致掉坑</p>
+<h2>主程篇</h2><h3>Step 0: 找到你的队友</h3>
+<p>两人一队，确定一位主程。</p>
+
+<p>由于我们目标是两人一队，主程必须要能负责整个购物网站专案的代码管理<br>
+除了负责 merge pull request，也需要能够解决与副程所产生的代码冲突问题。</p>
+
+<p><a href="https://fullstack.xinshengdaxue.com/posts/716">组队诀窍</a></p>
+<h3>Step 1: 主程邀请你的队友</h3>
+<p>打开要进行协作的repo，点击 <code>Settings</code> -&gt; <code>Collaborators</code></p>
+
+<p>在页面中间的搜索框中输入队友github的username，如果找到，框下面会跳出队友头像，点击头像，然后点击 <code>Add collaborator</code>，这样就邀请成功啦。</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/KxRSUTl6RW2b8a1x3Hd5_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-13%2020.54.57.png" title=""></figure></p>
+<h3>Step 2: 协作之前，将最新分支merge到master</h3>
+<p>如果master分支的更新时间不是最近，那么你需要做这一步</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/CiIb3zKdTiOfP8etXfKX_Screen%20Shot%202017-02-21%20at%2015.44.46.png" title=""></figure></p>
+
+<p>比如你的最新分支是story5，那么在终端 <code>git checkout master</code>，然后 <code>git merge story5</code>，再推到github <code>git push origin master</code></p>
+<h3>Step 3: 主程 merge 来自副程或自己的 pull request</h3>
+<p>点击 <code>Pull requests</code> 可以看到所有 pull requests 记录</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/nv83BTBS0KxmNrVMYqXu_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-13%2022.20.31.png" title=""></figure></p>
+
+<p>点开 pull request</p>
+
+<p>如果显示 <code>This branch has no conflicts with the base branch</code>，这种情况可以直接merge，点击 <code>Merge pull request</code>，然后 <code>Confirm merge</code> 就可以了</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YHsNZ0rkQJ2DCAMaoWA5_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-13%2022.29.10.png" title=""></figure></p>
+
+<p>merge完成</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/I5XYs9V4TsKDGWTkoBv2_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-13%2022.33.28.png" title=""></figure></p>
+
+<p>那么，什么情况不能直接merge呢？</p>
+
+<p>显示 <code>This branch has conflicts that must be resolved</code>，这时 <code>Merge pull request</code> 按钮呈灰色，无法点击，必须先解决代码冲突才能继续。</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/TOgZ8fViQDGimdGbMtcC_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%2011.26.31.png" title=""></figure></p>
+<h3>Step 4: 解决冲突</h3>
+<p>如何解决冲突？</p>
+
+<p>你可以选择不处理这个pull request，在本地修改后再上传一个新的pull request</p>
+
+<p>或者按照github给出的指令处理冲突</p>
+
+<p>点击 <code>Resolve conflicts</code>，左边显示出代码有冲突的所有文件，打开其中一个文件</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/fIeRBukJQoeagROsqrcZ_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%2011.37.20.png" title=""></figure></p>
+
+<p>可以看到，<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> 和 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; master</code> 把代码有冲突的部分包了起来</p>
+
+<p><code>=======</code> 又把这部分分成了上下两半</p>
+
+<p>上半部分是当前pull request中这个文件的写法</p>
+
+<p>下半部分是当前master分支上这个文件的写法</p>
+
+<p>接下来把多出的三行符号删掉，保留你需要的代码</p>
+
+<p>比如</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/e9hcNSWUSiGGYh4HT5D3_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%2011.53.37.png" title=""></figure></p>
+
+<p>然后点击 <code>Mark as resolved</code></p>
+
+<p>冲突全部解决之后，会显示 <code>Resolved all conflicts</code>，点击 <code>Commit changes</code></p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/KhfsT9ENSWuEZYlKHHMP_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%2011.56.30.png" title=""></figure></p>
+
+<p>之后会跳转回当前pull request地址，显示 <code>This branch has no conflicts with the base branch</code>，点击 <code>Merge pull request</code>，然后 <code>Confirm merge</code> 就可以了</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/v0qwJIQbQfeBNnynHyku_%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%2012.04.17.png" title=""></figure></p>
+<h3>Step 5: 在本地获取 merge 后最新的代码</h3>
+<p>当最新的代码已经合进 master 分支里，主程只需要在本地的终端checkout回master分支，然后运行git fetch</p>
+
+<p>那么主程就能够得到最新的代码了</p>
+<h2>副程篇</h2><h3>Step 1: 接受主程邀请，成为协作者</h3>
+<p>副程所使用的github注册邮箱会收到一封邀请邮件</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/UJLRG8FTSBake7cgYR3j_Screenshot%20at%20Feb%2013%2020-58-53.png" title=""></figure></p>
+
+<p>点击 <code>View invitation</code> 后，跳转到github页面</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/ObEv8dDQGWklU17ZYWt9_Screenshot%20at%20Feb%2013%2020-59-19.png" title=""></figure></p>
+
+<p>点击 <code>Accept invitation</code>，会跳转到协作repo，同时收到一封确认邮件</p>
+
+<p>协作repo如图：<br>
+<figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/yomQZoMfR1y2gWLxDuoQ_Screenshot%20at%20Feb%2013%2021-00-19.png" title=""></figure></p>
+
+<p>确认邮件如图：<br>
+<figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/A4XP1U67QK2guBmEzbeh_Screenshot%20at%20Feb%2013%2021-01-04.png" title=""></figure></p>
+<h3>Step 2: clone 主程的代码一起共同开发</h3>
+<p>第一次把代码下载到本地，使用 <code>git clone 主程的repo地址</code></p>
+
+<p>在终端运行 <code>cd xxx（专案名）</code></p>
+
+<p><code>cp config/database.yml.example config/database.yml</code></p>
+
+<p><code>bundle install</code>  </p>
+
+<p><code>rake db:migrate</code></p>
+
+<p>再打开rails s，才能在本地跑起来</p>
+
+<p>如果有先写好的seed档案，也别忘记对数据库初始化，运行 <code>rake db:seed</code> 就可以了</p>
+
+<p>这里请直接 clone 主程的专案到本机进行开发，自己的专案不需要在管。</p>
+
+<p>可以在你 clone 下来的专案输入 <code>git remote -v</code>，检查当中的网址是否为主程的 github 帐号，如果不是，请注意你会无法发送开发功能给主程，请在此刻修正。</p>
+<h3>Step 3: 发送 Pull Requset 给主程吧</h3>
+<p>在本地终端切出一只分支，尝试修改某个文字之后进行 commit 存档，然后 push 这只分支到 github 吧！</p>
+
+<p>接下来我们就能够发 pull request 给主程啰</p>
+
+<p>点击「New pull request」，会转成以下画面。把base fork点选主程的repo（通常是第二笔）</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/bsYhwQXgReaLIb3EkrQu_Screenshot%20at%20Mar%2007%2018-24-35.png" title=""></figure></p>
+
+<p>可以看到页面跳转成如下。</p>
+
+<p>① 确认已经转到主程的repo；<br>
+② base选择你想要merge的分支，可以选择「master」（一般正式协作会另外创建一个develop分支，把开发的进度放到develop，master一般于production环境）；<br>
+③ compare选择副程的分支名；<br>
+④ 查看是否是「Able to merge」状态；<br>
+⑤ 写下你的comment。<br>
+确认以上五点后，点击「Create pull request」</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/vMd2FdH7RKOslvGhqzuy_Screenshot%20at%20Mar%2007%2018-27-05.png" title=""></figure></p>
+
+<p>点击「Merge pull request」</p>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/BFqxQ21DRLi9EvuSmIM2_Screenshot%20at%20Mar%2007%2018-28-03.png" title=""></figure></p>
+
+<p>你就完成提交了功能开发的分支给主程啰，你的任务就是</p>
+
+<p>「本地切分支开发功能」 -&gt; 「开发完后 push 当前分支」 -&gt; 「上 Github 开 pull request 给主程」</p>
+<h2>共同遵守篇（主程 + 副程都得这么做）</h2><h3>Step 1: 获取最新代码</h3>
+<p>每天于开发前执行 <code>git fetch origin</code>，获取当前所有分支的讯息</p>
+
+<p>获取最新代码时，先 <code>git checkout master</code>，然后 <code>git pull origin master</code></p>
+<h3>Step 2: 开发项目</h3>
+<p>现在你在master分支上，对代码进行任何改动之前，一定要切换到一个新的分支，在新分支上进行修改</p>
+
+<p>分支命名规则 <code>git checkout -b name-feature (姓名-功能)</code></p>
+
+<p>记住一个原则，请勿直接在 master 开发并直接推送到 github ，容易出现双方代码不对齐的情况，并且会不断发生冲突，请详记！</p>
+<h3>Step 3: 上传分支</h3>
+<p>上传之前，一定要在本地进行测试，确认没有bug才可以上传</p>
+
+<figure class="figure-code code"><div class="highlight"><pre>git add .
+git commit -m "这个分支做的功能"
+git push origin name-feature
+</pre></div>
+</figure>
+
+<p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/NIgLGgxSf928gZY7X6gx_Screen%20Shot%202017-02-13%20at%2010.06.09%20PM.png" title=""></figure></p>
+
+    </div>
+  </div>
+
+  <div class="panic-panel">
+  <div class="row panic-panel-title">
+    <h4>对本页内容的感受如何？</h4>
+    <div class="complain-btn">
+      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
+        📣 &nbsp我要吐槽
+      </button>
+    </div>
+  </div>
+
+  <!-- new feeling's UI -->
+
+  <div class="panic-panel-body" id="selectable" data-post-id="717">
+    <div class="item " value="good" >
+      <div class="ui-widget-content"><span class="emoji">😄</span><span class="text">So easy</span></div>
+    </div>
+    <div class="item " value="normal" >
+      <div class="ui-widget-content"><span class="emoji">😐</span><span class="text">还OK</span></div>
+    </div>
+    <div class="item " value="bad" >
+      <div class="ui-widget-content"><span class="emoji">😭</span><span class="text">崩溃了</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <span id="status-area" class="feeling-submit-tips"></span>
+  </div>
+
+</div>
+
+
+
+<!-- 吐槽Modal -->
+<div class="modal fade modal-draggable message-modal-style" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="complainModalLabel">您对本篇教程有什么想说的？</h4>
+      </div>
+      <form class="simple_form new_complain" id="new_complain" enctype="multipart/form-data" action="https://fullstack.xinshengdaxue.com/complains" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="modal-body">
+          <div class="input-block">
+            <div class="form-group hidden complain_post_id"><input class="form-control hidden" value="717" type="hidden" name="complain[post_id]" id="complain_post_id" /></div>
+            <div class="form-group text optional complain_content"><label class="control-label text optional" for="complain_content">槽点/反馈(如果遇到课程技术问题，请直接到Slack向助教提问)</label><textarea class="form-control text optional" name="complain[content]" id="complain_content">
+</textarea></div>
+            <div class="file-upload-block complain-img">
+              <div class="form-group file optional complain_image"><label class="control-label file optional" for="complain_image">上传截图(可选)</label><input class="file optional" type="file" name="complain[image]" id="complain_image" /></div>
+            </div>
+            <div class="message-modal-footer">
+              <div class="row">
+                <span id="complain-submit-status-srea" class="pull-left"></span>
+              </div>
+              <a href="#" data-dismiss="modal">取消</a>
+              <input type="submit" name="commit" value="吐槽" class="btn btn-primary" id="complain-submit-btn" disabled="disabled" data-disable-with="吐槽" />
+            </div>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+
+
+    <div class="group post-nav-btn">
+      
+<ul class="pager-custom">
+  <li class="previous"> <a id="previous" href="https://fullstack.xinshengdaxue.com/posts/716"><i class="fa fa-arrow-left"></i><span> 上一页</span></a></li>
+  <li class="keyboard-tips"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页</li>
+  <li class="next"><a href="https://fullstack.xinshengdaxue.com/posts/1237">下一页<span class="fa fa-arrow-right" id="next"></span></a> </li>
+</ul>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+          </div>
+        </div>
+        <div id="backtotop">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8c.js"></script>
+      <footer class="posts-show-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src='logo.png'>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学线上全栈营由两岸知名的 Rails 教练郑伊廷、天使投资人李笑来共同主持。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>全栈营</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>课程资源</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class='column-title'>关于我们</li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/about">公司介绍</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.xinshengdaxue.com/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 北京全栈思维教育科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc51.js"></script>
+    
+      <script type="text/javascript">
+mixpanel.track_links('.course-post .next a', 'Clicked next post btn');
+mixpanel.track_links('.course-post .previous a', 'Clicked previous post btn');
+mixpanel.track_links('#backtotop .btn-backtotop', 'Clicked back to top btn');
+</script>
+<script type="text/javascript">
+mixpanel.track_links('.navbar-container .custom-dropdown-menu a.tracking', "Clicked user dropdown menu link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".navbar-container .navbar-link a", "Clicked top nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+<script type="text/javascript">
+mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", function(element) {
+  return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+});
+</script>
+
+    <script type="text/javascript">
+    mixpanel.track("7-2 Github协作指南 - Rails 实战：购物网站 | 新生大学全栈营")
+    </script>
+
+      <script type="text/javascript">
+var metadata = {
+  post_id: '717',
+  post_title: '7-2 Github协作指南',
+  post_url: 'https://fullstack.xinshengdaxue.com/posts/717'
+};
+Intercom('trackEvent', 'watched_post', metadata);
+</script>
+
+
+  </body>
+</html>
