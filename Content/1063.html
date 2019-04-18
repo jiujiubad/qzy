@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://fullstack.qzy.camp/posts/1063 -->
+<html lang="zh-cn" class="cye-disabled cye-nm"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" data-tag-name="trix-editor">trix-editor:empty:not(:focus)::before {
+  content: attr(placeholder);
+  color: graytext;
+}
+
+trix-editor a[contenteditable=false] {
+  cursor: text;
+}
+
+trix-editor img {
+  max-width: 100%;
+  height: auto;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea {
+  resize: none;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+  position: absolute;
+  left: -9999px;
+  max-height: 0px;
+}
+
+trix-editor [data-trix-attachment][data-trix-mutable] figcaption:empty::before {
+  content: "Add a caption…";
+  color: graytext;
+}
+
+trix-editor [data-trix-selection] { font-size: 0 !important;
+padding: 0 !important;
+margin: 0 !important;
+border: none !important;
+line-height: 0 !important; }
+trix-editor { display: block; }</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
+  white-space: collapse;
+}
+
+trix-toolbar .dialog {
+  display: none;
+}
+
+trix-toolbar .dialog.active {
+  display: block;
+}
+
+trix-toolbar .dialog input.validate:invalid {
+  background-color: #ffdddd;
+}
+
+trix-toolbar[native] {
+  display: none;
+}
+trix-toolbar { display: block; }</style>
+    <title>3-7 重构测试码 - Rails 自动化测试 | 全栈营</title>
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" media="all" href="./1063_files/course-be66eca8621e8a69e8d06318bd0cb2333f117f197628deecb9d7119f722e326f.css" data-turbolinks-track="reload">
+    <meta name="fp-apikey" content="A0cS9babJQsalfBCTkQl3z">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Nlj3tODrTAcjg/BUth4ktsRmUErPfkl0PxNIL5RoFOgUR0hm8SzHSavO2bkuaXpwnWuJGi4TGcPIrv+XPxUINw==">
+    
+    <link rel="shortcut icon" href="https://fullstack.qzy.camp/images/favicon.ico">
+    
+  <style id="nightModeStyle">
+html.cye-enabled.cye-nm:not(*:-webkit-full-screen) body,
+ html.cye-enabled.cye-nm:not(*:-webkit-full-screen) #cye-workaround-body {-webkit-filter:contrast(91%) brightness(84%) invert(1);}</style><style id="cyebody">html.cye-enabled.cye-lm body{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyediv">html.cye-enabled.cye-lm div{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetable">html.cye-enabled.cye-lm th{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm td{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetextInput">html.cye-enabled.cye-lm input[type=text]{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm textarea{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeselect">html.cye-enabled.cye-lm select{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeul">html.cye-enabled.cye-lm ul{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeChangeByClick">html.cye-enabled.cye-lm .cye-lm-tag,html.cye-enabled.cye-lm.cye-lm-tag{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style type="text/css" data-jwplayer-id="all-players">.jw-reset{color:inherit;background-color:transparent;padding:0;margin:0;float:none;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1em;list-style:none;text-align:left;text-transform:none;vertical-align:baseline;border:0;direction:ltr;font-variant:inherit;font-stretch:inherit;-webkit-tap-highlight-color:rgba(255,255,255,0)}@font-face{font-family:jw-icons;src:url(data:application/font-woff;base64,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) format('woff'),url(data:application/octet-stream;base64,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BQUBBQIGBBAJBQYKCgkFAw8nBQoGCAUFCQQFBwwGBAMNBAYFCAYJDIwHCgUHAgIBBAMDBAMJDjcBQAKHCxgJBAsIAQILEQMEBQgDAQECAwYDEiQSBDpUAwIHNwEDOwECkAkKCwIEAQ4KBwM6A5cBBhIQGRgYGB8ICiIPBQIFAgIBDAUDHgYFEAYwHQYODQYFBAcJEgX+/gYDAQMIAwYFCQEBAhM3GAIFBgUCHS8JAhQgCxcMCxULGCkPAwUCFQ4OFBEgCwcDAQEDAgQDAQEEFQsBAgMEAgUKBQMEBgcHCAQaNhUJCwcCCRsvGwIDBQIPIAUFBwMGBwoMAQEEBQIdLSUIEQgLEQoEBAQDDgQCAwQBAwUEBCE+BQUGAQUBBwUKDgQSBA0sBg8FBgsBBQ4KAgYIDxEFBwkRCQ4bDxAICg4RGwUFBAkBBAEFAgUBBgEFAQcEAgMCBQEMAQgGBwQUDgcPDDAKDQYIDQUVBQYHBQ0FBw8pCQgHDgYEEAYDDwkHAwcGBQIFAQQE/vYDAwUIAwoDBQQNBw4PBgFikwIGCgsFERY2CRoQAwYFAgICAwEBAQEDAUfXBwEFkwMCxAICAgYBCQ8MmgMAAAAADgCuAAEAAAAAAAEADAAaAAEAAAAAAAIABwA3AAEAAAAAAAMADABZAAEAAAAAAAQADACAAAEAAAAAAAUACwClAAEAAAAAAAYADADLAAEAAAAAAAoAGgEOAAMAAQQJAAEAGAAAAAMAAQQJAAIADgAnAAMAAQQJAAMAGAA/AAMAAQQJAAQAGABmAAMAAQQJAAUAFgCNAAMAAQQJAAYAGACxAAMAAQQJAAoANADYAGoAdwAtAHMAaQB4AC0AaQBjAG8AbgBzAABqdy1zaXgtaWNvbnMAAFIAZQBnAHUAbABhAHIAAFJlZ3VsYXIAAGoAdwAtAHMAaQB4AC0AaQBjAG8AbgBzAABqdy1zaXgtaWNvbnMAAGoAdwAtAHMAaQB4AC0AaQBjAG8AbgBzAABqdy1zaXgtaWNvbnMAAFYAZQByAHMAaQBvAG4AIAAxAC4AMQAAVmVyc2lvbiAxLjEAAGoAdwAtAHMAaQB4AC0AaQBjAG8AbgBzAABqdy1zaXgtaWNvbnMAAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAARm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0AAAECAAIBAwADAQQBBQEGAQcBCAEJAQoBCwEMAQ0BDgEPARABEQESARMBFAEVARYBFwEYARkBGgEbBmdseXBoMQd1bmkwMDAxB3VuaUU2MDAHdW5pRTYwMQd1bmlFNjAyB3VuaUU2MDMHdW5pRTYwNAd1bmlFNjA1B3VuaUU2MDYHdW5pRTYwNwd1bmlFNjA4B3VuaUU2MDkHdW5pRTYwQQd1bmlFNjBCB3VuaUU2MEMHdW5pRTYwRAd1bmlFNjBFB3VuaUU2MEYHdW5pRTYxMAd1bmlFNjExB3VuaUU2MTIHdW5pRTYxMwd1bmlFNjE0B3VuaUU2MTUHdW5pRTYxNgd1bmlFNjE3AAABAAH//wAPAAAAAQAAAADSBBQFAAAAANHUIisAAAAA0pAw5Q==) format('truetype');font-weight:400;font-style:normal}.jw-controlbar .jw-menu .jw-option:before,.jw-icon-display,.jw-icon-inline,.jw-icon-tooltip{font-family:jw-icons;-webkit-font-smoothing:antialiased;font-style:normal;font-weight:400;text-transform:none;background-color:transparent;font-variant:normal;-webkit-font-feature-settings:"liga";-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga";font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale}.jw-icon-audio-tracks:before{content:"\E600"}.jw-icon-buffer:before{content:"\E601"}.jw-icon-cast:before{content:"\E603"}.jw-icon-cast.jw-off:before{content:"\E602"}.jw-icon-cc:before{content:"\E605"}.jw-icon-cue:before,.jw-icon-menu-bullet:before{content:"\E606"}.jw-icon-error:before{content:"\E607"}.jw-icon-fullscreen:before{content:"\E608"}.jw-icon-fullscreen.jw-off:before{content:"\E613"}.jw-icon-hd:before{content:"\E60A"}.jw-rightclick-logo:before,.jw-watermark:before{content:"\E60B"}.jw-icon-next:before{content:"\E60C"}.jw-icon-pause:before{content:"\E60D"}.jw-icon-play:before{content:"\E60E"}.jw-icon-prev:before{content:"\E60F"}.jw-icon-replay:before{content:"\E610"}.jw-icon-volume:before{content:"\E612"}.jw-icon-volume.jw-off:before{content:"\E611"}.jw-icon-more:before{content:"\E614"}.jw-icon-close:before{content:"\E615"}.jw-icon-playlist:before{content:"\E616"}.jw-icon-barlogo:before{content:"\E617"}.jwplayer{width:100%;font-size:16px;position:relative;display:block;min-height:0;overflow:hidden;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;background-color:#000;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.jwplayer *{box-sizing:inherit}.jwplayer.jw-flag-aspect-mode{height:auto!important}.jwplayer.jw-flag-aspect-mode .jw-aspect{display:block}.jwplayer .jw-aspect{display:none}.jwplayer.jw-no-focus:focus,.jwplayer .jw-swf{outline:none}.jwplayer.jw-ie:focus{outline:1px dotted #585858}.jwplayer:hover .jw-display-icon-container{background-color:#333;background:#333;background-size:#333}.jw-adv,.jw-controls,.jw-media,.jw-overlays,.jw-preview{position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0}.jwplayer .jw-adv{background-size:100% 100%;cursor:pointer}.jwplayer .jw-adv .adv-countdown{position:absolute;width:95px;padding-left:10px;height:30px;line-height:30px;background-color:#202020;opacity:.7;color:#ee6002;font-size:14px;top:0;right:0;display:none}.jwplayer .jw-adv .adv-close{position:absolute;height:22px;line-height:22px;color:#fff;font-weight:700;font-size:14px;width:20px;top:0;right:5px;display:none;text-align:center}.jw-media{overflow:hidden;cursor:pointer}.jw-overlays{cursor:auto}.jw-media.jw-media-show{visibility:visible;opacity:1}.jw-controls.jw-controls-disabled{display:none}.jw-controls .jw-controls-right{position:absolute;top:0;right:0;left:0;bottom:2em}.jw-warning{color:red;top:30px;right:10px;position:absolute;z-index:10000;width:320px;display:none}.jw-warning a{color:#108cee}.jw-marquee{opacity:0;color:#fff;width:110px;font-size:16px;font-weight:700;position:absolute}@-webkit-keyframes marquee1{0%{left:100%}to{left:-110px}}@keyframes marquee1{0%{left:100%}to{left:-110px}}@-webkit-keyframes marquee2{0%{left:100%}to{left:-110px}}@keyframes marquee2{0%{left:100%}to{left:-110px}}.jw-text{height:1em;font-family:Arial,Helvetica,sans-serif;font-size:.75em;font-style:normal;font-weight:400;color:#fff;text-align:center;font-variant:normal;font-stretch:normal}.jw-plugin{position:absolute;bottom:2.5em}.jw-plugin .jw-banner{max-width:100%;opacity:0;cursor:pointer;position:absolute;margin:auto auto 0;left:0;right:0;bottom:0;display:block}.jw-cast-screen{width:100%;height:100%}.jw-instream{position:absolute;top:0;right:0;bottom:0;left:0;display:none}.jw-icon-playback:before{content:"\E60E"}.jw-captions,.jw-controls,.jw-overlays,.jw-preview,.jw-title{pointer-events:none}.jw-controlbar,.jw-display-icon-container,.jw-dock,.jw-logo,.jw-media,.jw-overlays>div,.jw-skip{pointer-events:all}.jwplayer video{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;margin:auto;background:transparent}.jwplayer video::-webkit-media-controls-start-playback-button{display:none}.jwplayer.jw-stretch-uniform video{-o-object-fit:contain;object-fit:contain}.jwplayer.jw-stretch-none video{-o-object-fit:none;object-fit:none}.jwplayer.jw-stretch-fill video{-o-object-fit:cover;object-fit:cover}.jwplayer.jw-stretch-exactfit video{-o-object-fit:fill;object-fit:fill}.jw-adv,.jw-click,.jw-preview{position:absolute;width:100%;height:100%}.jw-adv,.jw-preview{display:none;opacity:1;visibility:visible;background:#000 no-repeat 50% 50%}.jw-error .jw-preview,.jw-stretch-uniform .jw-preview,.jwplayer .jw-preview{background-size:100% 100%}.jw-stretch-none .jw-preview{background-size:auto auto}.jw-stretch-fill .jw-preview{background-size:cover}.jw-stretch-exactfit .jw-preview{background-size:100% 100%}.jw-display-icon-container{position:relative;top:50%;display:table;height:3.5em;width:3.5em;margin:-1.75em auto 0;cursor:pointer}.jw-display-icon-container .jw-icon-display{position:relative;display:table-cell;text-align:center;vertical-align:middle!important;background-position:50% 50%;background-repeat:no-repeat;font-size:2em}.jw-flag-audio-player .jw-display-icon-container,.jw-flag-dragging .jw-display-icon-container{display:none}.jw-icon{font-family:jw-icons;-webkit-font-smoothing:antialiased;font-style:normal;font-weight:400;text-transform:none;background-color:transparent;font-variant:normal;-webkit-font-feature-settings:"liga";-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga";font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale}.jw-controlbar{display:table;position:absolute;right:0;left:0;bottom:0;height:2em;padding:0 .25em}.jw-controlbar .jw-hidden{display:none}.jw-controlbar.jw-drawer-expanded .jw-controlbar-center-group,.jw-controlbar.jw-drawer-expanded .jw-controlbar-left-group{opacity:0}.jw-controlbar-textshow .jw-controlbar-center-group .jw-slider-time,.jw-controlbar-textshow .jw-controlbar-center-group .jw-text-duration,.jw-controlbar-textshow .jw-controlbar-center-group .jw-text-elapsed{display:none}.jw-controlbar-textshow .jw-controlbar-center-group .jw-text-alt{display:inline}.jw-background-color{background-color:#414040}.jw-group{display:table-cell}.jw-controlbar-center-group{width:100%;padding:0 .25em}.jw-controlbar-center-group .jw-slider-time,.jw-controlbar-center-group .jw-text-alt{padding:0}.jw-controlbar-center-group .jw-text-alt{display:none}.jw-controlbar-left-group,.jw-controlbar-right-group{white-space:nowrap}.jw-icon-display:hover,.jw-icon-inline:hover,.jw-icon-tooltip:hover,.jw-knob:hover,.jw-option:before:hover{color:#eee}.jw-icon-inline,.jw-icon-tooltip,.jw-slider-horizontal,.jw-text-duration,.jw-text-elapsed{display:inline-block;height:2em;position:relative;line-height:2em;vertical-align:middle;cursor:pointer}.jw-icon-inline,.jw-icon-tooltip{min-width:1.25em;text-align:center}.jw-icon-playback{min-width:2.25em}.jw-icon-barlogo{font-size:18px;min-width:1.75em}.jw-icon-volume{min-width:1.75em;text-align:left}.jw-time-tip{line-height:1em;pointer-events:none}.jw-icon-inline:after,.jw-icon-tooltip:after{width:100%;height:100%;font-size:1em}.jw-icon-cast,.jw-icon-inline.jw-icon-volume,.jw-slider-volume.jw-slider-horizontal{display:none}.jw-dock{margin:.75em;display:block;opacity:1;clear:right}.jw-dock:after{content:'';clear:both;display:block}.jw-dock-button{cursor:pointer;float:right;position:relative;width:2.5em;height:2.5em;margin:.5em}.jw-dock-button .jw-arrow{display:none;position:absolute;bottom:-.2em;width:.5em;height:.2em;left:50%;margin-left:-.25em}.jw-dock-button .jw-overlay{display:none;position:absolute;top:2.5em;right:0;margin-top:.25em;padding:.5em;white-space:nowrap}.jw-dock-button:hover .jw-arrow,.jw-dock-button:hover .jw-overlay{display:block}.jw-dock-image{width:100%;height:100%;background-position:50% 50%;background-repeat:no-repeat;opacity:.75}.jw-title{display:none;position:absolute;top:0;width:100%;font-size:.875em;height:8em;background:-webkit-linear-gradient(top,#000,#000 18%,transparent);background:linear-gradient(180deg,#000 0,#000 18%,transparent)}.jw-title-primary,.jw-title-secondary{padding:.75em 1.5em;min-height:2.5em;width:100%;color:#fff;white-space:nowrap;text-overflow:ellipsis;overflow-x:hidden}.jw-title-primary{font-weight:700}.jw-title-secondary{margin-top:-.5em}.jw-slider-container{display:inline-block;height:1em;position:relative;touch-action:none}.jw-buffer,.jw-progress,.jw-rail{position:absolute;cursor:pointer}.jw-progress{background-color:#fff}.jw-rail{background-color:#aaa}.jw-buffer{background-color:#202020}.jw-cue,.jw-knob{position:absolute;cursor:pointer}.jw-cue{background-color:#fff;width:.1em;height:.4em}.jw-knob{background-color:#aaa;width:.4em;height:.4em}.jw-slider-horizontal{width:4em;height:1em}.jw-slider-horizontal.jw-slider-volume{margin-right:5px}.jw-slider-horizontal .jw-buffer,.jw-slider-horizontal .jw-progress,.jw-slider-horizontal .jw-rail{width:100%;height:.4em}.jw-slider-horizontal .jw-buffer,.jw-slider-horizontal .jw-progress{width:0}.jw-slider-horizontal .jw-progress,.jw-slider-horizontal .jw-rail,.jw-slider-horizontal .jw-slider-container{width:100%}.jw-slider-horizontal .jw-knob{left:0;margin-left:-.325em}.jw-slider-vertical{width:.75em;height:4em;bottom:0;position:absolute;padding:1em}.jw-slider-vertical .jw-buffer,.jw-slider-vertical .jw-progress,.jw-slider-vertical .jw-rail{bottom:0;height:100%}.jw-slider-vertical .jw-buffer,.jw-slider-vertical .jw-progress{height:0}.jw-slider-vertical .jw-progress,.jw-slider-vertical .jw-rail,.jw-slider-vertical .jw-slider-container{bottom:0;width:.75em;height:100%;left:0;right:0;margin:0 auto}.jw-slider-vertical .jw-slider-container{height:4em;position:relative}.jw-slider-vertical .jw-knob{bottom:0;left:0;right:0;margin:0 auto}.jw-slider-time{right:0;left:0;width:100%}.jw-tooltip-time{position:absolute}.jw-slider-volume .jw-buffer{display:none}.jw-captions{position:absolute;display:none;margin:0 auto;width:100%;left:0;bottom:3em;right:0;max-width:90%;text-align:center}.jw-captions.jw-captions-enabled{display:block}.jw-captions-window{display:none;padding:.25em;border-radius:.25em}.jw-captions-text,.jw-captions-window.jw-captions-window-active{display:inline-block}.jw-captions-text{color:#fff;background-color:#000;word-wrap:break-word;white-space:pre-line;font-style:normal;font-weight:400;text-align:center;text-decoration:none;line-height:1.3em;padding:.1em .8em}.jwplayer video::-webkit-media-controls{-webkit-box-pack:start;justify-content:flex-start}.jwplayer video::-webkit-media-text-track-container{max-height:84.5%;line-height:1.3em}.jwplayer.jw-flag-compact-player video::-webkit-media-text-track-container{max-height:82%}.jwplayer .jw-rightclick{display:none;position:absolute;white-space:nowrap}.jwplayer .jw-rightclick.jw-open{display:block}.jwplayer .jw-rightclick ul{list-style:none;font-weight:700;border-radius:.15em;margin:0;border:1px solid #444;padding:0}.jwplayer .jw-rightclick ul li{background-color:#000;border-bottom:1px solid #444;margin:0}.jwplayer .jw-rightclick ul li .jw-rightclick-logo{font-size:2em;color:#ff0147;vertical-align:middle;padding-right:.3em;margin-right:.3em;border-right:1px solid #444}.jwplayer .jw-rightclick ul li a{color:#fff;text-decoration:none;padding:1em;display:block;font-size:.6875em;line-height:1em}.jwplayer .jw-rightclick ul li:last-child{border-bottom:none}.jwplayer .jw-rightclick ul li:hover{background-color:#1a1a1a;cursor:pointer}.jwplayer .jw-rightclick ul .jw-featured{background-color:#252525;vertical-align:middle}.jwplayer .jw-rightclick ul .jw-featured a{color:#777}.jw-logo{position:absolute;margin:.75em;cursor:pointer;pointer-events:all;background-repeat:no-repeat;background-size:contain;top:auto;right:auto;left:auto;bottom:auto}.jw-logo .jw-flag-audio-player{display:none}.jw-logo-top-right{top:0;right:0}.jw-logo-top-left{top:0;left:0}.jw-logo-bottom-left{bottom:0;left:0}.jw-logo-bottom-right,.jw-watermark{bottom:0;right:0}.jw-watermark{position:absolute;top:50%;left:0;text-align:center;font-size:14em;color:#eee;opacity:.33;pointer-events:none}.jw-icon-tooltip.jw-open .jw-overlay{opacity:1;visibility:visible}.jw-icon-tooltip.jw-hidden,.jw-icon-tooltip.jw-open-drawer:before,.jw-overlay-horizontal{display:none}.jw-icon-tooltip.jw-open-drawer .jw-overlay-horizontal{opacity:1;display:inline-block;vertical-align:top}.jw-overlay:before{position:absolute;top:0;bottom:0;left:-50%;width:100%;background-color:transparent;content:" "}.jw-slider-time .jw-overlay:before{height:1em;top:auto}.jw-menu,.jw-time-tip,.jw-volume-tip{position:relative;left:-50%;border:1px solid #000;margin:0}.jw-volume-value-tip{font-size:12px;position:absolute;top:-26px;right:20px;background-color:#000;line-height:20px;border-radius:3px;padding:0 3px;color:#fff}.jw-volume-tip{width:100%;height:100%;display:block}.jw-time-tip{text-align:center;font-family:inherit;color:#aaa;bottom:1em;border:4px solid #000}.jw-time-tip .jw-text{line-height:1em}.jw-controlbar .jw-overlay{margin:0;position:absolute;bottom:2em;left:50%;opacity:0;visibility:hidden}.jw-controlbar .jw-overlay .jw-contents{position:relative}.jw-controlbar .jw-option{position:relative;white-space:nowrap;cursor:pointer;list-style:none;height:1.5em;font-family:inherit;line-height:1.5em;color:#aaa;padding:0 .5em;font-size:.8em}.jw-controlbar .jw-option:before:hover,.jw-controlbar .jw-option:hover{color:#eee}.jw-controlbar .jw-option:before{padding-right:.125em}.jw-playlist-container ::-webkit-scrollbar-track{background-color:#333;border-radius:10px}.jw-playlist-container ::-webkit-scrollbar{width:5px;border:10px solid #000;border-bottom:0;border-top:0}.jw-playlist-container ::-webkit-scrollbar-thumb{background-color:#fff;border-radius:5px}.jw-tooltip-title{border-bottom:1px solid #444;text-align:left;padding-left:.7em}.jw-playlist{max-height:11em;min-height:4.5em;overflow-x:hidden;overflow-y:scroll;width:calc(100% - 4px)}.jw-playlist .jw-option{height:3em;margin-right:5px;color:#fff;padding-left:1em;font-size:.8em}.jw-playlist .jw-label,.jw-playlist .jw-name{display:inline-block;line-height:3em;text-align:left;overflow:hidden;white-space:nowrap}.jw-playlist .jw-label{width:1em}.jw-playlist .jw-name{width:11em}.jw-skip{cursor:default;position:absolute;float:right;display:inline-block;right:.75em;bottom:3em}.jw-skip.jw-skippable{cursor:pointer}.jw-skip.jw-hidden{visibility:hidden}.jw-skip .jw-skip-icon{display:none;margin-left:-.75em}.jw-skip .jw-skip-icon:before{content:"\E60C"}.jw-skip .jw-skip-icon,.jw-skip .jw-text{color:#aaa;vertical-align:middle;line-height:1.5em;font-size:.7em}.jw-skip.jw-skippable:hover{cursor:pointer}.jw-skip.jw-skippable:hover .jw-skip-icon,.jw-skip.jw-skippable:hover .jw-text{color:#eee}.jw-skip.jw-skippable .jw-skip-icon{display:inline;margin:0}.jwplayer.jw-state-paused.jw-flag-casting .jw-display-icon-container,.jwplayer.jw-state-playing.jw-flag-casting .jw-display-icon-container{display:table}.jwplayer.jw-flag-casting .jw-display-icon-container{border-radius:0;border:1px solid #fff;position:absolute;top:auto;left:.5em;right:.5em;bottom:50%;margin-bottom:-12.5%;height:50%;width:50%;padding:0;background-repeat:no-repeat;background-position:50%}.jwplayer.jw-flag-casting .jw-display-icon-container .jw-icon{font-size:3em}.jwplayer.jw-flag-casting.jw-state-complete .jw-preview{display:none}.jw-cast{position:absolute;width:100%;height:100%;background-repeat:no-repeat;background-size:auto;background-position:50% 50%}.jw-cast-label{position:absolute;left:.5em;right:.5em;bottom:75%;margin-bottom:1.5em;text-align:center}.jw-cast-name{color:#ccc}.jw-state-idle .jw-preview{display:block}.jw-state-idle .jw-icon-display:before{content:"\E60E"}.jw-state-idle .jw-captions,.jw-state-idle .jw-controlbar{display:none}.jw-state-idle .jw-title{display:block}.jwplayer.jw-state-playing .jw-display-icon-container{display:none}.jwplayer.jw-state-playing .jw-display-icon-container .jw-icon-display:before,.jwplayer.jw-state-playing .jw-icon-playback:before{content:"\E60D"}.jwplayer.jw-state-paused .jw-display-icon-container{display:none}.jwplayer.jw-state-paused .jw-display-icon-container .jw-icon-display:before,.jwplayer.jw-state-paused .jw-icon-playback:before{content:"\E60E"}.jwplayer.jw-state-buffering .jw-display-icon-container .jw-icon-display{-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}.jwplayer.jw-state-buffering .jw-display-icon-container .jw-icon-display:before{content:"\E601"}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn)}}@keyframes spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.jwplayer.jw-state-buffering .jw-display-icon-container .jw-text{display:none}.jwplayer.jw-state-buffering .jw-icon-playback:before{content:"\E60D"}.jwplayer.jw-state-complete .jw-preview{display:block}.jwplayer.jw-state-complete .jw-display-icon-container{z-index:10}.jwplayer.jw-state-complete .jw-display-icon-container .jw-icon-display:before{content:"\E610"}.jwplayer.jw-state-complete .jw-display-icon-container .jw-text{display:none}.jwplayer.jw-state-complete .jw-icon-playback:before{content:"\E60E"}.jwplayer.jw-state-complete .jw-captions{display:none}.jwplayer.jw-state-error .jw-title,body .jw-error .jw-title{display:block;z-index:1}.jwplayer.jw-state-error .jw-title .jw-title-primary,body .jw-error .jw-title .jw-title-primary{white-space:normal}.jwplayer.jw-state-error .jw-title .jw-title-primary a,body .jw-error .jw-title .jw-title-primary a{cursor:pointer;color:#699f00;pointer-events:auto}.jwplayer.jw-state-error .jw-preview,body .jw-error .jw-preview{display:block}.jwplayer.jw-state-error .jw-captions,.jwplayer.jw-state-error .jw-controlbar,body .jw-error .jw-captions,body .jw-error .jw-controlbar{display:none}.jwplayer.jw-state-error:hover .jw-display-icon-container,body .jw-error:hover .jw-display-icon-container{cursor:default;color:#fff;background:#000}.jwplayer.jw-state-error .jw-icon-display,body .jw-error .jw-icon-display{cursor:default;font-family:jw-icons;-webkit-font-smoothing:antialiased;font-style:normal;font-weight:400;text-transform:none;background-color:transparent;font-variant:normal;-webkit-font-feature-settings:"liga";-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga";font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale}.jwplayer.jw-state-error .jw-icon-display:before,body .jw-error .jw-icon-display:before{content:"\E607"}.jwplayer.jw-state-error .jw-icon-display:hover,body .jw-error .jw-icon-display:hover{color:#fff}body .jw-error{font-size:16px;background-color:#000;color:#eee;width:100%;height:100%;display:table;opacity:1;position:relative}body .jw-error .jw-icon-container{position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0}.jwplayer.jw-flag-cast-available .jw-controlbar{display:table}.jwplayer.jw-flag-cast-available .jw-icon-cast{display:inline-block}.jwplayer.jw-flag-skin-loading .jw-captions,.jwplayer.jw-flag-skin-loading .jw-controls,.jwplayer.jw-flag-skin-loading .jw-title{display:none}.jwplayer.jw-flag-fullscreen{width:100%!important;height:100%!important;top:0;right:0;bottom:0;left:0;z-index:1000;margin:0;position:fixed}.jwplayer.jw-flag-live .jw-controlbar .jw-slider-time,.jwplayer.jw-flag-live .jw-controlbar .jw-text-duration,.jwplayer.jw-flag-live .jw-controlbar .jw-text-elapsed{display:none}.jwplayer.jw-flag-live .jw-controlbar .jw-text-alt{display:inline}.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-controlbar,.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-dock,.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-logo.jw-hide{display:none}.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-captions,.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-plugin{bottom:.5em}.jwplayer.jw-flag-user-inactive.jw-state-playing .jw-media{cursor:none;-webkit-cursor-visibility:auto-hide}.jwplayer.jw-flag-user-inactive.jw-state-playing video::-webkit-media-text-track-container{max-height:none}.jwplayer.jw-flag-user-inactive.jw-state-buffering .jw-controlbar{display:none}.jwplayer.jw-flag-media-audio .jw-controlbar,.jwplayer.jw-flag-media-audio.jw-flag-user-inactive .jw-controlbar{display:table}.jwplayer.jw-flag-media-audio.jw-flag-user-inactive.jw-state-playing .jw-captions,.jwplayer.jw-flag-media-audio.jw-flag-user-inactive.jw-state-playing .jw-plugin{bottom:3em}.jwplayer.jw-flag-media-audio.jw-flag-user-inactive.jw-state-playing video::-webkit-media-text-track-container{max-height:84.5%}.jw-flag-media-audio .jw-preview{display:block}.jwplayer.jw-flag-ads .jw-captions.jw-captions-enabled,.jwplayer.jw-flag-ads .jw-dock,.jwplayer.jw-flag-ads .jw-logo,.jwplayer.jw-flag-ads .jw-preview{display:none}.jwplayer.jw-flag-ads video::-webkit-media-text-track-container{display:none}.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-inline,.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-tooltip,.jwplayer.jw-flag-ads .jw-controlbar .jw-slider-horizontal,.jwplayer.jw-flag-ads .jw-controlbar .jw-text{display:none}.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-fullscreen,.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-playback,.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-volume,.jwplayer.jw-flag-ads .jw-controlbar .jw-slider-volume{display:inline-block}.jwplayer.jw-flag-ads .jw-controlbar .jw-text-alt{display:inline}.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-inline.jw-icon-volume,.jwplayer.jw-flag-ads .jw-controlbar .jw-slider-volume.jw-slider-horizontal{display:inline-block}.jwplayer.jw-flag-ads .jw-controlbar .jw-icon-tooltip.jw-icon-volume{display:none}.jwplayer.jw-flag-ads-googleima .jw-controlbar{display:table;bottom:0}.jwplayer.jw-flag-ads-googleima.jw-flag-touch .jw-controlbar{font-size:1em}.jwplayer.jw-flag-ads-googleima.jw-flag-touch.jw-state-paused .jw-display-icon-container{display:none}.jwplayer.jw-flag-ads-googleima.jw-skin-seven .jw-controlbar{font-size:.9em}.jwplayer.jw-flag-ads-vpaid .jw-controlbar{display:none}.jwplayer.jw-flag-ads-hide-controls .jw-controls{display:none!important}.jwplayer.jw-flag-ads.jw-flag-touch .jw-controlbar{display:table}.jwplayer.jw-flag-overlay-open-related .jw-controls,.jwplayer.jw-flag-overlay-open-related .jw-title,.jwplayer.jw-flag-overlay-open-sharing .jw-controls,.jwplayer.jw-flag-overlay-open-sharing .jw-title,.jwplayer.jw-flag-overlay-open .jw-controls-right .jw-logo,.jwplayer.jw-flag-overlay-open .jw-title{display:none}.jwplayer.jw-flag-rightclick-open{overflow:visible}.jwplayer.jw-flag-rightclick-open .jw-rightclick{z-index:16777215}.jw-flag-controls-disabled .jw-controls{visibility:hidden}.jw-flag-controls-disabled .jw-logo{visibility:visible}.jw-flag-controls-disabled .jw-media{cursor:auto}body .jwplayer.jw-flag-flash-blocked .jw-title{display:block}body .jwplayer.jw-flag-flash-blocked .jw-controls,body .jwplayer.jw-flag-flash-blocked .jw-overlays,body .jwplayer.jw-flag-flash-blocked .jw-preview{display:none}.jw-flag-touch .jw-controlbar,.jw-flag-touch .jw-plugin,.jw-flag-touch .jw-skip{font-size:1.5em}.jw-flag-touch .jw-captions{bottom:4.25em}.jw-flag-touch video::-webkit-media-text-track-container{max-height:70%}.jw-flag-touch .jw-icon-tooltip.jw-open-drawer:before{display:inline;content:"\E615"}.jw-flag-touch .jw-display-icon-container{pointer-events:none}.jw-flag-touch.jw-state-paused .jw-display-icon-container{display:table}.jw-flag-compact-player .jw-icon-playlist,.jw-flag-compact-player .jw-text-duration,.jw-flag-compact-player .jw-text-elapsed,.jw-flag-touch.jw-state-paused.jw-flag-dragging .jw-display-icon-container{display:none}.jwplayer.jw-flag-audio-player{background-color:transparent}.jwplayer.jw-flag-audio-player .jw-media{visibility:hidden}.jwplayer.jw-flag-audio-player .jw-media object{width:1px;height:1px}.jwplayer.jw-flag-audio-player .jw-display-icon-container,.jwplayer.jw-flag-audio-player .jw-preview{display:none}.jwplayer.jw-flag-audio-player .jw-controlbar{display:table;height:auto;left:0;bottom:0;margin:0;width:100%;min-width:100%;opacity:1}.jwplayer.jw-flag-audio-player .jw-controlbar .jw-icon-fullscreen,.jwplayer.jw-flag-audio-player .jw-controlbar .jw-icon-tooltip{display:none}.jwplayer.jw-flag-audio-player .jw-controlbar .jw-icon-inline.jw-icon-volume,.jwplayer.jw-flag-audio-player .jw-controlbar .jw-slider-volume.jw-slider-horizontal{display:inline-block}.jwplayer.jw-flag-audio-player .jw-controlbar .jw-icon-tooltip.jw-icon-volume{display:none}.jwplayer.jw-flag-audio-player.jw-flag-user-inactive .jw-controlbar{display:table}.jw-skin-seven .jw-background-color{background:#000}.jw-skin-seven .jw-controlbar{border-top:1px solid #333;height:2.5em}.jw-skin-seven .jw-group{vertical-align:middle}.jw-skin-seven .jw-playlist{background-color:rgba(0,0,0,.5)}.jw-skin-seven .jw-playlist-container{left:-43%;background-color:rgba(0,0,0,.5)}.jw-skin-seven .jw-playlist-container .jw-option{border-bottom:1px solid #444}.jw-skin-seven .jw-playlist-container .jw-option.jw-active-option,.jw-skin-seven .jw-playlist-container .jw-option:hover{background-color:#000}.jw-skin-seven .jw-playlist-container .jw-option:hover .jw-label{color:#ff0046}.jw-skin-seven .jw-playlist-container .jw-icon-playlist{margin-left:0}.jw-skin-seven .jw-playlist-container .jw-label .jw-icon-play{color:#ff0046}.jw-skin-seven .jw-playlist-container .jw-label .jw-icon-play:before{padding-left:0}.jw-skin-seven .jw-tooltip-title{background-color:#000;color:#fff}.jw-skin-seven .jw-button-color,.jw-skin-seven .jw-text{color:#fff}.jw-skin-seven .jw-button-color:hover,.jw-skin-seven .jw-toggle{color:#ff0046}.jw-skin-seven .jw-toggle.jw-off{color:#fff}.jw-skin-seven .jw-controlbar .jw-icon:before,.jw-skin-seven .jw-text-duration,.jw-skin-seven .jw-text-elapsed{padding:0 .7em}.jw-skin-seven .jw-controlbar .jw-icon-prev:before{padding-right:.25em}.jw-skin-seven .jw-controlbar .jw-icon-playlist:before{padding:0 .45em}.jw-skin-seven .jw-controlbar .jw-icon-next:before{padding-left:.25em}.jw-skin-seven .jw-icon-next,.jw-skin-seven .jw-icon-prev{font-size:.7em}.jw-skin-seven .jw-icon-prev:before{border-left:1px solid #666}.jw-skin-seven .jw-icon-next:before{border-right:1px solid #666}.jw-skin-seven .jw-icon-display{color:#fff}.jw-skin-seven .jw-icon-display:before{padding-left:0}.jw-skin-seven .jw-display-icon-container{border-radius:50%;border:1px solid #333}.jw-skin-seven .jw-rail{background-color:#384154;box-shadow:none}.jw-skin-seven .jw-buffer{background-color:#666f82}.jw-skin-seven .jw-progress{background:#ff0046}.jw-skin-seven .jw-knob{width:.6em;height:.6em;background-color:#fff;box-shadow:0 0 0 1px #000;border-radius:1em}.jw-skin-seven .jw-slider-horizontal .jw-slider-container{height:.95em}.jw-skin-seven .jw-slider-horizontal .jw-buffer,.jw-skin-seven .jw-slider-horizontal .jw-progress,.jw-skin-seven .jw-slider-horizontal .jw-rail{height:.2em;border-radius:0}.jw-skin-seven .jw-slider-horizontal .jw-knob{top:-.2em}.jw-skin-seven .jw-slider-horizontal .jw-cue{top:-.05em;width:.3em;height:.3em;background-color:#fff;border-radius:50%}.jw-skin-seven .jw-slider-vertical .jw-buffer,.jw-skin-seven .jw-slider-vertical .jw-progress,.jw-skin-seven .jw-slider-vertical .jw-rail{width:.2em}.jw-skin-seven .jw-slider-vertical .jw-knob{margin-bottom:-.3em}.jw-skin-seven .jw-volume-tip{width:100%;left:-45%;padding-bottom:.7em}.jw-skin-seven .jw-text-duration{color:#666f82}.jw-skin-seven .jw-controlbar-right-group .jw-icon-inline:before,.jw-skin-seven .jw-controlbar-right-group .jw-icon-tooltip:before{border-left:1px solid #666}.jw-skin-seven .jw-controlbar-right-group .jw-icon-inline:first-child:before{border:none}.jw-skin-seven .jw-dock .jw-dock-button{border-radius:50%;border:1px solid #333}.jw-skin-seven .jw-dock .jw-overlay{border-radius:2.5em}.jw-skin-seven .jw-icon-tooltip .jw-active-option{background-color:#ff0046;color:#fff}.jw-skin-seven .jw-icon-volume{min-width:2.6em}.jw-skin-seven .jw-menu,.jw-skin-seven .jw-skip,.jw-skin-seven .jw-time-tip,.jw-skin-seven .jw-volume-tip{border:1px solid #333}.jw-skin-seven .jw-time-tip{padding:.2em;bottom:1.3em}.jw-skin-seven .jw-menu,.jw-skin-seven .jw-volume-tip{bottom:.24em}.jw-skin-seven .jw-skip{padding:.4em;border-radius:1.75em}.jw-skin-seven .jw-skip .jw-icon-inline,.jw-skin-seven .jw-skip .jw-text{color:#fff;line-height:1.75em}.jw-skin-seven .jw-skip.jw-skippable:hover .jw-icon-inline,.jw-skin-seven .jw-skip.jw-skippable:hover .jw-text{color:#ff0046}.jw-skin-seven.jw-flag-touch .jw-controlbar .jw-icon:before,.jw-skin-seven.jw-flag-touch .jw-text-duration,.jw-skin-seven.jw-flag-touch .jw-text-elapsed{padding:0 .35em}.jw-skin-seven.jw-flag-touch .jw-controlbar .jw-icon-prev:before{padding:0 .125em 0 .7em}.jw-skin-seven.jw-flag-touch .jw-controlbar .jw-icon-next:before{padding:0 .7em 0 .125em}.jw-skin-seven.jw-flag-touch .jw-controlbar .jw-icon-playlist:before{padding:0 .225em}</style></head>
+
+  <body class="posts posts-show" style="">
+    <div id="qz-wrapper">
+      <nav class="navbar navbar-default posts-show-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://fullstack.qzy.camp/dashboard">
+        <span class="logo"><img src="./1063_files/logo.png">全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="https://fullstack.qzy.camp/dashboard">学习中心</a></li>
+    <li><a href="https://fullstack.qzy.camp/meetup_groups?from=navbar">Meetup</a></li>
+    <li><a href="https://fullstack.qzy.camp/live">直播室</a></li>
+  <li><a href="https://fullstack.qzy.camp/competitions">编程比赛</a></li>
+  <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+  <a class="mail-icon" id="mail-icon-right" href="https://fullstack.qzy.camp/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="https://fullstack.qzy.camp/posts/1063#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;jiujiubad
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a target="_blank" class="tracking" href="https://fullstack.qzy.camp/users/555">个人主页</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a class="tracking" href="https://fullstack.qzy.camp/account/users">我的资料</a></li>
+      <li><a class="tracking" href="https://fullstack.qzy.camp/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      
+      <li><a rel="nofollow" data-method="delete" href="https://fullstack.qzy.camp/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+
+</ul>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu">
+  <div class="menu-content">
+    <div class="left-block hidden-xs">
+      <h1><a href="https://fullstack.qzy.camp/courses/44/syllabus">Rails 自动化测试</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="https://fullstack.qzy.camp/courses/44/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="https://fullstack.qzy.camp/courses/44">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a aria-current="page" href="https://fullstack.qzy.camp/courses/44/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="https://fullstack.qzy.camp/courses/44/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="https://fullstack.qzy.camp/courses/44/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="https://fullstack.qzy.camp/courses/44/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="fixed"></div>
+        <div class="flash-block">
+          
+        </div>
+        <div class="container course-block" id="show-content">
+          <div class="row">
+            <div class="post-visitor">
+  <div class="des-text">
+    <h4>所属章节：3. 停车计费程序 Part 2</h4>
+    <p></p>
+    <p></p><p>再学习2节就可以完成本章了</p><p></p>
+  </div>
+</div>
+<div class="view-count">
+  共 193 位第二期同学学习了本节
+</div>
+
+<div class="course-post">
+  <div class="post-title-h1 markdown">
+    <h1>
+      3-7 重构测试码
+    </h1>
+    <div id="favorite" class="favorite-icon-block">
+        <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.qzy.camp/favorites?post_id=1063">
+    <span class="fa fa-bookmark-o"></span>
+</a>
+    </div>
+  </div>
+
+  <div class="post group">
+    <div class="post-content markdown">
+      <p>除了实作代码，测试代码也可以重构。不同案例之间如果有重复用到的变量，可以抽取出来放在 <code>before</code> 区块：</p>
+
+<figure class="figure-code code"><figcaption><span>spec/models/parking_spec.rb
+</span></figcaption><div class="highlight"><pre>  describe ".calculate_amount" do
+<span class="gi">+   before do
++     # 把每个测试都会用到的 @time 提取出来，这个 before 区块会在这个 describe 内的所有测试前执行
++     @time = Time.new(2017,3, 27, 8, 0, 0) # 固定一个时间比 Time.now 更好，这样每次跑测试才能确保一样的结果
++   end
+</span>
+    context "guest" do
+
+<span class="gi">+     before do
++       # 把每个测试都会用到的 @parking 提取出来，这个 before 区块会在这个 context 内的所有测试前执行
++       @parking = Parking.new( :parking_type =&gt; "guest", :user =&gt; @user, :start_at =&gt; @time )
++     end
+</span>
+      it "30 mins should be ¥2" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new(:parking_type =&gt; "guest", :start_at =&gt; t, :end_at =&gt; t + 30.minutes)
+-       parking.calculate_amount
+-       expect(parking.amount).to eq(200)
+</span><span class="gi">+       @parking.end_at = @time + 30.minutes
++       @parking.calculate_amount
++       expect(@parking.amount).to eq(200)
+</span>      end
+
+      it "60 mins should be ¥2" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new(:parking_type =&gt; "guest", :start_at =&gt; t, :end_at =&gt; t + 60.minutes)
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(200)
+</span><span class="gi">+       @parking.end_at = @time + 60.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(200)
+</span>      end
+
+      it "61 mins should be ¥3" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new(:parking_type =&gt; "guest", :start_at =&gt; t, :end_at =&gt; t + 61.minutes)
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(300)
+</span><span class="gi">+       @parking.end_at = @time + 61.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(300)
+</span>      end
+
+      it "90 mins should be ¥3" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new(:parking_type =&gt; "guest", :start_at =&gt; t, :end_at =&gt; t + 90.minutes)
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(300)
+</span><span class="gi">+       @parking.end_at = @time + 90.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(300)
+</span>      end
+
+      it "120 mins should be ¥4" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new(:parking_type =&gt; "guest", :start_at =&gt; t, :end_at =&gt; t + 120.minutes)
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(400)
+</span><span class="gi">+       @parking.end_at = @time + 120.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(400)
+</span>      end
+    end
+
+    context "short-term" do
+
+<span class="gi">+     before do
++       # 把每个测试都会用到的 @user 和 @parking 提取出来
++       @user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
++       @parking = Parking.new( :parking_type =&gt; "short-term", :user =&gt; @user, :start_at =&gt; @time )
++     end
+</span>
+      it "30 mins should be ¥2" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new( :parking_type =&gt; "short-term",
+-                              :start_at =&gt; t, :end_at =&gt; t + 30.minutes )
+-       parking.user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
+-       parking.calculate_amount
+-       expect(parking.amount).to eq(200)
+</span><span class="gi">+       @parking.end_at = @time + 30.minutes
++       @parking.calculate_amount
++       expect(@parking.amount).to eq(200)
+</span>      end
+
+      it "60 mins should be ¥2" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new( :parking_type =&gt; "short-term",
+-                              :start_at =&gt; t, :end_at =&gt; t + 60.minutes )
+-       parking.user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(200)
+</span><span class="gi">+       @parking.end_at = @time + 60.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(200)
+</span>      end
+
+      it "61 mins should be ¥2.5" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new( :parking_type =&gt; "short-term",
+-                              :start_at =&gt; t, :end_at =&gt; t + 61.minutes )
+-       parking.user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(250)
+</span><span class="gi">+       @parking.end_at = @time + 61.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(250)
+</span>      end
+
+      it "90 mins should be ¥2.5" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new( :parking_type =&gt; "short-term",
+-                              :start_at =&gt; t, :end_at =&gt; t + 90.minutes )
+-       parking.user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(250)
+</span><span class="gi">+       @parking.end_at = @time + 90.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(250)
+</span>      end
+
+      it "120 mins should be ¥3" do
+<span class="gd">-       t = Time.now
+-       parking = Parking.new( :parking_type =&gt; "short-term",
+-                              :start_at =&gt; t, :end_at =&gt; t + 120.minutes )
+-       parking.user = User.create( :email =&gt; "test@example.com", :password =&gt; "123455678")
+-       parking.calculate_amount
+-       expect( parking.amount ).to eq(300)
+</span><span class="gi">+       @parking.end_at = @time + 120.minutes
++       @parking.calculate_amount
++       expect( @parking.amount ).to eq(300)
+</span>      end
+    end
+<span class="err">  end
+</span></pre></div>
+</figure>
+
+<p>但是，也不能做的太过分，例如把所有测试案例改写成循环:</p>
+
+<figure class="figure-code code"><figcaption><span>
+</span></figcaption><div class="highlight"><pre><span class="c1"># 不好的例子，请不要这么写
+</span>
+<span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">400</span><span class="p">]].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">data</span><span class="o">|</span>
+  <span class="n">it</span> <span class="s2">"</span><span class="si">#{</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> mins should be </span><span class="si">#{</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span> <span class="k">do</span>
+    <span class="vi">@parking</span><span class="p">.</span><span class="nf">end_at</span> <span class="o">=</span> <span class="vi">@time</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">minutes</span>
+    <span class="vi">@parking</span><span class="p">.</span><span class="nf">calculate_amount</span>
+    <span class="n">expect</span><span class="p">(</span><span class="vi">@parking</span><span class="p">.</span><span class="nf">amount</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p>这样就太过分了，因为测试码需要尽量好读，每一个测试案例尽量清楚，能一眼就看出来要测试什么。</p>
+
+<p>因此测试代码比实作还多行是正常的，请耐着性子看完，你会发现其实非常平铺直叙，就是 1. 建立测试资料 2.执行程序 3. 检查结果</p>
+
+    </div>
+  </div>
+
+  <div class="panic-panel">
+  <div class="row panic-panel-title">
+    <h4>对本页内容的感受如何？</h4>
+  </div>
+
+  <!-- new feeling's UI -->
+
+  <div class="panic-panel-body ui-selectable" id="selectable" data-post-id="1063">
+    <div class="item  ui-selectee" value="good">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😄</span><span class="text ui-selectee">So easy</span></div>
+    </div>
+    <div class="item  ui-selectee" value="normal">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😐</span><span class="text ui-selectee">还OK</span></div>
+    </div>
+    <div class="item  ui-selectee" value="bad">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😭</span><span class="text ui-selectee">崩溃了</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <span id="status-area" class="feeling-submit-tips"></span>
+  </div>
+
+</div>
+
+
+
+<!-- 吐槽Modal -->
+<div class="modal fade modal-draggable message-modal-style" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog ui-draggable">
+    <div class="modal-content">
+      <div class="modal-header ui-draggable-handle">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="complainModalLabel">您对本篇教程有什么想说的？</h4>
+      </div>
+      <form class="simple_form new_complain" id="new_complain" enctype="multipart/form-data" action="https://fullstack.qzy.camp/complains" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+        <div class="modal-body">
+          <div class="input-block">
+            <div class="form-group hidden complain_post_id"><input class="form-control hidden" value="1063" type="hidden" name="complain[post_id]" id="complain_post_id"></div>
+            <div class="form-group text optional complain_content"><label class="control-label text optional" for="complain_content">槽点/反馈(如果遇到课程技术问题，请直接到Slack向助教提问)</label><textarea class="form-control text optional" name="complain[content]" id="complain_content"></textarea></div>
+            <div class="file-upload-block complain-img">
+              <div class="form-group file optional complain_image"><label class="control-label file optional" for="complain_image">上传截图(可选)</label><input class="file optional" type="file" name="complain[image]" id="complain_image"></div>
+            </div>
+            <div class="message-modal-footer">
+              <div class="row">
+                <span id="complain-submit-status-srea" class="pull-left"></span>
+              </div>
+              <a href="https://fullstack.qzy.camp/posts/1063#" data-dismiss="modal">取消</a>
+              <input type="submit" name="commit" value="吐槽" class="btn btn-primary" id="complain-submit-btn" disabled="disabled" data-disable-with="吐槽">
+            </div>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+
+
+    <div class="group post-nav-btn">
+      
+<ul class="pager-custom">
+  <li class="previous"> <a id="previous" href="1062.html"><i class="fa fa-arrow-left"></i><span> 上一页</span></a></li>
+  <li class="keyboard-tips"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页</li>
+  <li class="next"><a href="1064.html">下一页<span class="fa fa-arrow-right" id="next"></span></a> </li>
+</ul>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+          </div>
+        </div>
+        <div id="backtotop" style="display: none;">
+          <a href="https://fullstack.qzy.camp/posts/1063#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script type="text/javascript" async="" src="./1063_files/akpenf00"></script><script src="./1063_files/course-a1f935bd63e40b416534022dac704214bc17b62c1dea6da648e918e8cb40e86f.js"></script>
+      <footer class="posts-show-footer" id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="introduce">
+                        <div class="img-block">
+                            <img src="./1063_files/logo.png">
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                全栈营以认知心理学为基石，打破过去传统刻板的编程学习、培训途径，旨在为未来培养出一批能够快速贯通编程理念并灵活实践的全栈工程师。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class="column-title">全栈营</li>
+                        <li><a href="https://fullstack.qzy.camp/pages/course_intro">课程介绍</a></li>
+                        <li><a href="https://fullstack.qzy.camp/pages/teachers">教学团队</a></li>
+                        <li><a href="https://fullstack.qzy.camp/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class="column-title">课程资源</li>
+                        <li><a href="https://fullstack.qzy.camp/dashboard">学习中心</a></li>
+                        <li><a href="http://docs.qzy.camp/">帮助文档</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class="column-title">帮助中心</li>
+                        <li><a href="https://fullstack.qzy.camp/pages/faq">常见问题</a></li>
+                        <li><a href="https://fullstack.qzy.camp/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 - 2019 全栈营
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>
+
+    <script src="./1063_files/cyberplayer-baca247386108140f146be31acc721b4cadef259ad2d63f5fc511a0f0e4df76d.js"></script>
+    
+  <script id="IntercomSettingsScriptTag">window.intercomSettings = {"email":"524945638@qq.com","created_at":1481034885,"user_id":555,"real_name":"谢育初","phone":"+8615017226170","membership":"vip_2st_member","github":"jiujiubad","wechat":"jiujiubad","wechat_nickname":"","logdown":"http://jiujiubad-blog.logdown.com/","user_admin_url":"https://fullstack.qzy.camp/admin/users/555","real_province":"广东省","real_city":"汕头市","real_area":"龙湖区","last_seen_post":1555601066,"app_id":"akpenf00"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/akpenf00';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+
+<iframe id="intercom-frame" style="display: none;" src="./1063_files/saved_resource.html"></iframe><div id="intercom-css-container"><style data-emotion="css-global"></style><style data-emotion="css"></style></div><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}</style><div class="intercom-app" aria-live="polite"><iframe allowfullscreen="" class="intercom-launcher-frame css-ufrdcd e1oluflk1" name="intercom-launcher-frame" title="Intercom Live Chat" data-intercom-frame="true" src="./1063_files/saved_resource(1).html"></iframe></div></div></body><div id="cyeBlackMaskLayer" style="background-color: rgb(19, 19, 19); position: fixed; width: 1980px; height: 1080px; z-index: -2147483648;"></div><div id="cye-workaround-body" style="position: absolute; left: 0px; top: 0px; z-index: -2147483646; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(249, 249, 250); height: 3647px; width: 1248px;"></div><div id="cye-workaround-body-image" style="position: absolute; left: 0px; top: 0px; z-index: -2147483645; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); height: 3647px; width: 1248px;"></div></html>
