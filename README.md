@@ -1,4 +1,4 @@
-## 全栈营 - growthschool
+## full_stack - growthschool
 growthschool-github：https://github.com/growthschool
 
 ## 用法
