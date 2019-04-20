@@ -242,9 +242,9 @@ var _hmt = _hmt || [];
 <p>这一招又叫做 Remote JavaScript (RJS)，把远端的 JavaScript 代码抓回来执行。</p>
 </blockquote>
 
-<p>做到这里，那一笔贴文虽然在数据库中已经被删除了，但因为是 Ajax 没有整页重新整理，所以那一笔贴文看起来还在网页上面，如果你重新整理画面的话，那一笔才会不见。</p>
+<p>做到这里，那一笔文章虽然在数据库中已经被删除了，但因为是 Ajax 没有整页重新整理，所以那一笔文章看起来还在网页上面，如果你重新整理画面的话，那一笔才会不见。</p>
 
-<p>我们希望的 UI 效果是立即移除画面上的那一笔贴文，这时候得用到上一章 jQuery 学到的 <code>$("xxxx").remove()</code> 用法：</p>
+<p>我们希望的 UI 效果是立即移除画面上的那一笔文章，这时候得用到上一章 jQuery 学到的 <code>$("xxxx").remove()</code> 用法：</p>
 
 <p>因为要在 controller 里面放 JavaScript 字串是很痛苦的，接下来改成用 erb 样板的方式来写 JavaScript：</p>
 
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/views/posts/index.html.erb</code>，针对每一笔贴文 div 补上一个 id 来做定位：</p>
+<p>编辑 <code>app/views/posts/index.html.erb</code>，针对每一笔文章 div 补上一个 id 来做定位：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre>-  &lt;div class="panel panel-default"&gt;

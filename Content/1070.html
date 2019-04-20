@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1070'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>4-5 测试登入登出流程 - Rails 自动化测试 | 新生大学全栈营</title>
+    <title>4-5 测试登录退出流程 - Rails 自动化测试 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      4-5 测试登入登出流程
+      4-5 测试登录退出流程
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1070">
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>测试用户登入登出的流程：</p>
+      <p>测试用户登录退出的流程：</p>
 
 <figure class="figure-code code"><figcaption><span>spec/features/auth_spec.rb
 </span></figcaption><div class="highlight"><pre>  <span class="n">feature</span> <span class="s2">"register and login"</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:feature</span> <span class="k">do</span>
@@ -220,11 +220,11 @@ var _hmt = _hmt || [];
 <span class="o">+</span>      <span class="n">fill_in</span> <span class="s2">"Password"</span><span class="p">,</span> <span class="ss">with: </span><span class="s2">"12345678"</span>
 <span class="o">+</span>    <span class="k">end</span>
 <span class="o">+</span>
-<span class="o">+</span>    <span class="n">click_button</span> <span class="s2">"Log in"</span>  <span class="c1"># 点击登入按钮
+<span class="o">+</span>    <span class="n">click_button</span> <span class="s2">"Log in"</span>  <span class="c1"># 点击登录按钮
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span><span class="p">(</span><span class="s2">"Signed in successfully"</span><span class="p">)</span>
 <span class="o">+</span>
-<span class="o">+</span>    <span class="n">click_link</span> <span class="s2">"登出"</span>  <span class="c1"># 点击主选单的登出超连结
+<span class="o">+</span>    <span class="n">click_link</span> <span class="s2">"退出"</span>  <span class="c1"># 点击主选单的退出超连结
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span><span class="p">(</span><span class="s2">"Signed out successfully"</span><span class="p">)</span>
 <span class="o">+</span>  <span class="k">end</span>
@@ -434,13 +434,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("4-5 测试登入登出流程 - Rails 自动化测试 | 新生大学全栈营")
+    mixpanel.track("4-5 测试登录退出流程 - Rails 自动化测试 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1070',
-  post_title: '4-5 测试登入登出流程',
+  post_title: '4-5 测试登录退出流程',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1070'
 };
 Intercom('trackEvent', 'watched_post', metadata);

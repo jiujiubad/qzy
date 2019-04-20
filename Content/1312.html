@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1312'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>2-11 显示和更新多少人按讚 - Ajax 交互式网页应用 | 新生大学全栈营</title>
+    <title>2-11 显示和更新多少人点赞 - Ajax 交互式网页应用 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      2-11 显示和更新多少人按讚
+      2-11 显示和更新多少人点赞
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1312">
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接下来我们想额外在画面上显示总共有多少人按讚，像这样：</p>
+      <p>接下来我们想额外在画面上显示总共有多少人点赞，像这样：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/Q7XdZvNSTFue1STvg67N_22.png" title=""></figure></p>
 
@@ -218,7 +218,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>修改 <code>app/views/posts/like.js.erb</code> 除了替换按讚的区块，也需要同时更新上述的 👍 数量：</p>
+<p>修改 <code>app/views/posts/like.js.erb</code> 除了替换点赞的区块，也需要同时更新上述的 👍 数量：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre>   str = "&lt;%=j render :partial =&gt; "like", :locals =&gt; { :post =&gt; @post } %&gt;";
@@ -431,13 +431,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("2-11 显示和更新多少人按讚 - Ajax 交互式网页应用 | 新生大学全栈营")
+    mixpanel.track("2-11 显示和更新多少人点赞 - Ajax 交互式网页应用 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1312',
-  post_title: '2-11 显示和更新多少人按讚',
+  post_title: '2-11 显示和更新多少人点赞',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1312'
 };
 Intercom('trackEvent', 'watched_post', metadata);

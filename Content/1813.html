@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>情境：在 View 中需要一些条件判断，来决定要不要显示某些内容</p>
 
-<p>重构前：需要检查有登入、该用户是该篇文章作者或是编辑员</p>
+<p>重构前：需要检查有登录、该用户是该篇文章作者或是编辑员</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>&lt;% if current_user &amp;&amp; (current_user == @post.user ||
                        @post.editors.include?(current_user) %&gt;

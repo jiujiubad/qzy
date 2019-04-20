@@ -133,7 +133,7 @@ zh_TW:
     generic_error: "抱歉，發生錯誤。"
     generic_error_with_reason: "發生錯誤: %{error}"
     sign_up: "註冊"
-    log_in: "登入"
+    log_in: "登录"
     age: "已建立"
     joined: "加入時間"
     admin_title: "管理員"
@@ -194,7 +194,7 @@ zh_TW:
         bookmark: "將此主題的第一篇文章加入書籤"
         unbookmark: "移除此主題所有書籤"
     bookmarks:
-      not_logged_in: "抱歉，你必須先登入才能將文章加上書籤"
+      not_logged_in: "抱歉，你必須先登录才能將文章加上書籤"
       created: "你已將此文章加上書籤"
       not_bookmarked: "你已閱讀過這篇文章，按此加上書籤"
       last_read: "這是你最後閱讀的文章，按此加上書籤"
@@ -307,7 +307,7 @@ zh_TW:
         regular:
           title: "一般"
     user_action_groups:
-      '1': "已按讚"
+      '1': "已点赞"
       '2': "已收到的讚"
       '3': "書籤"
       '4': "討論話題"
@@ -486,7 +486,7 @@ zh_TW:
       last_emailed: "最近寄出電子郵件"
       last_seen: "出現時間"
       created: "建立日期"
-      log_out: "登出"
+      log_out: "退出"
       location: "位置"
       card_badge:
         title: "用戶卡徽章"
@@ -554,7 +554,7 @@ zh_TW:
         same_as_email: "你的密碼與電郵相同。"
         ok: "你的密碼符合要求。"
         instructions: "至少 %{count} 個字。"
-      associated_accounts: "登入"
+      associated_accounts: "登录"
       ip_address:
         title: "最近的 IP 位址"
       registration_ip_address:
@@ -591,10 +591,10 @@ zh_TW:
         fixed: "載入頁面"
     close: "關閉"
     assets_changed_confirm: "此網站剛剛已更新，你要重整頁面以獲得最新版本嗎？"
-    logout: "已登出"
+    logout: "已退出"
     refresh: "重新整理"
     read_only_mode:
-      login_disabled: "在唯讀模式下不能登入"
+      login_disabled: "在唯讀模式下不能登录"
     learn_more: "進一步了解..."
     year: '年'
     year_desc: '最近 365 天內建立的討論話題'
@@ -646,27 +646,27 @@ zh_TW:
       complete_username_not_found: "沒有帳號使用 <b>%{username}</b> 這個用戶名稱"
       complete_email_not_found: "沒有帳號使用 <b>%{email}</b>"
     login:
-      title: "登入"
+      title: "登录"
       username: "用戶"
       password: "密碼"
       email_placeholder: "電子郵件地址或用戶名稱"
       caps_lock_warning: "大寫鎖定中"
       error: "未知的錯誤"
-      rate_limit: "嘗試重新登入前請先等待"
+      rate_limit: "嘗試重新登录前請先等待"
       blank_username_or_password: "請輸入你的電子郵件或者用戶名稱，以及密碼。"
       reset_password: '重設密碼'
-      logging_in: "登入中..."
+      logging_in: "登录中..."
       or: "或"
       authenticating: "正在認證..."
       awaiting_confirmation: "你的帳號尚未啟用，請使用忘記密碼連結重新發出啟用帳號的電子郵件。"
       awaiting_approval: "你的帳號尚未通過工作人員的審核，當審核通過時你會收到電子郵件通知。"
       requires_invite: "抱歉，只有受邀請者才能進入此論壇。"
-      not_activated: "你還無法登入，我們之前曾將啟用帳號的電子郵件寄至 <b>{{sentTo}}</b>，請從該電子郵件啟用你的帳號。"
-      not_allowed_from_ip_address: "你無法透過此 IP 登入。"
-      admin_not_allowed_from_ip_address: "你無法透過此 IP 登入成為管理員。"
+      not_activated: "你還無法登录，我們之前曾將啟用帳號的電子郵件寄至 <b>{{sentTo}}</b>，請從該電子郵件啟用你的帳號。"
+      not_allowed_from_ip_address: "你無法透過此 IP 登录。"
+      admin_not_allowed_from_ip_address: "你無法透過此 IP 登录成為管理員。"
       resend_activation_email: "按這裡重新寄出啟用帳號的電子郵件。"
       sent_activation_email_again: "我們已經將啟用帳號的電子郵件寄至 <b>{{currentEmail}}</b>，你可能幾分鐘後才會收到，如果一直沒收到，請檢查垃圾郵件資料夾。"
-      to_continue: "請登入"
+      to_continue: "請登录"
       google:
         title: "使用 Google 帳號"
         message: "使用 Google 帳號認証 (請確定你的網頁瀏覽器未阻擋彈出視窗)"
@@ -858,7 +858,7 @@ zh_TW:
       invalid_access:
         title: "私人討論話題"
         description: "抱歉，你沒有進入此討論話題的權限！"
-        login_required: "你需要登入才能看見這個討論話題。"
+        login_required: "你需要登录才能看見這個討論話題。"
       server_error:
         title: "討論話題載入失敗"
         description: "抱歉，可能因為連線有問題而無法載入此討論話題，請再試一次，如果這個問題持續發生，請讓我們知道。"
@@ -980,11 +980,11 @@ zh_TW:
         title: '邀請'
         username_placeholder: "用戶名稱"
         action: '送出邀請'
-        to_forum: "我們將向你的朋友發出一封電子郵件，他不必登入，他只要按電子郵件裡的連結就可以加入此論壇。"
+        to_forum: "我們將向你的朋友發出一封電子郵件，他不必登录，他只要按電子郵件裡的連結就可以加入此論壇。"
         to_topic_blank: "輸入你想邀請的用戶的用戶名稱或電子郵件地址到該討論主題"
         email_placeholder: '電子郵件地址'
         success_username: "我們已經邀請該使用者加入此主題討論"
-      login_reply: '登入以發表回應'
+      login_reply: '登录以發表回應'
       filters:
         n_posts:
           other: "{{count}} 則文章"
@@ -1047,7 +1047,7 @@ zh_TW:
         other: "{{count}} 個讚"
       has_likes_title:
         other: "{{count}} 個使用者對此文章讚好"
-      has_likes_title_only_you: "你已按讚"
+      has_likes_title_only_you: "你已点赞"
       errors:
         create: "抱歉，建立你的文章時發生錯誤，請再試一次。"
         edit: "抱歉，編輯你的文章時發生錯誤，請再試一次。"
@@ -1056,7 +1056,7 @@ zh_TW:
         upload_not_authorized: "抱歉，你想上傳的是不允許的檔案 (允許的副檔名: {{authorized_extensions}})."
         image_upload_not_allowed_for_new_user: "抱歉，新用戶不可上傳圖片。"
         attachment_upload_not_allowed_for_new_user: "抱歉，新用戶不可上傳附件。"
-        attachment_download_requires_login: "抱歉，您必須登入以下載附件。"
+        attachment_download_requires_login: "抱歉，您必須登录以下載附件。"
       abandon:
         confirm: "你確定要捨棄你的文章嗎?"
         no_value: "否"
@@ -1067,11 +1067,11 @@ zh_TW:
         save: '儲存選項'
       controls:
         reply: "開始編寫對此文章的回覆"
-        like: "給此文章按讚"
-        has_liked: "你已對此文章按讚"
+        like: "給此文章点赞"
+        has_liked: "你已對此文章点赞"
         undo_like: "撤回讚"
         edit: "編輯此文章"
-        edit_anonymous: "抱歉，您必須登入以修改文章。"
+        edit_anonymous: "抱歉，您必須登录以修改文章。"
         flag: "投訴此文章或傳送私人通知"
         delete: "刪除此文章"
         undelete: "復原此文章"
@@ -1113,7 +1113,7 @@ zh_TW:
           notify_moderators: "你已通知版主此文章"
           notify_user: "您已送出訊息給這位用戶"
           bookmark: "你已將此文章加上書籤"
-          like: "你已在此文章按讚"
+          like: "你已在此文章点赞"
           vote: "你已在此文章投票支持"
         by_you_and_others:
           off_topic:
@@ -1129,7 +1129,7 @@ zh_TW:
           bookmark:
             other: "你與 {{count}} 個人將此文章加上書籤"
           like:
-            other: "你與其他 {{count}} 人對此按讚"
+            other: "你與其他 {{count}} 人對此点赞"
           vote:
             other: "你與其他 {{count}} 人已投票給此文章"
         by_others:
@@ -1146,7 +1146,7 @@ zh_TW:
           bookmark:
             other: "{{count}} 個人將此文章加上書籤"
           like:
-            other: "{{count}} 人對此按讚"
+            other: "{{count}} 人對此点赞"
           vote:
             other: "{{count}} 人已投票給此文章"
       delete:
@@ -1679,7 +1679,7 @@ zh_TW:
             description: '用來表示一項動作已順利完成'
           love:
             name: '愛'
-            description: "按讚按鈕的顏色"
+            description: "点赞按鈕的顏色"
       email:
         title: "電子郵件"
         settings: "設定"
@@ -1812,7 +1812,7 @@ zh_TW:
           title: "錯誤紀錄"
       impersonate:
         title: "檢視角度"
-        help: "使用此工具以用戶的檢視角度進行除錯。完成後將需登出。"
+        help: "使用此工具以用戶的檢視角度進行除錯。完成後將需退出。"
         not_found: "找不到那位使用者。"
       users:
         title: '用戶'
@@ -1860,7 +1860,7 @@ zh_TW:
         unsuspend_failed: "恢復此用戶的權限時發生錯誤 {{error}}"
         suspend_duration: "你想將此用戶停權多久?"
         suspend_duration_units: "(天)"
-        suspend_reason_label: "你為什麼要將此用戶停權？你輸入的原因將在此用戶登入時顯示，及顯示在此用戶的基本資料頁面，且<b>任何人都可以看見</b>，請簡短說明原因。"
+        suspend_reason_label: "你為什麼要將此用戶停權？你輸入的原因將在此用戶登录時顯示，及顯示在此用戶的基本資料頁面，且<b>任何人都可以看見</b>，請簡短說明原因。"
         suspend_reason: "原因"
         suspended_by: "將其停權者"
         delete_all_posts: "刪除所有文章"
@@ -1878,8 +1878,8 @@ zh_TW:
         show_public_profile: "顯示公開的基本資料"
         impersonate: '檢視角度'
         ip_lookup: "IP 反查"
-        log_out: "登出"
-        logged_out: "用戶已從所有裝置中登出"
+        log_out: "退出"
+        logged_out: "用戶已從所有裝置中退出"
         revoke_admin: '撤銷管理員權限'
         grant_admin: '授予管理員權限'
         revoke_moderation: '撤銷板主權限'
@@ -1932,7 +1932,7 @@ zh_TW:
         unblock_failed: '解除此用戶的封鎖狀態時發生錯誤。'
         block_failed: '封鎖此用戶時發生錯誤。'
         deactivate_explanation: "帳號的啟用狀態被取消的用戶必需重新啟用帳號。"
-        suspended_explanation: "被停權的用戶無法登入。"
+        suspended_explanation: "被停權的用戶無法登录。"
         block_explanation: "被封鎖的用戶無法發表文章或建立討論話題。"
         trust_level_change_failed: "修改用戶的信任等級時發生錯誤。"
         suspend_modal_title: "將用戶停權"
@@ -1967,7 +1967,7 @@ zh_TW:
           locked_will_not_be_promoted: "信任等級鎖定。將不會再被升級。"
           locked_will_not_be_demoted: "信任等級鎖定。將不會再被降級。"
         sso:
-          title: "單一登入"
+          title: "單一登录"
           external_id: "外部 ID"
           external_username: "用戶名稱"
           external_name: "名稱"
@@ -2038,7 +2038,7 @@ zh_TW:
           legal: "法律"
           uncategorized: '其他'
           backups: "備份"
-          login: "登入"
+          login: "登录"
           plugins: "延伸套件"
           user_preferences: "偏好設定"
       badges:

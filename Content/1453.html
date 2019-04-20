@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
 
 <p>根据<a href="https://zh.wikipedia.org/zh-cn/CAP%E5%AE%9A%E7%90%86">CAP 定理</a>告诉我们: RDBMS 在多服务器(P)架构下为了维持 C 特性，只能牺牲 A、NoSQL 让你有 tradeoff 的空间，牺牲 C 特性以换得 A、但这不是 C 和 A 二元的选择，而是 C 和 delay 延迟时间的取舍，你愿意容忍多少延迟时间才算作不 Available。</p>
 
-<p>因此这类型的 NoSQL 不讲 ACID，而是讲 BASE 特性 (Basically Available, Soft state, Eventual consistency)，重点是 Eventual consistency。想像一个场景: Facebook 和 Twitter 贴文，当你贴文成功的时候，并不是当下马上其他人就可以看到你的贴文，这中间其实是有延迟时间的。这个延迟对于关系型数据库来说是不可以接受的，但是对于这种社交应用来说，却没有关系。牺牲 Consistence 一致性，就可以换到更多的写入反应效能，这就是这类型的 NoSQL 的设计目的。</p>
+<p>因此这类型的 NoSQL 不讲 ACID，而是讲 BASE 特性 (Basically Available, Soft state, Eventual consistency)，重点是 Eventual consistency。想像一个场景: Facebook 和 Twitter 文章，当你文章成功的时候，并不是当下马上其他人就可以看到你的文章，这中间其实是有延迟时间的。这个延迟对于关系型数据库来说是不可以接受的，但是对于这种社交应用来说，却没有关系。牺牲 Consistence 一致性，就可以换到更多的写入反应效能，这就是这类型的 NoSQL 的设计目的。</p>
 
 <ul>
 <li>

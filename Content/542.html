@@ -278,7 +278,7 @@ git commit -m "add bootstrap to project"
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"bs-example-navbar-collapse-1"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav navbar-right"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;li&gt;</span>
-                    <span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"登入"</span><span class="p">,</span> <span class="s1">'#'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+                    <span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"登录"</span><span class="p">,</span> <span class="s1">'#'</span><span class="p">)</span> <span class="cp">%&gt;</span>
                 <span class="nt">&lt;/li&gt;</span>
             <span class="nt">&lt;/ul&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
@@ -463,8 +463,8 @@ git commit -m "add bootstrap flash function"
 </figure>
 
 <p><br></p>
-<h2>Part 4 : 安装 Devise</h2><h3>Step 1: 安装登入系统</h3>
-<p>Devise 是 Rails 里热门的一个 gem，专门用来快速实作“登入系统”。在这一节我们会用 devise 实作登入功能。</p>
+<h2>Part 4 : 安装 Devise</h2><h3>Step 1: 安装登录系统</h3>
+<p>Devise 是 Rails 里热门的一个 gem，专门用来快速实作“登录系统”。在这一节我们会用 devise 实作登录功能。</p>
 
 <p>Gemfile 新增一行 <code>gem 'devise'</code></p>
 
@@ -493,10 +493,10 @@ rake db:migrate
 <p><br></p>
 <h3>Step 3: 修改 app/views/common/_navbar.html.erb</h3>
 <figure class="figure-code code"><figcaption><span>app/views/common/_navbar.html.erb
-</span></figcaption><div class="highlight"><pre><span class="gd">-                &lt;li&gt; &lt;%= link_to("登入", '#') %&gt;   &lt;/li&gt;
+</span></figcaption><div class="highlight"><pre><span class="gd">-                &lt;li&gt; &lt;%= link_to("登录", '#') %&gt;   &lt;/li&gt;
 </span><span class="gi">+                &lt;% if !current_user %&gt;
 +                  &lt;li&gt;&lt;%= link_to("注册", new_user_registration_path) %&gt; &lt;/li&gt;
-+                  &lt;li&gt;&lt;%= link_to("登入", new_user_session_path) %&gt;&lt;/li&gt;
++                  &lt;li&gt;&lt;%= link_to("登录", new_user_session_path) %&gt;&lt;/li&gt;
 +                &lt;% else %&gt;
 +                  &lt;li class="dropdown"&gt;
 +                    &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;
@@ -504,7 +504,7 @@ rake db:migrate
 +                        &lt;b class="caret"&gt;&lt;/b&gt;
 +                    &lt;/a&gt;
 +                    &lt;ul class="dropdown-menu"&gt;
-+                        &lt;li&gt; &lt;%= link_to("登出", destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
++                        &lt;li&gt; &lt;%= link_to("退出", destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
 +                    &lt;/ul&gt;
 +                  &lt;/li&gt;
 </span><span class="err">+                &lt;% end %&gt;

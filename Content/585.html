@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <h2>目标：</h2>
 <ul>
-<li>点击注册/登入链接后，弹出窗口</li>
+<li>点击注册/登录链接后，弹出窗口</li>
 </ul>
 <h2>步骤：</h2><h3>step1 修改 application.js 文件，加入 modal 的 js 效果</h3>
 <figure class="figure-code code"><figcaption><span>app/assets/javascripts/application.js
@@ -215,13 +215,13 @@ var _hmt = _hmt || [];
 <span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span>
 </pre></div>
 </figure>
-<h3>step2 修改 navbar 文件，加入弹窗页面代码，将注册/登入链接与弹窗连接起来</h3>
+<h3>step2 修改 navbar 文件，加入弹窗页面代码，将注册/登录链接与弹窗连接起来</h3>
 <figure class="figure-code code"><figcaption><span>app/views/common/_navbar.html.erb
 </span></figcaption><div class="highlight"><pre>略...
 +<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">"#signup-modal"</span><span class="nt">&gt;</span>注册<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">"#login-modal"</span><span class="nt">&gt;</span>登入<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
++<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">"#login-modal"</span><span class="nt">&gt;</span>登录<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 -<span class="nt">&lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"注册"</span><span class="p">,</span> <span class="n">new_user_registration_path</span><span class="p">)</span> <span class="cp">%&gt;</span> <span class="nt">&lt;/li&gt;</span>
--<span class="nt">&lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"登入"</span><span class="p">,</span> <span class="n">new_user_session_path</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="nt">&lt;/li&gt;</span>
+-<span class="nt">&lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"登录"</span><span class="p">,</span> <span class="n">new_user_session_path</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="nt">&lt;/li&gt;</span>
 略...
 <span class="c">&lt;!-- 以下代码添加在最后 --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade"</span> <span class="na">id=</span><span class="s">"login-modal"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"myModalLabel"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span> <span class="na">style=</span><span class="s">"display: none;"</span><span class="nt">&gt;</span>

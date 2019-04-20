@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>我们在「百宝箱 13. Rich Editor 编辑器」有介绍过 <a href="https://zh.wikipedia.org/zh-cn/%E8%B7%A8%E7%BD%91%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A0%81">XSS</a> 跨站脚本攻击：如果用户可以自己张贴内容到网站上，并且网站会显示出来的话，就有可能有 XSS 漏洞。恶意用户会张贴 JavaScript 代码上来，那么这么当其他用户浏览到这一页时，浏览器就会盲目的执行 JavaScript 代码。</p>
 
-<p>让我们攻击看看，请用 <code>hacker@example.org</code> 登入，然后针对一则活动留言，贴上以下 JavaScript 代码：</p>
+<p>让我们攻击看看，请用 <code>hacker@example.org</code> 登录，然后针对一则活动留言，贴上以下 JavaScript 代码：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>&lt;script&gt;
 $.ajax({
@@ -224,7 +224,7 @@ $.ajax({
 
 <p>留言完之后，接下来任何人看到这一页，就会执行这段 Ajax 代码，也跟着留言一次。请多重新整理页面几次看看。</p>
 
-<p>你也可以测试看看其他人浏览会怎么样？你可以用另一个浏览器(例如 Safari)，或是用 Chrome 的 Incognito Windows(无痕模式，这会开启一个干净没有 Cookie 的新视窗)，然后改用 <code>admin@example.org</code> 登入，然后浏览刚刚那一个活动...</p>
+<p>你也可以测试看看其他人浏览会怎么样？你可以用另一个浏览器(例如 Safari)，或是用 Chrome 的 Incognito Windows(无痕模式，这会开启一个干净没有 Cookie 的新视窗)，然后改用 <code>admin@example.org</code> 登录，然后浏览刚刚那一个活动...</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/pVhhnVfpQhORali1KhpE_2-chrome.png" title=""></figure></p>
 

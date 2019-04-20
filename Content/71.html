@@ -359,7 +359,7 @@ var _hmt = _hmt || [];
       </div>
         <div class="panel-body">
           <ul>
-<li>在这一阶段的细节，你不太需要知道他是怎么运作？（事实上也很复杂）<br>* 你只要知道 <code>before_action :authenticate_user!</code> 可以帮你做出“限制使用者必须登入”的功能。</li>
+<li>在这一阶段的细节，你不太需要知道他是怎么运作？（事实上也很复杂）<br>* 你只要知道 <code>before_action :authenticate_user!</code> 可以帮你做出“限制使用者必须登录”的功能。</li>
 </ul>
 
         </div>
@@ -373,7 +373,7 @@ var _hmt = _hmt || [];
         </h5>
       </div>
         <div class="panel-body">
-          <p><br><code>before_action</code> 后面加的往往是一个 controller 内的 method，在这里 <code>:authenticate_user!</code> 是 devise 提供的内建功能。<br><br>* <code>before_action :authenticate_user! , only: [:new]</code>，表示“只有 new 需要登入”<br>* <code>before_action :authenticate_user!</code> 后面不加任何东西，表示这个 controller 下的所有 action 都要登入。<br>* 你可以把 <code>before_action</code> 想像成“先过我这一关”的“拦截器”</p>
+          <p><br><code>before_action</code> 后面加的往往是一个 controller 内的 method，在这里 <code>:authenticate_user!</code> 是 devise 提供的内建功能。<br><br>* <code>before_action :authenticate_user! , only: [:new]</code>，表示“只有 new 需要登录”<br>* <code>before_action :authenticate_user!</code> 后面不加任何东西，表示这个 controller 下的所有 action 都要登录。<br>* 你可以把 <code>before_action</code> 想像成“先过我这一关”的“拦截器”</p>
 
         </div>
     </div>

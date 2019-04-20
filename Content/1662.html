@@ -208,7 +208,7 @@ var _hmt = _hmt || [];
       <p>要部署新代码上服务器，记得需要先 <code>git push</code> 到 Github 上，再执行 <code>cap production deploy</code></p>
 <h3>如何检视 log</h3>
 <ul>
-<li>用 deploy 身分登入</li>
+<li>用 deploy 身分登录</li>
 <li>
 <code>cd ~/rails-recipes/current</code>  进到 Rails 目录下</li>
 <li>
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 <p>如果只是要重开 Rails，可以不重开 Nginx。在你的 Rails 目录下(例如 <code>/home/deploy/rails-recipes/current</code> 这个目录)执行 <code>touch tmp/restart.txt</code> 即可，这样 Passenger 就会知道要重新加载 Rails，而不需要重开 Nginx。</p>
 <h3>在远端如何进 rails console?</h3>
 <ul>
-<li>用 deploy 身分登入，例如 ssh deploy@your_server_ip 或用 root 登入再切换身分 sudo su deploy</li>
+<li>用 deploy 身分登录，例如 ssh deploy@your_server_ip 或用 root 登录再切换身分 sudo su deploy</li>
 <li><code>cd ~/your_project/current</code></li>
 <li>执行 <code>bundle exec rails c production</code>
 </li>
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
 <p>例如想在服务器上执行 <code>rake db:seed</code>，可以这样做：</p>
 
 <ul>
-<li>用 deploy 身分登入，例如 ssh deploy@your_server_ip 或用 root 登入再切换身分 sudo su deploy</li>
+<li>用 deploy 身分登录，例如 ssh deploy@your_server_ip 或用 root 登录再切换身分 sudo su deploy</li>
 <li><code>cd ~/your_project/current</code></li>
 <li>执行 <code>RAILS_ENV=production bundle exec rake db:seed</code>
 </li>

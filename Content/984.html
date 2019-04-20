@@ -270,7 +270,7 @@ index、create是复数，对群集操作</p></li>
 <code>ProductInfo belongs_to Product</code><br>
 ProductInfo 里的 column 分别有 product_id, size(尺寸), price(价钱), stock(库存)，这样就可以让同一个产品有不同的规格了</p></li>
 <li>
-<p>N+1就是指说，回圈中查询N 笔资料，加上一开始的第一笔，经常发生在一对多关联上，因为要查询User has many Skill 的情况下，容易在view 中一笔一笔去资料库找相关的post ，而这每一笔去资料库的动作，就会有以下的查询，然后造成N+1 query 的问题。</p>
+<p>N+1就是指说，循环中查询N 笔资料，加上一开始的第一笔，经常发生在一对多关联上，因为要查询User has many Skill 的情况下，容易在view 中一笔一笔去资料库找相关的post ，而这每一笔去资料库的动作，就会有以下的查询，然后造成N+1 query 的问题。</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>Skill Load (0.2ms) SELECT `skills`.* FROM `skills` WHERE `skills`.`user_id` = 1
 Skill Load (0.2ms) SELECT `skills`.* FROM `skills` WHERE `skills`.`user_id` = 2

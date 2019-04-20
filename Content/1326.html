@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 <li>在 Layout 的 head 中有输出一段 <code>&lt;%= csrf_meta_tag %&gt;</code> 的作用也是搭配给 UJS 使用的，这会让 jQuery 的 $ajax 送出时附带 CSRF 表单安全验证码，我们会在之后的网络安全一章讨论到什么是CSRF。</li>
 </ul>
 
-<p>总之，如果 jquery-ujs 没有顺利加载的话，不只 <code>:remote =&gt; true</code> 不能用，所有非 GET 方法的超连结会坏掉，会变成 GET 出去。另外还有 Devise 的登出按钮因为用了 <code>:method =&gt; :delete</code> 也会无法作用。</p>
+<p>总之，如果 jquery-ujs 没有顺利加载的话，不只 <code>:remote =&gt; true</code> 不能用，所有非 GET 方法的超连结会坏掉，会变成 GET 出去。另外还有 Devise 的退出按钮因为用了 <code>:method =&gt; :delete</code> 也会无法作用。</p>
 
     </div>
   </div>

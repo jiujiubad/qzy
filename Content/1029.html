@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
 </span></figcaption><div class="highlight"><pre>
  class Api::V1::ReservationsController &lt; ApiController
 
-<span class="gi">+  before_action :authenticate_user!, :only =&gt; [:index] # 这会检查 index +这个操作一定要登入
+<span class="gi">+  before_action :authenticate_user!, :only =&gt; [:index] # 这会检查 index +这个操作一定要登录
 +
 +  def index
 +    @reservations = current_user.reservations
@@ -248,7 +248,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>用 Postman 进行测试，首先新增订票，记得多传 <code>auth_token</code> 参数表示这是登入的用户：</p>
+<p>用 Postman 进行测试，首先新增订票，记得多传 <code>auth_token</code> 参数表示这是登录的用户：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/4U7vFWL2T9e15V4QfMEj_postman-api-token.png" title=""></figure></p>
 

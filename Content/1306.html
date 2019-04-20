@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1306'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>2-5 新增和删除贴文 - Ajax 交互式网页应用 | 新生大学全栈营</title>
+    <title>2-5 新增和删除文章 - Ajax 交互式网页应用 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      2-5 新增和删除贴文
+      2-5 新增和删除文章
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1306">
@@ -223,7 +223,7 @@ var _hmt = _hmt || [];
 +   end
 +
 +   def destroy
-+     @post = current_user.posts.find(params[:id]) # 只能删除自己的贴文
++     @post = current_user.posts.find(params[:id]) # 只能删除自己的文章
 +     @post.destroy
 +
 +     redirect_to posts_path
@@ -243,7 +243,7 @@ var _hmt = _hmt || [];
 <p>编辑 <code>app/views/posts/index.html.erb</code></p>
 
 <figure class="figure-code code"><figcaption><span>
-</span></figcaption><div class="highlight"><pre>+ &lt;%= form_for Post.new do |f| %&gt;
+</span></figcaption><div class="highlight"><pre>+ &lt;%= form_with model: Post.new do |f| %&gt;
 +   &lt;div class="form-group"&gt;
 +     &lt;%= f.text_area :content, :class =&gt; "form-control" %&gt;
 +   &lt;/div&gt;
@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>测试看看新增贴文和删除，要先注册登入才能贴文喔：</p>
+<p>测试看看新增文章和删除，要先注册登录才能新增文章喔：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/0a4AgJKBRdiduR13OMku_17-new.png" title=""></figure></p>
 
@@ -475,13 +475,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("2-5 新增和删除贴文 - Ajax 交互式网页应用 | 新生大学全栈营")
+    mixpanel.track("2-5 新增和删除文章 - Ajax 交互式网页应用 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1306',
-  post_title: '2-5 新增和删除贴文',
+  post_title: '2-5 新增和删除文章',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1306'
 };
 Intercom('trackEvent', 'watched_post', metadata);

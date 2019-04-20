@@ -303,13 +303,13 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>在本机执行 <code>cap production deploy:check</code>，这会自动登入远端服务器建立一些 Capistrano 需要的架构目录(稍后会解说)。</p>
+<p>在本机执行 <code>cap production deploy:check</code>，这会自动登录远端服务器建立一些 Capistrano 需要的架构目录(稍后会解说)。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YYvMTAgQDGGhVZgYWL4E_30.png" title=""></figure></p>
 
 <p>你会看到一个 ERROR 说服务器上缺少一些档案，让我们进远端服务器上新增这些档案：</p>
 <h3>远端设定 database.yml 和 secrets.yml</h3>
-<p>请用 deploy 身份登入 <code>ssh deploy@47.92.82.116</code>，或是切换到 deploy 身份 <code>sudo su deploy</code>：</p>
+<p>请用 deploy 身份登录 <code>ssh deploy@47.92.82.116</code>，或是切换到 deploy 身份 <code>sudo su deploy</code>：</p>
 
 <p>在远端新增 <code>/home/deploy/rails-recipes/shared/config/database.yml</code> 这个档案，内容是：</p>
 
@@ -358,7 +358,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/2vZSNQYhS7mtOBXkOzgi_32.png" title=""></figure></p>
 <h3>执行部署</h3>
-<p>本机执行部署 <code>cap production deploy</code>，这个指令会登入远端服务器，把 Github 上的代码抓下来，然后自动执行 bundle 安装套件、跑数据库 migration 和编译 assets 编译等等步骤：</p>
+<p>本机执行部署 <code>cap production deploy</code>，这个指令会登录远端服务器，把 Github 上的代码抓下来，然后自动执行 bundle 安装套件、跑数据库 migration 和编译 assets 编译等等步骤：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/rXVdFE8JSESNwoU2o7qP_29.png" title=""></figure></p>
 

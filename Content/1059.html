@@ -212,7 +212,7 @@ var _hmt = _hmt || [];
 <span class="gd">-    @parking = Parking.new( :parking_type =&gt; "guest", :start_at =&gt; Time.now )
 </span><span class="gi">+    @parking = Parking.new( :start_at =&gt; Time.now )
 +
-+    # 有登入的话，根据用户选的费率。没有登入的话，指定是 guest 费率
++    # 有登录的话，根据用户选的费率。没有登录的话，指定是 guest 费率
 +    if current_user
 +      @parking.parking_type = params[:parking][:parking_type]
 +      @parking.user = current_user
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>实际注册和登入之后，就可以操作看看了：</p>
+<p>实际注册和登录之后，就可以操作看看了：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/Nb2t2VeeSrypTuQMbapZ_3-1.png" title=""></figure></p>
 

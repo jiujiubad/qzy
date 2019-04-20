@@ -222,7 +222,7 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h3>Step 2. 建立 account/posts_controller.rb 下的 index action</h3>
-<p>加入： before_action :authenticate_user!，限制必须要得登入使用者，才能看。</p>
+<p>加入： before_action :authenticate_user!，限制必须要得登录使用者，才能看。</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/account/posts_controller.rb
 </span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Account</span><span class="o">::</span><span class="no">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>

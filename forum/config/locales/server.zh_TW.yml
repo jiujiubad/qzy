@@ -22,7 +22,7 @@ zh_TW:
   posts: "文章"
   loading: "載入中"
   powered_by_html: 'Powered by <a href="http://www.discourse.org">Discourse</a>, 請啟用 Javascript 以獲得最佳瀏覽效果'
-  log_in: "登入"
+  log_in: "登录"
   disable_remote_images_download_reason: "磁盤空間不足，圖像下載已被禁用。"
   anonymous: "匿名"
   errors: &errors
@@ -77,7 +77,7 @@ zh_TW:
     operation_already_running: "%{operation} 操作正在運行。 目前無法執行新的 %{operation} 操作。"
     backup_file_should_be_tar_gz: "備份檔案應使用 .tar.gz 歸檔"
     not_enough_space_on_disk: "沒有足夠的磁碟空間可供備份檔案上傳"
-  not_logged_in: "你需要先登入才能那樣做。"
+  not_logged_in: "你需要先登录才能那樣做。"
   not_found: "所請求的URL或資源無法找到。"
   invalid_access: "你不允許查看所請求的資源。"
   read_only_mode_enabled: "這個網站目前在唯讀模式，無法進行互動功能。"
@@ -168,7 +168,7 @@ zh_TW:
               same_as_username: "與你的使用者名稱相同。請使用其他更安全的密碼。"
               same_as_email: "與你的電郵相同。請使用其他更安全的密碼。"
             ip_address:
-              signup_not_allowed: "不能使用這個帳戶進行登入"
+              signup_not_allowed: "不能使用這個帳戶進行登录"
         color_scheme_color:
           attributes:
             hex:
@@ -268,7 +268,7 @@ zh_TW:
     update: '更新密碼'
     save: '設定密碼'
     title: '重設密碼'
-    success: "密碼修改成功，現在已為你登入。"
+    success: "密碼修改成功，現在已為你登录。"
     success_unapproved: "你的密碼已成功修改。"
     continue: "繼續連接至 %{site_name}"
   change_email:
@@ -310,8 +310,8 @@ zh_TW:
       long_form: '此文章已加上書籤'
     like:
       title: '讚'
-      description: '給此文章按讚'
-      long_form: '已按讚'
+      description: '給此文章点赞'
+      long_form: '已点赞'
     vote:
       title: '投票'
       description: '投票給此文章'
@@ -422,7 +422,7 @@ zh_TW:
       title: "匿名"
       xaxis: "天"
     page_view_logged_in_reqs:
-      title: "已登入"
+      title: "已登录"
       xaxis: "天"
     page_view_crawler_reqs:
       title: "網絡爬蟲"
@@ -470,10 +470,10 @@ zh_TW:
     gc_warning: '伺服器正在使用的 ruby 可能僅啟用了預設的 垃圾回收設定 (garbage collection), 這個設定無法提供最佳效能。請瀏覽此效能設定的資訊: <a href="http://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126">Tuning Ruby and Rails for Discourse</a>。'
     sidekiq_warning: 'Sidekiq 未有執行。很多程序, 如發送電子郵件, 需要 sidekiq 非同步 (asynchronous) 執行的。請確保至少運行一個 sidekiq 程序。<a href="https://github.com/mperham/sidekiq">瞭解 Sidekiq</a>。'
     memory_warning: '伺服器記憶體少於 1GB，建議配置至少 1GB 記憶體'
-    google_oauth2_config_warning: '伺服器設定為允許使用 Google Oauth2 註冊以及登入 (enable_google_oauth2_logins)，但未設定客戶端 id 和客戶端 secret 值。請至<a href="/admin/site_settings">網站設定</a>裡更改設定。<a href="https://meta.discourse.org/t/configuring-google-login-for-discourse/15858" target="_blank">參閱教學指南</a>。'
-    facebook_config_warning: '伺服器允許使用 Facebook 帳號登入 (enable_facebook_logins), 但未有設定 app id 及 app secret values 。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide#enable-facebook-logins" target="_blank">設定教學指南</a>。'
-    twitter_config_warning: '伺服器允許使用 Twitter 帳號登入 (enable_twitter_logins), 但未有設定 key 和 secret values 。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide#enable-twitter-logins" target="_blank">設定教學指南</a>。'
-    github_config_warning: '伺服器允許使用 GitHub 帳號登入  (enable_github_logins), 但未有設定 client id 和 secret values。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide" target="_blank">設定教學指南</a>。'
+    google_oauth2_config_warning: '伺服器設定為允許使用 Google Oauth2 註冊以及登录 (enable_google_oauth2_logins)，但未設定客戶端 id 和客戶端 secret 值。請至<a href="/admin/site_settings">網站設定</a>裡更改設定。<a href="https://meta.discourse.org/t/configuring-google-login-for-discourse/15858" target="_blank">參閱教學指南</a>。'
+    facebook_config_warning: '伺服器允許使用 Facebook 帳號登录 (enable_facebook_logins), 但未有設定 app id 及 app secret values 。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide#enable-facebook-logins" target="_blank">設定教學指南</a>。'
+    twitter_config_warning: '伺服器允許使用 Twitter 帳號登录 (enable_twitter_logins), 但未有設定 key 和 secret values 。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide#enable-twitter-logins" target="_blank">設定教學指南</a>。'
+    github_config_warning: '伺服器允許使用 GitHub 帳號登录  (enable_github_logins), 但未有設定 client id 和 secret values。 請在 <a href="/admin/site_settings">網站設定</a> 裡更改設定。 <a href="https://github.com/discourse/discourse/wiki/The-Discourse-Admin-Quick-Start-Guide" target="_blank">設定教學指南</a>。'
     s3_config_warning: '伺服器被設定為上傳文件到 s3，但是至少有一個值未被設定： s3_access_key_id, s3_secret_access_key 或 s3_upload_bucket。到<a href="/admin/site_settings">設定</a>更新此設定。<a href="http://meta.discourse.org/t/how-to-set-up-image-uploads-to-s3/7229" target="_blank">參考如何設置圖片上傳至 S3</a>。'
     s3_backup_config_warning: '伺服器被設置為上傳備份到 s3，但是至少有一個值未被設定： s3_access_key_id, s3_secret_access_key 或 s3_upload_bucket。到<a href="/admin/site_settings">設定</a>更新此設定。<a href="http://meta.discourse.org/t/how-to-set-up-image-uploads-to-s3/7229" target="_blank">參考如何設置圖片上傳至 S3</a>。'
     image_magick_warning: '伺服器被設置為給大圖片創建縮略圖，但是 ImageMagick 沒有被安裝。使用你喜愛的包裝管理器安裝 ImageMagick 或<a href="http://www.imagemagick.org/script/binary-releases.php" target="_blank">下載最新版</a>。'
@@ -555,7 +555,7 @@ zh_TW:
     email_token_grace_period_hours: "\"忘記密碼\" / \"重啟帳號\" 的 token 在使用後仍舊有效的小時數 (n)"
     enable_badges: "啟用勳章系統"
     allow_index_in_robots_txt: "在 robots.txt 中記錄這個網站允許被搜尋引擎索引的部分"
-    log_out_strict: "登出時，登出用戶所有設備上的所有時段"
+    log_out_strict: "退出時，退出用戶所有設備上的所有時段"
     version_checks: "訪問 Discourse Hub 來檢查版本更新，並在管理面板 /admin 顯示新版本訊息"
     new_version_emails: "當新版本發佈時，將會發送一封新的 EMail 至 contact_email 設定的位址"
     port: "使用此 HTTP 埠而不是80埠。留空為不使用，主要用於開發調試"
@@ -563,7 +563,7 @@ zh_TW:
     invite_expiry_days: "多少天以內用戶的邀請碼是有效的"
     invite_passthrough_hours: "邀請號碼如已被使用，用戶仍可使用多少小時"
     invite_only: "已經禁止開放註冊，新的使用者必須取得其他用戶，或是管理員的邀請"
-    login_required: "需要登入才能進入網站，不允許匿名操作"
+    login_required: "需要登录才能進入網站，不允許匿名操作"
     min_username_length: "最少用戶名長度"
     max_username_length: "最大用戶名長度"
     min_password_length: "最小密碼長度"
@@ -573,17 +573,17 @@ zh_TW:
     sso_overrides_avatar: "用 SSO 訊息中的外部網站頭像覆蓋用戶頭像。如果啟用，建議禁用 allow_uploaded_avatars"
     enable_local_logins: "啟用網站用戶名稱和密碼驗證 ( 注意：這必須啟用邀請才能有動作 )"
     allow_new_registrations: "允許新用戶註冊，如果取消選取，則沒有人能夠註冊"
-    enable_yahoo_logins: "啟用雅虎（Yahoo）帳號驗證登入"
+    enable_yahoo_logins: "啟用雅虎（Yahoo）帳號驗證登录"
     enable_google_oauth2_logins: "啟用 Google Oauth2 認證。這是目前 Google 支援的認證方式，需要 key 以及 secret。"
     google_oauth2_client_id: "你的 Google 應用程式的客戶端 ID"
     google_oauth2_client_secret: "你的 Google 應用程式的客戶端 secret"
-    enable_twitter_logins: "啟用推特（Twitter）帳號驗證登入，需要 twitter_consumer_key 和 twitter_consumer_secret"
+    enable_twitter_logins: "啟用推特（Twitter）帳號驗證登录，需要 twitter_consumer_key 和 twitter_consumer_secret"
     twitter_consumer_key: "推特帳號驗證的客戶密匙（Consumer key），到 http://dev.twitter.com 來註冊獲取"
     twitter_consumer_secret: "推特帳號驗證的客戶密碼（Consumer secret），到 http://dev.twitter.com 來註冊獲取"
-    enable_facebook_logins: "啟用臉書（Facebook）帳號驗證登入，需要 facebook_app_id 和 facebook_app_secret"
+    enable_facebook_logins: "啟用臉書（Facebook）帳號驗證登录，需要 facebook_app_id 和 facebook_app_secret"
     facebook_app_id: "臉書帳號驗證的應用帳號（App id），到 https://developers.facebook.com/apps 來註冊獲取"
     facebook_app_secret: "臉書帳號驗證的應用密碼（App secret），到 https://developers.facebook.com/apps 來註冊獲取"
-    enable_github_logins: "啟用 Github 帳號驗證登入，需要 github_client_id 和 github_client_secret"
+    enable_github_logins: "啟用 Github 帳號驗證登录，需要 github_client_id 和 github_client_secret"
     github_client_id: "Github 帳號驗證的用戶端帳號（Client id），到 https://github.com/settings/applications 來註冊獲取"
     github_client_secret: "Github 帳號驗證的用戶端密碼（Client secret），到 https://github.com/settings/applications 來註冊獲取"
     allow_restore: "允許還原資料，注意此動作可能覆蓋「所有」網站資料！除非你計畫還原備份檔，否則請保持此設定為 false"
@@ -669,7 +669,7 @@ zh_TW:
     tos_url: "如果你想要使用一個部署在某個地方的服務條款文檔，那麼請在此填寫其完整URL地址。"
     privacy_policy_url: "如果你想要使用一個部署在某個地方的隱私政策文檔，那麼請在此填寫其完整URL地址。"
     white_listed_spam_host_domains: "域名的白名單列表，新用戶可以任意連結到這些主機，而不會因防止廣告的測試過濾被檔下"
-    staff_like_weight: "管理員按讚時所給予的額外加權係數。"
+    staff_like_weight: "管理員点赞時所給予的額外加權係數。"
     levenshtein_distance_spammer_emails: "當比對廣告Email時，數字與文字將仍使用模糊比對"
     max_new_accounts_per_registration_ip: "如果已經有了從這個 IP 創建的 (n) 個信任等級0的賬戶（並且沒有一個是職員或者是信任等級2以上的用戶），不再允許來自該 IP 地址的註冊請求。"
     min_ban_entries_for_roll_up: "當點擊折疊按鈕且不少於 (N) 條記錄時，將會創建一個子網禁止記錄。"
@@ -737,14 +737,14 @@ zh_TW:
     incorrect_username_email_or_password: "用戶名、電子郵箱或密碼不正確"
     wait_approval: "謝謝註冊帳號。我們會在你的帳號獲得批准之後通知你。"
     active: "你的帳號已經被啟用，可以使用了。"
-    not_activated: "你還不能登入。我們發送了一封啟用郵件給你，請按照郵件中的步驟來啟用你的帳號。"
-    not_allowed_from_ip_address: "你無法透過此 IP 登入成為 %{username}。"
-    admin_not_allowed_from_ip_address: "你無法透過此 IP 登入成為管理員。"
-    suspended: "你在 %{date} 之前無法登入。"
+    not_activated: "你還不能登录。我們發送了一封啟用郵件給你，請按照郵件中的步驟來啟用你的帳號。"
+    not_allowed_from_ip_address: "你無法透過此 IP 登录成為 %{username}。"
+    admin_not_allowed_from_ip_address: "你無法透過此 IP 登录成為管理員。"
+    suspended: "你在 %{date} 之前無法登录。"
     errors: "%{errors}"
     not_available: "不可用，試試 %{suggestion}？"
     something_already_taken: "出了一些問題，可能此用戶名或電子郵箱已經被註冊。試試 忘記密碼 連結吧。"
-    omniauth_error_unknown: "在處理你的登入過程中發生了錯誤，請重試。"
+    omniauth_error_unknown: "在處理你的登录過程中發生了錯誤，請重試。"
     new_registrations_disabled: "現在不允許註冊新的帳戶"
     password_too_long: "密碼不能超過 200 個字符。"
     missing_user_field: "你還沒有填寫完所有用戶字段"

@@ -224,14 +224,12 @@ var _hmt = _hmt || [];
 <p>编辑 <code>config/routes.rb</code></p>
 
 <figure class="figure-code code"><figcaption><span>config/routes.rb
-</span></figcaption><div class="highlight"><pre><span class="n">get</span> <span class="s2">"/jquery-1"</span> <span class="o">=&gt;</span> <span class="s2">"pages#jquery_1"</span>
-<span class="n">get</span> <span class="s2">"/jquery-2"</span> <span class="o">=&gt;</span> <span class="s2">"pages#jquery_2"</span>
-<span class="n">get</span> <span class="s2">"/jquery-3"</span> <span class="o">=&gt;</span> <span class="s2">"pages#jquery_3"</span>
-<span class="n">get</span> <span class="s2">"/jquery-4"</span> <span class="o">=&gt;</span> <span class="s2">"pages#jquery_4"</span>
-<span class="n">get</span> <span class="s2">"/jquery-5"</span> <span class="o">=&gt;</span> <span class="s2">"pages#jquery_5"</span>
-
-<span class="n">root</span> <span class="s2">"pages#jquery_1"</span>
-
+</span></figcaption><div class="highlight"><pre>
+    get &#39;/jquery-1&#39;, to: &#39;pages#jquery_1&#39;
+    get &#39;/jquery-2&#39;, to: &#39;pages#jquery_2&#39;
+    get &#39;/jquery-3&#39;, to: &#39;pages#jquery_3&#39;
+    get &#39;/jquery-4&#39;, to: &#39;pages#jquery_4&#39;
+    get &#39;/jquery-5&#39;, to: &#39;pages#jquery_5&#39;
 </pre></div>
 </figure>
 

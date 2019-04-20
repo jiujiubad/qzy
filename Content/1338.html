@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/rEpVyrfoRQqniUSFKMZA_13-9-hackyou.png" title=""></figure></p>
 
-<p>这么当其他用户浏览到这一页时，浏览器就会盲目的执行这段 JavaScript 代码，例如这里会跳出恼人的 <code>alert</code> 视窗，而恶意的骇客会植入邪恶的 JavaScript 程序，例如输入 <code>&lt;script&gt;location.href='https://ihower.tw'&lt;/script&gt;</code> 就会把用户骗去 ihower 老师的网页 😵😵😵 或是删除用户资料或窃取登入权限等等。这种攻击方式叫做 <a href="https://zh.wikipedia.org/zh-cn/%E8%B7%A8%E7%BD%91%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A0%81">XSS</a> 跨站脚本攻击，是最常见的网络攻击手法之一。任何网站只要允许用户输入资料，就有这个风险。防范的方式就是在输出时，进行过滤或一律脱逸。</p>
+<p>这么当其他用户浏览到这一页时，浏览器就会盲目的执行这段 JavaScript 代码，例如这里会跳出恼人的 <code>alert</code> 视窗，而恶意的骇客会植入邪恶的 JavaScript 程序，例如输入 <code>&lt;script&gt;location.href='https://ihower.tw'&lt;/script&gt;</code> 就会把用户骗去 ihower 老师的网页 😵😵😵 或是删除用户资料或窃取登录权限等等。这种攻击方式叫做 <a href="https://zh.wikipedia.org/zh-cn/%E8%B7%A8%E7%BD%91%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A0%81">XSS</a> 跨站脚本攻击，是最常见的网络攻击手法之一。任何网站只要允许用户输入资料，就有这个风险。防范的方式就是在输出时，进行过滤或一律脱逸。</p>
 
 <p>而当我们用 <code>raw</code> 或 <code>html_safe</code> 的话，就是告诉 Rails 这个输出字串是安全的。</p>
 

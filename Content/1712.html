@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>CSRF 之所以危险的地方，在于攻击方可以在其他网站挖坑，只要管理员浏览到那一页，一样可以执行这个攻击。</p>
 
-<p>所以就算上一节我们已经改成 POST 了，而且这个网站也不存在 XSS 漏洞，骇客依然有办法去诱使管理员的浏览器去 POST 操作。例如骇客知道管理员常去看「百度贴吧」，然后假设「百度贴吧」有个 XSS 漏洞可以贴 JavaScript 代码，那么骇客可以贴文：</p>
+<p>所以就算上一节我们已经改成 POST 了，而且这个网站也不存在 XSS 漏洞，骇客依然有办法去诱使管理员的浏览器去 POST 操作。例如骇客知道管理员常去看「百度贴吧」，然后假设「百度贴吧」有个 XSS 漏洞可以贴 JavaScript 代码，那么骇客可以文章：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>&lt;iframe style="display:none" name="csrf-frame"&gt;&lt;/iframe&gt;
 
@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>这段 HTML 和 JavaScript 代码会自动 submit 到隐藏的 iframe 视窗里面，所以管理员是没有感觉的。只要管理员浏览到这段贴文的网页，浏览器就会自动 POST 出去了.... 达成高亮效果。</p>
+<p>这段 HTML 和 JavaScript 代码会自动 submit 到隐藏的 iframe 视窗里面，所以管理员是没有感觉的。只要管理员浏览到这段文章的网页，浏览器就会自动 POST 出去了.... 达成高亮效果。</p>
 
     </div>
   </div>

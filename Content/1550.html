@@ -332,7 +332,7 @@ Response Body 是没有限制格式的，例如 HTML 是 <code>text/html; charse
 <h3>HTTP 的无状态(Stateless)特性，以及用 Cookie 做状态管理</h3>
 <p>在 HTTP 的设计中，每个 Requests 之间都是完全独立的(和前后 Request 相比)，也就是说每个 Request 必须带有完整的参数来完成操作。</p>
 
-<p>那要如何识别登入的用户呢? 每个 Request 都要自带可以识别的资讯，例如浏览器会使用 Cookies 这个功能。服务器透过 Response Header 的 <code>Set-Cookie</code> 来告诉浏览器要记住一些数据，然后浏览器就会在之后的 Request 都带有 Cookie 这个 Header。</p>
+<p>那要如何识别登录的用户呢? 每个 Request 都要自带可以识别的资讯，例如浏览器会使用 Cookies 这个功能。服务器透过 Response Header 的 <code>Set-Cookie</code> 来告诉浏览器要记住一些数据，然后浏览器就会在之后的 Request 都带有 Cookie 这个 Header。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/kIWND9f4Q2SzEdKFZ4Yb_15.png" title=""></figure></p>
 

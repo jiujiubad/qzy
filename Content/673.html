@@ -227,19 +227,22 @@ rails s
 
 <p><br></p>
 <h2>Part 2 安装 Bootstrap</h2><h3>Step 1. 挂上 bootstrap-sass 这个 gem</h3>
+
+<div>
+  <a href='https://rubygems.org/gems/bootstrap-sass'>https://rubygems.org/gems/bootstrap-sass</a>
+</div>
+
+<div>
+  <a href='https://github.com/twbs/bootstrap-sass'>https://github.com/twbs/bootstrap-sass</a>
+</div>
+
 <figure class="figure-code code"><figcaption><span>Gemfile
-</span></figcaption><div class="highlight"><pre><span class="n">gem</span> <span class="s1">'bootstrap-sass'</span>
+</span></figcaption><div class="highlight"><pre><span class="n">gem</span> <span class="s1">'bootstrap-sass', '~> 3.4'</span>
 </pre></div>
 </figure>
 
 <p><br></p>
-<h3>Step 2. bundle install</h3>
-<p>执行 <code>bundle install</code></p>
-
-<p>(注意：修改完 Gemfile 都要执行 bundle install）</p>
-
-<p><br></p>
-<h3>Step 3. 将 Bootstrap 的 CSS 套件装进专案里面</h3>
+<h3>Step 2. 将 Bootstrap 的 CSS 套件装进专案里面</h3>
 <p>在终端输入</p>
 
 <p><code>mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</code></p>
@@ -259,9 +262,31 @@ rails s
 </figure>
 
 <p><br></p>
-<h3>Step 4. 将变更 commit 进 git 里面</h3>
+<h3>Step 3. 安装 jquery-rails</h3>
+<div>
+  <a href='https://rubygems.org/gems/jquery-rails'>https://rubygems.org/gems/jquery-rails</a>
+</div>
+<div>
+  <a href='https://github.com/rails/jquery-rails'>https://github.com/rails/jquery-rails</a>
+</div>
+<figure class="figure-code code"><figcaption><span>Gemfile
+</span></figcaption><div class="highlight"><pre><span class="n">gem</span> <span class="s1">'jquery-rails', '~> 4.3'</span>
+</pre></div>
+</figure>
+<figure class="figure-code code"><figcaption><span>app/assets/javascripts/application.js
+</span></figcaption><div class="highlight"><pre><span class="s1">  //= require rails-ujs<br/>+ //= require jquery<br/>+ //= require bootstrap/dropdown</span>
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 4. bundle install</h3>
+<p>执行 <code>bundle install</code></p>
+<p>(注意：修改完 Gemfile 都要执行 bundle install）</p>
+
+<p><br></p>
+<h3>Step 5. 将变更 commit 进 git 里面</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
-git commit -m "add bootstrap to project"
+git commit -m "Add gem bootstrap and jquery-rails"
 </pre></div>
 </figure>
 
@@ -271,29 +296,57 @@ git commit -m "add bootstrap to project"
 
 <p><br></p>
 <h3>Step 2. 新增 navbar</h3>
+<a href='http://www.runoob.com/bootstrap/bootstrap-navbar.html'>http://www.runoob.com/bootstrap/bootstrap-navbar.html</a><br/>
+<br/>
 <p><code>touch app/views/common/_navbar.html.erb</code></p>
 
 <p>填入</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/common/_navbar.html.erb
-</span></figcaption><div class="highlight"><pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-default"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- Brand and toggle get grouped for better mobile display --&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-header"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>JDStore <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-
-        <span class="c">&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"bs-example-navbar-collapse-1"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav navbar-right"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"登入"</span><span class="p">,</span> <span class="s1">'#'</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;/ul&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="c">&lt;!-- /.navbar-collapse --&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="c">&lt;!-- /.container-fluid --&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
-
+</span></figcaption><div class="highlight"><pre>
+    &lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot;
+                  data-target=&quot;#example-navbar-collapse&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;切换导航&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;有学&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;form class=&quot;navbar-form navbar-left&quot; role=&quot;search&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Search&quot;&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;搜索&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;example-navbar-collapse&quot;&gt;
+          &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;&lt;%= link_to(&quot;学习中心&quot;, &#39;#&#39;) %&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;%= link_to(&quot;注册&quot;, &#39;#&#39;) %&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;%= link_to(&quot;登录&quot;, &#39;#&#39;) %&gt;&lt;/li&gt;
+            &lt;li class=&quot;dropdown&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                账户 &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;
+              &lt;/a&gt;
+              &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;jmeter&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;EJB&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Jasper Report&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;分离的链接&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;另一个分离的链接&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
 </pre></div>
 </figure>
 
@@ -305,8 +358,8 @@ git commit -m "add bootstrap to project"
 
 <figure class="figure-code code"><figcaption><span>app/views/common/_footer.html.erb
 </span></figcaption><div class="highlight"><pre><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"container"</span> <span class="na">style=</span><span class="s">"margin-top: 100px;"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>Copyright ©2017 JDStore
-        <span class="nt">&lt;br&gt;</span>Design by yourname
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>Copyright ©2019 JDStore
+        <span class="nt">&lt;br&gt;</span>Design by Chu
         
     <span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/footer&gt;</span>
@@ -447,7 +500,7 @@ git commit -m "add bootstrap to project"
 <p><br></p>
 <h3>Step 5. git 存档</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
-git commit -m "add bootstrap flash function"
+git commit -m "add bootstrap flash"
 </pre></div>
 </figure>
 <h3>Step 6: 测试 flash helper 的功能</h3>
@@ -463,8 +516,8 @@ git commit -m "add bootstrap flash function"
 </figure>
 
 <p><br></p>
-<h2>Part 5 安装 Devise</h2><h3>Step 1: 安装登入系统</h3>
-<p>Devise 是一个 Rails 内热门的 gem，专门用来快速实作“登入系统”。在这一节我们会用 devise 实作登入功能。</p>
+<h2>Part 5 安装 Devise</h2><h3>Step 1: 安装登录系统</h3>
+<p>Devise 是一个 Rails 内热门的 gem，专门用来快速实作“登录系统”。在这一节我们会用 devise 实作登录功能。</p>
 
 <p>Gemfile 新增一行 <code>gem 'devise'</code></p>
 
@@ -494,10 +547,10 @@ rake db:migrate
 <p><br></p>
 <h3>Step 3: 修改 app/views/common/_navbar.html.erb</h3>
 <figure class="figure-code code"><figcaption><span>app/views/common/_navbar.html.erb
-</span></figcaption><div class="highlight"><pre><span class="gd">-                &lt;li&gt; &lt;%= link_to("登入", '#') %&gt;   &lt;/li&gt;
+</span></figcaption><div class="highlight"><pre><span class="gd">-                &lt;li&gt; &lt;%= link_to("登录", '#') %&gt;   &lt;/li&gt;
 </span><span class="gi">+                &lt;% if !current_user %&gt;
 +                  &lt;li&gt;&lt;%= link_to("注册", new_user_registration_path) %&gt; &lt;/li&gt;
-+                  &lt;li&gt;&lt;%= link_to("登入", new_user_session_path) %&gt;&lt;/li&gt;
++                  &lt;li&gt;&lt;%= link_to("登录", new_user_session_path) %&gt;&lt;/li&gt;
 +                &lt;% else %&gt;
 +                  &lt;li class="dropdown"&gt;
 +                    &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;
@@ -505,7 +558,7 @@ rake db:migrate
 +                        &lt;b class="caret"&gt;&lt;/b&gt;
 +                    &lt;/a&gt;
 +                    &lt;ul class="dropdown-menu"&gt;
-+                        &lt;li&gt; &lt;%= link_to("登出", destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
++                        &lt;li&gt; &lt;%= link_to("退出", destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
 +                    &lt;/ul&gt;
 +                  &lt;/li&gt;
 </span><span class="err">+                &lt;% end %&gt;
@@ -528,7 +581,7 @@ rake db:migrate
 <p><br></p>
 <h3>Step 5: git 储存</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
-git commit -m "user can login/logout/signup"
+git commit -m "Add gem devise: user can signup/login/logout"
 </pre></div>
 </figure>
 
@@ -569,16 +622,21 @@ git commit -m "user can login/logout/signup"
 <p><br></p>
 <h3>Step 3. git 存档</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
-git commit -m "install simpleform with bootstrap"
+git commit -m "Add gem simpleform with bootstrap"
 </pre></div>
 </figure>
 
 <p><br></p>
-<h2>Part 7 安装 font-awesome-rails</h2><h3>Step 1. 挂上font-awesome-rails</h3>
+<h2>Part 7 安装 font-awesome-sass</h2><h3>Step 1. 挂上font-awesome-sass</h3>
+<div>
+  <a href='https://github.com/FortAwesome/font-awesome-sass'>https://github.com/FortAwesome/font-awesome-sass</a>
+</div>
+##让旧版本 font-awesome-rails 图标生效，需在 application.thml.erb 添加 
+<xmp><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"></xmp>
 <figure class="figure-code code"><figcaption><span>Gemfile
 </span></figcaption><div class="highlight"><pre><span class="n">gem</span> <span class="s1">'devise'</span>
 <span class="n">gem</span> <span class="s1">'simple_form'</span>
-<span class="o">+</span> <span class="n">gem</span> <span class="s1">'font-awesome-rails'</span>
+<span class="o"><span class="s1"># 图标 icon <br/>gem 'font-awesome-sass', '~> 5.8'</span>
 </pre></div>
 </figure>
 
@@ -589,39 +647,38 @@ git commit -m "install simpleform with bootstrap"
 <p>重启<code>rails s</code></p>
 <h3>Step 3. 将 font-awesome装进专案里面</h3>
 <figure class="figure-code code"><figcaption><span>app/assets/stylesheets/application.scss
-</span></figcaption><div class="highlight"><pre><span class="k">@import</span> <span class="s2">"font-awesome"</span><span class="p">;</span>
+</span></figcaption><div class="highlight"><pre><span class="s2">@import "font-awesome-sprockets"; <br/> @import "font-awesome";</span><span class="p">;</span>
 </pre></div>
 </figure>
 
 <p><br></p>
 <h3>Step 4. 修改 app/views/common/_navbar.html.erb</h3>
 <figure class="figure-code code"><figcaption><span>app/views/common/_navbar.html.erb
-</span></figcaption><div class="highlight"><pre>             &lt;% if !current_user %&gt;
-               &lt;li&gt;&lt;%= link_to("注册", new_user_registration_path) %&gt; &lt;/li&gt;
-<span class="gd">-                  &lt;li&gt;&lt;%= link_to("登入", new_user_session_path) %&gt;&lt;/li&gt;
-</span><span class="gi">+                  &lt;li&gt;&lt;%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %&gt;&lt;/li&gt;
-</span>             &lt;% else %&gt;
-               &lt;li class="dropdown"&gt;
-                 &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;
-                     Hi!, &lt;%= current_user.email %&gt;
-                     &lt;b class="caret"&gt;&lt;/b&gt;
-                 &lt;/a&gt;
-                 &lt;ul class="dropdown-menu"&gt;
-<span class="gd">-                        &lt;li&gt; &lt;%= link_to("登出", destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
-</span><span class="gi">+                        &lt;li&gt; &lt;%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
-</span>                 &lt;/ul&gt;
-               &lt;/li&gt;
-<span class="err">             &lt;% end %&gt;
+</span></figcaption><div class="highlight"><pre>
+    &lt;% if !current_user %&gt;
+    &lt;li&gt;&lt;%= link_to(content_tag(:i, &#39; 注册&#39;, class: &#39;fas fa-user-plus&#39;), new_user_registration_path) %&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;%= link_to(content_tag(:i, &#39; 登录&#39;, class: &#39;fas fa-sign-in-alt&#39;), new_user_session_path) %&gt;&lt;/li&gt;
+  &lt;% else %&gt;
+    &lt;li class=&quot;dropdown&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+        Hi!, &lt;%= current_user.email %&gt;
+        &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;
+      &lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        &lt;li&gt; &lt;%= link_to(content_tag(:i, &#39; 退出&#39;, class: &#39;fas fa-sign-out-alt&#39;), destroy_user_session_path, method: :delete) %&gt; &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;% end %&gt;
 </span></pre></div>
 </figure>
 
-<p>登入、登出旁会出现新图标<br>
+<p>登录、退出旁会出现新图标<br>
 <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/SSB4lxneTfymXrHnua61_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-14%20%E4%B8%8B%E5%8D%882.37.15.png" title=""></figure></p>
 
 <p><br></p>
 <h3>Step 5. git存档</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
-git commit -m "install font-awesome-rails"
+git commit -m "Add gem font-awesome-sass: add login/logout/signup icon"
 </pre></div>
 </figure> 
 <h2>效果动图</h2>

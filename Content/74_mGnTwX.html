@@ -216,14 +216,14 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h2>步骤</h2><h3>Step 1: 路人不应该可以看到“编辑”“删除”按钮</h3>
-<p>让我们登出系统，在这里我们察觉一个严重的问题：明明是路人，怎么能看到“编辑”“删除”按钮的资讯呢？</p>
+<p>让我们退出系统，在这里我们察觉一个严重的问题：明明是路人，怎么能看到“编辑”“删除”按钮的资讯呢？</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/mALyeLKkQVSVYkqVWLXG_Screenshot%20at%20Mar%2028%2014-40-48.png" title=""></figure></p>
 
 <p>所以在这里我们要把“编辑”“删除”这两个按钮藏起来，限定</p>
 
 <ul>
-<li>只有登入模式下</li>
+<li>只有登录模式下</li>
 <li>而且还必须是群组“创始者”</li>
 </ul>
 
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
 
 <p>我们也要在 controller 做权限判断，滤掉这种人。</p>
 
-<p>首先，我们先限定 edit / update / destroy 这三个操作动作，必须要是“登入”的使用者才能存取。</p>
+<p>首先，我们先限定 edit / update / destroy 这三个操作动作，必须要是“登录”的使用者才能存取。</p>
 
 <p>修改 app/controllers/groups_controller.rb 在 before_action :authenticate_user!  列表中，加入 :edit, :update, :destroy</p>
 

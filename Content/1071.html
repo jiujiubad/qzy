@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>要操作「短期费率」必须登入。但是登入刚刚已经测试过了，不需要再用 capybara 再走一次。Devise 有提供测试用的 <code>sign_in</code> 方法，请修改 <code>spec/rails_helper.rb</code>：</p>
+      <p>要操作「短期费率」必须登录。但是登录刚刚已经测试过了，不需要再用 capybara 再走一次。Devise 有提供测试用的 <code>sign_in</code> 方法，请修改 <code>spec/rails_helper.rb</code>：</p>
 
 <figure class="figure-code code"><figcaption><span>spec/rails_helper.rb
 </span></figcaption><div class="highlight"><pre>  RSpec.configure do |config|
@@ -228,7 +228,7 @@ var _hmt = _hmt || [];
 
   <span class="n">scenario</span> <span class="s2">"short-term parking"</span> <span class="k">do</span>
     <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"foobar@example.com"</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">"12345678"</span><span class="p">)</span>
-    <span class="n">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="c1"># 这样就可以登入了
+    <span class="n">sign_in</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="c1"># 这样就可以登录了
 </span>
 
     <span class="n">visit</span> <span class="s2">"/"</span>

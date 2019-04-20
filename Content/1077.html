@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1077'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>5-4 测试登入登出 API - Rails 自动化测试 | 新生大学全栈营</title>
+    <title>5-4 测试登录退出 API - Rails 自动化测试 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      5-4 测试登入登出 API
+      5-4 测试登录退出 API
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1077">
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_http_status</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="o">+</span>    <span class="n">old_token</span> <span class="o">=</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">authentication_token</span>
 <span class="o">+</span>    <span class="vi">@user</span><span class="p">.</span><span class="nf">reload</span>
-<span class="o">+</span>    <span class="c1"># 检查登出后 `authentication_token` 会改掉
+<span class="o">+</span>    <span class="c1"># 检查退出后 `authentication_token` 会改掉
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="vi">@user</span><span class="p">.</span><span class="nf">authentication_token</span><span class="p">).</span><span class="nf">not_to</span> <span class="n">eq</span><span class="p">(</span><span class="n">old_token</span><span class="p">)</span>
 <span class="o">+</span>  <span class="k">end</span>
@@ -250,7 +250,7 @@ var _hmt = _hmt || [];
 <span class="o">+</span>    <span class="n">post</span> <span class="s2">"/api/v1/login"</span><span class="p">,</span> <span class="ss">params: </span><span class="p">{</span> <span class="ss">:auth_token</span> <span class="o">=&gt;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">authentication_token</span><span class="p">,</span>
 <span class="o">+</span>                                    <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">"xxx"</span> <span class="p">}</span>
 <span class="o">+</span>
-<span class="o">+</span>    <span class="c1"># 检查登入失败回传 401
+<span class="o">+</span>    <span class="c1"># 检查登录失败回传 401
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_http_status</span><span class="p">(</span><span class="mi">401</span><span class="p">)</span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span>
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>两个测试案例测试登入成功和登入失败。</p>
+<p>两个测试案例测试登录成功和登录失败。</p>
 
     </div>
   </div>
@@ -465,13 +465,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("5-4 测试登入登出 API - Rails 自动化测试 | 新生大学全栈营")
+    mixpanel.track("5-4 测试登录退出 API - Rails 自动化测试 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1077',
-  post_title: '5-4 测试登入登出 API',
+  post_title: '5-4 测试登录退出 API',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1077'
 };
 Intercom('trackEvent', 'watched_post', metadata);

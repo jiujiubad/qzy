@@ -210,7 +210,7 @@ var _hmt = _hmt || [];
 <li>实作 Jobs 的 CRUD</li>
 <li>Job 至少必须要有 title 与 description 栏位</li>
 <li>Job 的 title 不可为空</li>
-<li>new/create/update/edit/destroy 动作必须要进行登入</li>
+<li>new/create/update/edit/destroy 动作必须要进行登录</li>
 </ul>
 
 <p>P.S. 如果你想要详细记录每步做了什么，建议每一步都 git commit 。</p>
@@ -495,7 +495,7 @@ exit
 </figure>
 
 <p><br></p>
-<h3>Step 12: 限制 new/create/update/edit/destroy 动作必须要进行登入</h3>
+<h3>Step 12: 限制 new/create/update/edit/destroy 动作必须要进行登录</h3>
 <p>加入这行</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/jobs_controller.rb
@@ -503,7 +503,7 @@ exit
 </pre></div>
 </figure>
 
-<p>这样若存取 <a href="http://localhost:3000/jobs/new" rel="nofollow" target="_self">http://localhost:3000/jobs/new</a> 就会被导到登入页。</p>
+<p>这样若存取 <a href="http://localhost:3000/jobs/new" rel="nofollow" target="_self">http://localhost:3000/jobs/new</a> 就会被导到登录页。</p>
 
 <p><br></p>
 <h3>Step 13: git 存档</h3>

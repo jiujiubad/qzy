@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1318'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>4-3 贴文无限捲轴 - Ajax 交互式网页应用 | 新生大学全栈营</title>
+    <title>4-3 文章无限滚动 - Ajax 交互式网页应用 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      4-3 贴文无限捲轴
+      4-3 文章无限滚动
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1318">
@@ -205,20 +205,20 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>目标：实作贴文的无限捲轴 (Endless Page)，当用户捲到画面最下方时，自动加载更早的资料。</p>
+      <p>目标：实作文章的无限滚动 (Endless Page)，当用户滚到画面最下方时，自动加载更早的资料。</p>
 
-<p>这个任务需要侦测浏览器捲轴的行为，没办法用 <code>:remote =&gt; true</code> 了，需要自己去绑定事件，侦测用户捲到视窗最下面。</p>
+<p>这个任务需要侦测浏览器滚动的行为，没办法用 <code>:remote =&gt; true</code> 了，需要自己去绑定事件，侦测用户滚到视窗最下面。</p>
 
 <p>编辑<code>app/views/posts/index.html.erb</code></p>
 
 <figure class="figure-code code"><figcaption><span>app/views/posts/index.html.erb
 </span></figcaption><div class="highlight"><pre>  &lt;script&gt;
-<span class="gi">+  // 记下目前画面最小的贴文 ID
+<span class="gi">+  // 记下目前画面最小的文章 ID
 +  var current_post_id = &lt;%= @posts.last.id %&gt;;
 +
-+  // 当捲轴动的时候，会触发这个事件
++  // 当滚动动的时候，会触发这个事件
 +  $(window).scroll(function(){
-+    // 当捲到最下面的时候
++    // 当滚到最下面的时候
 +    if ((window.innerHeight + window.scrollY) &gt;= document.body.offsetHeight) {
 +      var url = "/posts?max_id=" + current_post_id;
 +      if (url) {
@@ -273,7 +273,7 @@ var current_post_id = &lt;%= @posts.last.id %&gt;;
 </pre></div>
 </figure>
 
-<p>这样画面捲到最下方时，就会自动加载，并且更新 <code>current_post_id</code> 的值，这样下次再抓就会抓到更早的资料。</p>
+<p>这样画面滚到最下方时，就会自动加载，并且更新 <code>current_post_id</code> 的值，这样下次再抓就会抓到更早的资料。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/DUUZhNl4QhGQ2m9qFxFN_endless-page.gif" title=""></figure></p>
 
@@ -477,13 +477,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("4-3 贴文无限捲轴 - Ajax 交互式网页应用 | 新生大学全栈营")
+    mixpanel.track("4-3 文章无限滚动 - Ajax 交互式网页应用 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1318',
-  post_title: '4-3 贴文无限捲轴',
+  post_title: '4-3 文章无限滚动',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1318'
 };
 Intercom('trackEvent', 'watched_post', metadata);

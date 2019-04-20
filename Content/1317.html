@@ -222,7 +222,7 @@ var _hmt = _hmt || [];
 </span></figcaption><div class="highlight"><pre>  &lt;script&gt;
 <span class="gi">+   // 这会绑 click 事件到所有有 `.delete-post` class 的元素上，也就是所有的删除按钮
 +   $(".delete-post").click(function(evt){
-+     // `evt` 是浏览器的事件物件，evt.preventDefault(); 会终止这个元素的默认行为：
++     // `evt` 是浏览器的事件对象，evt.preventDefault(); 会终止这个元素的默认行为：
 +     // 超连结 a 的默认行为是跳到下一页，如果没有这行的话，送出 ajax 后会跳去 show page
 +     evt.preventDefault();
 +     // this 是个特别的变量，代表触发事件的元素。使用 attr 可以读取元素的属性，这里要拿到超连结的网址
@@ -281,6 +281,11 @@ var _hmt = _hmt || [];
 
     </div>
   </div>
+
+  <br/><br/><br/>
+  <h4 style="color:red">遇到报错：前端 422 Unprocessable Entity，控制台 ajax Can't verify CSRF token authenticity</h4><br/>
+  <p>解决办法1（推荐）：app/assets/javascripts/application.js 添加 //= require jquery_ujs，虽然这个 gem 的官方 github 有说 rails5 以上版本可以不添加这行，但这里遇到问题说明还是要加上。</p><br/>
+  <p>解决办法2（可能会有安全问题）：避开 csrf，在 controller 添加 skip_before_action :verify_authenticity_token</p>
 
   <div class="panic-panel">
   <div class="row panic-panel-title">

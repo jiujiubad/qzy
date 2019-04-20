@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>订票其实有三种情况，分别是 1. 有登入带 <code>auth_token</code> 订票 2. 没登入订票 3. 订票失败(因为座位重复)</p>
+<p>订票其实有三种情况，分别是 1. 有登录带 <code>auth_token</code> 订票 2. 没登录订票 3. 订票失败(因为座位重复)</p>
 
 <blockquote>
 <p>在 Web API 课程中比较早完成的同学，做到这里你可能会测试失败，因为之前在 <code>app/models/reservation.rb</code> 中是写 <code>belongs_to :user</code> 这表示 <code>user</code> 是必填，需要改成 <code>belongs_to :user, :optional =&gt; true</code> 让 user 是选填。</p>

@@ -206,10 +206,10 @@ var _hmt = _hmt || [];
   <div class="post group">
     <div class="post-content markdown">
       <h3>开自己的帐号</h3>
-<p>刚刚登入服务器用的 <code>root</code> 帐号拥有最大的权限，通常我们会另开一个帐号作为平常登入管理之用：</p>
+<p>刚刚登录服务器用的 <code>root</code> 帐号拥有最大的权限，通常我们会另开一个帐号作为平常登录管理之用：</p>
 
 <blockquote>
-<p>有了自己的管理帐号后，稍后的 Linux 安全性章节会说明如何让 root 无法远端登入，不然每台服务器默认都有 root 帐号，要破解密码的话只要去猜 root 密码即可。</p>
+<p>有了自己的管理帐号后，稍后的 Linux 安全性章节会说明如何让 root 无法远端登录，不然每台服务器默认都有 root 帐号，要破解密码的话只要去猜 root 密码即可。</p>
 </blockquote>
 
 <p>执行 <code>adduser ihower</code></p>
@@ -222,7 +222,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/1lToMCRBRgeLXWmrVDAu_49.png" title=""></figure></p>
 
-<p>输入 <code>exit</code> 离开服务器，重新 SSH 登入看看：</p>
+<p>输入 <code>exit</code> 离开服务器，重新 SSH 登录看看：</p>
 
 <p><code>ssh ihower@47.92.136.237</code></p>
 
@@ -296,8 +296,8 @@ var _hmt = _hmt || [];
 <p>你要的权限就是把数字加起来，例如 <code>rw-</code> 就是 4+2 是 6。<code>r--</code> 就是 4。于是 <code>rw-r--r--</code> 就是 644 了。</p>
 
 <p>如果理解的话，之后碰到档案存取权限问题时，就知道如何处理了。</p>
-<h3>免密码登入</h3>
-<p>远端登入除了输入密码之外，SSH 还可以用非对称加密(Public Key Encryption)的方式来做登入。</p>
+<h3>免密码登录</h3>
+<p>远端登录除了输入密码之外，SSH 还可以用非对称加密(Public Key Encryption)的方式来做登录。</p>
 
 <p>在非对称加密算法中，会有两把钥匙(key)，一把叫做公钥(public key)、一把叫做密钥(private key)。</p>
 
@@ -306,7 +306,7 @@ var _hmt = _hmt || [];
 <li>透过密钥加密的密文，只有公钥能够解开</li>
 </ul>
 
-<p>于是我们就可以用这个机制来做登入：首先我们把自己的公钥先放在服务器上，那么之后登入时，服务器会送一个乱数字符串给用户，用户用密钥加密后返回服务器，如果服务器可以用公钥解回来，就表示认证成功。</p>
+<p>于是我们就可以用这个机制来做登录：首先我们把自己的公钥先放在服务器上，那么之后登录时，服务器会送一个乱数字符串给用户，用户用密钥加密后返回服务器，如果服务器可以用公钥解回来，就表示认证成功。</p>
 
 <p>以下是设定的步骤，：</p>
 
@@ -324,7 +324,7 @@ var _hmt = _hmt || [];
 
 <p><code>chmod 644 ~/.ssh/authorized_keys</code></p>
 
-<p>这样就好了，你可以试试看再次登入就不用打密码了，太棒了！</p>
+<p>这样就好了，你可以试试看再次登录就不用打密码了，太棒了！</p>
 
 <p>以下是操作的截图：</p>
 

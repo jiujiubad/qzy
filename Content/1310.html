@@ -205,20 +205,20 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接下来制作用户可以针对贴文按讚，先来做一个基本版没有 Ajax 效果的版本：</p>
+      <p>接下来制作用户可以针对文章点赞，先来做一个基本版没有 Ajax 效果的版本：</p>
 
-<p>一个用户可以针对很多贴文按讚，一篇贴文可以有很多用户按讚，这是一个多对多的模型，让我们新增一个 Like model：</p>
+<p>一个用户可以针对很多文章点赞，一篇文章可以有很多用户点赞，这是一个多对多的模型，让我们新增一个 Like model：</p>
 
-<p>执行 <code>rails g model like</code></p>
+<p>执行 <code>rails g model like user:references post:references</code></p>
 
-<p>编辑 <code>db/migrate/201703XXXXXXXX_create_likes.rb</code></p>
+<p>查看 <code>db/migrate/201703XXXXXXXX_create_likes.rb</code></p>
 
 <figure class="figure-code code"><figcaption><span>db/migrate/201703XXXXXXXX_create_likes.rb
 </span></figcaption><div class="highlight"><pre>  class CreateLikes &lt; ActiveRecord::Migration[5.0]
     def change
       create_table :likes do |t|
-<span class="gi">+       t.integer :user_id, :index =&gt; true
-+       t.integer :post_id, :index =&gt; true
+<span class="gi">+       t.references :user, :foreign_key true
++       t.references :post, :foreign_key true
 </span>        t.timestamps
       end
     end
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/models/post.rb</code>，加上关联和一个 <code>find_like</code> 方法：由于一个用户只能针对一篇贴文按一个讚，所以透过用户ID和贴文ID，就可以找到唯一的 Like，等会我们会用这个方法来判断一个用户不能重复按讚。</p>
+<p>编辑 <code>app/models/post.rb</code>，加上关联和一个 <code>find_like</code> 方法：由于一个用户只能针对一篇文章按一个讚，所以透过用户ID和文章ID，就可以找到唯一的 Like，等会我们会用这个方法来判断一个用户不能重复点赞。</p>
 
 <figure class="figure-code code"><figcaption><span>app/models/post.rb
 </span></figcaption><div class="highlight"><pre>   belongs_to :user
@@ -283,7 +283,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/views/posts/_post.html.erb</code> 加上按讚的按钮：</p>
+<p>编辑 <code>app/views/posts/_post.html.erb</code> 加上点赞的按钮：</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/posts/_post.html.erb
 </span></figcaption><div class="highlight"><pre>  &lt;div class="panel-body"&gt;
@@ -295,11 +295,11 @@ var _hmt = _hmt || [];
 +        &lt;%= post.liked_users.map{ |u| u.display_name }.join(",") %&gt; 点了赞
 +      &lt;% end %&gt;
 +
-+      &lt;% if current_user # 有登入才可以按讚 %&gt;
++      &lt;% if current_user # 有登录才可以点赞 %&gt;
 +        &lt;% if post.find_like(current_user) %&gt;
-+          &lt;%= link_to "-1", unlike_post_path(post), :method =&gt; :post, :class =&gt; "btn btn-primary" %&gt;
++          &lt;%= link_to "-1", unlike_post_path(post), method: :post, class: "btn btn-primary" %&gt;
 +        &lt;% else %&gt;
-+          &lt;%= link_to "+1", like_post_path(post), :method =&gt; :post, :class =&gt; "btn btn-primary" %&gt;
++          &lt;%= link_to "+1", like_post_path(post), method: :post, class: "btn btn-primary" %&gt;
 +        &lt;% end %&gt;
 +      &lt;% end %&gt;
 </span>
@@ -317,7 +317,7 @@ var _hmt = _hmt || [];
 </span></figcaption><div class="highlight"><pre>
 <span class="gi">+  def like
 +    @post = Post.find(params[:id])
-+    unless @post.find_like(current_user)  # 如果已经按讚过了，就略过不再新增
++    unless @post.find_like(current_user)  # 如果已经点赞过了，就略过不再新增
 +      Like.create( :user =&gt; current_user, :post =&gt; @post)
 +    end
 +
@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>实际测试看看按讚 +1 和取消按讚 -1</p>
+<p>实际测试看看点赞 +1 和取消点赞 -1</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/4khabC9NTb5cK0xvJQpR_21-like.png" title=""></figure></p>
 

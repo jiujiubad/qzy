@@ -213,13 +213,16 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>将删除改成自行绑事件</li>
-<li>贴文无限捲轴</li>
+<li>文章无限滚动</li>
 <li>使用核选方块(checkbox)做开关</li>
-<li>使用下拉选单(select)分类贴文</li>
+<li>使用下拉选单(select)分类文章</li>
 </ul>
 
 <p>另外，搭配 jQuery Plugin 的话，也必须自己写 Ajax 代码。这章最后也会示范使用 jQuery Raty - A Star Rating Plugin 来做评等。</p>
 
+<br/>
+<p style="color:red">综上，可能基本要弃用 remote:true 的用法因为 ①前后端分离不明确；②只能用在 按钮、链接、form_with 上。而现在流行的 Vue 或 React 都是前后端分离。另外，麦子学院的仿锤子网站教程也都是用 ajax 而没有用到 remote:true。</p>
+<p>疑问：不知道 remote:true 是不是有哪些特定的应用场景？</p>
     </div>
   </div>
 

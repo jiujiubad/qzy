@@ -33,7 +33,7 @@ feature "register and login", :type => :feature do
     click_button "Log in"
     expect(page).to have_content("Signed in successfully")
 
-    click_link "登出"
+    click_link "退出"
     expect(page).to have_content("Signed out successfully")
   end
 

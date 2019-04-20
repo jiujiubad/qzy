@@ -228,11 +228,11 @@ var _hmt = _hmt || [];
 +   &lt;% end %&gt;
 </span>
 <span class="gi">+  &lt;% if current_user %&gt;
-+     &lt;%= link_to('登出', destroy_user_session_path, :method =&gt; :delete) %&gt;
++     &lt;%= link_to('退出', destroy_user_session_path, :method =&gt; :delete) %&gt;
 +    &lt;%= link_to('修改密码', edit_registration_path(:user)) %&gt;
 +  &lt;% else %&gt;
 +    &lt;%= link_to('注册', new_registration_path(:user)) %&gt; |
-+    &lt;%= link_to('登入', new_session_path(:user)) %&gt;
++    &lt;%= link_to('登录', new_session_path(:user)) %&gt;
 +   &lt;% end %&gt;
 </span>
 <span class="err">...(略)

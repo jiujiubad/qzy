@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1311'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>2-10 Ajax 按讚 - Ajax 交互式网页应用 | 新生大学全栈营</title>
+    <title>2-10 Ajax 点赞 - Ajax 交互式网页应用 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      2-10 Ajax 按讚
+      2-10 Ajax 点赞
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1311">
@@ -205,17 +205,17 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接着改进为神速 Ajax 按讚，流程是：</p>
+      <p>接着改进为神速 Ajax 点赞，流程是：</p>
 
 <ol>
 <li>把本来的 +1 和 -1 按钮，改成 <code>:remote =&gt; true</code> 用 Ajax 送出</li>
 <li>服务器会新建或删除 Like 资料进数据库</li>
-<li>服务器回传的 JavaScript 要替换掉整块按讚的 HTML 部分，包括 XXX 按了讚，以及把 +1 改成 -1 按钮或 -1 改成 +1 按钮。</li>
+<li>服务器回传的 JavaScript 要替换掉整块点赞的 HTML 部分，包括 XXX 按了讚，以及把 +1 改成 -1 按钮或 -1 改成 +1 按钮。</li>
 </ol>
 
 <p>这里又需要用到 Partial 样板了，这样才能在一开始显示 HTML 时，以及在 Ajax 中去重复使用同一份 erb 代码。</p>
 
-<p>编辑 <code>app/views/posts/_post.html.erb</code> 把本来整块的按讚 HTML 搬到 Partial 去，并用一个 span 包起来，方便等会定位：</p>
+<p>编辑 <code>app/views/posts/_post.html.erb</code> 把本来整块的点赞 HTML 搬到 Partial 去，并用一个 span 包起来，方便等会定位：</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/posts/_post.html.erb
 </span></figcaption><div class="highlight"><pre>
@@ -223,7 +223,7 @@ var _hmt = _hmt || [];
 -     &lt;%= post.liked_users.map{ |u| u.display_name }.join(",") %&gt; 点了赞
 -   &lt;% end %&gt;
 -
--   &lt;% if current_user # 有登入才可以按讚 %&gt;
+-   &lt;% if current_user # 有登录才可以点赞 %&gt;
 -     &lt;% if post.find_like(current_user) %&gt;
 -       &lt;%= link_to "-1", unlike_post_path(post), :method =&gt; :post, :class =&gt; "btn btn-primary" %&gt;
 -     &lt;% else %&gt;
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
   &lt;%= post.liked_users.map{ |u| u.display_name }.join(",") %&gt; 点了赞
 &lt;% end %&gt;
 
-&lt;% if current_user # 有登入才可以按讚 %&gt;
+&lt;% if current_user # 有登录才可以点赞 %&gt;
   &lt;% if post.find_like(current_user) %&gt;
     &lt;%= link_to "取消讚", unlike_post_path(post), :method =&gt; :post, :remote =&gt; true, :class =&gt; "btn btn-primary" %&gt;
   &lt;% else %&gt;
@@ -286,7 +286,7 @@ $("#post-like-&lt;%= @post.id %&gt;").html(str);
 </pre></div>
 </figure>
 
-<p>测试看看，现在可以神速按讚了。</p>
+<p>测试看看，现在可以神速点赞了。</p>
 
     </div>
   </div>
@@ -488,13 +488,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("2-10 Ajax 按讚 - Ajax 交互式网页应用 | 新生大学全栈营")
+    mixpanel.track("2-10 Ajax 点赞 - Ajax 交互式网页应用 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1311',
-  post_title: '2-10 Ajax 按讚',
+  post_title: '2-10 Ajax 点赞',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1311'
 };
 Intercom('trackEvent', 'watched_post', metadata);

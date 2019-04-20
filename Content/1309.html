@@ -218,20 +218,20 @@ var _hmt = _hmt || [];
 
 <p>用 <code>.val("")</code> 就可以把输入框的值设定为空。</p>
 
-<p>第二是储存失败的情况处理，假设贴文是空的，那么 @post 会储存失败，这时候应该有错误讯息提示。修改<code>app/views/posts/create.js.erb</code></p>
+<p>第二是储存失败的情况处理，假设文章是空的，那么 @post 会储存失败，这时候应该有错误讯息提示。修改<code>app/views/posts/create.js.erb</code></p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre>+ &lt;% if @post.valid? %&gt;
   $("#post-list").prepend("&lt;%=j render :partial =&gt; "post", :locals =&gt; { :post =&gt; @post } %&gt;");
   $("#post_content").val("");
 + &lt;% else %&gt;
-+   alert("贴文失败");
++   alert("文章失败");
 + &lt;% end %&gt;
 
 </pre></div>
 </figure>
 
-<p>增加一个 if else 的情况区分，当 <code>valid?</code> 成功时，插入新贴文，当储存失败时，跳一个 alert 视窗。</p>
+<p>增加一个 if else 的情况区分，当 <code>valid?</code> 成功时，插入新文章，当储存失败时，跳一个 alert 视窗。</p>
 
     </div>
   </div>

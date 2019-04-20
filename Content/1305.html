@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1305'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>2-4 浏览贴文和产生假资料 - Ajax 交互式网页应用 | 新生大学全栈营</title>
+    <title>2-4 浏览文章和产生假资料 - Ajax 交互式网页应用 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      2-4 浏览贴文和产生假资料
+      2-4 浏览文章和产生假资料
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1305">
@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
 </span></figcaption><div class="highlight"><pre>
 <span class="gi">+  def index
-+    @posts = Post.order("id DESC").all    # 新贴文放前面
++    @posts = Post.order("id DESC").all    # 新文章放前面
 +  end
 </span><span class="err">
 </span></pre></div>
@@ -261,33 +261,36 @@ var _hmt = _hmt || [];
 
 <p>执行 <code>bundle install</code></p>
 
-<p>写个 rake 程序来产生假资料，新增 <code>lib/tasks/dev.rake</code>，放在这个目录下的 rake 档案是用来编写任务脚本，让我们在 Terminal 中可以执行它：</p>
+<p>写个 rake 程序来产生假资料，新增 <code>lib/tasks/post.rake</code>，放在这个目录下的 rake 档案是用来编写任务脚本，让我们在 Terminal 中可以执行它：</p>
 
-<figure class="figure-code code"><figcaption><span>lib/tasks/dev.rake
+<figure class="figure-code code"><figcaption><span>lib/tasks/post.rake
 </span></figcaption><div class="highlight"><pre>
-<span class="n">namespace</span> <span class="ss">:dev</span> <span class="k">do</span>
+namespace :post do
+  # 跳过回调：<a href="http://thelazylog.com/skip-activerecord-callbacks">http://thelazylog.com/skip-activerecord-callbacks</a>
+  task all: [
+              :create_users_and_posts
+            ]
 
-  <span class="n">task</span> <span class="ss">:fake</span> <span class="o">=&gt;</span> <span class="ss">:environment</span> <span class="k">do</span>
-    <span class="n">users</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="mi">10</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
-      <span class="n">users</span> <span class="o">&lt;&lt;</span> <span class="no">User</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Internet</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">"12345678"</span><span class="p">)</span>
-    <span class="k">end</span>
+  ## Ajax交互式网页应用-文章点赞网
+  task create_users_and_posts: :environment do
+    puts "Start create_users_and_posts"
+    User.create!(email: "chu@example.com", password: "chu@example.com")
 
-    <span class="mi">50</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-      <span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span> <span class="ss">:content</span> <span class="o">=&gt;</span> <span class="no">Faker</span><span class="o">::</span><span class="no">Lorem</span><span class="p">.</span><span class="nf">paragraph</span><span class="p">,</span>
-                            <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="n">users</span><span class="p">.</span><span class="nf">sample</span><span class="p">.</span><span class="nf">id</span> <span class="p">)</span>
+    10.times do
+      User.create!(email: Faker::Internet.email, password: Faker::Internet.password(8))
+    end
 
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-<span class="k">end</span>
-
+    50.times do
+      Post.create!( content: Faker::Lorem.paragraph, user_id: User.all.sample.id )
+    end
+  end
+end
 </pre></div>
 </figure>
 
 <p>执行 <code>rake dev:fake</code> 就会执行这个任务，产生 10 笔假用户和 50 笔文章。</p>
 
-<p>浏览 <code>http://localhost:3000</code> 可以看到贴文一览了：</p>
+<p>浏览 <code>http://localhost:3000</code> 可以看到文章一览了：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/dlQZRTQCT3WrW16fq5ql_16-posts.png" title=""></figure></p>
 
@@ -495,13 +498,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("2-4 浏览贴文和产生假资料 - Ajax 交互式网页应用 | 新生大学全栈营")
+    mixpanel.track("2-4 浏览文章和产生假资料 - Ajax 交互式网页应用 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1305',
-  post_title: '2-4 浏览贴文和产生假资料',
+  post_title: '2-4 浏览文章和产生假资料',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1305'
 };
 Intercom('trackEvent', 'watched_post', metadata);

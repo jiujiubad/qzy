@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：5. 实作注册、登入、登出 API</h4>
+    <h4>所属章节：5. 实作注册、登录、退出 API</h4>
     <p></p>
     <p><p>再学习2节就可以完成本章了</p></p>
   </div>
@@ -207,9 +207,9 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>上一章中是直接在网页上看到 <code>auth_token</code> 让用户使用，但这个前提是用户本身就是开发者，就像第一章我们使用数据聚合一样，我们直接在后台就看到了 <code>api key</code>。</p>
 
-<p>另一种常见情境是我们自己开发客户端 App，例如 iOS 或 Android，这时候就不能让小白用户自己去网页上复制贴上 api key 了。这时候我们就得做登入的 API，好让用户输入帐号密码登入，拿到 API Key 存在客户端 App 上来使用。</p>
+<p>另一种常见情境是我们自己开发客户端 App，例如 iOS 或 Android，这时候就不能让小白用户自己去网页上复制贴上 api key 了。这时候我们就得做登录的 API，好让用户输入帐号密码登录，拿到 API Key 存在客户端 App 上来使用。</p>
 
-<p>这一章我们将实作以下 API，包括注册、登入和登出：</p>
+<p>这一章我们将实作以下 API，包括注册、登录和退出：</p>
 <figure class="figure-code code"><div class="highlight"><pre>POST /api/v1/signup
 POST /api/v1/login
 POST /api/v1/logout
