@@ -220,16 +220,14 @@ var _hmt = _hmt || [];
 
 <figure class="figure-code code"><figcaption><span>app/views/posts/index.html.erb
 </span></figcaption><div class="highlight"><pre>  &lt;script&gt;
-<span class="gi">+   // 这会绑 click 事件到所有有 `.delete-post` class 的元素上，也就是所有的删除按钮
+<span class="gi">+   //1.点击删除按钮，会删除文章
 +   $(".delete-post").click(function(evt){
 +     // `evt` 是浏览器的事件对象，evt.preventDefault(); 会终止这个元素的默认行为：
 +     // 超连结 a 的默认行为是跳到下一页，如果没有这行的话，送出 ajax 后会跳去 show page
 +     evt.preventDefault();
 +     // this 是个特别的变量，代表触发事件的元素。使用 attr 可以读取元素的属性，这里要拿到超连结的网址
-+     var url = $(this).attr("href");
-+
-+     // 送出 Ajax
-+     $.ajax({
++     var url = $(this).attr("href");  
++     $.ajax({// 送出 Ajax
 +       url: url,
 +       method: 'DELETE',
 +       dataType: 'script' // 要求服务器回传 javascript
@@ -253,7 +251,7 @@ var _hmt = _hmt || [];
         method: 'DELETE',
 <span class="gd">-       dataType: 'script'
 </span><span class="gi">+       dataType: 'json', // 要求服务器回传 json
-+       success: function(data){   // data 就是服务器回传的 JSON 资料
++       success: function(data){   // 请求成功时执行，data 就是服务器回传的 JSON 资料
 +         $("#post-" + data["id"]).remove();
 +       }
 </span>      })
