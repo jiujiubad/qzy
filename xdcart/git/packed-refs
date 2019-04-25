@@ -1,6 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-710a8a5a6447a0b958de7cc9b03bf426d93151e1 refs/remotes/origin/deploy-heroku
-1fa77e40fafa9cb5789e26eda58ad6a4fe8a688c refs/remotes/origin/fix-confusing-name
-f433d7b33a8c05b9fb0e1b6df5f924dbbfe9939e refs/remotes/origin/master
-84274562a9fe877bd5245f347df9777f933af5c1 refs/remotes/origin/t6003
-95f7365b7ce802139d50dbed9fc36a6632e880cc refs/remotes/origin/t6040
