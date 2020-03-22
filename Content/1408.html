@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1408'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>10. 档案处理 - 编程基础练习簿 | 新生大学全栈营</title>
+    <title>10. 文件处理 - 编程基础练习簿 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      10. 档案处理
+      10. 文件处理
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1408">
@@ -206,22 +206,22 @@ var _hmt = _hmt || [];
   <div class="post group">
     <div class="post-content markdown">
       <h3>题目 28</h3>
-<p>请打开 <code>wordcount.txt</code>，计算每个单字出现的次数</p>
+<p>请打开 <code>wordcount.txt</code>，计算每个单词出现的次数</p>
 <h3>题目 29</h3>
 <p>请打开 <code>todos.txt</code>，其中每一行就是一个待办事项。<br>
 请编写一个程序，可以新增和删除代办事项，最后可以存盘离开。<br>
 重新执行这只程序，可以继续上次的代办事项。</p>
 
 <p>注意：<code>gets</code> 读到的字符串，最后都会有一个换行符号，这是一个萤幕不可见的字符，在字符串中用 <code>"\n"</code>表示。用 <code>chomp</code> 方法可以去除字符串前后的空白和换行符号 <code>"\"</code>。</p>
-<h3>提示说明</h3><h4>什么是档案？</h4>
+<h3>提示说明</h3><h4>什么是文件？</h4>
 <p>所有正在执行中的程序和数据，都是放在内存(memory)之中。内存存取速度快，但是容量小而且一关机数据就不见了。<br>
-档案则是存在硬盘上，容量大但存取慢，但是关机重来还是继续保存着。</p>
+文件则是存在硬盘上，容量大但存取慢，但是关机重来还是继续保存着。</p>
 
-<p>所谓的读取档案就是将数据从硬盘放进内存里面，让程序可以操作。反之写入档案则是将内存的数据写入硬盘进行保存。</p>
+<p>所谓的读取文件就是将数据从硬盘放进内存里面，让程序可以操作。反之写入文件则是将内存的数据写入硬盘进行保存。</p>
 <h4>如何开档读取和写入</h4>
 <p>使用 Ruby 的 <a href="https://ruby-doc.org/core-2.4.1/File.html">File API</a>：</p>
 
-<p>读取档案内容：</p>
+<p>读取文件内容：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>file = File.open("foo.txt")
 doc = file.read("foo.txt")
@@ -229,7 +229,7 @@ doc = file.read("foo.txt")
 </pre></div>
 </figure>
 
-<p>写入档案：</p>
+<p>写入文件：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>File.open("bar.txt", "w+") do |f|
   f &lt;&lt; "aaa"
@@ -480,13 +480,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("10. 档案处理 - 编程基础练习簿 | 新生大学全栈营")
+    mixpanel.track("10. 文件处理 - 编程基础练习簿 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1408',
-  post_title: '10. 档案处理',
+  post_title: '10. 文件处理',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1408'
 };
 Intercom('trackEvent', 'watched_post', metadata);

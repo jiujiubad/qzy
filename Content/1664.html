@@ -246,16 +246,16 @@ var _hmt = _hmt || [];
 </blockquote>
 
 <p>之后每次 <code>cap production deploy</code> 进行布署的时候，这也会重开 sidekiq。</p>
-<h3>Cron 固定排程</h3>
-<p>Sidekiq 是不定时由用户的某个行为来触发，但有时候我们需要的是某个固定时间由系统排程来执行，例如每天凌晨四点进行备份、每天凌晨寄信提醒缴费、每周一凌晨一点产生报表等等。这种情况可以透过 Linux 内建的例行性排程机制 Cron。</p>
+<h3>Cron 固定定时任务</h3>
+<p>Sidekiq 是不定时由用户的某个行为来触发，但有时候我们需要的是某个固定时间由系统定时任务来执行，例如每天凌晨四点进行备份、每天凌晨寄信提醒缴费、每周一凌晨一点产生报表等等。这种情况可以透过 Linux 内建的例行性定时任务机制 Cron。</p>
 
 <blockquote>
-<p><a href="http://linux.vbird.org/linux_basic/0430cron.php">例行性工作排程(crontab)</a></p>
+<p><a href="http://linux.vbird.org/linux_basic/0430cron.php">例行性工作定时任务(crontab)</a></p>
 </blockquote>
 
 <p>首先，你先将需要执行的任务写成一个 rake 指令，这样就可以在主机上用 crontab 指令去执行这个 rake。</p>
 
-<p>不过由于 crontab 的格式不是非常友善，我们可以透过 <a href="https://github.com/javan/whenever">whenever</a> 这个 Gem 来编辑，用 Ruby 的语法撰写 crontab 语法，并且他支援搭配 capistrano 在布署时自动更新 crontab，非常方便。</p>
+<p>不过由于 crontab 的格式不是非常友善，我们可以透过 <a href="https://github.com/javan/whenever">whenever</a> 这个 Gem 来编辑，用 Ruby 的语法编写 crontab 语法，并且他支援搭配 capistrano 在布署时自动更新 crontab，非常方便。</p>
 <h4>安装方式</h4>
 <p>修改 Gemfile 加上</p>
 
@@ -265,9 +265,9 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>接着执行 <code>bundle</code> 和 <code>wheneverize .</code> 就会产生设定档。</p>
-<h4>排程设定</h4>
-<p>修改 <code>config/schedule.rb</code> 加入你要的排程工作，例如：</p>
+<p>接着执行 <code>bundle</code> 和 <code>wheneverize .</code> 就会产生设置文件。</p>
+<h4>定时任务设定</h4>
+<p>修改 <code>config/schedule.rb</code> 加入你要的定时任务工作，例如：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>env :PATH, ENV['PATH']
 set :output, 'log/cron.log'

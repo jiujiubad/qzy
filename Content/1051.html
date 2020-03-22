@@ -205,11 +205,11 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>新增 Parking model 来储存停车的资料，并检查必填的资料。</p>
+      <p>新增 Parking model 来保存停车的资料，并检查必填的资料。</p>
 
 <p><code>rails g model parking</code></p>
 
-<p>编辑 migration 档案：</p>
+<p>编辑 migration 文件：</p>
 
 <figure class="figure-code code"><figcaption><span>db/migrate/201703XXXXXXXX_create_parkings.rb
 </span></figcaption><div class="highlight"><pre>  <span class="k">class</span> <span class="nc">CreateParkings</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span>
@@ -234,7 +234,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <blockquote>
-<p>注意到 <code>amount</code> 金额字段通常会储存货币的最小单位，因此这里 ¥1 会存成 100。</p>
+<p>注意到 <code>amount</code> 金额字段通常会保存货币的最小单位，因此这里 ¥1 会存成 100。</p>
 </blockquote>
 
 <p>执行 <code>rake db:migrate</code></p>

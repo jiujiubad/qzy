@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
 <p>我们的 suggestotron 会有一个 Topics （主题）列表让大家来投票。我们会把 Topics 存进 database 里面。在这一步你会做这些事：</p>
 
 <ul>
-<li>在资料库里建立一个简单的“表格（Table）”来储存 Topics，每一篇 Topic 里会有标题和正文内容。</li>
+<li>在资料库里建立一个简单的“表格（Table）”来保存 Topics，每一篇 Topic 里会有标题和正文内容。</li>
 <li>在 Rails 里自动产生相对应的 Scaffold（包含 Model、View、Controller）。</li>
 </ul>
 
@@ -225,15 +225,15 @@ var _hmt = _hmt || [];
 <p><code>rails generate scaffold topic title:string description:text</code></p>
 
 <ul>
-<li>generate scaffold 告诉 Rails 去建立一堆档案让 topics 可以动。</li>
+<li>generate scaffold 告诉 Rails 去建立一堆文件让 topics 可以动。</li>
 <li>topic 是告诉 rails 新的 Model 的名字是什么。</li>
 <li>title:string 是说 topics 有标题（title），它是一个字串（String）。</li>
-<li>description:text 是说 topics 有正文内容（description），它是一段文字（Text）。（“字串”跟“文字”的差别？基本上“文字”是用来储存可能会很长的字串。）</li>
+<li>description:text 是说 topics 有正文内容（description），它是一段文字（Text）。（“字串”跟“文字”的差别？基本上“文字”是用来保存可能会很长的字串。）</li>
 </ul>
 
 <p><figure><img src="006y8lVajw1faqwp5ocz3j30p9071778.jpg" title=""></figure></p>
 
-<p>你若有兴趣，可以花一点时间研究一下自动产生出来的档案。</p>
+<p>你若有兴趣，可以花一点时间研究一下自动产生出来的文件。</p>
 
 <p>补充教材：<a href="https://fullstack.xinshengdaxue.com/posts/49" target="_self">“Rails 架构”</a></p>
 
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
 <p><code>rake db:migrate</code><br>
 <figure><img src="006y8lVajw1faqwr419bmj30f803i75g.jpg" title=""></figure></p>
 
-<p>告诉 Rails 更新资料库来建立一个用来储存新的 Model 的表格（Table）。</p>
+<p>告诉 Rails 更新资料库来建立一个用来保存新的 Model 的表格（Table）。</p>
 
 <p><br></p>
 

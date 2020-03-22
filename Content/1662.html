@@ -217,7 +217,7 @@ var _hmt = _hmt || [];
 <code>tail -f log/production.log</code> 这样会一直挂着显示</li>
 </ul>
 
-<p>除了 Rails 的错误讯息，错误也有可能发生在 Nginx，这时候可以找 nginx log，位置在 <code>/var/log/nginx/error.log</code>，需要用 root 身分才能看。</p>
+<p>除了 Rails 的错误信息，错误也有可能发生在 Nginx，这时候可以找 nginx log，位置在 <code>/var/log/nginx/error.log</code>，需要用 root 身分才能看。</p>
 <h3>如何查看系统状态</h3>
 <ul>
 <li>
@@ -254,7 +254,7 @@ var _hmt = _hmt || [];
 
 <p>如果可以连线进去，就先检查目前系统负载情形，是不是内存不够了? 或是硬盘满了? 如果是 Passenger 进程太多人塞住了，可以先尝试重开 Nginx 让网站恢复运作。如果还是没多久还是一样，就需要进一步看 log 检查是哪一个环节不正常。</p>
 <h3>网站服务器重启指令</h3>
-<p>默认安装完以及开机后，就会启动 Nginx。如果有修改 Nginx 设定档，需要重开 Nginx。</p>
+<p>默认安装完以及开机后，就会启动 Nginx。如果有修改 Nginx 设置文件，需要重开 Nginx。</p>
 
 <p>启动 <code>sudo service nginx start</code><br>
 停止 <code>sudo service nginx stop</code><br>

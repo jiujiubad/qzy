@@ -343,7 +343,7 @@ var _hmt = _hmt || [];
 <h3>Indexes 索引</h3>
 <p><code>WHERE</code>、<code>ORDER</code> 条件字段最好都要加上数据库索引(Index)，例如范例中的 <code>date</code> 字串，如果没有索引的话，会是 O(n) 的效率(这里又叫作 Full Table Scan，需要扫过整个表的意思)，数据库越多数据会越慢。如果有索引的话，会是 O(logn)，在数据量大的情况差非常多。</p>
 
-<p>模糊搜寻 LIKE 查询都会变成 Full Table Scan，没办法用数据库索引，百宝箱教过的 <a href="https://github.com/activerecord-hackery/ransack">ransack</a> gem 搜寻是用 LIKE 语法，在几万笔数据内效能还能接受，再大的数据量就需要用另外的 Full-Text Searching 引擎了，例如 <a href="https://www.elastic.co">ElasticSearch</a>。</p>
+<p>模糊搜索 LIKE 查询都会变成 Full Table Scan，没办法用数据库索引，百宝箱教过的 <a href="https://github.com/activerecord-hackery/ransack">ransack</a> gem 搜索是用 LIKE 语法，在几万笔数据内效能还能接受，再大的数据量就需要用另外的 Full-Text Searching 引擎了，例如 <a href="https://www.elastic.co">ElasticSearch</a>。</p>
 
 <p>加索引的 SQL 语法：</p>
 
@@ -360,7 +360,7 @@ var _hmt = _hmt || [];
 <p>将字段设成 unique 跟设成 unique index 是一样的</p>
 </blockquote>
 
-<p>当然也不是所有字段通通都加上索引就好了，因为加索引会让写入数据变慢(因为要建立索引，也会增加储存空间)，但是查询时会加快。</p>
+<p>当然也不是所有字段通通都加上索引就好了，因为加索引会让写入数据变慢(因为要建立索引，也会增加保存空间)，但是查询时会加快。</p>
 
     </div>
   </div>

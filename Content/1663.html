@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1663'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>15. 整理 Log 档案 - Linux 云服务器部署运维 | 新生大学全栈营</title>
+    <title>15. 整理 Log 文件 - Linux 云服务器部署运维 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      15. 整理 Log 档案
+      15. 整理 Log 文件
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1663">
@@ -205,9 +205,9 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>Linux 内建有 logrotate 工具，可以定期清空和压缩 Log 档案。如果你不整理的话，Rails 的 production.log 会不断成长到撑爆硬盘空间。</p>
+      <p>Linux 内建有 logrotate 工具，可以定期清空和压缩 Log 文件。如果你不整理的话，Rails 的 production.log 会不断成长到撑爆硬盘空间。</p>
 
-<p>用 root 权限新增 <code>/etc/logrotate.d/rails</code> 档案，内容如下：</p>
+<p>用 root 权限新增 <code>/etc/logrotate.d/rails</code> 文件，内容如下：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>/home/deploy/rails-recipes/shared/log/*.log {
   monthly
@@ -226,13 +226,13 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>其中 daily 表示每天整理，也可以改成 weekly 或 monthly</li>
-<li>dateext 表示档案补上 rotate 的日期</li>
+<li>dateext 表示文件补上 rotate 的日期</li>
 <li>missingok 表示如果找不到 log 档也没关系</li>
 <li>rotate 表示保留65535份，建议如果硬盘空间够的话，就不要砍log档了，以供未来备查</li>
 <li>compress 表示压缩起来，默认用 gzip</li>
 <li>delaycompress 表示延后压缩直到下一次 rotate</li>
 <li>notifempty 表示如果 log 档是空的，就不 rotate</li>
-<li>copytruncate 先复制 log 档的内容后，在清空的作法，因为有些程式一定 log 在本来的档名，例如 rails。另一种方法是 create。</li>
+<li>copytruncate 先复制 log 档的内容后，在清空的作法，因为有些程序一定 log 在本来的档名，例如 rails。另一种方法是 create。</li>
 </ul>
 
 <p>设定好之后，可以等明天，或是执行 <code>sudo /usr/sbin/logrotate -f /etc/logrotate.conf</code> 测试看看，会发现 rails 项目下的 log/production.log 被依日期拆开了。</p>
@@ -437,13 +437,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("15. 整理 Log 档案 - Linux 云服务器部署运维 | 新生大学全栈营")
+    mixpanel.track("15. 整理 Log 文件 - Linux 云服务器部署运维 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1663',
-  post_title: '15. 整理 Log 档案',
+  post_title: '15. 整理 Log 文件',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1663'
 };
 Intercom('trackEvent', 'watched_post', metadata);

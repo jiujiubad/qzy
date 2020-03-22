@@ -185,7 +185,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：4-手动实作讨论群的“新增”“修改”“删除”功能</h4>
+    <h4>所属章节：4-手动实战讨论群的“新增”“修改”“删除”功能</h4>
     <p><p>本章预计学习时间: 2小时以内</p></p>
     <p><p>再学习3节就可以完成本章了</p></p>
   </div>
@@ -210,8 +210,8 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <h2>目标</h2>
 <ul>
-<li>有时候我们会遇到使用者手残，直接送出全空的表单，结果就出现空文章</li>
-<li>因此我们要加上一个限制，让使用者不能送出“空标题”文章才对</li>
+<li>有时候我们会遇到使用者手残，直接提交全空的表单，结果就出现空文章</li>
+<li>因此我们要加上一个限制，让使用者不能提交“空标题”文章才对</li>
 </ul>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/xrqeAKZS9GL8cfozVPCJ_Screenshot%20at%20Mar%2028%2013-48-45.png" title=""></figure></p>
@@ -228,14 +228,14 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>这样一来，就算送出了空的表单，也不会产生任何纪录。</p>
+<p>这样一来，就算提交了空的表单，也不会产生任何纪录。</p>
 
-<p>但我们真正希望达到的效果是像这样子的，送出了空表单，使用者能够确切地知道，自己是因为什么错误被拦下：</p>
+<p>但我们真正希望达到的效果是像这样子的，提交了空表单，使用者能够确切地知道，自己是因为什么错误被拦下：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/eu3DA4QRSYdIBksgBvXg_Screenshot%20at%20Mar%2028%2013-53-53.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 2: 在 groups_controller 里面加入储存失败的判断</h3>
+<h3>Step 2: 在 groups_controller 里面加入保存失败的判断</h3>
 <p>修改 app/controllers/groups_controller.rb</p>
 
 <p>将 create action 修改成这样：</p>

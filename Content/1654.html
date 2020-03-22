@@ -248,7 +248,7 @@ var _hmt = _hmt || [];
 
 <p>新开的帐号没有 sudo 权限，首先需要将 ihower 加到 sudo 清单：</p>
 
-<p>新增 <code>/etc/sudoers.d/ihower</code> 这个档案，内容是</p>
+<p>新增 <code>/etc/sudoers.d/ihower</code> 这个文件，内容是</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>ihower  ALL=(ALL:ALL) ALL
 
@@ -264,28 +264,28 @@ var _hmt = _hmt || [];
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/bVEdFETASTWMM4GYDKpk_53.png" title=""></figure></p>
 
 <p>注意到 sudo 后要再次输入自己密码，不是 root 的密码。</p>
-<h3>档案和目录权限</h3>
-<p>Linux 对于每个档案和目录，依据不同用户有着严格的权限控制：可否读、可否写、可否执行。</p>
+<h3>文件和目录权限</h3>
+<p>Linux 对于每个文件和目录，依据不同用户有着严格的权限控制：可否读、可否写、可否执行。</p>
 
-<p>执行 <code>ls -la</code> 显示一下当前目前目录的所有档案：</p>
+<p>执行 <code>ls -la</code> 显示一下当前目前目录的所有文件：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/JFvfJ9orTy2sYKLXEwXP_50.png" title=""></figure></p>
 
-<p>第二栏的 root 表示这个档案属于 root 用户，也就是档案 owner 拥有者。</p>
+<p>第二栏的 root 表示这个文件属于 root 用户，也就是文件 owner 拥有者。</p>
 
-<p>第三栏的 root 表示这个档案属于 root 群组(group)。默认每个用户会属于跟自己同名的群组。</p>
+<p>第三栏的 root 表示这个文件属于 root 群组(group)。默认每个用户会属于跟自己同名的群组。</p>
 
 <p>而第一栏的字段共十位，第一位表示是文件还是目录，<code>d</code> 是目录、<code>-</code>是文件。</p>
 
-<p>剩下9位，每三位一组，第一组是档案 owner 拥有者的权限、第二组是群组(group)群限、第三组是其他用户。</p>
+<p>剩下9位，每三位一组，第一组是文件 owner 拥有者的权限、第二组是群组(group)群限、第三组是其他用户。</p>
 
 <p>每组分别是三位来表示，分别是 <code>rwx</code>，<code>r</code> 表示读、<code>w</code>表示写入、<code>x</code>表示可以执行，<code>-</code> 表示没有权限。</p>
 
-<p>截图中 abc.txt 是 <code>-rw-r--r--</code> 表示这是一个档案、档案拥有者是 <code>rw-</code> 可以读写、无法执行、群组和其他人是 <code>r--</code> 表示可以读不能写入。</p>
-<h4>如何变更档案权限？</h4>
-<p><code>chown</code> 指令可以变更档案拥有者和群组，例如 <code>chown ihower:ihower abc.txt</code> 可以将档案 abc.txt 的拥有者设定为 <code>ihower</code>，群组设定为 <code>ihower</code>。如果要修改整个目录包含以下档案，则可以用 <code>chown -R</code></p>
+<p>截图中 abc.txt 是 <code>-rw-r--r--</code> 表示这是一个文件、文件拥有者是 <code>rw-</code> 可以读写、无法执行、群组和其他人是 <code>r--</code> 表示可以读不能写入。</p>
+<h4>如何变更文件权限？</h4>
+<p><code>chown</code> 指令可以变更文件拥有者和群组，例如 <code>chown ihower:ihower abc.txt</code> 可以将文件 abc.txt 的拥有者设定为 <code>ihower</code>，群组设定为 <code>ihower</code>。如果要修改整个目录包含以下文件，则可以用 <code>chown -R</code></p>
 
-<p><code>chmod</code> 指令可以变更档案的权限，例如 <code>chmod 644 abc.txt</code> 就会设定成 <code>rw-r--r--</code>。这需要了解一下什么是 Octal Permissions 表示方式：</p>
+<p><code>chmod</code> 指令可以变更文件的权限，例如 <code>chmod 644 abc.txt</code> 就会设定成 <code>rw-r--r--</code>。这需要了解一下什么是 Octal Permissions 表示方式：</p>
 
 <ul>
 <li><code>r 是 4</code></li>
@@ -295,18 +295,18 @@ var _hmt = _hmt || [];
 
 <p>你要的权限就是把数字加起来，例如 <code>rw-</code> 就是 4+2 是 6。<code>r--</code> 就是 4。于是 <code>rw-r--r--</code> 就是 644 了。</p>
 
-<p>如果理解的话，之后碰到档案存取权限问题时，就知道如何处理了。</p>
+<p>如果理解的话，之后碰到文件存取权限问题时，就知道如何处理了。</p>
 <h3>免密码登录</h3>
 <p>远端登录除了输入密码之外，SSH 还可以用非对称加密(Public Key Encryption)的方式来做登录。</p>
 
-<p>在非对称加密算法中，会有两把钥匙(key)，一把叫做公钥(public key)、一把叫做密钥(private key)。</p>
+<p>在非对称加密算法中，会有两把钥匙(key)，一把叫做公钥(public key)、一把叫做私钥(private key)。</p>
 
 <ul>
-<li>透过公钥加密的密文，只有密钥能够解开</li>
-<li>透过密钥加密的密文，只有公钥能够解开</li>
+<li>透过公钥加密的密码，只有私钥能够解开</li>
+<li>透过私钥加密的密码，只有公钥能够解开</li>
 </ul>
 
-<p>于是我们就可以用这个机制来做登录：首先我们把自己的公钥先放在服务器上，那么之后登录时，服务器会送一个乱数字符串给用户，用户用密钥加密后返回服务器，如果服务器可以用公钥解回来，就表示认证成功。</p>
+<p>于是我们就可以用这个机制来做登录：首先我们把自己的公钥先放在服务器上，那么之后登录时，服务器会送一个乱数字符串给用户，用户用私钥加密后返回服务器，如果服务器可以用公钥解回来，就表示认证成功。</p>
 
 <p>以下是设定的步骤，：</p>
 
@@ -336,9 +336,9 @@ var _hmt = _hmt || [];
 <h4>本机没有 id_rsa.pub ？</h4>
 <p>因为 Github 也是用一样的认证机制，所以之前操作 git 时你应该已经产生过这个 SSH key，并且在 Github 后台贴上你自己的公钥，所以在 <code>git push</code> 时不需要打密码。</p>
 
-<p>如果本机真的没有 <code>~/.ssh/id_rsa.pub</code> 公钥的话，需要先产生你自己的公钥私钥，请执行 <code>ssh-keygen -t rsa</code> 就会产生公钥 <code>~/.ssh/id_rsa.pub</code> 以及密钥 <code>~/.ssh/id_rsa</code> 这两个档案。请一直按 Enter，不需要设定 passphrse 密码(不然你每次用key都要输入一次密码很麻烦)。</p>
+<p>如果本机真的没有 <code>~/.ssh/id_rsa.pub</code> 公钥的话，需要先产生你自己的公钥私钥，请执行 <code>ssh-keygen -t rsa</code> 就会产生公钥 <code>~/.ssh/id_rsa.pub</code> 以及私钥 <code>~/.ssh/id_rsa</code> 这两个文件。请一直按 Enter，不需要设定 passphrse 密码(不然你每次用key都要输入一次密码很麻烦)。</p>
 
-<p>公钥可以公开给别人没关系，密钥就千万要保管好喔。</p>
+<p>公钥可以公开给别人没关系，私钥就千万要保管好喔。</p>
 
     </div>
   </div>

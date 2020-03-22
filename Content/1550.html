@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>其中第一行的第一单字就是 HTTP 方法，第二个单字是网址，第三个单字是 HTTP 的版本，目前通行的版本是 HTTP 1.1</p>
+<p>其中第一行的第一单词就是 HTTP 方法，第二个单词是网址，第三个单词是 HTTP 的版本，目前通行的版本是 HTTP 1.1</p>
 
 <p>第二行之后是 HTTP Header，是 <code>key: value</code> 的格式，例如 Host 是 <code>ihower.tw</code>。</p>
 <h4>HTTP 方法</h4>
@@ -239,11 +239,11 @@ var _hmt = _hmt || [];
 <li>DELETE: 不安全(Non-safe) 但幂等(idempotent)，用来删除数据</li>
 </ul>
 
-<p>在浏览器中输入网址时，会用 GET 方法。网页中的 a 超连结，会用 GET 跳到下一页。网页中的 form 表单，默认是用 POST 送出。在 Ajax 中，我们可以用 JavaScript 自行指定要用哪一种 HTTP 方法。</p>
+<p>在浏览器中输入网址时，会用 GET 方法。网页中的 a 超连结，会用 GET 跳到下一页。网页中的 form 表单，默认是用 POST 提交。在 Ajax 中，我们可以用 JavaScript 自行指定要用哪一种 HTTP 方法。</p>
 
-<p>这里安全(Safe)的意思是这个操作不会修改到服务器的数据。但这只是语意上的意思，不代表服务器的实作。例如 GET 某一个网页时，服务器还是可以实做浏览量(Page view)功能，每次有人浏览就在数据库加一。但是我们并不会因此就改成用 POST 或 PATCH 方法，因为从用户的立场来说，浏览网页并不预期会修改或新增数据。</p>
+<p>这里安全(Safe)的意思是这个操作不会修改到服务器的数据。但这只是语意上的意思，不代表服务器的实战。例如 GET 某一个网页时，服务器还是可以实做浏览量(Page view)功能，每次有人浏览就在数据库加一。但是我们并不会因此就改成用 POST 或 PATCH 方法，因为从用户的立场来说，浏览网页并不预期会修改或新增数据。</p>
 
-<p>另外，因为互联网都会假设 GET 是可以重复读取并缓存的，而 POST 不行。因此搜寻引擎只会用 GET 抓资料，像<a href="https://www.puritys.me/docs-blog/article-204-%E6%88%91%E8%A2%AB-Google-%E9%AA%87%E5%AE%A2%E6%94%BB%E5%87%BB%E4%BA%86.html">这篇文章</a>就闹了笑话，这个人用 GET 来删除资料，造成Google 爬虫一爬就不小心删除了，他还以为是 Google 故意骇他...lol 另外，像浏览器的表单送出是用POST，如果我们在action 中不redirect (也就是让浏览器去GET 另一页)，而是直接render 返回，那么如果用户重新整理画面的话，浏览器会跳出以下的警告视窗，要求用户确认是否再POST 一次，因为这可能会造成重复操作(重复新增)。如果是 GET 的话，重新整理就不会有这种警告了。</p>
+<p>另外，因为互联网都会假设 GET 是可以重复读取并缓存的，而 POST 不行。因此搜索引擎只会用 GET 抓资料，像<a href="https://www.puritys.me/docs-blog/article-204-%E6%88%91%E8%A2%AB-Google-%E9%AA%87%E5%AE%A2%E6%94%BB%E5%87%BB%E4%BA%86.html">这篇文章</a>就闹了笑话，这个人用 GET 来删除资料，造成Google 爬虫一爬就不小心删除了，他还以为是 Google 故意骇他...lol 另外，像浏览器的表单提交是用POST，如果我们在action 中不redirect (也就是让浏览器去GET 另一页)，而是直接render 返回，那么如果用户重新整理画面的话，浏览器会跳出以下的警告视窗，要求用户确认是否再POST 一次，因为这可能会造成重复操作(重复新增)。如果是 GET 的话，重新整理就不会有这种警告了。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/S2hCzQITYORTVc6vEveP_post-confirm.png" title=""></figure></p>
 
@@ -260,7 +260,7 @@ Accept: */*
 </figure>
 
 <ul>
-<li>Host 指的是请求的网域名称。这样因为同一个 IP 地址的 HTTP 实体服务器上，可以同时有不同网站。但要如何区分呢？它们的 TCP/IP 首部上的 IP 地址是一样的数字，抵达服务器后也用一样的 Port (HTTP 用80、HTTPS用443)，因此一定要用不同的网域名称来做区分，例如 <a href="https://fullstack.xinshengdaxue.com" rel="nofollow" target="_self">https://fullstack.xinshengdaxue.com</a> 和 <a href="https://forum.qzy.camp" rel="nofollow" target="_self">https://forum.qzy.camp</a> 其实是在同一台主机上，IP 地址是一样的。但是透过 Host 的不同，HTTP 服务器就可以区分是要打开那一个网站。</li>
+<li>Host 指的是请求的域名。这样因为同一个 IP 地址的 HTTP 实体服务器上，可以同时有不同网站。但要如何区分呢？它们的 TCP/IP 首部上的 IP 地址是一样的数字，抵达服务器后也用一样的 Port (HTTP 用80、HTTPS用443)，因此一定要用不同的域名来做区分，例如 <a href="https://fullstack.xinshengdaxue.com" rel="nofollow" target="_self">https://fullstack.xinshengdaxue.com</a> 和 <a href="https://forum.qzy.camp" rel="nofollow" target="_self">https://forum.qzy.camp</a> 其实是在同一台主机上，IP 地址是一样的。但是透过 Host 的不同，HTTP 服务器就可以区分是要打开那一个网站。</li>
 <li>
 <a href="https://zh.wikipedia.org/zh-cn/%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86">User-Agent</a> 是用户使用的软件，不过由于历史因素，这些 User Agent 字符串都<a href="https://udger.com/resources/ua-list">蛮丑的</a>。另外，User-Agent 也不代表客户端真的是用这个软件，这是可以自行修改的。</li>
 <li>Accept 指的是希望服务器回传的格式。<code>*/*</code> 是都可以的意思，像 Chrome 浏览器的 GET 操作默认会用 <code>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</code>，表示第一优先是 <code>text/html</code> 格式。</li>
@@ -268,9 +268,9 @@ Accept: */*
 
 <p>HTTP 并没有规定 Response 一定是什么格式，所以在 Request Header 会用 Accept 注明希望什么格式，等等回传的 Response Header 中也会写清楚是什么格式。</p>
 
-<p>如果是 HTML 表单用 POST 送出，浏览器则会用 <code>application/x-www-form-urlencoded</code> 或 <code>form-data</code> 格式，详见 <a href="https://imququ.com/post/four-ways-to-post-data-in-http.html">四种常见的 POST 提交数据方式</a></p>
+<p>如果是 HTML 表单用 POST 提交，浏览器则会用 <code>application/x-www-form-urlencoded</code> 或 <code>form-data</code> 格式，详见 <a href="https://imququ.com/post/four-ways-to-post-data-in-http.html">四种常见的 POST 提交数据方式</a></p>
 <h4>信息内容 Message Body</h4>
-<p>GET 没有信息内容，要用 POST/PATCH/PUT/DELETE 才会有信息内容。另外，也因为浏览器的网址(URL)是有长度限制的，所以如果 HTTP Request 要带很多数据时，就不能用 GET。所以 HTML 表单的送出默认是用 POST。</p>
+<p>GET 没有信息内容，要用 POST/PATCH/PUT/DELETE 才会有信息内容。另外，也因为浏览器的网址(URL)是有长度限制的，所以如果 HTTP Request 要带很多数据时，就不能用 GET。所以 HTML 表单的提交默认是用 POST。</p>
 <h3>HTTP Response</h3>
 <p>一个 Response 包括几个成分：</p>
 
@@ -293,7 +293,7 @@ Content-Type: text/html
 </pre></div>
 </figure>
 
-<p><code>HTTP/1.1</code> 是 HTTP 规格的版本、第二个单字 <code>200</code> 是 HTTP 状态码数字、第三个单字 'OK' 是状态码。</p>
+<p><code>HTTP/1.1</code> 是 HTTP 规格的版本、第二个单词 <code>200</code> 是 HTTP 状态码数字、第三个单词 'OK' 是状态码。</p>
 
 <p>隔一行后，就是 Response 的信息内容，这个内容物可以是任何格式，例如 HTML 或 JSON 或是二进制的图片等等。这个会在 Headers 里面用 <code>Content-Type</code> 告所我们这是什么格式。</p>
 <h4>HTTP Status Code</h4>
@@ -328,7 +328,7 @@ Response Body 是没有限制格式的，例如 HTML 是 <code>text/html; charse
 <li><a href="http://devco.re/blog/2014/06/11/setcookie-httponly-security-issues-of-http-headers-3/">HttpOnly - HTTP Headers 的资安议题 (3)</a></li>
 </ul>
 
-<p>HTTP Header 还有一些是告诉浏览器和路由路如何做缓存、哪些信息可以缓存哪些不行，例如 <code>Cache-Control</code>、<code>ETag</code> 和 <code>Last-Modified</code> 等等，让浏览器可以不需要重复抓取一样的内容。有兴趣的请进一步参考 <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">HTTP Caching</a>。在正式的部署中，我们也会设定静态档案(CSS/JavaScript/图档等)可以缓存，告诉浏览器可以放心地缓存这些静态档案，这也是因为 Rails 的 Asset Pipeline 会将静态档案的档名修改成根据内容加上 digest 编码，因此只要静态档案内容有修改，档名就会变更。那浏览器就会重新下载到最新的档案，而不怕继续用旧的缓存盘案。</p>
+<p>HTTP Header 还有一些是告诉浏览器和路由路如何做缓存、哪些信息可以缓存哪些不行，例如 <code>Cache-Control</code>、<code>ETag</code> 和 <code>Last-Modified</code> 等等，让浏览器可以不需要重复爬取一样的内容。有兴趣的请进一步参考 <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">HTTP Caching</a>。在正式的部署中，我们也会设定静态文件(CSS/JavaScript/图档等)可以缓存，告诉浏览器可以放心地缓存这些静态文件，这也是因为 Rails 的 Asset Pipeline 会将静态文件的档名修改成根据内容加上 digest 编码，因此只要静态文件内容有修改，档名就会变更。那浏览器就会重新下载到最新的文件，而不怕继续用旧的缓存盘案。</p>
 <h3>HTTP 的无状态(Stateless)特性，以及用 Cookie 做状态管理</h3>
 <p>在 HTTP 的设计中，每个 Requests 之间都是完全独立的(和前后 Request 相比)，也就是说每个 Request 必须带有完整的参数来完成操作。</p>
 
@@ -340,9 +340,9 @@ Response Body 是没有限制格式的，例如 HTML 是 <code>text/html; charse
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/KJjKjLk9Shu3HIR3J04x_17.png" title=""></figure></p>
 
-<p>另外，Cookie 只会向同一个网域送出，这是浏览器的<a href="https://en.wikipedia.org/wiki/Same-origin_policy">安全同源政策 Same-origin policy</a>，例如在 fullstack.xinshengdaxue.com 设定的 Cookie，浏览器只会向 fullstack.xinshengdaxue.com 送回 Cookie。</p>
+<p>另外，Cookie 只会向同一个域名提交，这是浏览器的<a href="https://en.wikipedia.org/wiki/Same-origin_policy">安全同源政策 Same-origin policy</a>，例如在 fullstack.xinshengdaxue.com 设定的 Cookie，浏览器只会向 fullstack.xinshengdaxue.com 送回 Cookie。</p>
 
-<p>画面中还有看到 baidu 和 intercom 的 Cookie，这是因为全栈营网页上有安装 <a href="https://tongji.baidu.com">百度统计</a> 来统计用户流量，以及 <a href="https://www.intercom.com/">Intercom</a> 来做即时线上客服。这两个是 JavaScript 插件放在 HTML 上的，你可以在网页上放其他网域的 JavaScript/CSS或图片。</p>
+<p>画面中还有看到 baidu 和 intercom 的 Cookie，这是因为全栈营网页上有安装 <a href="https://tongji.baidu.com">百度统计</a> 来统计用户流量，以及 <a href="https://www.intercom.com/">Intercom</a> 来做即时线上客服。这两个是 JavaScript 插件放在 HTML 上的，你可以在网页上放其他域名的 JavaScript/CSS或图片。</p>
 
     </div>
   </div>

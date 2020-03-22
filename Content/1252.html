@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>常见的做法是在 Users 上新增一个字段 <code>time_zone:string</code>，储存该用户的偏好时区。</p>
+      <p>常见的做法是在 Users 上新增一个字段 <code>time_zone:string</code>，保存该用户的偏好时区。</p>
 
 <p>执行 <code>rails g migration add_time_zone_to_users</code></p>
 
@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
 
 <blockquote>
 <p>注意，这里的路由设计使用单数 <code>resource<br>
-:user</code>，跟 <code>resources :users</code> 相比，单数的路由少了 <code>index action</code>，并且网址上不会有 ID，路由方法也皆为单数不需要参数，例如 <code>user_path</code>、<code>edit_user_path</code>。会这样设计的原因是对前台用户而言，编辑用户资料就是编辑自己的资料，所以这个单数的用意是指唯一自己，用户也不能修改其他人的资料，因此在controller 里面是写<code>@user = current_user</code>，而不是根据<code>params[:id]</code> 去捞不同用户。另一个附带的好处是网址列上不会出现ID，即使你没有实作第一章去改 Model 网址，用户也不会知道 User ID。</p>
+:user</code>，跟 <code>resources :users</code> 相比，单数的路由少了 <code>index action</code>，并且网址上不会有 ID，路由方法也皆为单数不需要参数，例如 <code>user_path</code>、<code>edit_user_path</code>。会这样设计的原因是对前台用户而言，编辑用户资料就是编辑自己的资料，所以这个单数的用意是指唯一自己，用户也不能修改其他人的资料，因此在controller 里面是写<code>@user = current_user</code>，而不是根据<code>params[:id]</code> 去捞不同用户。另一个附带的好处是网址列上不会出现ID，即使你没有实战第一章去改 Model 网址，用户也不会知道 User ID。</p>
 </blockquote>
 
 <p>执行 <code>rails g controller users</code></p>

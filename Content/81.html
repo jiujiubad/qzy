@@ -215,13 +215,13 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h2>步骤</h2><h3>Step 0. git checkout -b ch06</h3>
-<p>因为我们现在要实作第六章的内容，新增一个 branch 把实作内容集中在 ch06 是比较合理的。将来回顾就可以比较清楚 在 ch06 我们做了哪一些练习。</p>
+<p>因为我们现在要实战第六章的内容，新增一个 branch 把实战内容集中在 ch06 是比较合理的。将来回顾就可以比较清楚 在 ch06 我们做了哪一些练习。</p>
 
 <p><code>git checkout -b ch06</code></p>
 
 <p><br></p>
 <h3>Step 1: 建立 GroupRelationship</h3>
-<p>我们在这里要建立一个新的 model 叫 GroupRelationship。这个数据表里面只有两个栏位：</p>
+<p>我们在这里要建立一个新的 model 叫 GroupRelationship。这个数据表里面只有两个字段：</p>
 
 <ul>
 <li>group_id  ( integer )</li>
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>user.groups 会捞出这个使用者“创造过的所有群”。那我们要如何撰写 “参与的所有群”呢？</p>
+<p>user.groups 会捞出这个使用者“创造过的所有群”。那我们要如何编写 “参与的所有群”呢？</p>
 
 <p>首先，修改 app/models/user.rb 加入以下两行</p>
 
@@ -318,7 +318,7 @@ var _hmt = _hmt || [];
 <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/hTViiKFRQq2Sv3tOELHu_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-12%20%E4%B8%8B%E5%8D%885.22.33.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 5: git 储存</h3>
+<h3>Step 5: git 保存</h3>
 <p><code>git add .</code><br>
 <code>git commit -m "implement group relation"</code></p>
 

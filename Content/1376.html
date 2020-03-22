@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1376'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>19-3 上传多档案(使用额外Model) - Rails 百宝箱 第三集 | 新生大学全栈营</title>
+    <title>19-3 上传多文件(使用额外Model) - Rails 百宝箱 第三集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：19. 多档案上传</h4>
+    <h4>所属章节：19. 多文件上传</h4>
     <p></p>
     <p><p>学完本节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      19-3 上传多档案(使用额外Model)
+      19-3 上传多文件(使用额外Model)
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1376">
@@ -205,13 +205,13 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>上一节的多档上传实作，我们用了 <code>serialize :images, JSON</code> 这会将多个文档的档名数组，转成 JSON 后存储在 <code>images</code> 字段之中，Rails 在读出来的时候，会自动转回数组。这一招让 carrierwave 很简单就可以支援多档上传，它把所有档名的数据都塞进同一个字段 <code>images</code>。</p>
+      <p>上一节的多文件上传实战，我们用了 <code>serialize :images, JSON</code> 这会将多个文档的档名数组，转成 JSON 后存储在 <code>images</code> 字段之中，Rails 在读出来的时候，会自动转回数组。这一招让 carrierwave 很简单就可以支援多文件上传，它把所有档名的数据都塞进同一个字段 <code>images</code>。</p>
 
 <p>不过这种方法有几个缺点：</p>
 
 <ol>
 <li>无法增加每个文档编辑额外的描述或其他资讯</li>
-<li>无法为个别的文档进行更新：重传的时候，它会全部砍掉然后全部重新上传</li>
+<li>无法为个别的文档进行更新：重传的时候，它会全部删掉然后全部重新上传</li>
 <li>上传的 UI 需要用户知道用 Command 按键才能多选文档。因此如果是后台管理员还可以教育，前台一般用户可能会不知道如何使用。</li>
 </ol>
 
@@ -277,7 +277,7 @@ var _hmt = _hmt || [];
 +       &lt;%= ff.label :attachment %&gt;
 +       &lt;%= ff.file_field :attachment, :class =&gt; "form-control" %&gt;
 +       &lt;% if ff.object.attachment.present? %&gt;
-+         已上传档案 &lt;%= link_to ff.object.description, ff.object.attachment.url, :target =&gt; "_blank" %&gt;
++         已上传文件 &lt;%= link_to ff.object.description, ff.object.attachment.url, :target =&gt; "_blank" %&gt;
 +       &lt;% end %&gt;
 +     &lt;/div&gt;
 +
@@ -286,11 +286,11 @@ var _hmt = _hmt || [];
 +       &lt;%= ff.text_field :description, :class =&gt; "form-control" %&gt;
 +     &lt;/div&gt;
 +
-+     &lt;%= ff.remove_nested_fields_link "移除这个档案", :class =&gt; "btn btn-danger" %&gt;
++     &lt;%= ff.remove_nested_fields_link "移除这个文件", :class =&gt; "btn btn-danger" %&gt;
 +   &lt;/fieldset&gt;
 + &lt;% end %&gt;
 + &lt;p class="text-right"&gt;
-+   &lt;%= f.add_nested_fields_link :attachments, "新增档案", :class =&gt; "btn btn-default" %&gt;
++   &lt;%= f.add_nested_fields_link :attachments, "新增文件", :class =&gt; "btn btn-default" %&gt;
 + &lt;/p&gt;
 +
 </span>
@@ -446,7 +446,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="pannel-body">
     <div class="post-task-descripiton">
-        <p>请在任一个项目中，实作上传多档案。</p>
+        <p>请在任一个项目中，实战上传多文件。</p>
 
     </div>
 
@@ -578,13 +578,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("19-3 上传多档案(使用额外Model) - Rails 百宝箱 第三集 | 新生大学全栈营")
+    mixpanel.track("19-3 上传多文件(使用额外Model) - Rails 百宝箱 第三集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1376',
-  post_title: '19-3 上传多档案(使用额外Model)',
+  post_title: '19-3 上传多文件(使用额外Model)',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1376'
 };
 Intercom('trackEvent', 'watched_post', metadata);

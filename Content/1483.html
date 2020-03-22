@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1483'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>25-3 把汇入档案存下来纪录过程 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>25-3 把导入文件存下来纪录过程 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：25. 数据汇入</h4>
+    <h4>所属章节：25. 数据导入</h4>
     <p></p>
     <p><p>学完本节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      25-3 把汇入档案存下来纪录过程
+      25-3 把导入文件存下来纪录过程
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1483">
@@ -205,19 +205,19 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>上一节的方式比较简略，我们并没有把上传的档案存下来，而是直接读取档案内容进行处理。</p>
+      <p>上一节的方式比较简略，我们并没有把上传的文件存下来，而是直接读取文件内容进行处理。</p>
 
-<p>如果这是一个面向终端用户的功能，会需要实作的更完整，例如：</p>
+<p>如果这是一个面向终端用户的功能，会需要实战的更完整，例如：</p>
 
 <ol>
-<li>把上传的档案先存下来，先给用户预览字段顺序是否正确、有多少数据要汇入、哪些数据有问题</li>
-<li>确认后，才开始汇入数据库</li>
-<li>可以浏览过往的汇入历史纪录</li>
+<li>把上传的文件先存下来，先给用户预览字段顺序是否正确、有多少数据要导入、哪些数据有问题</li>
+<li>确认后，才开始导入数据库</li>
+<li>可以浏览过往的导入历史纪录</li>
 </ol>
 
-<p>接下来我们示范如何新增一个 Model 把档案存下来处理，以及新增一个 RegistrationImports controller 显示汇入的历史纪录。</p>
+<p>接下来我们示范如何新增一个 Model 把文件存下来处理，以及新增一个 RegistrationImports controller 显示导入的历史纪录。</p>
 
-<p>执行 <code>rails g model registration_import</code>，这个 Model 会存下上传的 CSV 档案，并记录汇入的结果。</p>
+<p>执行 <code>rails g model registration_import</code>，这个 Model 会存下上传的 CSV 文件，并记录导入的结果。</p>
 
 <p>编辑 <code>db/migrate/2017XXXXXX4512_create_registration_imports.rb</code></p>
 
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
 
 <p>执行 <code>rails g uploader registration_import_csv</code></p>
 
-<p>编辑 <code>app/models/registration_import.rb</code>，其中的 <code>process!</code> 方法就是要执行的汇入操作。</p>
+<p>编辑 <code>app/models/registration_import.rb</code>，其中的 <code>process!</code> 方法就是要执行的导入操作。</p>
 
 <figure class="figure-code code"><figcaption><span>app/models/registration_import.rb
 </span></figcaption><div class="highlight"><pre><span class="gi">+ require 'csv'
@@ -351,7 +351,7 @@ var _hmt = _hmt || [];
 +
 +     if @import.save
 +       @import.process!
-+       flash[:notice] = "汇入完成"
++       flash[:notice] = "导入完成"
 +     end
 +
 +     redirect_to admin_event_registration_imports_path(@event)
@@ -372,9 +372,9 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>其中在 <code>@import.save</code> 之后，随即呼叫 <code>process!</code> 开始汇入。</p>
+<p>其中在 <code>@import.save</code> 之后，随即呼叫 <code>process!</code> 开始导入。</p>
 
-<p>新增 <code>app/views/admin/registration_imports/index.html.erb</code> 显示档案上传的输入框，以及历史汇入纪录。</p>
+<p>新增 <code>app/views/admin/registration_imports/index.html.erb</code> 显示文件上传的输入框，以及历史导入纪录。</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/registration_imports/index.html.erb
 </span></figcaption><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span><span class="cp">&lt;%=</span> <span class="vi">@event</span><span class="p">.</span><span class="nf">name</span> <span class="cp">%&gt;</span> / Registrations Import<span class="nt">&lt;/h1&gt;</span>
@@ -388,7 +388,7 @@ var _hmt = _hmt || [];
   <span class="nt">&lt;/div&gt;</span>
 
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-    <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">submit</span> <span class="s2">"送出"</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">"btn btn-primary"</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">submit</span> <span class="s2">"提交"</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s2">"btn btn-primary"</span> <span class="cp">%&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 
 <span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
@@ -397,10 +397,10 @@ var _hmt = _hmt || [];
 <span class="nt">&lt;tr&gt;</span>
   <span class="nt">&lt;th&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
   <span class="nt">&lt;th&gt;</span>状态<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;th&gt;</span>CSV档案<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th&gt;</span>CSV文件<span class="nt">&lt;/th&gt;</span>
   <span class="nt">&lt;th&gt;</span>总笔数<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;th&gt;</span>汇入成功笔数<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;th&gt;</span>错误讯息<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th&gt;</span>导入成功笔数<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th&gt;</span>错误信息<span class="nt">&lt;/th&gt;</span>
 <span class="nt">&lt;/tr&gt;</span>
 <span class="cp">&lt;%</span> <span class="vi">@imports</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">import</span><span class="o">|</span> <span class="cp">%&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
@@ -627,13 +627,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("25-3 把汇入档案存下来纪录过程 - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("25-3 把导入文件存下来纪录过程 - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1483',
-  post_title: '25-3 把汇入档案存下来纪录过程',
+  post_title: '25-3 把导入文件存下来纪录过程',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1483'
 };
 Intercom('trackEvent', 'watched_post', metadata);

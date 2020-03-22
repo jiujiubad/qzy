@@ -205,10 +205,10 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>在远端用 root 权限编辑 <code>/etc/nginx/nginx.conf</code> 这个档案：</p>
+      <p>在远端用 root 权限编辑 <code>/etc/nginx/nginx.conf</code> 这个文件：</p>
 
 <figure class="figure-code code"><figcaption><span>
-</span></figcaption><div class="highlight"><pre>  # 让 Nginx 可以读到环境变量 PATH，Rails 需要这一行才能调用到 nodejs 来编译静态档案
+</span></figcaption><div class="highlight"><pre>  # 让 Nginx 可以读到环境变量 PATH，Rails 需要这一行才能调用到 nodejs 来编译静态文件
 <span class="gi">+ env PATH;
 </span>
     user www-data;
@@ -226,7 +226,7 @@ var _hmt = _hmt || [];
 <span class="gi">+   passenger_show_version_in_header off;
 +   server_tokens       off;
 </span>
-    # 设定档案上传可以到100mb，默认只有1Mb超小气的，上传一张图片就爆了
+    # 设定文件上传可以到100mb，默认只有1Mb超小气的，上传一张图片就爆了
 <span class="gi">+   client_max_body_size 100m;
 </span>
     gzip on;
@@ -247,7 +247,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>在远端用 root 权限新增 <code>/etc/nginx/sites-enabled/rails-recipes.conf</code> 这个档案(档名可以自订无所谓)</p>
+<p>在远端用 root 权限新增 <code>/etc/nginx/sites-enabled/rails-recipes.conf</code> 这个文件(档名可以自订无所谓)</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>server {
   listen 80;
@@ -270,18 +270,18 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>以上设定包括设定 Assets 静态档案成为永不过期(Rails的Assets Pipeline会加上版本号，所以不需要担心)、设定 Passenger 至少开一个进程(Process)。其中 <code>server_name</code> 应该填网域名称。不过如果目前没有的话，只好先填 IP 位置。</p>
+<p>以上设定包括设定 Assets 静态文件成为永不过期(Rails的Assets Pipeline会加上版本号，所以不需要担心)、设定 Passenger 至少开一个进程(Process)。其中 <code>server_name</code> 应该填域名。不过如果目前没有的话，只好先填 IP 位置。</p>
 
 <p>如果有多个 domain 连到同一个网站，可以用空白区隔，例如：</p>
 
 <p><code>server_name abc.ihower.tw xyz.ihower.tw ihower.tw;</code></p>
 
-<p>这样三个网址都会连到同一个 Rails 了。如果之后想在同一个服务器装多个网站，那么就需要有不同的网域名称，每个网站有自己的 <code>/etc/nginx/sites-enabled/xxxxx.conf</code> 设定档案，这样 Nginx 才能区别用户是要打开那一个网站。</p>
+<p>这样三个网址都会连到同一个 Rails 了。如果之后想在同一个服务器装多个网站，那么就需要有不同的域名，每个网站有自己的 <code>/etc/nginx/sites-enabled/xxxxx.conf</code> 设定文件，这样 Nginx 才能区别用户是要打开那一个网站。</p>
 
 <p>最后执行 <code>sudo service nginx restart</code> 才会套用新的 Nginx 设定。</p>
 
 <blockquote>
-<p>如果 Nginx 设定档格式不对，例如结尾少了分号 <code>;</code>，那么 <code>sudo service nginx restart</code> 会失败，Nginx 服务器就死掉了。这时候请回头修好设定档，然后执行 <code>sudo service nginx start</code> 就会启动 Nginx 了。如果无法启动请检查 <code>/etc/nginx/nginx.conf</code> 和 <code>/etc/nginx/sites-enabled/rails-recipes.conf</code>。</p>
+<p>如果 Nginx 设置文件格式不对，例如结尾少了分号 <code>;</code>，那么 <code>sudo service nginx restart</code> 会失败，Nginx 服务器就死掉了。这时候请回头修好设置文件，然后执行 <code>sudo service nginx start</code> 就会启动 Nginx 了。如果无法启动请检查 <code>/etc/nginx/nginx.conf</code> 和 <code>/etc/nginx/sites-enabled/rails-recipes.conf</code>。</p>
 </blockquote>
 
 <p>打开浏览器连过去，应该可以看到百宝箱的首页了，大功告成。</p>

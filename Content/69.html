@@ -185,7 +185,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：4-手动实作讨论群的“新增”“修改”“删除”功能</h4>
+    <h4>所属章节：4-手动实战讨论群的“新增”“修改”“删除”功能</h4>
     <p><p>本章预计学习时间: 2小时以内</p></p>
     <p><p>学完本节就可以完成本章了</p></p>
   </div>
@@ -233,12 +233,12 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>GET ：输入网址，点击某些网址。这都是 GET。</li>
-<li>POST：送出表单。这叫做 POST</li>
+<li>POST：提交表单。这叫做 POST</li>
 </ul>
 
 <p><br></p>
 <h2>RESTful 的基础概念</h2>
-<p>因为 CRUD 是常见的操作行为，但是大家实作的方式、与网址设计方式不一样。造成很多维护上的困扰。</p>
+<p>因为 CRUD 是常见的操作行为，但是大家实战的方式、与网址设计方式不一样。造成很多维护上的困扰。</p>
 
 <p>后来就有人发明 RESTful 这个概念，希望用 HTTP 的动作 ( Verb）一起去封装 CRUD 的行为。所以又多加了两个动作：</p>
 
@@ -278,16 +278,16 @@ var _hmt = _hmt || [];
 <li>删除 (destroy，使用 DELETE)</li>
 </ul>
 
-<p>在这组 controller 当中，我们会实作 7 个 Action ，4 张页面。</p>
+<p>在这组 controller 当中，我们会实战 7 个 Action ，4 张页面。</p>
 
 <ul>
 <li>首页( index )：用来列出所有的讨论版，可以选择各个单版 （使用 GET )</li>
 <li>各个讨论版专属页面(show)：显示讨论版版名跟简介 (使用 GET )</li>
-<li>新增页面(new)：里面会有表单，填完以后可以送出 (使用 GET )</li>
-<li>产生数据（create) ：new 送出来的表单到 create 这个 action，新增一笔数据 ( 使用 POST )</li>
-<li>编辑页面(edit)：里面会有表单呈现现有数据来，填完数据后可以送出 (使用 GET )</li>
-<li>更新数据（update)：edit 送出来的表单可以到 update 这个 action，更新该笔数据 (使用 PUT )</li>
-<li>删除数据：送出删除请求，删除该笔数据（使用 DELETE）</li>
+<li>新增页面(new)：里面会有表单，填完以后可以提交 (使用 GET )</li>
+<li>产生数据（create) ：new 提交来的表单到 create 这个 action，新增一笔数据 ( 使用 POST )</li>
+<li>编辑页面(edit)：里面会有表单呈现现有数据来，填完数据后可以提交 (使用 GET )</li>
+<li>更新数据（update)：edit 提交来的表单可以到 update 这个 action，更新该笔数据 (使用 PUT )</li>
+<li>删除数据：提交删除请求，删除该笔数据（使用 DELETE）</li>
 </ul>
 
 <p>这七个 action ，是每个CRUD功能里最基本的动作。只要我们在 controller.rb 里定义 (def) 好这七个方法当作动作 (action)。其他的部分 Rails 就会帮我们处理了。</p>

@@ -249,9 +249,9 @@ bike.foo()
 
 <p><code>Vehicle</code> 类定义了 <code>move</code>方法，而 <code>Car</code> 跟 <code>Bike</code> 都继承自 <code>Vehicle</code>，因此他们也都有 <code>move</code> 方法。但是在 <code>Bike</code> 中你也可以复写掉 <code>move</code> 方法。</p>
 
-<p>在 Rails 中也很常见继承，打开任一个 Model 档案，都是继承自 <code>ApplicationRecord</code>。再打开会发现 <code>ApplicationRecord</code> 继承自 <code>ActiveRecord::Base</code>。后者是 Rails 框架的核心类，我们之所以可以调用 <code>.save</code>、<code>.find</code>、<code>.where</code> 等等方法就是在 <code>ActiveRecord::Base</code> 中定义的。。</p>
+<p>在 Rails 中也很常见继承，打开任一个 Model 文件，都是继承自 <code>ApplicationRecord</code>。再打开会发现 <code>ApplicationRecord</code> 继承自 <code>ActiveRecord::Base</code>。后者是 Rails 框架的核心类，我们之所以可以调用 <code>.save</code>、<code>.find</code>、<code>.where</code> 等等方法就是在 <code>ActiveRecord::Base</code> 中定义的。。</p>
 
-<p>打开任一个 Controller 档案，都是继承自 <code>ApplicationController</code>，然后 <code>ApplicationController</code> 又是继承自 <code>ActionController::Base</code>，我们之所以可以调用 <code>before_action</code>、<code>render</code>、<code>redirect_to</code> 等等方法就是在 <code>ActionController::Base</code> 中定义的。</p>
+<p>打开任一个 Controller 文件，都是继承自 <code>ApplicationController</code>，然后 <code>ApplicationController</code> 又是继承自 <code>ActionController::Base</code>，我们之所以可以调用 <code>before_action</code>、<code>render</code>、<code>redirect_to</code> 等等方法就是在 <code>ActionController::Base</code> 中定义的。</p>
 
 <p>透过继承，我们写的 Model 和 Controller 都是基于 Rails 已经写好的功能进行扩充而已。</p>
 <h3>多重继承</h3>

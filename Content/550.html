@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <p><br></p>
-<h3>Step 1: 新增 is_hidden 栏位到 Job</h3>
+<h3>Step 1: 新增 is_hidden 字段到 Job</h3>
 <figure class="figure-code code"><div class="highlight"><pre>rails g migration add_is_hidden_to_job
 </pre></div>
 </figure>
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <p><br></p>
-<h3>Step 2: 然后我们要修改所有 new/edit 的表单加上这个栏位。要修改的地方有四块</h3>
+<h3>Step 2: 然后我们要修改所有 new/edit 的表单加上这个字段。要修改的地方有四块</h3>
 <ul>
 <li><code>app/views/admin/jobs/edit.html.erb</code></li>
 <li><code>app/views/admin/jobs/new.html.erb</code></li>
@@ -249,7 +249,7 @@ var _hmt = _hmt || [];
 <li><code>app/views/jobs/new.html.erb</code></li>
 </ul>
 
-<p>新增以下栏位</p>
+<p>新增以下字段</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:is_hidden</span> <span class="cp">%&gt;</span>
@@ -353,7 +353,7 @@ var _hmt = _hmt || [];
 <h3>Step 7: 翻修到 Helper</h3>
 <p>在 View 里面写一堆 Ruby Code 实在太丑了，因此我们应该要把这段代码重构成 Helper 。</p>
 
-<p>所以我们应该把刚刚那一段判断式砍掉，换成这样</p>
+<p>所以我们应该把刚刚那一段判断式删掉，换成这样</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/jobs/index.html.erb 
 </span></figcaption><div class="highlight"><pre><span class="nt">&lt;td&gt;</span>

@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h2>步骤</h2><h3>Step 0. git checkout -b ch05</h3>
-<p>因为我们现在要实作第五章的内容，新增一个 branch 把实作内容集中在 ch05 是比较合理的。将来回顾就可以比较清楚 在 ch05 我们做了哪一些练习。</p>
+<p>因为我们现在要实战第五章的内容，新增一个 branch 把实战内容集中在 ch05 是比较合理的。将来回顾就可以比较清楚 在 ch05 我们做了哪一些练习。</p>
 
 <p><code>git checkout -b ch05</code></p>
 
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 <h3>Step 1. 设计 Post 的 model 架构</h3>
 <ul>
 <li>文章内容要有“内容”、“所属讨论群组”、“叙述”</li>
-<li>我们在这里要建立一个 model <strong>Post</strong>，并建立数据表 post 的三个栏位: content ( text 文字属性) 、group_id (integer 数字属性)、 user_id ( integer 数字属性）</li>
+<li>我们在这里要建立一个 model <strong>Post</strong>，并建立数据表 post 的三个字段: content ( text 文字属性) 、group_id (integer 数字属性)、 user_id ( integer 数字属性）</li>
 </ul>
 
 <p><code>rails g model post content:text group_id:integer user_id:integer</code></p>

@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/702'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>12-2 一些安全概念 (本节只需要看，不需要实作) - Rails 实战：购物网站 | 新生大学全栈营</title>
+    <title>12-2 一些安全概念 (本节只需要看，不需要实战) - Rails 实战：购物网站 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      12-2 一些安全概念 (本节只需要看，不需要实作)
+      12-2 一些安全概念 (本节只需要看，不需要实战)
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=702">
@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>各位都已经有部署产品到 Heroku 的经验了。但是这里，我们需要强调一些安全观念。</p>
 
-<p>在以往的教材里，我们都是教大家把密码写死在 .rb 档案里面，但是这样其实是很危险的。当我们把专案上传到 github 上后，github 是全世界都可以看的，这样就相当于把你的私人密码公布给大家，可想而知你的私人财产毫无保障。</p>
+<p>在以往的教材里，我们都是教大家把密码写死在 .rb 文件里面，但是这样其实是很危险的。当我们把专案上传到 github 上后，github 是全世界都可以看的，这样就相当于把你的私人密码公布给大家，可想而知你的私人财产毫无保障。</p>
 
 <p>我们可以上网看看，网络上常常有这样的惨案，坏人偷了你的钥匙后……</p>
 
@@ -217,13 +217,13 @@ var _hmt = _hmt || [];
 
 <p>为了不让这些惨案发生在自己身上，我们需要增强自己的密码管理意识。</p>
 
-<p>那么，我们应该如何管理自己的密钥呢？</p>
-<h4>首先：<strong>密码不要放在 .rb 档案里面</strong>
+<p>那么，我们应该如何管理自己的私钥呢？</p>
+<h4>首先：<strong>密码不要放在 .rb 文件里面</strong>
 </h4>
 <p>(如下图所示的写法是很危险的)</p>
 
 <p><figure><img src="2017020662808snip20170206_30.png" title=""></figure></p>
-<h4>其次：<strong>把密码放在 .yml 档案里面</strong>
+<h4>其次：<strong>把密码放在 .yml 文件里面</strong>
 </h4>
 <p>在做大项目的时候，我们需要与人协作。大家在 fork 或者 clone job-listing 和 jdstore 专案的时候，应该会发现一件事情，我给大家的是 database.yml.example，是因为我们不把自己真的 key（真的 key 在 database.yml 档里）给别人。所以在本地的时候就需要准备一份 database.yml.example （这是范例档，给同事知道有这个档——为了协作）。也就是说，上传到 github 上的是 database.yml.example 档。<br>
 （如下图所示的写法才是正确的）</p>
@@ -449,13 +449,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("12-2 一些安全概念 (本节只需要看，不需要实作) - Rails 实战：购物网站 | 新生大学全栈营")
+    mixpanel.track("12-2 一些安全概念 (本节只需要看，不需要实战) - Rails 实战：购物网站 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '702',
-  post_title: '12-2 一些安全概念 (本节只需要看，不需要实作)',
+  post_title: '12-2 一些安全概念 (本节只需要看，不需要实战)',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/702'
 };
 Intercom('trackEvent', 'watched_post', metadata);

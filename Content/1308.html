@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/controllers/posts_controller.rb</code>，把 <code>redirect_to</code> 砍掉：</p>
+<p>编辑 <code>app/controllers/posts_controller.rb</code>，把 <code>redirect_to</code> 删掉：</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
 </span></figcaption><div class="highlight"><pre>
@@ -231,7 +231,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>这时候如果你新增的话，按下送出网页看起来没有反应，其实数据库已经插入这一笔，重新整理就会出现。</p>
+<p>这时候如果你新增的话，按下提交网页看起来没有反应，其实数据库已经插入这一笔，重新整理就会出现。</p>
 
 <p>我们希望的 UI 效果是在 HTML 上插入一整个新文章的内容，也就是得在 <code>app/views/posts/create.js.erb</code> 用 <code>$("XXX").prepend("YYY")</code> 的语法来达成。问题是 XXX 跟 YYY 要填什么？</p>
 

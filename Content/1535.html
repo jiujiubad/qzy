@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 
 <p>其中 <code>:bar</code> 是一个不存在的 key，而 <code>h[:bar]</code> 默认回传 <code>nil</code> 代表了此值不存在。但 Ruby 也提供另一个 Hash#fetch 用法，如果该 key 不存在，会丢出错误异常 <code>KeyError</code>。同一件事情，Ruby 提供了两种 API 方法，但有不同的异常处理策略。</p>
 
-<p>在看 Ruby API 或是 gem 的 API 文档时，你可以注意一下它们是如何处理异常情况的。例如在 <a href="https://github.com/rest-client/rest-client">rest-client</a> gem 中(在 Web API 教程中，我们用这个 gem 来抓取第三方的信息)，如果抓取失败，就会抛出<a href="https://github.com/rest-client/rest-client#exceptions-see-httpwwww3orgprotocolsrfc2616rfc2616-sec10html">RestClient::ExceptionWithResponse 异常</a>。</p>
+<p>在看 Ruby API 或是 gem 的 API 文档时，你可以注意一下它们是如何处理异常情况的。例如在 <a href="https://github.com/rest-client/rest-client">rest-client</a> gem 中(在 Web API 教程中，我们用这个 gem 来爬取第三方的信息)，如果爬取失败，就会抛出<a href="https://github.com/rest-client/rest-client#exceptions-see-httpwwww3orgprotocolsrfc2616rfc2616-sec10html">RestClient::ExceptionWithResponse 异常</a>。</p>
 <h3>何时用抛出异常？</h3>
 <p>什么时候会用错误码？什么时候会用抛出异常的方式呢？这得取决于这个错误是否在预期之内。抛出异常的意思像是: 这个异常这里不知道怎么处理，只好把烫手山芋抛出去，看哪一层有办法处理。如果最后都没有人可以处理，那程序只好 crash 了!</p>
 

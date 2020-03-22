@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>Rails 的 <code>:remote =&gt; true</code> 的这个功能，在 Rails 是透过 <a href="https://github.com/rails/jquery-ujs">jquery-ujs</a> 这个 gem 所提供的，你可以在 <code>Gemfile</code> 中找到它，以及在 <code>app/assets/javascripts/application.js</code> 里面加载了 <code>//= require jquery_ujs</code>。</p>
 
-<p>之所以叫 UJS 是因为全名叫做 Unobtrusive JavaScript。那么什么是 Unobtrusive 呢？用个范例来说吧，以下代码会将超连结改成用表单DELETE送出，并且用一个提示视窗来作确认：</p>
+<p>之所以叫 UJS 是因为全名叫做 Unobtrusive JavaScript。那么什么是 Unobtrusive 呢？用个范例来说吧，以下代码会将超连结改成用表单DELETE提交，并且用一个提示视窗来作确认：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>link_to 'Remove', post_path(1), :method =&gt; :delete, :data =&gt; { :confirm =&gt; "Sure?" }
 </pre></div>
@@ -237,8 +237,8 @@ var _hmt = _hmt || [];
 <li>让超连结可以用 :method 参数支援非 GET 方法</li>
 <li>用超连结、按钮和表单可以用 <code>:remote =&gt; true</code> 支援 Ajax</li>
 <li>超连结、按钮和表单可以用 <code>:data =&gt; { :confirm =&gt; "Are you sure? }</code> 参数，跳出确认对话视窗</li>
-<li>送出按钮可以用 <code>:data =&gt; { :disable_with =&gt; "Please wait..." }</code> 参数在送出表单时暂时关闭按钮避免重复送出</li>
-<li>在 Layout 的 head 中有输出一段 <code>&lt;%= csrf_meta_tag %&gt;</code> 的作用也是搭配给 UJS 使用的，这会让 jQuery 的 $ajax 送出时附带 CSRF 表单安全验证码，我们会在之后的网络安全一章讨论到什么是CSRF。</li>
+<li>提交按钮可以用 <code>:data =&gt; { :disable_with =&gt; "Please wait..." }</code> 参数在提交表单时暂时关闭按钮避免重复提交</li>
+<li>在 Layout 的 head 中有输出一段 <code>&lt;%= csrf_meta_tag %&gt;</code> 的作用也是搭配给 UJS 使用的，这会让 jQuery 的 $ajax 提交时附带 CSRF 表单安全验证码，我们会在之后的网络安全一章讨论到什么是CSRF。</li>
 </ul>
 
 <p>总之，如果 jquery-ujs 没有顺利加载的话，不只 <code>:remote =&gt; true</code> 不能用，所有非 GET 方法的超连结会坏掉，会变成 GET 出去。另外还有 Devise 的退出按钮因为用了 <code>:method =&gt; :delete</code> 也会无法作用。</p>

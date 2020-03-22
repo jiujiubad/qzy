@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 </ul>
 
 <p><br></p>
-<h2>步骤：</h2><h3>Step 1: 实作 new / create action</h3>
+<h2>步骤：</h2><h3>Step 1: 实战 new / create action</h3>
 <p>新增 new 与 create action 在 posts_controller</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
@@ -326,7 +326,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/EK40JBOhR064tFYsu7DS_Screenshot%20at%20Mar%2028%2015-29-33.png" title=""></figure></p>
 
-<p>为了防止这样的情形，我们还是要限制 post 的 content 要是为空，就不得送出。</p>
+<p>为了防止这样的情形，我们还是要限制 post 的 content 要是为空，就不得提交。</p>
 
 <p>修改 app/models/post.rb 加入 validates :content, presence: true</p>
 
@@ -341,7 +341,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>之后要是再有使用者，送出空的内容，就会被挡下来。</p>
+<p>之后要是再有使用者，提交空的内容，就会被挡下来。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/v4lsOfKGQHSEvtI2k5FQ_Screenshot%20at%20Mar%2028%2015-31-43.png" title=""></figure></p>
 

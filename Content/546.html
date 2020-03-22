@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <h2>目标</h2>
 <ul>
-<li>实作 Admin 的 CRUD</li>
+<li>实战 Admin 的 CRUD</li>
 <li>身为管理者才可以存取 <a href="http://localhost:3000/admin/jobs" rel="nofollow" target="_self">http://localhost:3000/admin/jobs</a> 下的职缺操作</li>
 <li>身为管理者才可以看到 Admin 管理选单的链接</li>
 <li>admin 的判定应该使用资料库的判断 <code>is_admin</code>
@@ -234,7 +234,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <p><br></p>
-<h3>Step 2 : 实作 admin::jobs 的 CRUD</h3>
+<h3>Step 2 : 实战 admin::jobs 的 CRUD</h3>
 <figure class="figure-code code"><figcaption><span>app/controllers/admin/jobs_controller.rb
 </span></figcaption><div class="highlight"><pre>
 <span class="k">class</span> <span class="nc">Admin</span><span class="o">::</span><span class="no">JobsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
@@ -467,7 +467,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>接着我们再更改 <code>app/models/user.rb</code> 的 <code>admin?</code> 的定义，唯有 user 的 <code>is_admin</code> 这个栏位是 <code>true</code> 时，这个人才会被判定为 <code>admin</code></p>
+<p>接着我们再更改 <code>app/models/user.rb</code> 的 <code>admin?</code> 的定义，唯有 user 的 <code>is_admin</code> 这个字段是 <code>true</code> 时，这个人才会被判定为 <code>admin</code></p>
 
 <figure class="figure-code code"><figcaption><span>app/models/user.rb
 </span></figcaption><div class="highlight"><pre>

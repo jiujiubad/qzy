@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <blockquote>
-<p>之前提过测试案例跟案例之间是互相独立、不会互相影响的(这样测试失败时，才不用怀疑是不是被别的测试影响到)。每个测试案例，里面需要的对象会重新建立。跑自动化测试用的数据库跟开发用的不一样(在config/database.yml里面会设定<code>test</code>环境用的数据库，并用 <code>db/schema.rb</code> 的定义建立测试用数据库)。另外，如果你有 <code>save</code> 存进数据库的话，Rails 也会在跑完测试案例后，自动复原砍掉该测试案例新增的资料。</p>
+<p>之前提过测试案例跟案例之间是互相独立、不会互相影响的(这样测试失败时，才不用怀疑是不是被别的测试影响到)。每个测试案例，里面需要的对象会重新建立。跑自动化测试用的数据库跟开发用的不一样(在config/database.yml里面会设定<code>test</code>环境用的数据库，并用 <code>db/schema.rb</code> 的定义建立测试用数据库)。另外，如果你有 <code>save</code> 存进数据库的话，Rails 也会在跑完测试案例后，自动撤销删掉该测试案例新增的资料。</p>
 </blockquote>
 
 <p>删除检查 amount 必填的测试：</p>
@@ -258,7 +258,7 @@ var _hmt = _hmt || [];
 
 <p>这告诉我们单元测试的局限性，验收测试帮助我们检查了整个系统整合起来是正常的。</p>
 
-<p>修改 <code>app/controllers/parkings_controller.rb</code>，砍掉 <code>@parking.calculate_amount</code>：</p>
+<p>修改 <code>app/controllers/parkings_controller.rb</code>，删掉 <code>@parking.calculate_amount</code>：</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/parkings_controller.rb
 </span></figcaption><div class="highlight"><pre>   def update
@@ -276,7 +276,7 @@ var _hmt = _hmt || [];
 
 <p>再跑一次 <code>rspec spec/features/guest_spec.rb</code> 就通过了。</p>
 
-<p>刚刚都是跑单个测试档案，如果要跑全部测试，可以执行 <code>rake spec</code></p>
+<p>刚刚都是跑单个测试文件，如果要跑全部测试，可以执行 <code>rake spec</code></p>
 
     </div>
   </div>

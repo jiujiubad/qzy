@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1481'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>25-1 解析 CSV 档案 (Rake) - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>25-1 解析 CSV 文件 (Rake) - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：25. 数据汇入</h4>
+    <h4>所属章节：25. 数据导入</h4>
     <p></p>
     <p><p>再学习2节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      25-1 解析 CSV 档案 (Rake)
+      25-1 解析 CSV 文件 (Rake)
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1481">
@@ -205,15 +205,15 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>我们在「百宝箱 20-数据汇出 」实作过汇出 CSV 格式，一个有良心的平台会实作汇出功能，方便用户进行分析或资料转移。或是用 Microsoft Excel 或 Apple Numbers 试算表，可以点选另存新档(Save As...)为 CSV UTF-8 格式来做数据汇出。</p>
+      <p>我们在「百宝箱 20-数据导出 」实战过导出 CSV 格式，一个有良心的平台会实战导出功能，方便用户进行分析或资料转移。或是用 Microsoft Excel 或 Apple Numbers 试算表，可以点选另存新档(Save As...)为 CSV UTF-8 格式来做数据导出。</p>
 
 <blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC">CSV 逗号分隔值</a> 格式除了容易汇出，也是最容易汇入处理的格式，这一章会用 CSV 举例，不需要额外装 gem 就能处理。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC">CSV 逗号分隔值</a> 格式除了容易导出，也是最容易导入处理的格式，这一章会用 CSV 举例，不需要额外装 gem 就能处理。</p>
 </blockquote>
 
-<p>假设我们拿到这样的 CSV 档案，接下来要如果汇入数据库呢？总不能一笔一笔输入太慢了，当然要用写程序的方式来做汇入。</p>
+<p>假设我们拿到这样的 CSV 文件，接下来要如果导入数据库呢？总不能一笔一笔输入太慢了，当然要用写程序的方式来做导入。</p>
 
-<p>如果汇入是程序员的一次性的任务，我们可以不需要实作 Web UI，只需要一个 rake 任务可以执行就好了。</p>
+<p>如果导入是程序员的一次性的任务，我们可以不需要实战 Web UI，只需要一个 rake 任务可以执行就好了。</p>
 
 <p>请下载这一个 CSV: <a href="https://raw.githubusercontent.com/growthschool/rails-recipes/master/registrations.csv">registrations.csv</a> 放在项目 <code>tmp</code> 目录下（按右键另存新档)</p>
 
@@ -251,7 +251,7 @@ var _hmt = _hmt || [];
 +       end
 +     end
 +
-+     puts "总共汇入 #{success} 笔，失败 #{failed_records.size} 笔"
++     puts "总共导入 #{success} 笔，失败 #{failed_records.size} 笔"
 +
 +     failed_records.each do |record|
 +       puts "#{record[0]} ---&gt; #{record[1].errors.full_messages}"
@@ -262,20 +262,20 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>执行 <code>rake dev:import_registration_csv_file</code> 就会执行了汇入的操作到 <code>fullstack-meetup</code> 这个活动。</p>
+<p>执行 <code>rake dev:import_registration_csv_file</code> 就会执行了导入的操作到 <code>fullstack-meetup</code> 这个活动。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/FQqv602eRrGiC0mVt6qa_25-1.png" title=""></figure></p>
 
 <p>解说:</p>
 
 <ol>
-<li>和汇出 CSV 一样，Ruby 内建了 CSV 库可以解析 CSV，所以第一行先 <code>require 'csv'</code>
+<li>和导出 CSV 一样，Ruby 内建了 CSV 库可以解析 CSV，所以第一行先 <code>require 'csv'</code>
 </li>
 <li>
-<code>CSV.foreach</code> 会打开这个 CSV 档案跑循环，每笔资料就是一行 <code>row</code>，那一行的第一列是 <code>row[0]</code>、第二列是 <code>row[1]</code>。只要依序塞给 <code>event.registrations.new</code> 即可。</li>
+<code>CSV.foreach</code> 会打开这个 CSV 文件跑循环，每笔资料就是一行 <code>row</code>，那一行的第一列是 <code>row[0]</code>、第二列是 <code>row[1]</code>。只要依序塞给 <code>event.registrations.new</code> 即可。</li>
 <li>CSV 中的票种是字符串，但是转进我们的数据库中需要转换成 Ticket model，因此这里写成 <code>tickets.find{ |t| t.name == row[0] }</code> 用票种名称去找是哪一个对象。</li>
 <li>时间也是一样，透过 <code>Time.parse</code> 转成时间对象</li>
-<li>因为汇入会一次汇入非常多笔，我们希望不管每笔资料 save 成功或失败，都能跑完全部资料，最后印出一个总结：告诉我们总共几笔成功，总共几笔失败，是哪些笔失败又是什么原因。</li>
+<li>因为导入会一次导入非常多笔，我们希望不管每笔资料 save 成功或失败，都能跑完全部资料，最后印出一个总结：告诉我们总共几笔成功，总共几笔失败，是哪些笔失败又是什么原因。</li>
 </ol>
 
     </div>
@@ -478,13 +478,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("25-1 解析 CSV 档案 (Rake) - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("25-1 解析 CSV 文件 (Rake) - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1481',
-  post_title: '25-1 解析 CSV 档案 (Rake)',
+  post_title: '25-1 解析 CSV 文件 (Rake)',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1481'
 };
 Intercom('trackEvent', 'watched_post', metadata);

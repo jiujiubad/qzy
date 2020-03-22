@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 <p><br></p>
 <h2>步骤</h2><h3>Step 1: 将订单分为「已付款」、「未付款」</h3>
 <ul>
-<li>新增一个栏位 <code>is_paid</code> 到 <code>Order</code> 这个 model，使用 boolean （true / false ) 属性</li>
+<li>新增一个字段 <code>is_paid</code> 到 <code>Order</code> 这个 model，使用 boolean （true / false ) 属性</li>
 <li>预设是 false（未付费）。</li>
 </ul>
 
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 <p><br></p>
 <h3>Step 2: 记录订单付款方式</h3>
 <ul>
-<li>新增一个栏位 <code>payment_method</code>  到 <code>Order</code> 这个 model，使用 string 属性</li>
+<li>新增一个字段 <code>payment_method</code>  到 <code>Order</code> 这个 model，使用 string 属性</li>
 </ul>
 
 <p><code>rails g migration add_payment_method_to_order</code></p>

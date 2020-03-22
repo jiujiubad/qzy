@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>异常处理 (Exception Handling) 是高阶编程语言的一种用于处理异常状况的流程机制，在 Ruby、JavaScript、Python、Java、Swift 等语言中都有这个功能。</p>
 
-<p>哪些算是异常状况呢？是指不在程序运行中预期会发生的事情，例如语法错误、发送 HTTP API 时网络不通、写入档案时硬盘已满、数字除以零等等。</p>
+<p>哪些算是异常状况呢？是指不在程序运行中预期会发生的事情，例如语法错误、发送 HTTP API 时网络不通、写入文件时硬盘已满、数字除以零等等。</p>
 
 <p>当发生异常时，程序会中断跳开，跳到处理异常的代码。如果没有处理这段异常的代码，整个程序就会终止(也就是软件crash、app 闪退、网站看到500错误画面)</p>
 
@@ -236,7 +236,7 @@ exception.rb:4:in `&lt;main&gt;': Errorrrr (RuntimeError)
 <p>注意到第三行的 <code>puts "Never execute"</code> 是没有被执行的，执行到 <code>raise</code> 时程序就终止了。</p>
 
 <blockquote>
-<p><code>raise 'An error has occured.'</code> 等同于 <code>raise RuntimeError.new('An error has occured.')</code>，<code>RuntimeError</code> 是一个 Ruby 内建的默认异常对象，用来储存关于这个异常的信息。Rails 还有内建其他不同的异常对象，详见 <a href="https://ruby-doc.org/core-2.2.0/Exception.html">Ruby API</a>。</p>
+<p><code>raise 'An error has occured.'</code> 等同于 <code>raise RuntimeError.new('An error has occured.')</code>，<code>RuntimeError</code> 是一个 Ruby 内建的默认异常对象，用来保存关于这个异常的信息。Rails 还有内建其他不同的异常对象，详见 <a href="https://ruby-doc.org/core-2.2.0/Exception.html">Ruby API</a>。</p>
 </blockquote>
 
 <p>为什么你好像很少用到 <code>raise</code> 这个功能呢？这是因为丢出 <code>raise</code> 的大多是 Ruby 本身或是我们使用的库和框架之中，例如：</p>
@@ -275,11 +275,11 @@ Done
 </pre></div>
 </figure>
 
-<p><code>puts "Never execute"</code> 这一行依然不会执行到，程式从 <code>raise</code> 后就跳去 <code>resue</code> 的部分，然后再继续往后正常执行。</p>
+<p><code>puts "Never execute"</code> 这一行依然不会执行到，程序从 <code>raise</code> 后就跳去 <code>resue</code> 的部分，然后再继续往后正常执行。</p>
 
-<p>在 <code>rescue</code> 我们会写如何去处理(拯救)异常，而 <code>rescue =&gt; e</code> 的 <code>e</code> 是个异常对象，会储存关于这个异常的信息。</p>
+<p>在 <code>rescue</code> 我们会写如何去处理(拯救)异常，而 <code>rescue =&gt; e</code> 的 <code>e</code> 是个异常对象，会保存关于这个异常的信息。</p>
 
-<p>常见的 <code>rescue</code> 可能是显示错误讯息，告诉用户这个操作失败了，然后程序回复正常继续执行。</p>
+<p>常见的 <code>rescue</code> 可能是显示错误信息，告诉用户这个操作失败了，然后程序回复正常继续执行。</p>
 <h3>Ruby 语法: ensure</h3>
 <p><code>ensure</code> 部分则是不管有没有发生异常，都一定会执行到。例如：</p>
 

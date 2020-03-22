@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1494'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>22-2 汇出 Excel 档案 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>22-2 导出 Excel 文件 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：22. 数据汇出</h4>
+    <h4>所属章节：22. 数据导出</h4>
     <p></p>
     <p><p>学完本节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      22-2 汇出 Excel 档案
+      22-2 导出 Excel 文件
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1494">
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>如果上述 Excel 打开 CSV 档案的解法没办法接受的话，那只好想办法汇出 Excel 专用的 xlsx 格式了。这需要额外装 gem，这里示范使用 <a href="https://github.com/straydogstudio/axlsx_rails">axlsx_rails</a> gem。</p>
+      <p>如果上述 Excel 打开 CSV 文件的解法没办法接受的话，那只好想办法导出 Excel 专用的 xlsx 格式了。这需要额外装 gem，这里示范使用 <a href="https://github.com/straydogstudio/axlsx_rails">axlsx_rails</a> gem。</p>
 
 <p>编辑 <code>Gemfile</code></p>
 
@@ -219,14 +219,14 @@ var _hmt = _hmt || [];
 
 <p>执行 <code>bundle</code>，重启服务器</p>
 
-<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code>，加上汇出的按钮，指定 format 格式是 xlsx</p>
+<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code>，加上导出的按钮，指定 format 格式是 xlsx</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/event_registrations/index.html.erb
 </span></figcaption><div class="highlight"><pre>  &lt;%= paginate @registrations %&gt;
 
   &lt;p&gt;
-    &lt;%= link_to "汇出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
-<span class="gi">+   &lt;%= link_to "汇出 Excel", admin_event_registrations_path(:format =&gt; :xlsx), :class =&gt; "btn btn-default" %&gt;
+    &lt;%= link_to "导出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
+<span class="gi">+   &lt;%= link_to "导出 Excel", admin_event_registrations_path(:format =&gt; :xlsx), :class =&gt; "btn btn-default" %&gt;
 </span>  &lt;/p&gt;
 <span class="err">
 </span></pre></div>
@@ -261,7 +261,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>这样就可以汇出 Excel 格式的档案了。</p>
+<p>这样就可以导出 Excel 格式的文件了。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/QllzQDiATQ26prDvZLAp_20-4.png" title=""></figure></p>
 
@@ -465,13 +465,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("22-2 汇出 Excel 档案 - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("22-2 导出 Excel 文件 - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1494',
-  post_title: '22-2 汇出 Excel 档案',
+  post_title: '22-2 导出 Excel 文件',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1494'
 };
 Intercom('trackEvent', 'watched_post', metadata);

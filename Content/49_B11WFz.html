@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
   <div class="post group">
     <div class="post-content markdown">
       <h2>目标</h2>
-<p>做一个资料库表格来储存 topic，topic 有 title 和 description。</p>
+<p>做一个资料库表格来保存 topic，topic 有 title 和 description。</p>
 
 <p>在这一步我们会学一点 Rails 的架构。最终你应该会了解这些观念：</p>
 
@@ -224,21 +224,21 @@ var _hmt = _hmt || [];
 <h2>解说</h2><h3>Rails 的架构以及它与资料库的关联</h3>
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/2aFSZZRQKei3eSroobFg_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-10%20%E4%B8%8B%E5%8D%8811.14.22.png" title=""></figure></p>
 
-<p>Rails 把 <strong>Model/View/Controller</strong> 的设计模式实作得非常具体，来指引你如何设计你的网路应用程式。</p>
+<p>Rails 把 <strong>Model/View/Controller</strong> 的设计模式实战得非常具体，来指引你如何设计你的网路应用程序。</p>
 
 <p><br></p>
 <h4>Model</h4>
 <ul>
 <li>我们在 RailsBridge 建立的 Model，其每一个 Model object 都在资料库里面有对应的资料。资料库里面的表格（table）是 Model 的 class name 的复数形。例如，如果 Model 叫做 'Duck'，就会自动去资料库读写 'ducks' 这个表格。</li>
 <li>Rails 内部的 methods 让我们可以很容易把资料写入到资料库，之后再从资料库里面查询（query）出来。</li>
-<li>Model 是介于资料库和你的程式码之间的桥梁。</li>
+<li>Model 是介于资料库和你的代码之间的桥梁。</li>
 </ul>
 
 <p><br></p>
 <h4>View</h4>
 <ul>
 <li>View 会产生 HTML 来显示在浏览器。</li>
-<li>View 档案是用 ERB 写的，它是一种样板语言（Template Language）。里面是 HTML 加上内嵌的 Ruby 程式码。View 里面的 Ruby 的变数便是当使用者要浏览该页面的时候，所要填入的内容。</li>
+<li>View 文件是用 ERB 写的，它是一种样板语言（Template Language）。里面是 HTML 加上内嵌的 Ruby 代码。View 里面的 Ruby 的变数便是当使用者要浏览该页面的时候，所要填入的内容。</li>
 <li>（还有别的样板语言，但是在 RailsBridge 我们只用 ERB。）</li>
 </ul>
 
@@ -247,15 +247,15 @@ var _hmt = _hmt || [];
 <ul>
 <li>Controller 把 Ruby 的 objects 在 Model 和 View 之间传来传去。</li>
 <li>每一个 URL 都对应到 Controller 里面的某一个特定的 method。</li>
-<li>在这一步骤以后，当你打开你应用程式里面的任何一个页面，该请求（request）会被某个 Controller 的 method 
+<li>在这一步骤以后，当你打开你应用程序里面的任何一个页面，该请求（request）会被某个 Controller 的 method 
 处理。</li>
 </ul>
 
 <p>当我们把 Models、Views、Controllers 放在一起的时候，他们会遵循以下的模式：</p>
 
-<p>给一个 URL，Rails 会去检查要使用哪一个 Controller 里面的 method（又称为 "Action"）。Controller Action 会去呼叫 Model 里面对应的 methods。Model 会去读写资料库，然后把包含资料的 object 回传到 Controller。Controller 会拿到这个 object 并且丢到 View 里面。Action 通常会有对应的 View 档案，Rails 会自动寻找并使用之。）</p>
+<p>给一个 URL，Rails 会去检查要使用哪一个 Controller 里面的 method（又称为 "Action"）。Controller Action 会去呼叫 Model 里面对应的 methods。Model 会去读写资料库，然后把包含资料的 object 回传到 Controller。Controller 会拿到这个 object 并且丢到 View 里面。Action 通常会有对应的 View 文件，Rails 会自动寻找并使用之。）</p>
 
-<p>Models、Views、Controllers 有各自的工作。像这样把责任拆开来，会比较容易开发，尤其是它长得愈来愈大的时候。（每个档案都有清晰的责任，会比较容易处理问题、增加新功能。）</p>
+<p>Models、Views、Controllers 有各自的工作。像这样把责任拆开来，会比较容易开发，尤其是它长得愈来愈大的时候。（每个文件都有清晰的责任，会比较容易处理问题、增加新功能。）</p>
 
 <p>如果你想要学更多 Rails 架构的话，你可以看一下这个教学影片（三分半钟）<a href="https://www.youtube.com/watch?v=eTdVkgF_Slo" target="_self">“MVC 架构 YouTube”</a></p>
 
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 <p>从这张图可以更明白， controller 就是手把的摇杆去操控 model 后把画面给 view 显示。</p>
 
-<p>那么这边指的 model 就相当于游戏的逻辑啰，不同的游戏就载入不同的逻辑，以玛利欧游戏来说， model 里面就存放的关卡的讯息，包含有多少怪物、关卡可以获得多少金币等等… 当你破关的时候，就会在 model 里面去更新你的讯息了，这样下次就会知道哪些关卡已经突破，哪些还尚未闯关，如此一来，你就可以用 controller 选择下一关继续闯关了，这时候 view 就会显示新的关卡了。</p>
+<p>那么这边指的 model 就相当于游戏的逻辑啰，不同的游戏就载入不同的逻辑，以玛利欧游戏来说， model 里面就存放的关卡的信息，包含有多少怪物、关卡可以获得多少金币等等… 当你破关的时候，就会在 model 里面去更新你的信息了，这样下次就会知道哪些关卡已经突破，哪些还尚未闯关，如此一来，你就可以用 controller 选择下一关继续闯关了，这时候 view 就会显示新的关卡了。</p>
 
     </div>
   </div>

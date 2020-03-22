@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1487'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>26-4 异步汇出 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>26-4 异步导出 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      26-4 异步汇出
+      26-4 异步导出
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1487">
@@ -205,18 +205,18 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>数据汇出也是一个常用异步来处理的任务，流程和汇入其实87分像：</p>
+      <p>数据导出也是一个常用异步来处理的任务，流程和导入其实87分像：</p>
 
 <ul>
-<li>建立 RegistraionExport model，这个 model 会纪录是那个 user 做汇出、是哪个 event 要汇出，以及存储最后汇出的档案</li>
-<li>建立一个 RegistrationExports controller，这个 controller 让用户可以新增汇出纪录，以及浏览汇出纪录</li>
-<li>建立 ExportWorkerJob，这个异步任务会执行汇出操作，并将汇出的档案放到 RegistraionExport model 上</li>
-<li>异步任务最后完成时，可以寄 E-mail 通知用户汇出的档案已经准备好了</li>
+<li>建立 RegistraionExport model，这个 model 会纪录是那个 user 做导出、是哪个 event 要导出，以及存储最后导出的文件</li>
+<li>建立一个 RegistrationExports controller，这个 controller 让用户可以新增导出纪录，以及浏览导出纪录</li>
+<li>建立 ExportWorkerJob，这个异步任务会执行导出操作，并将导出的文件放到 RegistraionExport model 上</li>
+<li>异步任务最后完成时，可以寄 E-mail 通知用户导出的文件已经准备好了</li>
 </ul>
 
 <p>这里就不示范实做了。</p>
 
-<p>最后，汇出和汇入的功能要完整实做的话，还需要考虑档案存储的位置。我们用 carrierwave 上传的档案，默认是公开的。但是汇出和汇入的档案，应该也必须要检查有没有权限才行。这部分的实作牵扯到我们使用哪种档案服务器：</p>
+<p>最后，导出和导入的功能要完整实做的话，还需要考虑文件存储的位置。我们用 carrierwave 上传的文件，默认是公开的。但是导出和导入的文件，应该也必须要检查有没有权限才行。这部分的实战牵扯到我们使用哪种文件服务器：</p>
 
 <ul>
 <li>存储在本机的话，请参考 <a href="https://github.com/carrierwaveuploader/carrierwave/wiki/how-to:-secure-upload">How To: Secure Upload</a>
@@ -429,13 +429,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("26-4 异步汇出 - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("26-4 异步导出 - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1487',
-  post_title: '26-4 异步汇出',
+  post_title: '26-4 异步导出',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1487'
 };
 Intercom('trackEvent', 'watched_post', metadata);

@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
 
 <p>什么时候会需要一对一的关联设计呢？既然是一对一对应，那么直接合并 profiles 的所有字段在 users table 上，只用一个 User Model 也是可以啊。</p>
 
-<p>会这样设计的主要原因是为了节省数据库查询量，例如用户的 Profile 储存了用户的详细资料，一来很可能只有进到用户详细页面(例如users#show)才会用到、二来可能不是每一个用户都有这个 Profile 细节资料，所以拆表之后可以让绝大部分的操作都不需要去碰到 profiles table。对 User 来说尤其重要，因为登录之后，每一次的浏览，Rails 都会去数据库捞出 User 资料设定 <code>current_user</code></p>
+<p>会这样设计的主要原因是为了节省数据库查询量，例如用户的 Profile 保存了用户的详细资料，一来很可能只有进到用户详细页面(例如users#show)才会用到、二来可能不是每一个用户都有这个 Profile 细节资料，所以拆表之后可以让绝大部分的操作都不需要去碰到 profiles table。对 User 来说尤其重要，因为登录之后，每一次的浏览，Rails 都会去数据库捞出 User 资料设定 <code>current_user</code></p>
 
 <p>好，那让我们来制作用户 Profile：</p>
 

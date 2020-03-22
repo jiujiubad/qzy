@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
 <p>又叫做 <a href="https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0">First-class function 头等函数</a></p>
 </blockquote>
 
-<p>以下的 Ruby 程式码中，变量 <code>x</code> 就是一个函式变量。它的值 <code>-&gt;{ puts "Hello World"}</code> 叫做匿名函式(或叫做 anonymous function, code block 或 lambda )。匿名函式要透过 <code>.call</code> 才会实际调用。</p>
+<p>以下的 Ruby 代码中，变量 <code>x</code> 就是一个函式变量。它的值 <code>-&gt;{ puts "Hello World"}</code> 叫做匿名函式(或叫做 anonymous function, code block 或 lambda )。匿名函式要透过 <code>.call</code> 才会实际调用。</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"Hello World"</span> <span class="p">}</span>
@@ -325,7 +325,7 @@ var _hmt = _hmt || [];
 <p>看起来很熟悉了吧。如果参数列最后一个参数是匿名函式，那么就会用这种简化的写法：传入的匿名函式用 <code>{ ...}</code> 或 <code>do .... end</code> 表示，然后在函式里面用 <code>yield</code> 这个关键字来实际调用它。</p>
 
 <blockquote>
-<p>通常单行的程式会用 <code>{ ... }</code> 的写法，多行则会用 <code>do ... end</code> 的写法。这只是 Coding Style 惯例而已，作用是一样的。</p>
+<p>通常单行的程序会用 <code>{ ... }</code> 的写法，多行则会用 <code>do ... end</code> 的写法。这只是 Coding Style 惯例而已，作用是一样的。</p>
 </blockquote>
 
 <p>如果匿名函式接受参数的话，语法是这样：</p>

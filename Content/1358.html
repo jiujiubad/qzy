@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：17. 显示资料验证错误讯息</h4>
+    <h4>所属章节：17. 显示资料验证错误信息</h4>
     <p></p>
     <p><p>再学习2节就可以完成本章了</p></p>
   </div>
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>内联式(inline)错误讯息有个小问题，就是有些错误不属于表单上的某个输入字段。例如我们来自定义一个资料验证：如果活动的状态是 draft 草稿，则不允许新增报名。</p>
+      <p>内联式(inline)错误信息有个小问题，就是有些错误不属于表单上的某个输入字段。例如我们来自定义一个资料验证：如果活动的状态是 draft 草稿，则不允许新增报名。</p>
 
 <p>编辑 <code>app/models/registration.rb</code></p>
 
@@ -231,13 +231,13 @@ var _hmt = _hmt || [];
 <ul>
 <li>
 <code>validate</code> 可以增加自定义的资料验证，后面的 <code>:on =&gt; :create</code> 参数可以指定只有新建才会验证(默认是新建跟修改都会验证)</li>
-<li>验证不通过时，会用<code>errors.add</code> 增加错误讯息，第一个参数是字段名称，第二个参数是错误讯息</li>
+<li>验证不通过时，会用<code>errors.add</code> 增加错误信息，第一个参数是字段名称，第二个参数是错误信息</li>
 <li>因为表单上并没有 <code>event_id</code> 这个输入框，所以就算写成 <code>errors.add(:event_id, "活动尚未开放报名")</code> 也没有地方显示出来。依照惯例，任何不属于某个字段的错误，我们会放在 <code>:base</code> 上。</li>
 </ul>
 
 <p>那怎么把显示 <code>errors[:base]</code> 显示出来？有两种方法：</p>
 <h4>方法一：同 17-1 的作法</h4>
-<p>透过循环 <code>@registration.errors[:base]</code> 把错误讯息印出来，例如：</p>
+<p>透过循环 <code>@registration.errors[:base]</code> 把错误信息印出来，例如：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>&lt;% if @registration.errors[:base].any? %&gt;
   &lt;ul&gt;
@@ -249,7 +249,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 <h4>方法二：用 flash</h4>
-<p>flash 一般用在 redirect 跳转页面前后，用来传递提示讯息。这里也可以沿用 flash 的样式来显示资料验证的错误。</p>
+<p>flash 一般用在 redirect 跳转页面前后，用来传递提示信息。这里也可以沿用 flash 的样式来显示资料验证的错误。</p>
 
 <p>编辑 <code>app/controllers/registrations_controller.rb</code></p>
 
@@ -272,11 +272,11 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>本来的 <code>flash</code> 搭配的是 <code>redirect</code>，这会在跳转后清空 flash 讯息(所以只会显示一次)。<br>
+<p>本来的 <code>flash</code> 搭配的是 <code>redirect</code>，这会在跳转后清空 flash 信息(所以只会显示一次)。<br>
 这里因为并不是 <code>redirect</code> 跳转，而是用 <code>render</code> 显示页面，这种情况要改用 <code>flash.now</code>。</p>
 
 <blockquote>
-<p>有研究精神的话，你可以试试看在这里用 <code>flash[:alert]</code>，你会发现出现错误讯息之后，再点一次其他页面，错误讯息还会多重复出现一次。</p>
+<p>有研究精神的话，你可以试试看在这里用 <code>flash[:alert]</code>，你会发现出现错误信息之后，再点一次其他页面，错误信息还会多重复出现一次。</p>
 </blockquote>
 
 <p>另外，顺便修理一下目前的 flash 样式以配合 Bootstrap。</p>

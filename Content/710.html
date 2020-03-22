@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/710'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>13-5 泄漏 S3 密钥的处理方式 - Rails 实战：购物网站 | 新生大学全栈营</title>
+    <title>13-5 泄漏 S3 私钥的处理方式 - Rails 实战：购物网站 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      13-5 泄漏 S3 密钥的处理方式
+      13-5 泄漏 S3 私钥的处理方式
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=710">
@@ -206,30 +206,30 @@ var _hmt = _hmt || [];
   <div class="post group">
     <div class="post-content markdown">
       <h2>目标</h2>
-<p>如果没有正确使用 <a href="https://fullstack.xinshengdaxue.com/posts/241">Figaro管理密码</a>，将密钥上传到了github，会造成 S3 密钥泄漏。</p>
+<p>如果没有正确使用 <a href="https://fullstack.xinshengdaxue.com/posts/241">Figaro管理密码</a>，将私钥上传到了github，会造成 S3 私钥泄漏。</p>
 
-<p>如果发生了这种事情，我们需要马上删除泄漏的密钥。</p>
-<h2>步骤</h2><h3>Step 1: 登录 AWS 后台，删除根密钥</h3>
-<p>如果你泄漏了根密钥，会导致信用卡被盗刷</p>
+<p>如果发生了这种事情，我们需要马上删除泄漏的私钥。</p>
+<h2>步骤</h2><h3>Step 1: 登录 AWS 后台，删除根私钥</h3>
+<p>如果你泄漏了根私钥，会导致信用卡被盗刷</p>
 
 <p>打开我的安全凭证</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/12Kp5BR9Qf2AKXqT1nDQ_006tNbRwly1fcr2qxyrhhj308z06jjrk-1.jpg" title=""></figure></p>
 
-<p>打开访问密钥</p>
+<p>打开访问私钥</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/b8ng7UZOQSW45n3mS9Or_006tNbRwly1fcr39yfjqlj30l609g75i.jpg" title=""></figure></p>
 
-<p>删除泄漏访问密钥</p>
+<p>删除泄漏访问私钥</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/sFBL68YtT6OH8HccB5RD_OCj67Wq9TImgKaz3jQfz_006tNbRwly1fcr84r1cyoj30t20ixn21.jpg" title=""></figure></p>
 <h3>Step 2: 登录 AWS 后台,删除 IAM 用户</h3>
-<p>如果泄漏了 IAM 用户的密钥，需要把 IAM 用户一并删除<br>
+<p>如果泄漏了 IAM 用户的私钥，需要把 IAM 用户一并删除<br>
 打开我的安全凭证</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/12Kp5BR9Qf2AKXqT1nDQ_006tNbRwly1fcr2qxyrhhj308z06jjrk-1.jpg" title=""></figure></p>
 
-<p>打开用户，选择泄漏的密钥的用户，删除用户即可</p>
+<p>打开用户，选择泄漏的私钥的用户，删除用户即可</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/J8r7AsTSP6Fqjv9UPkVX_006tNbRwly1fcr3ya6vcoj30ie095gmf.jpg" title=""></figure></p>
 <h3>Step 3: 如果信用卡已经被盗刷</h3>
@@ -435,13 +435,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("13-5 泄漏 S3 密钥的处理方式 - Rails 实战：购物网站 | 新生大学全栈营")
+    mixpanel.track("13-5 泄漏 S3 私钥的处理方式 - Rails 实战：购物网站 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '710',
-  post_title: '13-5 泄漏 S3 密钥的处理方式',
+  post_title: '13-5 泄漏 S3 私钥的处理方式',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/710'
 };
 Intercom('trackEvent', 'watched_post', metadata);

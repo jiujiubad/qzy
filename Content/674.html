@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>使用者必须要是 admin 才能登录 <a href="http://localhost:3000/admin/products">http://localhost:3000/admin/products</a>
 </li>
-<li>商品栏位必须要有 title, description, quantity, price</li>
+<li>商品字段必须要有 title, description, quantity, price</li>
 <li>admin 后台 products 完整的 CRUD</li>
 </ul>
 
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
 <p><code>rake db:migrate</code></p>
 
 <p><br></p>
-<h3>Step 4: 实作后台新增商品</h3>
+<h3>Step 4: 实战后台新增商品</h3>
 <figure class="figure-code code"><figcaption><span>app/controllers/admin/products_controller.rb
 </span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Admin</span><span class="o">::</span><span class="no">ProductsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="k">def</span> <span class="nf">new</span>
@@ -308,7 +308,7 @@ var _hmt = _hmt || [];
 <p><figure><img src="QjTKV6aLQ8KoFg0jDAQT_step5.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 6: 实作后台index action</h3>
+<h3>Step 6: 实战后台index action</h3>
 <figure class="figure-code code"><figcaption><span>app/controllers/admin/products_contoller.rb
 </span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Admin</span><span class="o">::</span><span class="no">ProductsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
 <span class="o">+</span> <span class="k">def</span> <span class="nf">index</span>
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
 <p><figure><img src="uDf3Roi2StampV4sMHhu_step7.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 8: 实作后台商品修改</h3><h4>修改 admin/products_controller.rb</h4>
+<h3>Step 8: 实战后台商品修改</h3><h4>修改 admin/products_controller.rb</h4>
 <figure class="figure-code code"><figcaption><span>app/controllers/admin/products_controller.rb
 </span></figcaption><div class="highlight"><pre><span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">(</span><span class="err">略</span><span class="p">)</span>
   <span class="k">def</span> <span class="nf">new</span>

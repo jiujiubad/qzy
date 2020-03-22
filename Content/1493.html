@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1493'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>22-1 汇出 CSV 档案 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>22-1 导出 CSV 文件 - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：22. 数据汇出</h4>
+    <h4>所属章节：22. 数据导出</h4>
     <p></p>
     <p><p>再学习1节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      22-1 汇出 CSV 档案
+      22-1 导出 CSV 文件
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1493">
@@ -205,19 +205,19 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>需求：后台可以汇出报名资料</p>
+      <p>需求：后台可以导出报名资料</p>
 
-<p>有时候后台功能做再多，也不如 Microsoft Excel 或 Apple Numbers 试算表软件提供的分析功能，这时候如果有汇出功能，就可以很方便地把资料汇出来，用软件来打开浏览。</p>
+<p>有时候后台功能做再多，也不如 Microsoft Excel 或 Apple Numbers 试算表软件提供的分析功能，这时候如果有导出功能，就可以很方便地把资料导出来，用软件来打开浏览。</p>
 
 <p><a href="https://zh.wikipedia.org/wiki/%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E5%80%BC">CSV 逗号分隔值</a>是一种简单的资料格式，基本上就是单纯的文字档，一行一笔资料，不同字段用逗号隔开。这一节先来做这种。</p>
 
-<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code>，在最下方加上汇出按钮，指定 format 格式是 csv</p>
+<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code>，在最下方加上导出按钮，指定 format 格式是 csv</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/event_registrations/index.html.erb
 </span></figcaption><div class="highlight"><pre>   &lt;%= paginate @registrations %&gt;
 
 <span class="gi">+  &lt;p&gt;
-+    &lt;%= link_to "汇出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
++    &lt;%= link_to "导出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
 +  &lt;/p&gt;
 </span><span class="err">
 </span></pre></div>
@@ -254,17 +254,17 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p><a href="https://ruby-doc.org/stdlib-2.3.0/libdoc/csv/rdoc/CSV.html">CSV</a> 是 Ruby 内建的库，这里第一行需要先 <code>require</code> 它。使用 <code>CSV.generate</code> 可以产生出 <code>csv_string</code> 字符串，也就是要输出的 CSV 资料，接着透过 <code>send_data</code> 传给浏览器进行档案下载。</p>
+<p><a href="https://ruby-doc.org/stdlib-2.3.0/libdoc/csv/rdoc/CSV.html">CSV</a> 是 Ruby 内建的库，这里第一行需要先 <code>require</code> 它。使用 <code>CSV.generate</code> 可以产生出 <code>csv_string</code> 字符串，也就是要输出的 CSV 资料，接着透过 <code>send_data</code> 传给浏览器进行文件下载。</p>
 
 <p>用 Apple Number 试算表软件打开：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/8SSJdTDSQPCLV4CP6d29_20-2.png" title=""></figure></p>
 
-<p>但是 CSV 有个缺点，就是用 Microsoft Excel 打开时默认会变成乱码。这是因为汇出的 CSV 的字串编码是 <a href="https://zh.wikipedia.org/zh-tw/UTF-8">UTF-8</a>，但是 Excel 默认会用本地编码，例如中国大陆地区用 <a href="https://zh.wikipedia.org/wiki/GB_2312">GB 2312</a>，台湾地区用 <a href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E4%BA%94%E7%A2%BC">Big5</a>。解决办法有二：</p>
+<p>但是 CSV 有个缺点，就是用 Microsoft Excel 打开时默认会变成乱码。这是因为导出的 CSV 的字串编码是 <a href="https://zh.wikipedia.org/zh-tw/UTF-8">UTF-8</a>，但是 Excel 默认会用本地编码，例如中国大陆地区用 <a href="https://zh.wikipedia.org/wiki/GB_2312">GB 2312</a>，台湾地区用 <a href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E4%BA%94%E7%A2%BC">Big5</a>。解决办法有二：</p>
 
-<p>方法一: 以记事本开启后储存，再以 Excel 开启即可正常显示。</p>
+<p>方法一: 以记事本开启后保存，再以 Excel 开启即可正常显示。</p>
 
-<p>方法二: 开启 Excel 软件，新增空白活页簿(Workbook)，然后在上方功能选项中点选「资料(Data)」-&gt;「取得外部资料 Get External Data」-&gt;「从文字档 From Text File...」→「选择汇出的 CSV 档案」→ 选择符号分隔(Delimited)、选择 File origin 编码是 Unicode (UTF-8) → 选择分隔符号是 Comma 逗点，即可正常显示。</p>
+<p>方法二: 开启 Excel 软件，新增空白活页簿(Workbook)，然后在上方功能选项中点选「资料(Data)」-&gt;「取得外部资料 Get External Data」-&gt;「从文字档 From Text File...」→「选择导出的 CSV 文件」→ 选择符号分隔(Delimited)、选择 File origin 编码是 Unicode (UTF-8) → 选择分隔符号是 Comma 逗点，即可正常显示。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YrhK8j7kTh2DVxBmjk5Y_20-3.png" title=""></figure></p>
 
@@ -468,13 +468,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("22-1 汇出 CSV 档案 - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("22-1 导出 CSV 文件 - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1493',
-  post_title: '22-1 汇出 CSV 档案',
+  post_title: '22-1 导出 CSV 文件',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1493'
 };
 Intercom('trackEvent', 'watched_post', metadata);

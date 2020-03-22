@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 
 <p>从 <code>/orders/1</code> 改成 <code>/orders/0f054ab5-2833-4a6d-bde5-0820b68fffae</code></p>
 <h2>步骤</h2><h3>Step 1:</h3>
-<p>我们在订单这个 model 里面加上一个栏位叫 token 存订单乱序号</p>
+<p>我们在订单这个 model 里面加上一个字段叫 token 存订单乱序号</p>
 
 <p><code>rails g migration add_token_to_order</code></p>
 
@@ -306,7 +306,7 @@ git commit -m "add token to order"
 </pre></div>
 </figure>
 
-<p><code>before_create</code> 是 Rails model 内建的 callbacks，目的是让资料生成储存前先执行某某动作。比如说我们在这里就是让订单在生成前，先生成「乱数序号」。而<code>SecureRandom.uuid</code> 是 Ruby 内建的随机生成器。</p>
+<p><code>before_create</code> 是 Rails model 内建的 callbacks，目的是让资料生成保存前先执行某某动作。比如说我们在这里就是让订单在生成前，先生成「乱数序号」。而<code>SecureRandom.uuid</code> 是 Ruby 内建的随机生成器。</p>
 
     </div>
   </div>

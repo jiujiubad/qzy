@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：Part 2: DNS 网域名称系统</h4>
+    <h4>所属章节：Part 2: DNS 域名系统</h4>
     <p></p>
     <p><p>再学习1节就可以完成本章了</p></p>
   </div>
@@ -211,17 +211,17 @@ var _hmt = _hmt || [];
 
 <p>这个 DNS 机制基本上就是一个对照表，对照某某域名的 IP 地址是什么。</p>
 
-<p>在我们本机电脑上就有一个对照表的档案，也就是 <code>/etc/hosts</code>，你可以编辑这个档案，写下域名和 IP 地址的对应。</p>
+<p>在我们本机电脑上就有一个对照表的文件，也就是 <code>/etc/hosts</code>，你可以编辑这个文件，写下域名和 IP 地址的对应。</p>
 
-<p>但是，本机不可能预先存好全世界网域名称的对照表，因此我们会用 DNS 协议来做即时的线上查询。</p>
-<h3>认识网域名称(Domain Name)</h3>
+<p>但是，本机不可能预先存好全世界域名的对照表，因此我们会用 DNS 协议来做即时的线上查询。</p>
+<h3>认识域名(Domain Name)</h3>
 <p>我们先深入认识一下<a href="https://zh.wikipedia.org/zh-cn/%E5%9F%9F%E5%90%8D">域名</a>的组成：</p>
 
-<p>一个网域名称组成是 <code>sub-domain.second-level-domain(your-domain).top-level-domain</code>，例如 <code>fullstack.xinshengdaxue.com</code> 其中 <code>.com</code> 就是 top-level、<code>xinshengdaxue</code> 是 second-level，而 <code>fullstack</code> 是 sub-domain。这个 sub-domain 可以是空的，因此 <code>xinshengdaxue.com</code>也是合法的网域名称。</p>
+<p>一个域名组成是 <code>sub-domain.second-level-domain(your-domain).top-level-domain</code>，例如 <code>fullstack.xinshengdaxue.com</code> 其中 <code>.com</code> 就是 top-level、<code>xinshengdaxue</code> 是 second-level，而 <code>fullstack</code> 是 sub-domain。这个 sub-domain 可以是空的，因此 <code>xinshengdaxue.com</code>也是合法的域名。</p>
 
 <p>全世界的 top-level-domain 是由 <a href="https://zh.wikipedia.org/zh-cn/%E4%BA%92%E8%81%94%E7%BD%91%E5%8F%B7%E7%A0%81%E5%88%86%E9%85%8D%E5%B1%80">互联网号码分配局 IANA</a> 机构所管理的，所有的 top-level-domain 的列表请参考 <a href="http://www.iana.org/domains/root/db">Root Zone Database</a>，每个 top-level-domain 会分配给不同国家的非营利组织进行管理，例如管理 <code>.cn</code> 的单位是 <a href="http://www.cnnic.net.cn">中国互联网络信息中心(CNNIC)</a>。</p>
 
-<p>一般个人或公司组织会向这些非营利组织进行网域购买和登记，例如 xinshengdaxue.com 是登记在负责管理 .com 网域的 VeriSign Global Registry Services 组织。不过实务上我们不会直接跟 VeriSign Global Registry Services 购买，而是透过域名注册商进行购买，在这些域名注册商的网站上，你可以一次选购各种不同的网域。例如 <a href="https://fullstack.xinshengdaxue.com/myaccount/login.aspx">Namecheap</a>、<a href="http://godaddy.com/">Godaddy</a> 或 <a href="https://wanwang.aliyun.com/domain/">阿里云-万网</a> 等等。</p>
+<p>一般个人或公司组织会向这些非营利组织进行域名购买和登记，例如 xinshengdaxue.com 是登记在负责管理 .com 域名的 VeriSign Global Registry Services 组织。不过实务上我们不会直接跟 VeriSign Global Registry Services 购买，而是透过域名注册商进行购买，在这些域名注册商的网站上，你可以一次选购各种不同的域名。例如 <a href="https://fullstack.xinshengdaxue.com/myaccount/login.aspx">Namecheap</a>、<a href="http://godaddy.com/">Godaddy</a> 或 <a href="https://wanwang.aliyun.com/domain/">阿里云-万网</a> 等等。</p>
 
 <p>买到你自己的 second-level-domain 后，你就可以自行设定管理你的 sub-domain，例如 fullstack.xinshengdaxue.com 和 <a href="http://www.xinshengdaxue.com">www.xinshengdaxue.com</a> 指向不同的 IP 地址，是不同的网站服务器。</p>
 <h3>DNS 是如何查询的？</h3>
@@ -238,18 +238,18 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/nn68tr1tSWqONvd1xQsJ_9.png" title=""></figure></p>
 
-<p>查询的流程会是先从客户端偏好的 DNS 开始查询。如果 DNS 找不到纪录，则该 DNS 会从根网域名称服务器(root nameserver)开始查询，直到找到负责该网域的 DNS 服务器为止。在第一次查询后，那台客户端偏好的 DNS 就会缓存起来。</p>
+<p>查询的流程会是先从客户端偏好的 DNS 开始查询。如果 DNS 找不到纪录，则该 DNS 会从根域名服务器(root nameserver)开始查询，直到找到负责该域名的 DNS 服务器为止。在第一次查询后，那台客户端偏好的 DNS 就会缓存起来。</p>
 
-<p>举例来说：查询 fullstack.xinshengdaxue.com 时，如果客户端偏好的 DNS 没有纪录，就会去问 <a href="https://zh.wikipedia.org/zh-cn/%E6%A0%B9%E7%BD%91%E5%9F%9F%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">根网域名称服务器(root nameserver)</a> 说 .com 网域是谁管理的，它会回答负责 .com 的 nameserver，然后该 DNS 再去问 .com 的 nameserver 说 xinshengdaxue.com 是哪一台 DNS 负责的，然后再去问那一台 fullstack.xinshengdaxue.com 对应的 IP 是什么。</p>
+<p>举例来说：查询 fullstack.xinshengdaxue.com 时，如果客户端偏好的 DNS 没有纪录，就会去问 <a href="https://zh.wikipedia.org/zh-cn/%E6%A0%B9%E7%BD%91%E5%9F%9F%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">根域名服务器(root nameserver)</a> 说 .com 域名是谁管理的，它会回答负责 .com 的 nameserver，然后该 DNS 再去问 .com 的 nameserver 说 xinshengdaxue.com 是哪一台 DNS 负责的，然后再去问那一台 fullstack.xinshengdaxue.com 对应的 IP 是什么。</p>
 <h3>whois 指令</h3>
-<p><code>whois</code> 指令可以查询是谁注册了这个网域。不过，注册者可以选择关闭联络信息，所以不一定可以查到。</p>
+<p><code>whois</code> 指令可以查询是谁注册了这个域名。不过，注册者可以选择关闭联络信息，所以不一定可以查到。</p>
 <h3>nslookup 指令</h3>
 <p><code>nslookup</code> 指令可以简单查询 DNS</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/rEg2YVSQVCwQDwUebGgH_10.png" title=""></figure></p>
 
 <blockquote>
-<p>Non-authoritative answer 的意思是这个答案并不是从负责 xinshengdaxue.com 网域的主机回传，而是直接从客户端偏好的 DNS 服务器 8.8.8.8 的缓存纪录回答的。而 Authoritative 的意思就是这个答案是从负责 xinshengdaxue.com 网域的 DNS 主机回传的。</p>
+<p>Non-authoritative answer 的意思是这个答案并不是从负责 xinshengdaxue.com 域名的主机回传，而是直接从客户端偏好的 DNS 服务器 8.8.8.8 的缓存纪录回答的。而 Authoritative 的意思就是这个答案是从负责 xinshengdaxue.com 域名的 DNS 主机回传的。</p>
 </blockquote>
 <h3>dig 指令</h3>
 <p><code>dig</code> 指令也可以查询 DNS，提供更详细的数据：</p>
@@ -279,7 +279,7 @@ fullstack.xinshengdaxue.com. 600 IN A 124.42.118.141
 
 <p>其中 600 秒是指缓存有效时间，<code>A</code> 表示这一笔纪录是 IPv4 的纪录。</p>
 
-<p>假设从根网域服务器开始查询：</p>
+<p>假设从根域名服务器开始查询：</p>
 
 <p><code>dig @a.root-servers.net. fullstack.xinshengdaxue.com</code></p>
 
@@ -287,7 +287,7 @@ fullstack.xinshengdaxue.com. 600 IN A 124.42.118.141
 
 <p>其中一行 <code>com.      172800  IN  NS  a.gtld-servers.net.</code></p>
 
-<p>告诉们 .com 网域请去问 <code>a.gtld-servers.net</code> 这一台。NS 表示这一笔纪录是 Name Server 用途。</p>
+<p>告诉们 .com 域名请去问 <code>a.gtld-servers.net</code> 这一台。NS 表示这一笔纪录是 Name Server 用途。</p>
 
 <p><code>dig @a.gtld-servers.net. fullstack.xinshengdaxue.com</code></p>
 
@@ -296,7 +296,7 @@ fullstack.xinshengdaxue.com. 600 IN A 124.42.118.141
 <p><code>dig @f1g1ns1.dnspod.net. fullstack.xinshengdaxue.com</code></p>
 
 <blockquote>
-<p>这台 f1g1ns1.dnspod.net 服务器是 xinshengdaxue.com 网域的 Authoritative 服务器。</p>
+<p>这台 f1g1ns1.dnspod.net 服务器是 xinshengdaxue.com 域名的 Authoritative 服务器。</p>
 </blockquote>
 
 <p>其中一行 <code>fullstack.xinshengdaxue.com. 600 IN A 124.42.118.141</code></p>
@@ -313,7 +313,7 @@ fullstack.xinshengdaxue.com. 600 IN A 124.42.118.141
 <li>
 <code>MX</code> 邮件服务器</li>
 <li>
-<code>CNAME</code> 别名，可以设定某个 subdomain 指向另一个地址(不一定是同一个主网域)</li>
+<code>CNAME</code> 别名，可以设定某个 subdomain 指向另一个地址(不一定是同一个主域名)</li>
 </ul>
 
 <p>例如 xinshengdaxue.com 的邮件服务器和网站不是同一台服务器，很多公司会把邮件服务器改用 <a href="https://gsuite.google.com">Google Apps</a>，这在 DNS 设定中就可以指定 MX 纪录：</p>

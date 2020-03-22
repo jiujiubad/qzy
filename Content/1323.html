@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>上一节的下拉选单送出 Ajax 后，虽然数据库已经更新了，但是并没有任何视觉回馈，用户可能会感到疑惑到底成功了没有。所以通常我们还会制作一些动画效果，好告诉用户操作确实完成了。</p>
+      <p>上一节的下拉选单提交 Ajax 后，虽然数据库已经更新了，但是并没有任何视觉回馈，用户可能会感到疑惑到底成功了没有。所以通常我们还会制作一些动画效果，好告诉用户操作确实完成了。</p>
 
 <p>让我们找一张动画图片，在 <a href="http://loading.io" rel="nofollow" target="_self">http://loading.io</a> 可以产生和下载git 图片，或用这张动图 <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/cuin0cnOSEeorE6v3jlp_ajax-loader.gif" title=""></figure> （请按右键另存新档)，请将动图请放在<code>public/images/</code> 目录下，并命名为 <code>ajax-loader.gif</code>。</p>
 
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>其中 <code>beforeSend</code> 会在 Ajax 送出前触发，而<code>complete</code> 会在完成后触发。分别是插入这张动画 gif 图片，以及在 Ajax 完成后移除图片。</p>
+<p>其中 <code>beforeSend</code> 会在 Ajax 提交前触发，而<code>complete</code> 会在完成后触发。分别是插入这张动画 gif 图片，以及在 Ajax 完成后移除图片。</p>
 
 <p>因为是本地开发，感觉可能会一闪而过，我们可以暂时故意地在 action 做延迟：</p>
 

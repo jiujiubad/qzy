@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1817'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>16. 整理 Helper 档案 - Rails 代码重构 | 新生大学全栈营</title>
+    <title>16. 整理 Helper 文件 - Rails 代码重构 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      16. 整理 Helper 档案
+      16. 整理 Helper 文件
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1817">
@@ -205,9 +205,9 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>情境：每次 rails g controller XXX 时，Rails 都会自动新增对应的 XXX_helper.rb 档案</p>
+      <p>情境：每次 rails g controller XXX 时，Rails 都会自动新增对应的 XXX_helper.rb 文件</p>
 
-<p>重构前：很多 Helper 档案打开来里面都是空的，没有用到</p>
+<p>重构前：很多 Helper 文件打开来里面都是空的，没有用到</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>app/helpers/user_posts_helper.rb
 app/helpers/author_posts_helper.rb
@@ -216,7 +216,7 @@ app/helpers/admin_posts_helper.rb
 </pre></div>
 </figure>
 
-<p>重构后：简化集中到少数的 Helper 档案即可。这些 Helper 档案跟 Controller 并没有对应的关系，所有 Helper 档案里面宣告的方法都是通用的，不会因为放在哪一个 Helper 档案而有差异。因此我们可以重新编排整理。</p>
+<p>重构后：简化集中到少数的 Helper 文件即可。这些 Helper 文件跟 Controller 并没有对应的关系，所有 Helper 文件里面宣告的方法都是通用的，不会因为放在哪一个 Helper 文件而有差异。因此我们可以重新编排整理。</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>app/helpers/posts_helper.rb
 </pre></div>
@@ -422,13 +422,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("16. 整理 Helper 档案 - Rails 代码重构 | 新生大学全栈营")
+    mixpanel.track("16. 整理 Helper 文件 - Rails 代码重构 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1817',
-  post_title: '16. 整理 Helper 档案',
+  post_title: '16. 整理 Helper 文件',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1817'
 };
 Intercom('trackEvent', 'watched_post', metadata);

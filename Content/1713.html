@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>那要如何防御呢？我们需要针对所有非 GET 的操作，都加上额外的 token 验证码参数，检查用户浏览器当初真的是从网站上的某个表单送出的，而不是不小心触发的 CSRF 攻击。</p>
+      <p>那要如何防御呢？我们需要针对所有非 GET 的操作，都加上额外的 token 验证码参数，检查用户浏览器当初真的是从网站上的某个表单提交的，而不是不小心触发的 CSRF 攻击。</p>
 
 <p>这个防御功能 Rails 已经内建了，请修改 <code>app/controllers/application_controller.rb</code>，打开 <code>protect_from_forgery</code></p>
 
@@ -230,7 +230,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/7MnnSijMSdCm8zBg47jj_3-8-422.png" title=""></figure></p>
 
-<p>这也是为什么有时候逛 Rails 制作的网站，表单如果放太久才送出，有时候也会出现这个错误画面，因为这个 <code>authenticity_token</code> 过期失效了。</p>
+<p>这也是为什么有时候逛 Rails 制作的网站，表单如果放太久才提交，有时候也会出现这个错误画面，因为这个 <code>authenticity_token</code> 过期失效了。</p>
 
     </div>
   </div>

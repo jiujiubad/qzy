@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>这个 SQL 句告诉数据库拿出 <code>events</code> 表的所有数据。在 Rails 之中虽然我们没有直接撰写 SQL 句子，其实是 Rails 内部是自动帮我们转换好了，例如刚刚的句子，我们是写这样的 Ruby 代码：</p>
+<p>这个 SQL 句告诉数据库拿出 <code>events</code> 表的所有数据。在 Rails 之中虽然我们没有直接编写 SQL 句子，其实是 Rails 内部是自动帮我们转换好了，例如刚刚的句子，我们是写这样的 Ruby 代码：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="no">Event</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"RubyConf"</span><span class="p">,</span> <span class="ss">:capacity</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">)</span>

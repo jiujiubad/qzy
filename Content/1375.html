@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1375'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>19-2 上传多档 - Rails 百宝箱 第三集 | 新生大学全栈营</title>
+    <title>19-2 上传多文件 - Rails 百宝箱 第三集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：19. 多档案上传</h4>
+    <h4>所属章节：19. 多文件上传</h4>
     <p></p>
     <p><p>再学习1节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      19-2 上传多档
+      19-2 上传多文件
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1375">
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/views/admin/events/_form.html.erb</code> 加上文档上传的输入框，注意到因为要支援多档上传，多了一个 <code>:multiple =&gt; true</code> 参数。</p>
+<p>编辑 <code>app/views/admin/events/_form.html.erb</code> 加上文档上传的输入框，注意到因为要支援多文件上传，多了一个 <code>:multiple =&gt; true</code> 参数。</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/events/_form.html.erb
 </span></figcaption><div class="highlight"><pre>
@@ -284,7 +284,7 @@ var _hmt = _hmt || [];
 <p>请用 command 点选文档进行多选</p>
 </blockquote>
 
-<p>编辑前台的活动页面 <code>app/views/events/show.html.erb</code>，把图片显示出来。注意到因为是多档了，所以相比显示 Logo 多了 <code>.each</code> 循环。</p>
+<p>编辑前台的活动页面 <code>app/views/events/show.html.erb</code>，把图片显示出来。注意到因为是多文件了，所以相比显示 Logo 多了 <code>.each</code> 循环。</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/events/show.html.erb
 </span></figcaption><div class="highlight"><pre>   &lt;h2&gt;&lt;%= @event.category.try(:name) %&gt;&lt;/h2&gt;
@@ -500,13 +500,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("19-2 上传多档 - Rails 百宝箱 第三集 | 新生大学全栈营")
+    mixpanel.track("19-2 上传多文件 - Rails 百宝箱 第三集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1375',
-  post_title: '19-2 上传多档',
+  post_title: '19-2 上传多文件',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1375'
 };
 Intercom('trackEvent', 'watched_post', metadata);

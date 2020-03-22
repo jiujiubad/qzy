@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 <p><code>重开 rails s</code></p>
 
 <p><br></p>
-<h3>Step 2: 在product新增image栏位</h3>
+<h3>Step 2: 在product新增image字段</h3>
 <p><code>rails g migration add_image_to_product</code></p>
 
 <figure class="figure-code code"><figcaption><span>db/migrate/XXX(一堆数字)_add_image_to_product.rb
@@ -363,8 +363,8 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h3>Step 7: 将 uploads 资料夹放入 .gitignore</h3>
-<p>由于我们实作的图片上传功能，会将图片档案存在 public/uploads/xxx 的资料夹里面<br>
-我们不希望这些档案放进 git，所以要像 database.yml 一样将整个资料夹放入 .gitignore 里面</p>
+<p>由于我们实战的图片上传功能，会将图片文件存在 public/uploads/xxx 的资料夹里面<br>
+我们不希望这些文件放进 git，所以要像 database.yml 一样将整个资料夹放入 .gitignore 里面</p>
 
 <figure class="figure-code code"><figcaption><span>.gitignore
 </span></figcaption><div class="highlight"><pre>...(略)
@@ -379,7 +379,7 @@ git commit -m "implement image upload"
 </figure>
 
 <p><br></p>
-<h3>Step 8: 前台 products#show, products#index 实作</h3>
+<h3>Step 8: 前台 products#show, products#index 实战</h3>
 <p><code>rails g controller products</code></p>
 <h4>建立 products/index</h4>
 <figure class="figure-code code"><figcaption><span>app/controllers/products_controller.rb

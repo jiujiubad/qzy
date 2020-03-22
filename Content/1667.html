@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 
 <p>无论是哪一家 E-mail，注册后会拿到 SMTP (邮件通信协议) 服务器的 1.位址 2. 帐号 3. 密码</p>
 
-<p>如果你希望寄信来源要显示你自己的网域，例如来自 <code>hello@ihower.tw</code> 的话，首先你需要购买自己的网域(Part 7 会教)，以及进一步的 DNS 配置。</p>
+<p>如果你希望寄信来源要显示你自己的域名，例如来自 <code>hello@ihower.tw</code> 的话，首先你需要购买自己的域名(Part 7 会教)，以及进一步的 DNS 配置。</p>
 <h3>SendCloud</h3>
 <p><a href="http://sendcloud.net/">http://sendcloud.net/</a></p>
 
@@ -229,10 +229,10 @@ var _hmt = _hmt || [];
 <h3>Mailgun</h3>
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/IdfKCmPqQbQ6u7qasAgs_63.png" title=""></figure></p>
 <h3>Rails 设定</h3>
-<p>在本机编辑 <code>config/environments/production.rb</code>，加载 email 设定档。</p>
+<p>在本机编辑 <code>config/environments/production.rb</code>，加载 email 设置文件。</p>
 
 <figure class="figure-code code"><figcaption><span>config/environments/production.rb
-</span></figcaption><div class="highlight"><pre><span class="gi">+  config.action_mailer.default_url_options = { :host =&gt; '你的网域名称，暂时还没有就填IP地址' }
+</span></figcaption><div class="highlight"><pre><span class="gi">+  config.action_mailer.default_url_options = { :host =&gt; '你的域名，暂时还没有就填IP地址' }
 +  config.action_mailer.delivery_method = :smtp
 +  config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
 </span><span class="err">
@@ -273,7 +273,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>最后编辑 <code>config/deploy.rb</code>，在部署过程中去连结 <code>config/email.yml</code> 设定档。</p>
+<p>最后编辑 <code>config/deploy.rb</code>，在部署过程中去连结 <code>config/email.yml</code> 设置文件。</p>
 
 <figure class="figure-code code"><figcaption><span>config/deploy.rb
 </span></figcaption><div class="highlight"><pre><span class="gd">-  append :linked_files, "config/database.yml", "config/secrets.yml"

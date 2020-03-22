@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h3>Step 1 新增“薪资上限”“薪资下限”“联络 Email”</h3>
-<p>接下来我们要新增三个栏位：</p>
+<p>接下来我们要新增三个字段：</p>
 
 <ul>
 <li>wage_upper_bound （数字）</li>
@@ -251,7 +251,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <p><br></p>
-<h3>Step 2: 然后我们要修改所有 new/edit 的表单加上这个栏位。要修改的地方有四块</h3>
+<h3>Step 2: 然后我们要修改所有 new/edit 的表单加上这个字段。要修改的地方有四块</h3>
 <ul>
 <li><code>app/views/admin/jobs/edit.html.erb</code></li>
 <li><code>app/views/admin/jobs/new.html.erb</code></li>
@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
 <li><code>app/views/jobs/new.html.erb</code></li>
 </ul>
 
-<p>新增以下栏位</p>
+<p>新增以下字段</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:wage_lower_bound</span><span class="p">,</span> <span class="ss">:label</span> <span class="o">=&gt;</span> <span class="s2">"薪资下限"</span> <span class="cp">%&gt;</span>
@@ -273,8 +273,8 @@ var _hmt = _hmt || [];
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/ktZOJlMsSfCp2mwmXnNG_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-25%20%E4%B8%8B%E5%8D%887.21.23.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 3: 加上栏位白名单</h3>
-<p>既然新增了栏位，我们也要去改</p>
+<h3>Step 3: 加上字段白名单</h3>
+<p>既然新增了字段，我们也要去改</p>
 
 <ul>
 <li><code>app/controllers/admin/jobs_controller.rb</code></li>

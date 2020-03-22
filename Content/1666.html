@@ -211,35 +211,35 @@ var _hmt = _hmt || [];
 
 <ol>
 <li>源代码：这个我们都放在 Github 上了，加上 Git 分布式的特性，每个开发者都有一份完成的 repo，因此不需要备份服务器上的源代码。</li>
-<li>数据库：这是最重要的，需要汇出。</li>
-<li>用户上传的档案：如果你有做档案上传的功能，就会需要备份这些档案。不过如果有用七牛云或 AWS S3 来放档案的话，就不需要担心了。</li>
+<li>数据库：这是最重要的，需要导出。</li>
+<li>用户上传的文件：如果你有做文件上传的功能，就会需要备份这些文件。不过如果有用七牛云或 AWS S3 来放文件的话，就不需要担心了。</li>
 </ol>
 
-<p>备份数据需要存放在不同台机器才保险。除了备份程序之外，复原的程序也很重要，需要实际验证。很多公司以为做了备份，但真的发生事情要复原时，才发现备份的档案不能用。</p>
+<p>备份数据需要存放在不同台机器才保险。除了备份程序之外，撤销的程序也很重要，需要实际验证。很多公司以为做了备份，但真的发生事情要撤销时，才发现备份的文件不能用。</p>
 <h3>手动备份</h3>
-<p>汇出数据库：</p>
+<p>导出数据库：</p>
 
 <p>MySQL 的指令是 <code>mysqldump -u root -p rails_recipes &gt; rails_recipes.sql</code></p>
 
-<p>参数 <code>-u root</code> 表示用数据库的 root 帐号、<code>-p</code> 表示要输入密码、汇出 <code>rails_recipes</code> 数据库到 <code>rails_recipes.sql</code> 这个档案</p>
+<p>参数 <code>-u root</code> 表示用数据库的 root 帐号、<code>-p</code> 表示要输入密码、导出 <code>rails_recipes</code> 数据库到 <code>rails_recipes.sql</code> 这个文件</p>
 
 <p>PostreSQL 的指令是 <code>pg_dump -W -U postgres -h localhost rails_recipes &gt; rails_recipes.sql</code></p>
 
 <p>接着我们可以 <code>gzip rails_recipes.sql</code> 压缩起来，备份到其他电脑即可。</p>
 
-<p>数据库汇入：</p>
+<p>数据库导入：</p>
 
 <p>MySQL 的指令是 <code>mysql -u root -p rails_recipes &lt; rails_recipes.sql</code></p>
 
 <p>PostgreSQL 的指令是 <code>psql  -W -U postgres -h localhost rails_recipes &lt; rails_recipes.sql</code></p>
 
-<p>用户上传的档案：</p>
+<p>用户上传的文件：</p>
 
 <p>放在 <code>/home/deploy/rails-recipes/shared/public/system</code> 目录下，请打包压缩备份回其他电脑。</p>
 <h3>自动备份</h3>
 <p>使用 <a href="https://github.com/backup/backup" rel="nofollow" target="_self">https://github.com/backup/backup</a> 这个 Ruby 工具可以帮助我们设定好自动备份，可以参考 <a href="https://gist.github.com/ihower/5a28624f9420fb9a7c49" rel="nofollow" target="_self">https://gist.github.com/ihower/5a28624f9420fb9a7c49</a> 这会备份整个 mysql 数据库，打包压缩整个 /srv 目录，上传到指定的 AWS S3 bucket，最后寄送 email 通知完成。</p>
 
-<p>在服务器上执行 <code>crontab -e</code> 可以编辑例行性工作排程(crontab)，以下是一个每日凌晨 4:30 自动执行的范例：</p>
+<p>在服务器上执行 <code>crontab -e</code> 可以编辑例行性工作定时任务(crontab)，以下是一个每日凌晨 4:30 自动执行的范例：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>30 4 * * * /bin/bash -l -c '/usr/local/bin/backup perform -t my_backup -c /home/ihower/Backup/config.rb'
 </pre></div>

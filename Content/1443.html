@@ -207,17 +207,17 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>数据库的作用就是为了保存数据。</p>
 
-<p>程序运行时的数据会放在内存之中，但是只要程序结束或关机就会消失了。需要永久保存数据的话，就会存放在硬盘上。我们在编程基础课程曾经学过，可以利用档案来将数据放在硬盘上。不过如果数据又多又杂，存成档案要怎么命名、档案要用什么格式才方便之后查询，这些都是问题。</p>
+<p>程序运行时的数据会放在内存之中，但是只要程序结束或关机就会消失了。需要永久保存数据的话，就会存放在硬盘上。我们在编程基础课程曾经学过，可以利用文件来将数据放在硬盘上。不过如果数据又多又杂，存成文件要怎么命名、文件要用什么格式才方便之后查询，这些都是问题。</p>
 
 <p>数据库就是为了解决这些问题而发明了，除了可以保存大量数据，数据库还提供了方便的查询(Query)机制，以及提供 CRUD(Create, Read, Update, Delete) 操作。</p>
 <h3>关系型数据库</h3>
 <p>数据库有很多种，其中一种叫做「关系型数据库」 (RDBMS: Relational Database Management System) 是目前最普遍最多人使用的一种数据库。这种数据库包括开源的 SQLite、MySQL、PostgreSQL，以及需要付费的 Oracle、Microsoft SQL Server 等等，简单介绍如下：</p>
 <h4><a href="https://www.sqlite.org">SQLite3</a></h4>
-<p>SQLite 是一套轻量级的关系型数据库，也是 Rails 开发时默认的数据库。这种数据库并不是单独的服务器，而是会被集成在我们程序(也就是 Rails)之中，它的一个数据库就是一个档案，在 Rails 中也就是 <code>db/development.sqlite3</code> 这个档案。</p>
+<p>SQLite 是一套轻量级的关系型数据库，也是 Rails 开发时默认的数据库。这种数据库并不是单独的服务器，而是会被集成在我们程序(也就是 Rails)之中，它的一个数据库就是一个文件，在 Rails 中也就是 <code>db/development.sqlite3</code> 这个文件。</p>
 
 <p>SQLite 主要是单机用途，在行动装置、手机上比较常使用，并不适合多人连线使用的场景。因此在实际部署 Rails 到服务器时，我们会需要换成 PostgreSQL 或 MySQL 等数据库服务器。</p>
 
-<p>Mac 本身就有内建 SQLite3，请下载 <a href="http://sqlitebrowser.org">DB Browser for SQLite</a> 这个 GUI 软件，就可以打开 SQLte3 的数据库档案。</p>
+<p>Mac 本身就有内建 SQLite3，请下载 <a href="http://sqlitebrowser.org">DB Browser for SQLite</a> 这个 GUI 软件，就可以打开 SQLte3 的数据库文件。</p>
 <h4><a href="https://www.mysql.com">MySQL</a></h4>
 <p>MySQL 是目前最流行的开源数据库，容易上手、资源多、效能好、支援的厂商多，是最多网络公司使用的数据库。跟 SQLite3 不同，这是一个数据库服务器，除了安装还必须要执行 MySQL 服务器跑在背景，要连线 MySQL 也必须提供数据库的帐号密码。</p>
 

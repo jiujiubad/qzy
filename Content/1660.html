@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
 
 <p>执行 <code>bundle</code> 安装</p>
 <h3>本机设定 capistrano</h3>
-<p>执行 <code>cap install</code>，这会新增一些配置档案。</p>
+<p>执行 <code>cap install</code>，这会新增一些配置文件。</p>
 
 <p>编辑 <code>Capfile</code>：</p>
 
@@ -307,11 +307,11 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YYvMTAgQDGGhVZgYWL4E_30.png" title=""></figure></p>
 
-<p>你会看到一个 ERROR 说服务器上缺少一些档案，让我们进远端服务器上新增这些档案：</p>
+<p>你会看到一个 ERROR 说服务器上缺少一些文件，让我们进远端服务器上新增这些文件：</p>
 <h3>远端设定 database.yml 和 secrets.yml</h3>
 <p>请用 deploy 身份登录 <code>ssh deploy@47.92.82.116</code>，或是切换到 deploy 身份 <code>sudo su deploy</code>：</p>
 
-<p>在远端新增 <code>/home/deploy/rails-recipes/shared/config/database.yml</code> 这个档案，内容是：</p>
+<p>在远端新增 <code>/home/deploy/rails-recipes/shared/config/database.yml</code> 这个文件，内容是：</p>
 
 <p>如果是 MySQL 数据库：</p>
 
@@ -346,7 +346,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YbGf15mdQKqqCK3pwEdo_31.png" title=""></figure></p>
 
-<p>在远端新增 <code>/home/deploy/rails-recipes/shared/config/secrets.yml</code> 这个档案，内容是：</p>
+<p>在远端新增 <code>/home/deploy/rails-recipes/shared/config/secrets.yml</code> 这个文件，内容是：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>production:
   secret_key_base: 把刚刚的乱数key贴上来
@@ -358,7 +358,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/2vZSNQYhS7mtOBXkOzgi_32.png" title=""></figure></p>
 <h3>执行部署</h3>
-<p>本机执行部署 <code>cap production deploy</code>，这个指令会登录远端服务器，把 Github 上的代码抓下来，然后自动执行 bundle 安装套件、跑数据库 migration 和编译 assets 编译等等步骤：</p>
+<p>本机执行部署 <code>cap production deploy</code>，这个指令会登录远端服务器，把 Github 上的代码抓下来，然后自动执行 bundle 安装组件、跑数据库 migration 和编译 assets 编译等等步骤：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/rXVdFE8JSESNwoU2o7qP_29.png" title=""></figure></p>
 
@@ -399,13 +399,13 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 
-<p>每次执行 <code>cap production deploy</code> 时，capistrano 都会在 releases 都会建一个新的目录，然后从 git repo 把最新的代码抓下来，执行 bundle 安装套件、跑数据库 migration、编译 assets 编译等等步骤，都完成之后，会更新 current 目录(这是一个 <code>ln -s</code> 的捷径)指向最新的 releases/xxxx 目录，最后 <code>touch tmp/restart.txt</code> 告诉 Passenger 重启 Rails。</p>
+<p>每次执行 <code>cap production deploy</code> 时，capistrano 都会在 releases 都会建一个新的目录，然后从 git repo 把最新的代码抓下来，执行 bundle 安装组件、跑数据库 migration、编译 assets 编译等等步骤，都完成之后，会更新 current 目录(这是一个 <code>ln -s</code> 的捷径)指向最新的 releases/xxxx 目录，最后 <code>touch tmp/restart.txt</code> 告诉 Passenger 重启 Rails。</p>
 
 <p>这样做的好处是在部署过程中，服务器仍然可以稳稳地用本来的版本，不会受到新版本的影响，直到部署过程都完成之后，才会修改 current 目录重启 Rails。</p>
 
-<p>也由于每次部署都会建立新的 <code>releases/xxx</code> 目录，因此不同版本之间需要共享的档案和目录，就会放在 <code>shared</code> 下，例如 <code>bundle</code> 目录是放安装的 Ruby 套件、<code>public/system</code> 是默认用户上传档案放的位置、<code>public/assets</code> 是静态档案编译后放的位置。</p>
+<p>也由于每次部署都会建立新的 <code>releases/xxx</code> 目录，因此不同版本之间需要共享的文件和目录，就会放在 <code>shared</code> 下，例如 <code>bundle</code> 目录是放安装的 Ruby 组件、<code>public/system</code> 是默认用户上传文件放的位置、<code>public/assets</code> 是静态文件编译后放的位置。</p>
 
-<p>在 <code>config/deploy.rb</code> 的设定中，<code>linked_files</code> 和 <code>linked_dirs</code> 就是在配置部署过程中，需要将这些 <code>shared</code> 下的档案和目录，连结到新的 <code>releases</code> 目录里面去。</p>
+<p>在 <code>config/deploy.rb</code> 的设定中，<code>linked_files</code> 和 <code>linked_dirs</code> 就是在配置部署过程中，需要将这些 <code>shared</code> 下的文件和目录，连结到新的 <code>releases</code> 目录里面去。</p>
 
     </div>
   </div>

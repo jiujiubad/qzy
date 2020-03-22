@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>目标：做一个下拉选单可以分类，选了就立即生效，不需要再点送出</p>
+      <p>目标：做一个下拉选单可以分类，选了就立即生效，不需要再点提交</p>
 
 <p>让我们产生一个分类 Category model，让 Post 文章属于一种分类：</p>
 
@@ -296,7 +296,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>其中 <code>$ajax</code> 里面的 <code>data</code> 就是要送出去的参数，透过 <code>$(this).val()</code> 可以抓到选单的值。</p>
+<p>其中 <code>$ajax</code> 里面的 <code>data</code> 就是要提交去的参数，透过 <code>$(this).val()</code> 可以抓到选单的值。</p>
 
 <p>编辑 <code>app/controllers/posts_controller.rb</code> 加上 <code>update</code> action：</p>
 

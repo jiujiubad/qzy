@@ -205,13 +205,13 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>在实际运作的网站中，用户可能会不小心删除资料，或是修改时不小心改错等等。这时候用户可能会透过客服希望管理员能进行复原的动作。另一方面，针对重要的资料，我们也希望建立追踪和稽核的机制。</p>
+      <p>在实际运作的网站中，用户可能会不小心删除资料，或是修改时不小心改错等等。这时候用户可能会透过客服希望管理员能进行撤销的动作。另一方面，针对重要的资料，我们也希望建立追踪和稽核的机制。</p>
 
 <p>这种需求叫做软删除(Soft Deletion)和版本控管(Versions)。</p>
 
 <p>软删除(Soft Deletion)的意思是不要真的删除这一笔资料，常见的作法是增加一个删除的标记字段(例如 <code>deleted_at</code>字段)，如果被标记删除了，那就不要显示出来即可，使用 <a href="http://www.rubydoc.info/gems/paranoia">Paranoia</a> 这个 gem 可以完成这个功能。</p>
 
-<p>至于版本控管的作法，则会另外建立一个 Version Model 来存储编修纪录。如果本来的资料被删除或修改，则会复制资料到这个 Model 去。等会我们示范用 <a href="https://github.com/airblade/paper_trail">paper_trail</a> gem。如果用了 paper_trail 来做版本控管，也就不需要用 paranoia 了。因为前者也可以做删除的复原。</p>
+<p>至于版本控管的作法，则会另外建立一个 Version Model 来存储编辑和删除纪录。如果本来的资料被删除或修改，则会复制资料到这个 Model 去。等会我们示范用 <a href="https://github.com/airblade/paper_trail">paper_trail</a> gem。如果用了 paper_trail 来做版本控管，也就不需要用 paranoia 了。因为前者也可以做删除的撤销。</p>
 
 <blockquote>
 <p>不建议用 paranoia 的方式，这种方式有一个严重的数据库问题，会干扰 unique index。例如 User 的 email 是唯一的，如果不真的删除这一笔资料，只是标记被删除的话，那么被删除的用户资料，该 email 依然无法注册。因为数据库认为 email 重复了。</p>

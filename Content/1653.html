@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1653'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>5. Linux 档案操作 - Linux 云服务器部署运维 | 新生大学全栈营</title>
+    <title>5. Linux 文件操作 - Linux 云服务器部署运维 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      5. Linux 档案操作
+      5. Linux 文件操作
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1653">
@@ -235,15 +235,15 @@ var _hmt = _hmt || [];
 <code>~</code> 这个符号是家目录的意思，如果目前登录的用户是 <code>root</code>，那个 <code>cd ~</code> 会前往 <code>/root</code>。如果目前是用 ihower 帐号登录，<code>cd ~</code> 就会前往 <code>/home/ihower/</code>
 </li>
 </ul>
-<h3>一些档案管理的指令</h3>
+<h3>一些文件管理的指令</h3>
 <ul>
 <li>
-<code>ls -la</code> 显示所有档案，包含 <code>.</code> 开头的隐藏档案</li>
+<code>ls -la</code> 显示所有文件，包含 <code>.</code> 开头的隐藏文件</li>
 </ul>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/LKVvkhAiSr6qmJYmnQ0Q_44.png" title=""></figure></p>
 
-<p>这会显示档案和目录的权限(下一章会说明)、档案大小、最后修改时间。</p>
+<p>这会显示文件和目录的权限(下一章会说明)、文件大小、最后修改时间。</p>
 
 <ul>
 <li>
@@ -251,9 +251,9 @@ var _hmt = _hmt || [];
 <li>
 <code>touch</code> 创建一个空文件</li>
 <li>
-<code>cp</code> 复制档案</li>
+<code>cp</code> 复制文件</li>
 <li>
-<code>mv</code> 移动档案或目录(也可以更名)</li>
+<code>mv</code> 移动文件或目录(也可以更名)</li>
 <li>
 <code>ln -s</code> 建立捷径别名</li>
 </ul>
@@ -264,14 +264,14 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>
-<code>rm</code> 删除档案</li>
+<code>rm</code> 删除文件</li>
 <li>
-<code>rm -r</code> 删除整个目录和以下的档案</li>
+<code>rm -r</code> 删除整个目录和以下的文件</li>
 </ul>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/h0FfVvu8RFSXoUOrc6yL_46.png" title=""></figure></p>
 
-<p>截图中用 <code>rm</code> 指令删除了 abc 和 README.txt。<code>rm</code> 不能删除目录，而 <code>rmdir</code> 指令只能删除空目录，要用 <code>rm -r</code> 指令才可以整个目录含以下的档案都删除掉。</p>
+<p>截图中用 <code>rm</code> 指令删除了 abc 和 README.txt。<code>rm</code> 不能删除目录，而 <code>rmdir</code> 指令只能删除空目录，要用 <code>rm -r</code> 指令才可以整个目录含以下的文件都删除掉。</p>
 <h3>如何编辑和浏览文件</h3>
 <p>在 CLI 中没有像 Atom 的 GUI 编辑器，操作系统内建的是 nano 或 vi，让我们练习一下：</p>
 
@@ -281,11 +281,11 @@ var _hmt = _hmt || [];
 
 <p>按 control + X 再按 Y 再按 Enter 就可以存盘离开。</p>
 
-<p>请务必熟悉一下如何编辑文件，因为我们会时常需要在服务器上直接编辑各种设定档。</p>
+<p>请务必熟悉一下如何编辑文件，因为我们会时常需要在服务器上直接编辑各种设置文件。</p>
 
 <p>vi 和 vim 是另一套更为 geek 的文档编辑器，功能强大但比较难上手使用，有兴趣的学员可以自行 google 如何使用。</p>
-<h3>如何传档案？</h3>
-<p>SSH 通信协议除了可以让我们登录远端的服务器，也可以作为档案传输使用，又叫做 SFTP。CLI 的指令是 <code>scp</code>。</p>
+<h3>如何传文件？</h3>
+<p>SSH 通信协议除了可以让我们登录远端的服务器，也可以作为文件传输使用，又叫做 SFTP。CLI 的指令是 <code>scp</code>。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/QikL8gWCTWCjDrPuboav_48.png" title=""></figure></p>
 
@@ -296,21 +296,21 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>在 Mac 上可以用 FTP 软件例如 <a href="https://cyberduck.io">Cyberduck</a>，通讯协议选 SFTP 就可以连线传档。</p>
 </blockquote>
-<h3>如何打包压缩档案</h3>
-<p>压缩和打包是可以分开的：<code>gzip</code> 只能压缩一个档案、<code>tar</code> 可以打包整个目录顺便压缩。</p>
+<h3>如何打包压缩文件</h3>
+<p>压缩和打包是可以分开的：<code>gzip</code> 只能压缩一个文件、<code>tar</code> 可以打包整个目录顺便压缩。</p>
 
 <ul>
 <li>
-<code>gzip</code> 压缩档案</li>
+<code>gzip</code> 压缩文件</li>
 <li>
-<code>gzip -d</code> 解压缩档案</li>
+<code>gzip -d</code> 解压缩文件</li>
 <li>
-<code>tar zcvf xxx.tar.gz xxx</code>  将 xxx 目录打包并压缩成 <code>xxx.tar.gz</code> 档案</li>
+<code>tar zcvf xxx.tar.gz xxx</code>  将 xxx 目录打包并压缩成 <code>xxx.tar.gz</code> 文件</li>
 <li>
 <code>tar zxcf xxx.tar.gz</code>。将 <code>xxx.tar.gz</code> 解压缩</li>
 </ul>
 
-<p>如果你要和服务器传输很多档案，建议先压缩打包成一个档案再传，速度会快很多。</p>
+<p>如果你要和服务器传输很多文件，建议先压缩打包成一个文件再传，速度会快很多。</p>
 
     </div>
   </div>
@@ -512,13 +512,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("5. Linux 档案操作 - Linux 云服务器部署运维 | 新生大学全栈营")
+    mixpanel.track("5. Linux 文件操作 - Linux 云服务器部署运维 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1653',
-  post_title: '5. Linux 档案操作',
+  post_title: '5. Linux 文件操作',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1653'
 };
 Intercom('trackEvent', 'watched_post', metadata);

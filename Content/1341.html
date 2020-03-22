@@ -277,7 +277,7 @@ var _hmt = _hmt || [];
 <p>这样就可以批次删除了。</p>
 
 <blockquote>
-<p>Pro Tip 小技巧：关于 <code>Array(params[:ids]</code> 这个用法，如果是 <code>Array([1,2,3])</code> 会等同于 <code>[1,2,3]</code> 没变，但是 <code>Array[nil]</code> 会变成 <code>[]</code> 空数组，这可以让 <code>.each</code> 方法不会因为 <code>nil.each</code> 而爆错。如果不这样处理，在没有勾选任何活动就送出的情况，就会爆出 NoMethodError 错误。除非你额外检查 <code>params[:id]</code> 如果是 <code>nil</code> 就返回，但不如用 <code>Array</code> 来的精巧。</p>
+<p>Pro Tip 小技巧：关于 <code>Array(params[:ids]</code> 这个用法，如果是 <code>Array([1,2,3])</code> 会等同于 <code>[1,2,3]</code> 没变，但是 <code>Array[nil]</code> 会变成 <code>[]</code> 空数组，这可以让 <code>.each</code> 方法不会因为 <code>nil.each</code> 而爆错。如果不这样处理，在没有勾选任何活动就提交的情况，就会爆出 NoMethodError 错误。除非你额外检查 <code>params[:id]</code> 如果是 <code>nil</code> 就返回，但不如用 <code>Array</code> 来的精巧。</p>
 </blockquote>
 
 <p>注意本来的 admin layout 中的 flash 样式有点问题，请修改 <code>app/views/layouts/admin.html.erb</code> 修正一下：</p>

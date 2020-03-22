@@ -217,9 +217,9 @@ var _hmt = _hmt || [];
 
 <p>GC 是编程语言的一种内部功能，作用是自动把再没有用到的变量，把内存释出回操作系统。例如你可以想像，编程语言在执行的时候，会定时停一下检查所有变量，看看哪些变量已经没有被使用，就释放回操作系统。</p>
 
-<p>垃圾回收可以让程式员减轻许多负担，也减少程式员犯错的机会。在 Java, Ruby, JavaScript 都有 GC，一般来说不需要特别烦恼内存的使用。还是有可能碰到内存泄露(memory leak)问题，例如不断使用内存但没有释放的机会。</p>
+<p>垃圾回收可以让程序员减轻许多负担，也减少程序员犯错的机会。在 Java, Ruby, JavaScript 都有 GC，一般来说不需要特别烦恼内存的使用。还是有可能碰到内存泄露(memory leak)问题，例如不断使用内存但没有释放的机会。</p>
 
-<p>例如以下 Ruby 程式，是一个无穷循环不断增加资料到数组里面:</p>
+<p>例如以下 Ruby 程序，是一个无穷循环不断增加资料到数组里面:</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>

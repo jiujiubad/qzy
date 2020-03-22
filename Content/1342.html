@@ -205,17 +205,17 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接下来实作批次修改状态。注意到我们已经包了一个 <code>form</code> 在 <code>table</code> 外面了：</p>
+      <p>接下来实战批次修改状态。注意到我们已经包了一个 <code>form</code> 在 <code>table</code> 外面了：</p>
 
 <ul>
-<li>一个 form 的送出 URL 位置是固定的，会进到同一个 action。这里会 POST 送出到 <code>bulk_update_admin_events_path</code>
+<li>一个 form 的提交 URL 位置是固定的，会进到同一个 action。这里会 POST 提交到 <code>bulk_update_admin_events_path</code>
 </li>
 <li>
 <code>form</code> 里面不能再包 <code>form</code>
 </li>
 </ul>
 
-<p>那我们要怎么区别到底是要删除还是修改？所幸，按钮的文字也会送出变成参数。请修改 <code>app/views/admin/events/index.html.erb</code>，加上批次修改的按钮，以及状态的下拉选单：</p>
+<p>那我们要怎么区别到底是要删除还是修改？所幸，按钮的文字也会提交变成参数。请修改 <code>app/views/admin/events/index.html.erb</code>，加上批次修改的按钮，以及状态的下拉选单：</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/events/index.html.erb
 </span></figcaption><div class="highlight"><pre>   &lt;/table&gt;
@@ -383,7 +383,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="pannel-body">
     <div class="post-task-descripiton">
-        <p>请在任一个项目中，实作批次删除 and/or 批次修改，并贴上截图。</p>
+        <p>请在任一个项目中，实战批次删除 and/or 批次修改，并贴上截图。</p>
 
     </div>
 

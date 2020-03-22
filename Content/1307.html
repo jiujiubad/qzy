@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接下来是本课程的重点戏 Ajax。首先我们要让 Delete 删除的超连结变成 Ajax 送出。</p>
+      <p>接下来是本课程的重点戏 Ajax。首先我们要让 Delete 删除的超连结变成 Ajax 提交。</p>
 
 <p>编辑 <code>app/views/posts/index.html.erb</code></p>
 
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>透过 <code>:remote =&gt; true</code> 就会变成 Ajax 送出了，不需要自己写 <code>$("xxx").click</code> 去绑事件。</p>
+<p>透过 <code>:remote =&gt; true</code> 就会变成 Ajax 提交了，不需要自己写 <code>$("xxx").click</code> 去绑事件。</p>
 
 <p>接着编辑 <code>app/controllers/posts_controller.rb</code></p>
 
@@ -248,7 +248,7 @@ var _hmt = _hmt || [];
 
 <p>因为要在 controller 里面放 JavaScript 字串是很痛苦的，接下来改成用 erb 样板的方式来写 JavaScript：</p>
 
-<p>再次编辑 <code>app/controllers/posts_controller.rb</code>，把 <code>render :js</code> 砍掉：</p>
+<p>再次编辑 <code>app/controllers/posts_controller.rb</code>，把 <code>render :js</code> 删掉：</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
 </span></figcaption><div class="highlight"><pre>
@@ -285,7 +285,7 @@ var _hmt = _hmt || [];
 <li>一个 action 如果没有写明 <code>redirect</code> 或 <code>render</code> 的话，就会默认去找 action 名称的样板。于是这里就会去找 <code>destroy.js.erb</code>
 </li>
 <li>
-<code>destroy.js.erb</code> 里面要写回传的 JavaScript 代码，这个档案也是 erb 样板，所以可以用 <code>&lt;%= XXX %&gt;</code> 内嵌 Ruby 语法</li>
+<code>destroy.js.erb</code> 里面要写回传的 JavaScript 代码，这个文件也是 erb 样板，所以可以用 <code>&lt;%= XXX %&gt;</code> 内嵌 Ruby 语法</li>
 </ul>
 
 <p>再次测试看看删除，你会发现删除的操作变成超级神速。</p>

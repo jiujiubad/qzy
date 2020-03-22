@@ -242,12 +242,12 @@ rails s
 </figure>
 
 <p><br></p>
-<h3>Step 2. 将 Bootstrap 的 CSS 套件装进专案里面</h3>
+<h3>Step 2. 将 Bootstrap 的 CSS 组件装进专案里面</h3>
 <p>在终端输入</p>
 
 <p><code>mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</code></p>
 
-<p>然后修改 app/assets/stylesheets/application.scss 档案，在最后加入以下两行</p>
+<p>然后修改 app/assets/stylesheets/application.scss 文件，在最后加入以下两行</p>
 
 <figure class="figure-code code"><figcaption><span>app/assets/stylesheets/application.scss
 </span></figcaption><div class="highlight"><pre><span class="cm">/*
@@ -435,7 +435,7 @@ git commit -m "Add gem bootstrap and jquery-rails"
 <p><code>rails s</code></p>
 
 <p><br></p>
-<h2>Part 4 增加 flash 功能</h2><h3>Step 1. 将 Boostrap 的 js 提示套件 bootstrap/alert “挂”进专案里面</h3>
+<h2>Part 4 增加 flash 功能</h2><h3>Step 1. 将 Boostrap 的 js 提示组件 bootstrap/alert “挂”进专案里面</h3>
 <p>在 <code>requre_tree</code> 上加入一行 <code>//= require bootstrap/alert</code></p>
 
 <figure class="figure-code code"><figcaption><span>app/assets/javascripts/application.js
@@ -517,7 +517,7 @@ git commit -m "add bootstrap flash"
 
 <p><br></p>
 <h2>Part 5 安装 Devise</h2><h3>Step 1: 安装登录系统</h3>
-<p>Devise 是一个 Rails 内热门的 gem，专门用来快速实作“登录系统”。在这一节我们会用 devise 实作登录功能。</p>
+<p>Devise 是一个 Rails 内热门的 gem，专门用来快速实战“登录系统”。在这一节我们会用 devise 实战登录功能。</p>
 
 <p>Gemfile 新增一行 <code>gem 'devise'</code></p>
 
@@ -533,7 +533,7 @@ git commit -m "add bootstrap flash"
 </figure>
 
 <p><br></p>
-<h3>Step 2 : 产生会员系统的必要档案</h3>
+<h3>Step 2 : 产生会员系统的必要文件</h3>
 <p>执行</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>rails g devise:install
@@ -579,7 +579,7 @@ rake db:migrate
 <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/xeLBMLRfQdKd3lQzhyjf_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-14%20%E4%B8%8B%E5%8D%882.07.34.png" title=""></figure></p>
 
 <p><br></p>
-<h3>Step 5: git 储存</h3>
+<h3>Step 5: git 保存</h3>
 <figure class="figure-code code"><div class="highlight"><pre>git add .
 git commit -m "Add gem devise: user can signup/login/logout"
 </pre></div>

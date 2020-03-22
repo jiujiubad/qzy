@@ -240,7 +240,7 @@ var _hmt = _hmt || [];
 <p>这刚刚有提过，存储有分 save 和 save!，更新有分 udpate 和 udpate!。</p>
 
 <ul>
-<li>有搭配 <code>if ... else</code> 情况做处理用 save。这表示你会处理储存失败流程</li>
+<li>有搭配 <code>if ... else</code> 情况做处理用 save。这表示你会处理保存失败流程</li>
 <li>没有的话，用 save! 惊叹号版本。这表示你认为 99% 应该会存成功，懒得处理存不成功。如果出错会异常抛出</li>
 </ul>
 <h3>rescue_from</h3>
@@ -272,7 +272,7 @@ end
 <h3>安装异常通知</h3>
 <p>在 production 上线环境中，如果用户操作碰到异常会看到 500 错误画面，并且在 log 中会纪录下来。我们希望能有一些机制能够主动通知我们程序员，好让我可以 trace error、fixed bug 甚至在发生错误没多久就可以通知苦主发生了什么事情。</p>
 
-<p>最基本我们可以安装 <a href="https://github.com/smartinez87/exception_notification">Exception Notifier</a>，这个套件会在发生例外时寄 email 通知。或是使用第三方服务，例如：</p>
+<p>最基本我们可以安装 <a href="https://github.com/smartinez87/exception_notification">Exception Notifier</a>，这个组件会在发生例外时寄 email 通知。或是使用第三方服务，例如：</p>
 
 <ul>
 <li>
@@ -280,7 +280,7 @@ end
 <li><a href="https://airbrake.io">Airbrake</a></li>
 </ul>
 
-<p>这些第三方服务可以在网站发生异常错误的时候自动将错误讯息收集起来，并且提供了还蛮不错的后台可以浏览，还可以统计及追踪异常处理的情况。免费的方案对于小网站就很够用，非常推荐使用。</p>
+<p>这些第三方服务可以在网站发生异常错误的时候自动将错误信息收集起来，并且提供了还蛮不错的后台可以浏览，还可以统计及追踪异常处理的情况。免费的方案对于小网站就很够用，非常推荐使用。</p>
 
     </div>
   </div>

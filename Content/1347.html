@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/pWQxNtMMTraSX1DTW0nH_15-2.gif" title=""></figure></p>
 
-<p>拖拉的 UI 需要额外的前端套件，这里介绍 jQuery UI 的 <a href="http://api.jqueryui.com/sortable/">Sortable Plugin</a>，并直接使用 <a href="https://github.com/joliss/jquery-ui-rails">jquery-ui-rails</a> 这个 gem 来安装</p>
+<p>拖拉的 UI 需要额外的前端组件，这里介绍 jQuery UI 的 <a href="http://api.jqueryui.com/sortable/">Sortable Plugin</a>，并直接使用 <a href="https://github.com/joliss/jquery-ui-rails">jquery-ui-rails</a> 这个 gem 来安装</p>
 
 <p>编辑 <code>Gemfile</code></p>
 
@@ -301,7 +301,7 @@ var _hmt = _hmt || [];
 +    axis: 'y',       // 限制只能上下拖拉
 +    items: 'tr',     // 拖拉整个 tr
 +    cursor: 'move',  // 变更拖拉时的 icon
-+    handle: ".sortable_icon",  // 限制只有点 ☰ 才能开始拖拉，砍掉这行的话，会是整个 tr 都可以进行拖拉，你可以试试看
++    handle: ".sortable_icon",  // 限制只有点 ☰ 才能开始拖拉，删掉这行的话，会是整个 tr 都可以进行拖拉，你可以试试看
 +    stop: function(e, ui){     // 当拖拉结束时，会调用这个方法
 +      ui.item.children('td').effect('highlight', {}, 1000)
 +    },
@@ -453,7 +453,7 @@ var _hmt = _hmt || [];
     </div>
     <div class="pannel-body">
     <div class="post-task-descripiton">
-        <p>请在任一个项目中，实作 Ajax 拖拉排序的功能。请上传 gif 动图结果。</p>
+        <p>请在任一个项目中，实战 Ajax 拖拉排序的功能。请上传 gif 动图结果。</p>
 
     </div>
 

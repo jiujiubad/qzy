@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
 <p>这种技巧又叫做 <a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0">Higher-order function 高阶函数</a></p>
 </blockquote>
 <h3>pre-and post-processing</h3>
-<p>pre-and post-processing 的意思是前置和后置处理，将共享的前置和后置处理代码抽取出来。以 Ruby 的开档写入为例，无论要写入什么，首先一定要打开档案，完成后一定要调用 <code>close</code> 方法：</p>
+<p>pre-and post-processing 的意思是前置和后置处理，将共享的前置和后置处理代码抽取出来。以 Ruby 的开档写入为例，无论要写入什么，首先一定要打开文件，完成后一定要调用 <code>close</code> 方法：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"myfile.txt"</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>

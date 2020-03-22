@@ -205,9 +205,9 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>在本机开发的时候，我们使用 <a href="https://github.com/puma/puma">puma</a> 这一套由 Ruby 写的网站服务器，无论是静态档案(图片/CSS/JS)或是会进到 Rails 处理的动态网页，一律都是由 puma 来处理。</p>
+      <p>在本机开发的时候，我们使用 <a href="https://github.com/puma/puma">puma</a> 这一套由 Ruby 写的网站服务器，无论是静态文件(图片/CSS/JS)或是会进到 Rails 处理的动态网页，一律都是由 puma 来处理。</p>
 
-<p>在正式 production 环境中，我们会用更高效能的网站服务器来处理，其中 <a href="http://nginx.org/">Nginx</a> 是目前最流行的网站服务器(用C语言开发的)，可以非常高效能地提供静态档案，效能是纯 Ruby 网站服务器的数十倍以上。因此像图档/CSS/JS等等静态资源，都会由 Nginx 处理。至于 Rails 动态网页的部分，我们会安装 <a href="https://www.phusionpassenger.com/">Passenger</a> 这个 Nginx 的扩充模组来执行 Ruby 程序：Nginx 会把非静态档案的 HTTP Request 转交给 Passenger 来处理。</p>
+<p>在正式 production 环境中，我们会用更高效能的网站服务器来处理，其中 <a href="http://nginx.org/">Nginx</a> 是目前最流行的网站服务器(用C语言开发的)，可以非常高效能地提供静态文件，效能是纯 Ruby 网站服务器的数十倍以上。因此像图档/CSS/JS等等静态资源，都会由 Nginx 处理。至于 Rails 动态网页的部分，我们会安装 <a href="https://www.phusionpassenger.com/">Passenger</a> 这个 Nginx 的扩充模组来执行 Ruby 程序：Nginx 会把非静态文件的 HTTP Request 转交给 Passenger 来处理。</p>
 
 <p>以下安装程序参考自 <a href="https://www.phusionpassenger.com/library/install/nginx/install/oss/">Installing Passenger + Nginx</a> 的步骤：</p>
 <figure class="figure-code code"><div class="highlight"><pre>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7

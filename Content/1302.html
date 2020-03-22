@@ -205,18 +205,18 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>回想之前的超连结或是表单送出，浏览器会整页替换：</p>
+      <p>回想之前的超连结或是表单提交，浏览器会整页替换：</p>
 
-<p>例如点超连结时，浏览器会用 GET 送出，然后整个浏览器刷新到下一页：</p>
+<p>例如点超连结时，浏览器会用 GET 提交，然后整个浏览器刷新到下一页：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/cfoF9h32Qp6KLN3oXxsb_1.png" title=""></figure></p>
 
-<p>如果用表单送出的话，浏览器会先用 POST 送出，Rails 服务器处理完之后，通常我们会用 <code>redirect</code> 语法来回传 HTTP 状态码 301，当浏览器看到 301 后就会送 GET 去抓下一页。</p>
+<p>如果用表单提交的话，浏览器会先用 POST 提交，Rails 服务器处理完之后，通常我们会用 <code>redirect</code> 语法来回传 HTTP 状态码 301，当浏览器看到 301 后就会送 GET 去抓下一页。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/OUlDWbULTz5PwYLf5YO6_2.png" title=""></figure></p>
 
 <blockquote>
-<p>为何这样设计? 这是因为互联网的惯例是用 GET 来单纯读取资料，不会修改资料。而 POST 则是执行某个操作，会修改到服务器的资料。互联网也会假设 GET 是可以重复读取并缓存的，而 POST 不行。因此搜寻引擎只会用 GET 抓资料，像<a href="https://www.puritys.me/docs-blog/article-204-%E6%88%91%E8%A2%AB-Google-%E9%AA%87%E5%AE%A2%E6%94%BB%E5%87%BB%E4%BA%86.html">这篇文章</a>就闹了笑话，这个人用 GET 来删除资料，造成Google 爬虫一爬就不小心删除了，他还以为是 Google 故意骇他...lol 另外，像浏览器的表单送出是用POST，如果我们在action 中不 redirect (也就是不让浏览器去 GET 另一页)，而是直接render 返回，那么如果用户重新整理画面的话，浏览器会跳出以下的警告视窗，要求用户确认是否再POST 一次，因为这可能会造成重复操作(重复新增)。如果是 GET 的话，重新整理就不会有这种警告了。  <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/S2hCzQITYORTVc6vEveP_post-confirm.png" title=""></figure></p>
+<p>为何这样设计? 这是因为互联网的惯例是用 GET 来单纯读取资料，不会修改资料。而 POST 则是执行某个操作，会修改到服务器的资料。互联网也会假设 GET 是可以重复读取并缓存的，而 POST 不行。因此搜索引擎只会用 GET 抓资料，像<a href="https://www.puritys.me/docs-blog/article-204-%E6%88%91%E8%A2%AB-Google-%E9%AA%87%E5%AE%A2%E6%94%BB%E5%87%BB%E4%BA%86.html">这篇文章</a>就闹了笑话，这个人用 GET 来删除资料，造成Google 爬虫一爬就不小心删除了，他还以为是 Google 故意骇他...lol 另外，像浏览器的表单提交是用POST，如果我们在action 中不 redirect (也就是不让浏览器去 GET 另一页)，而是直接render 返回，那么如果用户重新整理画面的话，浏览器会跳出以下的警告视窗，要求用户确认是否再POST 一次，因为这可能会造成重复操作(重复新增)。如果是 GET 的话，重新整理就不会有这种警告了。  <figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/S2hCzQITYORTVc6vEveP_post-confirm.png" title=""></figure></p>
 </blockquote>
 
 <p>接下来要介绍的 Ajax(Asynchronous JavaScript and XML) 异步的JavaScript与XML技术，则可以不需要整页替换，只更新部分网页，这可以大大的改进 UI 反应速度。目前已经不流行用 XML 了，因此常见的回传会用 JSON 和 Script 格式：</p>

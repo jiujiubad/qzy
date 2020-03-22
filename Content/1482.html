@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1482'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>25-2 解析 CSV 档案 (Web UI 接口) - Rails 百宝箱 第四集 | 新生大学全栈营</title>
+    <title>25-2 解析 CSV 文件 (Web UI 接口) - Rails 百宝箱 第四集 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
           <div class="row">
             <div class="post-visitor">
   <div class="des-text">
-    <h4>所属章节：25. 数据汇入</h4>
+    <h4>所属章节：25. 数据导入</h4>
     <p></p>
     <p><p>再学习1节就可以完成本章了</p></p>
   </div>
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      25-2 解析 CSV 档案 (Web UI 接口)
+      25-2 解析 CSV 文件 (Web UI 接口)
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1482">
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>需要 Web UI 可以上传档案的话，让我们来实作一下：</p>
+      <p>需要 Web UI 可以上传文件的话，让我们来实战一下：</p>
 
 <p>请编辑 <code>config/routes.rb</code>，新增一个 import 路由</p>
 
@@ -223,18 +223,18 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code> 加上档案上传的输入框：</p>
+<p>编辑 <code>app/views/admin/event_registrations/index.html.erb</code> 加上文件上传的输入框：</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/admin/event_registrations/index.html.erb
-</span></figcaption><div class="highlight"><pre>   &lt;%= link_to "汇出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
-   &lt;%= link_to "汇出 Excel", admin_event_registrations_path(:format =&gt; :xlsx), :class =&gt; "btn btn-default" %&gt;
+</span></figcaption><div class="highlight"><pre>   &lt;%= link_to "导出 CSV", admin_event_registrations_path(:format =&gt; :csv), :class =&gt; "btn btn-default" %&gt;
+   &lt;%= link_to "导出 Excel", admin_event_registrations_path(:format =&gt; :xlsx), :class =&gt; "btn btn-default" %&gt;
  &lt;/p&gt;
 <span class="gi">+
 + &lt;hr&gt;
 +
 + &lt;%= form_tag import_admin_event_registrations_path(@event), :multipart =&gt; true do %&gt;
 +   &lt;p&gt;&lt;%= file_field_tag "csv_file" %&gt;&lt;/p&gt;
-+   &lt;p&gt;&lt;%= submit_tag "汇入CSV", :class =&gt; "btn btn-danger" %&gt;&lt;/p&gt;
++   &lt;p&gt;&lt;%= submit_tag "导入CSV", :class =&gt; "btn btn-danger" %&gt;&lt;/p&gt;
 + &lt;% end %&gt;
 </span><span class="err">
 </span></pre></div>
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
 +      end
 +    end
 +
-+    flash[:notice] = "总共汇入 #{success} 笔，失败 #{failed_records.size} 笔"
++    flash[:notice] = "总共导入 #{success} 笔，失败 #{failed_records.size} 笔"
 +    redirect_to admin_event_registrations_path(@event)
 +  end
 +
@@ -278,7 +278,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>其中 <code>csv_string</code> 就是从上传的档案中读取内容，接着用 <code>CSV.parse</code> 进行解析循环。</p>
+<p>其中 <code>csv_string</code> 就是从上传的文件中读取内容，接着用 <code>CSV.parse</code> 进行解析循环。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/YE9m2o1cSwu0nsTPa5Bb_25-2.png" title=""></figure></p>
 
@@ -503,13 +503,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("25-2 解析 CSV 档案 (Web UI 接口) - Rails 百宝箱 第四集 | 新生大学全栈营")
+    mixpanel.track("25-2 解析 CSV 文件 (Web UI 接口) - Rails 百宝箱 第四集 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1482',
-  post_title: '25-2 解析 CSV 档案 (Web UI 接口)',
+  post_title: '25-2 解析 CSV 文件 (Web UI 接口)',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1482'
 };
 Intercom('trackEvent', 'watched_post', metadata);

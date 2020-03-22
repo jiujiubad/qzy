@@ -209,9 +209,9 @@ var _hmt = _hmt || [];
 <p>注意：AWS S3 存储图片（方案1）与七牛云存储图片（方案2）切勿混用！</p>
 </blockquote>
 <h2>为什么我们需要 figaro？</h2>
-<p>当我们使用 Github 存储我们代码的时候，一些诸如 AccessKey 等密钥信息是不能够让其他人获得的，但项目中又需要提供配置信息。</p>
+<p>当我们使用 Github 存储我们代码的时候，一些诸如 AccessKey 等私钥信息是不能够让其他人获得的，但项目中又需要提供配置信息。</p>
 
-<p>figaro是一个方便管理机密信息、密钥的gem，并且能一个指令就将机密信息同步到heroku上，如此一来密钥也不会外泄。</p>
+<p>figaro是一个方便管理机密信息、私钥的gem，并且能一个指令就将机密信息同步到heroku上，如此一来私钥也不会外泄。</p>
 <h3>Step 1: 安装 figaro</h3>
 <p><code>git checkout -b aws</code></p>
 
@@ -228,14 +228,14 @@ var _hmt = _hmt || [];
 
 <p><code>figaro install</code></p>
 
-<p>会自动生成 config/application.yml 文件并自动添加到 .gitignore 档案里<br>
+<p>会自动生成 config/application.yml 文件并自动添加到 .gitignore 文件里<br>
 <figure><img src="http://user-image.logdown.io/user/19197/blog/18708/post/1383092/b5ktTYYGRbqmfpbF9pxU_Snip20170205_27.png" title=""></figure></p>
 <h3>Step 2: 设定机密信息</h3>
 <p><code>cp config/application.yml config/application.yml.example</code></p>
 
-<p>修改 config/application.yml 档案</p>
+<p>修改 config/application.yml 文件</p>
 
-<p>{备注：config/application.yml 档案有可能被隐藏了，所以我们要把它调出来。打开 atom 编辑器里的 settings（可以通过 command+ 逗号快速调出） -&gt; packages。在搜索栏中输入 tree，在 tree-view 中点选 settings，把 Hide VCS Ignored Files 的勾去掉就会显示出来了。}</p>
+<p>{备注：config/application.yml 文件有可能被隐藏了，所以我们要把它调出来。打开 atom 编辑器里的 settings（可以通过 command+ 逗号快速调出） -&gt; packages。在搜索栏中输入 tree，在 tree-view 中点选 settings，把 Hide VCS Ignored Files 的勾去掉就会显示出来了。}</p>
 
 <figure class="figure-code code"><figcaption><span>config/application.yml
 </span></figcaption><div class="highlight"><pre><span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">(</span><span class="err">略</span><span class="p">)</span>

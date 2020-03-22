@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>接下来还有两个小地方可以改进，第一是送出后，输入框应该清空。</p>
+      <p>接下来还有两个小地方可以改进，第一是提交后，输入框应该清空。</p>
 
 <p>修改<code>app/views/posts/create.js.erb</code>，新增一行 <code>$("#post_content").val("");</code></p>
 
@@ -218,7 +218,7 @@ var _hmt = _hmt || [];
 
 <p>用 <code>.val("")</code> 就可以把输入框的值设定为空。</p>
 
-<p>第二是储存失败的情况处理，假设文章是空的，那么 @post 会储存失败，这时候应该有错误讯息提示。修改<code>app/views/posts/create.js.erb</code></p>
+<p>第二是保存失败的情况处理，假设文章是空的，那么 @post 会保存失败，这时候应该有错误信息提示。修改<code>app/views/posts/create.js.erb</code></p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre>+ &lt;% if @post.valid? %&gt;
@@ -231,7 +231,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>增加一个 if else 的情况区分，当 <code>valid?</code> 成功时，插入新文章，当储存失败时，跳一个 alert 视窗。</p>
+<p>增加一个 if else 的情况区分，当 <code>valid?</code> 成功时，插入新文章，当保存失败时，跳一个 alert 视窗。</p>
 
     </div>
   </div>

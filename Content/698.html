@@ -236,7 +236,7 @@ var _hmt = _hmt || [];
 
 <p><code>bundle install</code><br>
 记得重开 <code>rails s</code></p>
-<h3>Step 2: 新增 aasm_state 栏位</h3>
+<h3>Step 2: 新增 aasm_state 字段</h3>
 <p><code>rails g migration add_aasm_state_to_order</code></p>
 
 <figure class="figure-code code"><figcaption><span>db/migrate/xxx(一堆数字)_add_aasm_state_to_order.rb 
@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 <p><br></p>
 <h3>Step 3 : 设定订单状态机制</h3>
-<p>在order.rb 插入以下的程式码</p>
+<p>在order.rb 插入以下的代码</p>
 
 <figure class="figure-code code"><figcaption><span>app/models/order.rb 
 </span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Order</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>

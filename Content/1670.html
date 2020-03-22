@@ -226,7 +226,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/JNwymzDSvWcFLSJ959UL_71.png" title=""></figure></p>
 
-<p>进入该网域的 Manage 画面</p>
+<p>进入该域名的 Manage 画面</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/mqDcSTqDTW637fHsAbVr_72.png" title=""></figure></p>
 
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
 <h3>修改 Nginx 设定</h3>
 <p>进入远端服务器，用 root 权限修改 <code>/etc/nginx/sites-enabled/rails-recipes.conf</code></p>
 
-<p>把 server_name 改成我们的网域名称：</p>
+<p>把 server_name 改成我们的域名：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>server_name www.rails-recipes.win;
 
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 
 <p>浏览 <code>http://www.rails-recipes.win</code> 确认完成</p>
 <h3>中国境内 ICP 备案</h3>
-<p>如果服务器主机和 DNS 服务器在中国境内，必须将网域名称和主机IP进行备案。如果没有备案，云服务商会进行定期检查屏蔽，DNS 解析也可能会被国内的 DNS 查询系统屏蔽：</p>
+<p>如果服务器主机和 DNS 服务器在中国境内，必须将域名和主机IP进行备案。如果没有备案，云服务商会进行定期检查屏蔽，DNS 解析也可能会被国内的 DNS 查询系统屏蔽：</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/51xJhDmHR2OgnM0IRuIa_99.png" title=""></figure></p>
 
@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
 <p>实际测试发现 http 在开站两天后就被阿里云屏蔽、但 https 或 IP 地址连线没问题。</p>
 </blockquote>
 
-<p>不同备案的省市和不同的网域名称，会有不同申请规定。在哪一家云服务商购买主机，就用那家的备案系统进行申请，例如<a href="https://beian.aliyun.com">阿里云备案</a></p>
+<p>不同备案的省市和不同的域名，会有不同申请规定。在哪一家云服务商购买主机，就用那家的备案系统进行申请，例如<a href="https://beian.aliyun.com">阿里云备案</a></p>
 
 <p>如果服务器主机在国外，就不需要也不能备案，但可能被墙封锁。另外也无法申请中国境内的金流服务和 CDN 服务等。</p>
 
