@@ -479,7 +479,7 @@ var _hmt = _hmt || [];
     <div class="trix-content"><div><strong>一、软体工程部分</strong></div><div><br></div><div><strong>1.请列出至少7个git指令，并简单说明它们的作用？</strong></div><ul>
 <li>git clone xxx.git : 从server端clone 代码仓</li>
 <li>git init : 初始化代码仓</li>
-<li>git add . :  将专案里面的所有改动（修改的、 新增的、 删除的）加入暂存区</li>
+<li>git add . :  将项目里面的所有改动（修改的、 新增的、 删除的）加入暂存区</li>
 <li>git commit -m"xxx"  提交代码到本地代码仓</li>
 <li>git reset --hard version_number   强制reset代码到指定版本， 如果 HEAD~1， 则是上一个版本</li>
 <li>git push origin master   提交代码 到服务器</li>
@@ -489,8 +489,8 @@ var _hmt = _hmt || [];
 <li>git pull orgin master: 同步server端代码仓最新版本</li>
 <li>git checkout -b xxx:  新建branch xxx </li>
 <li>git checkout xxx： 切换到branch xxx             </li>
-</ul><div><strong>2.如何为专案新增连接到一个remote repository</strong></div><div> git remote add remote_name   git://github.com/remote.git</div><div><br></div><div>3.<strong>如果你在GitHub上fork别人一个专案，之后该专案更新，你要怎么更新到最新版本？</strong>
-</div><div>    比如： fork了shenqiku的专案        </div><ol>
+</ul><div><strong>2.如何为项目新增连接到一个remote repository</strong></div><div> git remote add remote_name   git://github.com/remote.git</div><div><br></div><div>3.<strong>如果你在GitHub上fork别人一个项目，之后该项目更新，你要怎么更新到最新版本？</strong>
+</div><div>    比如： fork了shenqiku的项目        </div><ol>
 <li>添加 shenqiku代码仓地址：      $ git remote add shenqiku  git://github.com/shenqiku .git</li>
 <li>建立对应分支，同步主程master 代码 【在shenqiku_master 分支】</li>
 </ol><div>       $ git checkout -b shenqiku_master</div><div>    3. 建立新branch的同时，切换到 shenqiku_master 分支，然后同步主程的master分支</div><div>        $ git pull shenqiku master  <br>    4. merge 主程的master 分支 【在master分支】</div><div>        $ git chechout master 【切回自己的master分支】</div><div>        $ git merge shenqiku_master 【此时，本地已经和主程的master分支同步了】<br>    5. 提交到自己的远程代码仓 【在master分支】</div><div>        $ git push origin master</div><div><br></div><div><strong>二、网页开发部分</strong></div><div><br></div><div><strong>1.如果有个要实践的功能如下：使用者确认购买商品后，需要在下一个页面秀出成功购买的信息，此外还要把商品的信息email给使用者，你会怎样实战？</strong></div><div><strong>   1. 设定Controller, 设定确认购买</strong></div><div>

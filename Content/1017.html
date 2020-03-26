@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
  class CreateTrains &lt; ActiveRecord::Migration[5.0]
    def change
      create_table :trains do |t|
-<span class="gi">+      t.string :number, :index =&gt; true # 列车号码
+<span class="gi">+      t.string :number, :index =&gt; true # 火车号码
 </span>       t.timestamps
      end
    end
@@ -295,7 +295,7 @@ Train.create!( :number =&gt; "0642")
 </span></pre></div>
 </figure>
 
-<p>执行 <code>rake db:seed</code> 就有这些种子列车资料了。</p>
+<p>执行 <code>rake db:seed</code> 就有这些种子火车资料了。</p>
 
     </div>
   </div>

@@ -205,10 +205,10 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <h2>Part 1 安装 Bootstrap</h2><h3>Step 1. 帮专案穿上衣服 Bootstrap，挂上 bootstrap-sass 这个 gem</h3>
-<p>Bootstrap 是 Web 设计圈有名的 CSS 框架，提供了开发专案快速便捷的元件素材。如按钮、下拉选单、表格等等样式。</p>
+      <h2>Part 1 安装 Bootstrap</h2><h3>Step 1. 帮项目穿上衣服 Bootstrap，挂上 bootstrap-sass 这个 gem</h3>
+<p>Bootstrap 是 Web 设计圈有名的 CSS 框架，提供了开发项目快速便捷的元件素材。如按钮、下拉选单、表格等等样式。</p>
 
-<p>在 Rails 上要帮专案穿上 Bootstrap，用的是 <code>bootstrap-sass</code> 这个组件。</p>
+<p>在 Rails 上要帮项目穿上 Bootstrap，用的是 <code>bootstrap-sass</code> 这个组件。</p>
 
 <p>修改 Gemfile，在 <code>group :development, :test do</code> 前一行加入 <code>gem 'bootstrap-sass'</code></p>
 
@@ -228,7 +228,7 @@ var _hmt = _hmt || [];
 <p>(注意：修改完 Gemfile 都要执行 bundle install）</p>
 
 <p><br></p>
-<h3>Step 3. 将 Bootstrap 的 CSS 组件装进专案里面</h3>
+<h3>Step 3. 将 Bootstrap 的 CSS 组件装进项目里面</h3>
 <p>输入</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
@@ -380,7 +380,7 @@ git commit -m "add bootstrap to project"
 <p><code>rails s</code></p>
 
 <p><br></p>
-<h2>Part 3 增加 flash 功能</h2><h3>Step 1. 将 Bootstrap 的 js 提示组件 bootstrap/alert “挂”进专案里面</h3>
+<h2>Part 3 增加 flash 功能</h2><h3>Step 1. 将 Bootstrap 的 js 提示组件 bootstrap/alert “挂”进项目里面</h3>
 <p>在 <code>require_tree</code> 上加入 <code>//= require bootstrap/alert</code></p>
 
 <figure class="figure-code code"><figcaption><span>app/assets/javascripts/application.js

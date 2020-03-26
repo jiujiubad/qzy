@@ -207,9 +207,9 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <h2>目标：</h2>
 <ul>
-<li>首页可以按照职缺薪资下限排序</li>
-<li>首页可以按照职缺薪资上限排序</li>
-<li>首页可以按照职缺发表时间排序</li>
+<li>首页可以按照职位薪资下限排序</li>
+<li>首页可以按照职位薪资上限排序</li>
+<li>首页可以按照职位发表时间排序</li>
 <li>把 <code>Job.where(:is_hidden =&gt; false").order("created_at DESC")</code> 重构成 <code>Job.published.recent</code>
 </li>
 </ul>
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 </figure>
 
 <p><br></p>
-<h3>Step 1: 先将薪资上限、薪资下限，也加入首页职缺列表</h3>
+<h3>Step 1: 先将薪资上限、薪资下限，也加入首页职位列表</h3>
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/M3i1fLVJRNKgIIzEkes8_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-07-30%20%E4%B8%8A%E5%8D%881.21.59.png" title=""></figure></p>
 
 <p>修改 <code>app/views/jobs/index.html.erb</code> 的 <code>&lt;table&gt;</code></p>
@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
     <span class="nt">&lt;thead&gt;</span>
         <span class="nt">&lt;tr&gt;</span>
             <span class="nt">&lt;td&gt;</span>
-                职缺<span class="nt">&lt;/td&gt;</span>
+                职位<span class="nt">&lt;/td&gt;</span>
             <span class="nt">&lt;td&gt;</span>薪资下限<span class="nt">&lt;/td&gt;</span>
             <span class="nt">&lt;td&gt;</span>薪资上限<span class="nt">&lt;/td&gt;</span>
             <span class="nt">&lt;td&gt;</span>刊登时间<span class="nt">&lt;/td&gt;</span>

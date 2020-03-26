@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
     <div class="post-content markdown">
       <p>各位都已经有部署产品到 Heroku 的经验了。但是这里，我们需要强调一些安全观念。</p>
 
-<p>在以往的教材里，我们都是教大家把密码写死在 .rb 文件里面，但是这样其实是很危险的。当我们把专案上传到 github 上后，github 是全世界都可以看的，这样就相当于把你的私人密码公布给大家，可想而知你的私人财产毫无保障。</p>
+<p>在以往的教材里，我们都是教大家把密码写死在 .rb 文件里面，但是这样其实是很危险的。当我们把项目上传到 github 上后，github 是全世界都可以看的，这样就相当于把你的私人密码公布给大家，可想而知你的私人财产毫无保障。</p>
 
 <p>我们可以上网看看，网络上常常有这样的惨案，坏人偷了你的钥匙后……</p>
 
@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 <p><figure><img src="2017020662808snip20170206_30.png" title=""></figure></p>
 <h4>其次：<strong>把密码放在 .yml 文件里面</strong>
 </h4>
-<p>在做大项目的时候，我们需要与人协作。大家在 fork 或者 clone job-listing 和 jdstore 专案的时候，应该会发现一件事情，我给大家的是 database.yml.example，是因为我们不把自己真的 key（真的 key 在 database.yml 档里）给别人。所以在本地的时候就需要准备一份 database.yml.example （这是范例档，给同事知道有这个档——为了协作）。也就是说，上传到 github 上的是 database.yml.example 档。<br>
+<p>在做大项目的时候，我们需要与人协作。大家在 fork 或者 clone job-listing 和 jdstore 项目的时候，应该会发现一件事情，我给大家的是 database.yml.example，是因为我们不把自己真的 key（真的 key 在 database.yml 档里）给别人。所以在本地的时候就需要准备一份 database.yml.example （这是范例档，给同事知道有这个档——为了协作）。也就是说，上传到 github 上的是 database.yml.example 档。<br>
 （如下图所示的写法才是正确的）</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/D4o7snRRGsYosZGRyY0A_Screenshot%20at%20Feb%2017%2020-26-52.png" title=""></figure></p>
