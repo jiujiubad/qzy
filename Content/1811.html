@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>重构后：善用 Ruby 的 module 语法，可以将这些相关代码抽取出来，放在 <code>app/models/concerns</code> 目录下，包括 model 的 validates 宣告、回呼宣告、关联宣告、对象方法、类方法等等都可抽取出来。</p>
+<p>重构后：善用 Ruby 的 module 语法，可以将这些相关代码抽取出来，放在 <code>app/models/concerns</code> 目录下，包括 model 的 validates 宣告、回调宣告、关联宣告、对象方法、类方法等等都可抽取出来。</p>
 
 <figure class="figure-code code"><figcaption><span>app/models/concerns/has_cellphone.rb
 </span></figcaption><div class="highlight"><pre><span class="k">module</span> <span class="nn">HasCellphone</span>

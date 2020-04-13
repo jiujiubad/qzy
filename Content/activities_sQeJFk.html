@@ -521,7 +521,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>回传副本：<br>compact<br>merger<br>map<br>flatten<br>reverse<br>「In-place」修改：<br>compact!<br>merge!<br>map!<br>flatten!<br>reverse!<br>成对出现：<br>compact(回传副本) 与 compact！(「In-place」修改)<br>merger(回传副本) 与merge! (「In-place」修改)<br>map(回传副本) 与 map!(「In-place」修改)<br>flatten(回传副本) 与  flatten!(「In-place」修改)<br>reverse(回传副本) 与 reverse! (「In-place」修改)</div></div>
+          <div class="trix-content"><div>响应副本：<br>compact<br>merger<br>map<br>flatten<br>reverse<br>「In-place」修改：<br>compact!<br>merge!<br>map!<br>flatten!<br>reverse!<br>成对出现：<br>compact(响应副本) 与 compact！(「In-place」修改)<br>merger(响应副本) 与merge! (「In-place」修改)<br>map(响应副本) 与 map!(「In-place」修改)<br>flatten(响应副本) 与  flatten!(「In-place」修改)<br>reverse(响应副本) 与 reverse! (「In-place」修改)</div></div>
         </div>
         <div class="vote-answer"   data-answer-id="64473">
   <div class="pull-left vote-btn" style="margin-right: 40px;">
@@ -662,7 +662,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>回传新的副本：</div><ul>
+          <div class="trix-content"><div>响应新的副本：</div><ul>
 <li>flat_map </li>
 <li>reject</li>
 <li>select </li>
@@ -678,14 +678,14 @@ var _hmt = _hmt || [];
 <li>push</li>
 <li>shift</li>
 </ul><div>成对：</div><ul>
-<li>compact[回传副本] , compact![in-place修改]</li>
-<li>map[回传副本] , map![in-place修改]</li>
-<li>reverse[回传副本] , reverse![in-place修改]</li>
-<li>rotate[回传副本] , rotate![in-place修改]</li>
-<li>sort[回传副本] , sort![in-place修改]</li>
-<li>uniq[回传副本] , uniq![in-place修改]</li>
-<li>shuffle[回传副本] , shuffle![in-place修改]</li>
-<li>compact[回传副本] , compact![in-place修改]</li>
+<li>compact[响应副本] , compact![in-place修改]</li>
+<li>map[响应副本] , map![in-place修改]</li>
+<li>reverse[响应副本] , reverse![in-place修改]</li>
+<li>rotate[响应副本] , rotate![in-place修改]</li>
+<li>sort[响应副本] , sort![in-place修改]</li>
+<li>uniq[响应副本] , uniq![in-place修改]</li>
+<li>shuffle[响应副本] , shuffle![in-place修改]</li>
+<li>compact[响应副本] , compact![in-place修改]</li>
 </ul></div>
         </div>
         <div class="vote-answer"   data-answer-id="64387">
@@ -757,7 +757,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>成对的方法：<br>1.array.map与array.map!<br>2.array.uniq与array.uniq!<br>3.hash.compact与hash.compact!<br>4.hash.merge与hash.merge!<br>5.hash.reject与hash.reject!<br><br><br>回传新的副本方法：<br>1.array.collect { |x| x +"!"}<br>2.array.drop(3)<br>3.hash.invert<br>4.hash.merge(hash1)<br>5.array.first(2)<br><br>「In-place」修改方法：<br>1.array.map! { |x| x +"!"}<br>2.array.delete_at(2)<br>3.array.fill("x")<br>4.hash.delete_if {|key, value| key &lt;= :a }<br>5.hash.clear</div></div>
+          <div class="trix-content"><div>成对的方法：<br>1.array.map与array.map!<br>2.array.uniq与array.uniq!<br>3.hash.compact与hash.compact!<br>4.hash.merge与hash.merge!<br>5.hash.reject与hash.reject!<br><br><br>响应新的副本方法：<br>1.array.collect { |x| x +"!"}<br>2.array.drop(3)<br>3.hash.invert<br>4.hash.merge(hash1)<br>5.array.first(2)<br><br>「In-place」修改方法：<br>1.array.map! { |x| x +"!"}<br>2.array.delete_at(2)<br>3.array.fill("x")<br>4.hash.delete_if {|key, value| key &lt;= :a }<br>5.hash.clear</div></div>
         </div>
         <div class="vote-answer"   data-answer-id="64337">
   <div class="pull-left vote-btn" style="margin-right: 40px;">
@@ -901,7 +901,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>Enumerable module:<br>回传新的副本：<br>collect：返回新的数组，新数组元素是原来数组元素经过块处理后的结果。<br>drop:删除对象中前n个元素，返回剩下的元素。<br>drop_while:删除元素，知道碰到的元素在块中的结果为false或nil，即删除满足块中条件中元素，直到遇到第一个不满足条件的元素，便停止运行<br>find:返回满足条件的第一个元素<br>find_all:返回满足条件的所有元素<br><br>array class中成对出现的方法：(带有！为in-place修改方法)<br>collect：返回经过处理后的新的数组<br>compact:删除数组中的nil元素<br>flatten：将嵌套的数组展开<br>map：与collect类似<br>reject：删除满足条件的元素，返回剩下的元素<br>reverse:所有元素反向排序<br>rotate：反转，以指定元素为界限，让指定元素前面的元素放到数组的后面<br>slice：返回指定的元素<br>sort：排序<br>uniq：删除重复的元素<br><br>hash中成对出现的方法：<br>merge：将两个散列作并集操作<br>reject：删除<br>select：获取元素<br>transform_values<br>compact:删除值为nil的元素<br><br><br><br><br><br><br>
+          <div class="trix-content"><div>Enumerable module:<br>响应新的副本：<br>collect：返回新的数组，新数组元素是原来数组元素经过块处理后的结果。<br>drop:删除对象中前n个元素，返回剩下的元素。<br>drop_while:删除元素，知道碰到的元素在块中的结果为false或nil，即删除满足块中条件中元素，直到遇到第一个不满足条件的元素，便停止运行<br>find:返回满足条件的第一个元素<br>find_all:返回满足条件的所有元素<br><br>array class中成对出现的方法：(带有！为in-place修改方法)<br>collect：返回经过处理后的新的数组<br>compact:删除数组中的nil元素<br>flatten：将嵌套的数组展开<br>map：与collect类似<br>reject：删除满足条件的元素，返回剩下的元素<br>reverse:所有元素反向排序<br>rotate：反转，以指定元素为界限，让指定元素前面的元素放到数组的后面<br>slice：返回指定的元素<br>sort：排序<br>uniq：删除重复的元素<br><br>hash中成对出现的方法：<br>merge：将两个散列作并集操作<br>reject：删除<br>select：获取元素<br>transform_values<br>compact:删除值为nil的元素<br><br><br><br><br><br><br>
 </div></div>
         </div>
         <div class="vote-answer"   data-answer-id="64138">
@@ -1045,7 +1045,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>成对的 <br>arr.rotate 和 arr.rotate! 旋转，后面接着元素的位置来表示谁排在第一位（默认为1），然后依次排序<br>arr.reverse 和 arr.reverse! 反向排序<br>arr.select { |item| block } 和 arr.select! { |item| block }筛选，在所有的元素中寻找block中存在的元素<br>arr.shuffle 和 arr.shuffle! 随机排列<br>arr.shuffle(random: rng) 和 arr.shuffle！(random: rng) rng参数用作随机数生成器<br>arr.sort 和 arr.sort! 从小到大按顺序排列<br>arr.sort { |a, b| block } 和 arr.sort! { |a, b| block } 可以指定反向从大到小排列<br>arr.uniq 和 arr.uniq! 去掉重复<br>arr.uniq { |item| ... } 指定除去指定位置的重复元素<br>hash.compact 和 hash.compact! 精简哈希值，除去空值<br><br>回传新的副本：<br>arr.sample 随机抽样，后面接数字表示抽几个元素，默认为1<br>以上没有！号的都是回传新的副本<br><br>修改方法：<br>arr.shift 移除元素，后面可以接数字表示几个元素，默认为1，数字表示多少个，从第一个开始移除<br>arr.slice! 移除元素，后面可以接数字表示指定位置的元素，没有默认值，数字表示位置,可以删除多个指定元素<br>arr.unshift 增加元素，后面小括号直接加元素，可以增加多个元素，直接到最前面<br>hash.clear 删除所有哈希值<br>以上有！号的都是修改方法<br><br>
+          <div class="trix-content"><div>成对的 <br>arr.rotate 和 arr.rotate! 旋转，后面接着元素的位置来表示谁排在第一位（默认为1），然后依次排序<br>arr.reverse 和 arr.reverse! 反向排序<br>arr.select { |item| block } 和 arr.select! { |item| block }筛选，在所有的元素中寻找block中存在的元素<br>arr.shuffle 和 arr.shuffle! 随机排列<br>arr.shuffle(random: rng) 和 arr.shuffle！(random: rng) rng参数用作随机数生成器<br>arr.sort 和 arr.sort! 从小到大按顺序排列<br>arr.sort { |a, b| block } 和 arr.sort! { |a, b| block } 可以指定反向从大到小排列<br>arr.uniq 和 arr.uniq! 去掉重复<br>arr.uniq { |item| ... } 指定除去指定位置的重复元素<br>hash.compact 和 hash.compact! 精简哈希值，除去空值<br><br>响应新的副本：<br>arr.sample 随机抽样，后面接数字表示抽几个元素，默认为1<br>以上没有！号的都是响应新的副本<br><br>修改方法：<br>arr.shift 移除元素，后面可以接数字表示几个元素，默认为1，数字表示多少个，从第一个开始移除<br>arr.slice! 移除元素，后面可以接数字表示指定位置的元素，没有默认值，数字表示位置,可以删除多个指定元素<br>arr.unshift 增加元素，后面小括号直接加元素，可以增加多个元素，直接到最前面<br>hash.clear 删除所有哈希值<br>以上有！号的都是修改方法<br><br>
 </div></div>
         </div>
         <div class="vote-answer"   data-answer-id="63733">
@@ -1258,7 +1258,7 @@ var _hmt = _hmt || [];
           </b>
         </div>
         <div class="answer-block">
-          <div class="trix-content"><div>回传新的副本:</div><div>arr.each</div><div>arr.reverse_each</div><div>arr.select</div><div>arr.reject</div><div>arr.drop<br><br>
+          <div class="trix-content"><div>响应新的副本:</div><div>arr.each</div><div>arr.reverse_each</div><div>arr.select</div><div>arr.reject</div><div>arr.drop<br><br>
 </div><div>In-place:</div><div>arr.push</div><div>arr.new</div><div>arr.unshift</div><div>arr.insert</div><div>arr.pop<br><br>
 </div><div>成对：</div><div>arr.map</div><div>arr.map! </div><div>arr.compact</div><div>arr.compact!</div><div>arr.select</div><div>arr.reject</div><div>arr.delete_if</div><div>arr.keep_if <br>arr.unshift</div><div>arr.push</div></div>
         </div>

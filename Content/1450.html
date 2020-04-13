@@ -271,15 +271,15 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>
-<code>:destroy</code> 把依赖的 registrations 也一并删除，并且执行 Registration 的 destroy 回呼</li>
+<code>:destroy</code> 把依赖的 registrations 也一并删除，并且执行 Registration 的 destroy 回调</li>
 <li>
-<code>:delete</code> 把依赖的 registrations 也一并删除，但不执行 Registration 的 destroy 回呼</li>
+<code>:delete</code> 把依赖的 registrations 也一并删除，但不执行 Registration 的 destroy 回调</li>
 <li>
 <code>:nullify</code> 这是默认值，不会帮忙删除 registrations，但会把 registrations 的外部键 event_id 都设成NULL</li>
 <li>
 <code>:restrict_with_exception</code>如果有任何依赖的 registrations 资料，则连 event 都不允许删除。执行删除时会丢出错误例外 ActiveRecord::DeleteRestrictionError。</li>
 <li>
-<code>:restrict_with_error</code> 不允许删除。执行删除时会回传 false，在 @event.errors 中会留有错误信息。</li>
+<code>:restrict_with_error</code> 不允许删除。执行删除时会响应 false，在 @event.errors 中会留有错误信息。</li>
 </ul>
 <h3>逆规范化 denormalized</h3>
 <p>数据库规范化并不是完全的真理，在不同场景下甚至会做逆规范化的设计。</p>

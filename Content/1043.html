@@ -212,7 +212,7 @@ GET /api/v1/train/0606      # 拿 train logo
 GET /api/v1/train/0826      # 拿 train logo
 </pre></div>
 </figure>
-<p>手机的网络速度是不快的，每多发送一次请求，就很耗时间。因此我们会希望减少需要请求的次数。因此我们要修改 <code>GET /api/v1/reservations</code> 的回传 JSON，顺便回传完整 train 资料就好了：</p>
+<p>手机的网络速度是不快的，每多发送一次请求，就很耗时间。因此我们会希望减少需要请求的次数。因此我们要修改 <code>GET /api/v1/reservations</code> 的响应 JSON，顺便响应完整 train 资料就好了：</p>
 
 <p>修改 <code>app/controllers/api/v1/reservations_controller.rb</code>，把 <code>render :json</code> 拆除</p>
 

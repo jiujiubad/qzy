@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
 
 <p>对散列 Hash 来说，插入是平均复杂度是 O(1)。</p>
 <h4>检查一个值都没有在容器里面</h4>
-<p>Array 是 O(n)，需要走访整个数组依序检查</p>
+<p>Array 是 O(n)，需要遍历整个数组依序检查</p>
 
 <p>Hash 是 O(1)，只要将 key 经过散列算法，就可以直接检查那个位置有没有数据。</p>
 
@@ -373,11 +373,11 @@ var _hmt = _hmt || [];
         <p>给定一个数组，请写出一个方法，找出里面重复的数字。例如</p>
 
 <ul>
-<li>输入 <code>[1,1,2]</code> 回传 <code>[1]</code>
+<li>输入 <code>[1,1,2]</code> 响应 <code>[1]</code>
 </li>
-<li>输入 <code>[1,1,2,2]</code> 回传 <code>[1,2]</code>
+<li>输入 <code>[1,1,2,2]</code> 响应 <code>[1,2]</code>
 </li>
-<li>输入 <code>[1,2,3]</code> 回传 <code>[]</code>
+<li>输入 <code>[1,2,3]</code> 响应 <code>[]</code>
 </li>
 </ul>
 
@@ -415,11 +415,11 @@ var _hmt = _hmt || [];
     </div>
     <div class="pannel-body">
     <div class="post-task-descripiton">
-        <p>Ruby 的 <a href="https://docs.ruby-lang.org/en/2.4.0/Enumerable.html#method-i-find_index">Array#find_index</a> 方法可以从数组中寻找一个值，回传它的索引，这个算法是 O(n)。</p>
+        <p>Ruby 的 <a href="https://docs.ruby-lang.org/en/2.4.0/Enumerable.html#method-i-find_index">Array#find_index</a> 方法可以从数组中寻找一个值，响应它的索引，这个算法是 O(n)。</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">arr</span><span class="p">.</span><span class="nf">find_index</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># 回传 2
+<span class="n">arr</span><span class="p">.</span><span class="nf">find_index</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># 响应 2
 </span>
 
 </pre></div>
@@ -439,7 +439,7 @@ var _hmt = _hmt || [];
 
 <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">143</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">161</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">218</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">263</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">304</span><span class="p">,</span> <span class="mi">310</span><span class="p">,</span> <span class="mi">326</span><span class="p">,</span> <span class="mi">327</span><span class="p">,</span> <span class="mi">332</span><span class="p">,</span> <span class="mi">346</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">371</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">378</span><span class="p">,</span> <span class="mi">406</span><span class="p">,</span> <span class="mi">407</span><span class="p">,</span> <span class="mi">407</span><span class="p">,</span> <span class="mi">408</span><span class="p">,</span> <span class="mi">428</span><span class="p">,</span> <span class="mi">431</span><span class="p">,</span> <span class="mi">437</span><span class="p">,</span> <span class="mi">442</span><span class="p">,</span> <span class="mi">445</span><span class="p">,</span> <span class="mi">479</span><span class="p">,</span> <span class="mi">489</span><span class="p">,</span> <span class="mi">491</span><span class="p">,</span> <span class="mi">505</span><span class="p">,</span> <span class="mi">517</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">536</span><span class="p">,</span> <span class="mi">548</span><span class="p">,</span> <span class="mi">598</span><span class="p">,</span> <span class="mi">602</span><span class="p">,</span> <span class="mi">605</span><span class="p">,</span> <span class="mi">618</span><span class="p">,</span> <span class="mi">642</span><span class="p">,</span> <span class="mi">649</span><span class="p">,</span> <span class="mi">654</span><span class="p">,</span> <span class="mi">659</span><span class="p">,</span> <span class="mi">662</span><span class="p">,</span> <span class="mi">677</span><span class="p">,</span> <span class="mi">678</span><span class="p">,</span> <span class="mi">682</span><span class="p">,</span> <span class="mi">689</span><span class="p">,</span> <span class="mi">695</span><span class="p">,</span> <span class="mi">696</span><span class="p">,</span> <span class="mi">697</span><span class="p">,</span> <span class="mi">701</span><span class="p">,</span> <span class="mi">711</span><span class="p">,</span> <span class="mi">717</span><span class="p">,</span> <span class="mi">727</span><span class="p">,</span> <span class="mi">737</span><span class="p">,</span> <span class="mi">745</span><span class="p">,</span> <span class="mi">749</span><span class="p">,</span> <span class="mi">754</span><span class="p">,</span> <span class="mi">757</span><span class="p">,</span> <span class="mi">770</span><span class="p">,</span> <span class="mi">786</span><span class="p">,</span> <span class="mi">802</span><span class="p">,</span> <span class="mi">805</span><span class="p">,</span> <span class="mi">814</span><span class="p">,</span> <span class="mi">832</span><span class="p">,</span> <span class="mi">840</span><span class="p">,</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">853</span><span class="p">,</span> <span class="mi">854</span><span class="p">,</span> <span class="mi">888</span><span class="p">,</span> <span class="mi">894</span><span class="p">,</span> <span class="mi">904</span><span class="p">,</span> <span class="mi">913</span><span class="p">,</span> <span class="mi">913</span><span class="p">,</span> <span class="mi">945</span><span class="p">,</span> <span class="mi">962</span><span class="p">,</span> <span class="mi">964</span><span class="p">,</span> <span class="mi">972</span><span class="p">,</span> <span class="mi">998</span><span class="p">]</span>
 
-<span class="n">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">371</span><span class="p">)</span> <span class="c1"># 应该回传 35
+<span class="n">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">371</span><span class="p">)</span> <span class="c1"># 应该响应 35
 </span>
 
 </pre></div>

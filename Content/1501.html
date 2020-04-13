@@ -312,7 +312,7 @@ puts :foobar.object_id       # 输出 577768
 </pre></div>
 </figure>
 
-<p><code>object_id</code>方法会回传 Ruby 内部的内存位址编号。你会发现两个字符串就算内容相同，也是不同的位址。但是 Symbol 只要内容相同，就是相同位址。这种特性让 Symbol 的主要用途是作为散列 Hash 的键(Key)。</p>
+<p><code>object_id</code>方法会响应 Ruby 内部的内存位址编号。你会发现两个字符串就算内容相同，也是不同的位址。但是 Symbol 只要内容相同，就是相同位址。这种特性让 Symbol 的主要用途是作为散列 Hash 的键(Key)。</p>
 <h3>Number 数值类型</h3><h4>整数 Integer</h4>
 <p>电脑内部是用<a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E8%A1%A5%E6%95%B0">补码</a>的方式来存储整数，一个 byte 的空间可以表示 -128~127 之间的数字。在 C 语言中，需要先宣告你要使用多大的数字，例如 short 是 2 bytes，只可以存 -32768 - 32767 之间的整数，int 是 -2^31 - (2^31-1) 之间的整数。</p>
 

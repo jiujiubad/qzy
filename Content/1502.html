@@ -312,7 +312,7 @@ a, b 两个变量分别佔了内存的两块空间，当 <code>b = a</code> 时�
 
 <p>会这样设计的原因，也是因为默认复制引用类型成本太高了。</p>
 <h4>就地编辑(in-place editing)</h4>
-<p>在 Ruby 内建的 API 中，有些 API 是「回传新的副本」、有些是「In-place」做修改(mutate)，例如：</p>
+<p>在 Ruby 内建的 API 中，有些 API 是「响应新的副本」、有些是「In-place」做修改(mutate)，例如：</p>
 
 <p>Array 的 sort 方法：</p>
 
@@ -338,9 +338,9 @@ a, b 两个变量分别佔了内存的两块空间，当 <code>b = a</code> 时�
 <p>对 Ruby 来说，这个 <code>!</code> 只是名字的一部分，没有特别的作用。只是一个惯例提醒你说这个方法会有 副作用(side-effect)。</p>
 </blockquote>
 
-<p>那什么时候要用哪一种呢？比执行速度的话，「In-place」做修改(mutate) 是比「回传新的副本」还快，因为后者需要新的内存空间来存储。不过，实际写代码时，我们一般会偏好「回传新的副本」的方式，因为这样比较不容易有 bug。</p>
+<p>那什么时候要用哪一种呢？比执行速度的话，「In-place」做修改(mutate) 是比「响应新的副本」还快，因为后者需要新的内存空间来存储。不过，实际写代码时，我们一般会偏好「响应新的副本」的方式，因为这样比较不容易有 bug。</p>
 
-<p>这是因为一个软件里面的方法会调用其他方法，其他方法里面又会调用方法，所以参数可能会传递到很深的方法里面，如果有一个方法不小心直接修改了参数，对于调用者来说，可能不是预期会被修改的行为。因此用「回传新的副本」的方式，会比较保险安全。</p>
+<p>这是因为一个软件里面的方法会调用其他方法，其他方法里面又会调用方法，所以参数可能会传递到很深的方法里面，如果有一个方法不小心直接修改了参数，对于调用者来说，可能不是预期会被修改的行为。因此用「响应新的副本」的方式，会比较保险安全。</p>
 <h4>复制</h4>
 <p>组合数据类别的 <code>=</code> 指派只会复制引用，如果需要真的复制值，会改用 <code>clone</code> 方法：</p>
 
@@ -473,9 +473,9 @@ c
     </div>
     <div class="pannel-body">
     <div class="post-task-descripiton">
-        <p>请判断 Ruby <a href="https://docs.ruby-lang.org/en/2.4.0/Enumerable.html">Enumerable module</a>、<a href="https://docs.ruby-lang.org/en/2.4.0/Array.html">Array class</a> 和 <a href="https://docs.ruby-lang.org/en/2.4.0/Hash.html">Hash class</a> 文件中方法，哪些是「回传新的副本」？哪些是「In-place」修改方法？哪些是成对的？请研究至少五个 API 以上。</p>
+        <p>请判断 Ruby <a href="https://docs.ruby-lang.org/en/2.4.0/Enumerable.html">Enumerable module</a>、<a href="https://docs.ruby-lang.org/en/2.4.0/Array.html">Array class</a> 和 <a href="https://docs.ruby-lang.org/en/2.4.0/Hash.html">Hash class</a> 文件中方法，哪些是「响应新的副本」？哪些是「In-place」修改方法？哪些是成对的？请研究至少五个 API 以上。</p>
 
-<p>在 Ruby 里面只要是可以被走访的容器，都会 include Enumerable module。因此 Array 和 Hash 都会继承 Enumerable module，它的方法会被继承下来。</p>
+<p>在 Ruby 里面只要是可以被遍历的容器，都会 include Enumerable module。因此 Array 和 Hash 都会继承 Enumerable module，它的方法会被继承下来。</p>
 
     </div>
 

@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
 <p>在 development 开发模式中，你会看到 ActiveRecord::RecordNotFound 异常。在 production 上线模式，会显示 404 页面(public/404.html)</p>
 </blockquote>
 
-<p>Rails 还有提供 <code>find_by_字段名称</code> 和 <code>find_by_字段名称!</code> API，前者如果找不到数据，会回传 <code>nil</code>，后者则是抛出异常。</p>
+<p>Rails 还有提供 <code>find_by_字段名称</code> 和 <code>find_by_字段名称!</code> API，前者如果找不到数据，会响应 <code>nil</code>，后者则是抛出异常。</p>
 
 <p>在百宝箱第一集的「自定义 Model 网址」中，我们新增了一个 <code>friendly_id</code> 字段，然后 show action 改成：</p>
 
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
 
 <p>当找不到数据时，就会抛出 <code>ActiveRecord::RecordNotFound</code> 异常程序中断。</p>
 
-<p>为什么这里偏好用抛出异常的策略呢？如果我们改用 <code>Event.find_by_friendly_id(params[:id])</code> 的话，找不到数据时会回传 <code>nil</code>，那么 @event 变成 <code>nil</code> 程序继续执行，一直进到 <code>show.html.erb</code> 里面的某一行去显示 <code>@event.name</code>，然后就会碰到 <code>nil.name</code> 抛出异常是 <code>NoMethodError</code> 最后程序中断。这时候要找到真正异常的原因就会多花一点时间。</p>
+<p>为什么这里偏好用抛出异常的策略呢？如果我们改用 <code>Event.find_by_friendly_id(params[:id])</code> 的话，找不到数据时会响应 <code>nil</code>，那么 @event 变成 <code>nil</code> 程序继续执行，一直进到 <code>show.html.erb</code> 里面的某一行去显示 <code>@event.name</code>，然后就会碰到 <code>nil.name</code> 抛出异常是 <code>NoMethodError</code> 最后程序中断。这时候要找到真正异常的原因就会多花一点时间。</p>
 
 <p>我们希望在异常发生的第一时间就中断程序(fail fast)，而不是让程序无声地继续执行下去，最后像一个未爆弹一样最后莫名其妙地炸掉。</p>
 <h3>save 和 save!</h3>

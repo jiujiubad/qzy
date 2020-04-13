@@ -4,7 +4,7 @@
 <script type="text/javascript"> document.offlinePagesMetadata=window.offlinePagesMetadata={url:'https://fullstack.xinshengdaxue.com/posts/1808'} </script>
 <script type="text/javascript" src="--op-start-head.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>7. 使用 Model 回呼(callback) - Rails 代码重构 | 新生大学全栈营</title>
+    <title>7. 使用 Model 回调(callback) - Rails 代码重构 | 新生大学全栈营</title>
     
 
     <meta charset="utf-8">
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 <div class="course-post">
   <div class="post-title-h1 markdown">
     <h1 >
-      7. 使用 Model 回呼(callback)
+      7. 使用 Model 回调(callback)
     </h1>
     <div id="favorite" class="favorite-icon-block">
         <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="https://fullstack.xinshengdaxue.com/favorites?post_id=1808">
@@ -231,7 +231,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>重构后：新增一个虚拟属性 <code>auto_tagging</code>，以及一个 before_save 回呼来检查要不要自动下标籤。如此在 action 中就可以不必检查和处理 auto_tagging。这段过程会自动在 Post 存储前，自动调用 <code>generate_taggings</code> 方法进行处理。</p>
+<p>重构后：新增一个虚拟属性 <code>auto_tagging</code>，以及一个 before_save 回调来检查要不要自动下标籤。如此在 action 中就可以不必检查和处理 auto_tagging。这段过程会自动在 Post 存储前，自动调用 <code>generate_taggings</code> 方法进行处理。</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
@@ -463,13 +463,13 @@ mixpanel.track_links(".course-menu .nav-tabs a", "Clicked post nav link", functi
 </script>
 
     <script type="text/javascript">
-    mixpanel.track("7. 使用 Model 回呼(callback) - Rails 代码重构 | 新生大学全栈营")
+    mixpanel.track("7. 使用 Model 回调(callback) - Rails 代码重构 | 新生大学全栈营")
     </script>
 
       <script type="text/javascript">
 var metadata = {
   post_id: '1808',
-  post_title: '7. 使用 Model 回呼(callback)',
+  post_title: '7. 使用 Model 回调(callback)',
   post_url: 'https://fullstack.xinshengdaxue.com/posts/1808'
 };
 Intercom('trackEvent', 'watched_post', metadata);

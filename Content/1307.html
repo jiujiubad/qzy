@@ -236,7 +236,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/QylsbXhJQqKgPNZsUqlo_18-ajax-delete.png" title=""></figure></p>
 
-<p>服务器回传了 <code>alert('ok');</code> 字串，浏览器拿到之后就去执行，于是跳出一个 alert 视窗。</p>
+<p>服务器响应了 <code>alert('ok');</code> 字串，浏览器拿到之后就去执行，于是跳出一个 alert 视窗。</p>
 
 <blockquote>
 <p>这一招又叫做 Remote JavaScript (RJS)，把远端的 JavaScript 代码抓回来执行。</p>
@@ -285,7 +285,7 @@ var _hmt = _hmt || [];
 <li>一个 action 如果没有写明 <code>redirect</code> 或 <code>render</code> 的话，就会默认去找 action 名称的样板。于是这里就会去找 <code>destroy.js.erb</code>
 </li>
 <li>
-<code>destroy.js.erb</code> 里面要写回传的 JavaScript 代码，这个文件也是 erb 样板，所以可以用 <code>&lt;%= XXX %&gt;</code> 内嵌 Ruby 语法</li>
+<code>destroy.js.erb</code> 里面要写响应的 JavaScript 代码，这个文件也是 erb 样板，所以可以用 <code>&lt;%= XXX %&gt;</code> 内嵌 Ruby 语法</li>
 </ul>
 
 <p>再次测试看看删除，你会发现删除的操作变成超级神速。</p>
@@ -294,7 +294,7 @@ var _hmt = _hmt || [];
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/Qhr7AlW0QcUQup9OBG46_19.png" title=""></figure></p>
 
-<p>这截图说明了服务器回传 <code>$("#post-76").remove();</code> JavaScript 字串，浏览器去执行这个字串就把 id post-76 这个 div 给移除了。</p>
+<p>这截图说明了服务器响应 <code>$("#post-76").remove();</code> JavaScript 字串，浏览器去执行这个字串就把 id post-76 这个 div 给移除了。</p>
 
     </div>
   </div>

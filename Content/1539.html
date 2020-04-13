@@ -208,7 +208,7 @@ var _hmt = _hmt || [];
       <p><a href="https://zh.wikipedia.org/wiki/%E7%8C%B4%E8%A1%A5%E4%B8%81">猴子补丁</a>的意思是直接复写 Class 的定义去修改行为，在 Rails 中常用这招来扩增原本 Ruby 的行为，例如：</p>
 <h4>try 方法</h4>
 <figure class="figure-code code"><figcaption><span>
-</span></figcaption><div class="highlight"><pre><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">find_by_email</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:email</span><span class="p">])</span> <span class="c1"># 如果找不到，会回传 nil
+</span></figcaption><div class="highlight"><pre><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">find_by_email</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:email</span><span class="p">])</span> <span class="c1"># 如果找不到，会响应 nil
 </span>
 
 <span class="vi">@person</span><span class="p">.</span><span class="nf">try</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span> <span class="c1"># 如果 @person 是 nil，透过 try 会输出 nil

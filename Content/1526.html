@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span><span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>  <span class="c1"># 这个匿名函式要回传 true 或 false
+<span class="n">result</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">select</span><span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>  <span class="c1"># 这个匿名函式要响应 true 或 false
 </span>
 
 <span class="nb">puts</span> <span class="n">result</span>
@@ -295,7 +295,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p><code>result</code> 比较难理解一点：<code>reduce</code> 的第一个参数 <code>0</code> 是初始值，然后这个匿名函式依序走访容器，两个参数 <code>sum</code> 跟 <code>i</code>，前者 <code>sum</code> 是前一次循环的回传结果。<code>i</code> 是这次走访的元素。</p>
+<p><code>result</code> 比较难理解一点：<code>reduce</code> 的第一个参数 <code>0</code> 是初始值，然后这个匿名函式依序遍历容器，两个参数 <code>sum</code> 跟 <code>i</code>，前者 <code>sum</code> 是前一次循环的响应结果。<code>i</code> 是这次遍历的元素。</p>
 
 <p>找最大值其实也可以用 <code>reduce</code> 方法：</p>
 
@@ -315,7 +315,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>每次循环，匿名函式回传的值就是下一次的 <code>max</code> 参数。</p>
+<p>每次循环，匿名函式响应的值就是下一次的 <code>max</code> 参数。</p>
 
 <p>如果 <code>reduce</code> 没给第一个参数，那容器的第一个元素会是初始值。</p>
 <h3>综合应用</h3>

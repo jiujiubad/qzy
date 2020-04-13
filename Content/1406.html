@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 <p><code>h["qweqkleklwqen"]</code> 如果读取一个不存在的key，结果会是 nil</p>
 
 <p><code>h["new_key"] = 123</code> 如果本来没有这个 key，就会直接新增一组 key-value</p>
-<h4>如何走访散列 Hash？</h4>
+<h4>如何遍历散列 Hash？</h4>
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">h</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">key</span>
@@ -237,9 +237,9 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 <h4>常用方法</h4>
-<p><code>h.keys</code> 会回传一个数组包括所有 keys</p>
+<p><code>h.keys</code> 会响应一个数组包括所有 keys</p>
 
-<p><code>h.values</code> 会回传一个数组包括所有 values</p>
+<p><code>h.values</code> 会响应一个数组包括所有 values</p>
 
 <p><code>h.merge(h2)</code> 会合并散列 h2 到散列 h</p>
 

@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
 <h3>题目 19</h3>
 <p>给定一数组内含数字，输出另一个数组只包含偶数</p>
 
-<p>提示: 新建立一个空数组，然后走访本来的数组检查每一个元素，如果符合条件就塞进(push)进新的数组。</p>
+<p>提示: 新建立一个空数组，然后遍历本来的数组检查每一个元素，如果符合条件就塞进(push)进新的数组。</p>
 <h3>题目 20</h3>
 <p>承上题，请排序并去除重复的数字</p>
 
@@ -231,9 +231,9 @@ var _hmt = _hmt || [];
 
 <p>给定一数组内含数字，请实战<a href="https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">选择排序法</a>进行排序。</p>
 
-<p>假设数组有N个元素，先从第一个元素走访到最后一个，找到最小的那一个交换到第一个位置。</p>
+<p>假设数组有N个元素，先从第一个元素遍历到最后一个，找到最小的那一个交换到第一个位置。</p>
 
-<p>接着从第二个元素走访到最后一个，找到最小的元素，交换到第二个位置。以此类推，最后就会得到一个从小到大的数组。</p>
+<p>接着从第二个元素遍历到最后一个，找到最小的元素，交换到第二个位置。以此类推，最后就会得到一个从小到大的数组。</p>
 <h3>题目 22</h3>
 <p>给定一阵列内含数字，请输出 0~9 中不见的数字。例如 <code>arr = [2,2,1,5,8,4]</code>，输出 <code>[0,3,6,7,9]</code></p>
 <h3>提示说明</h3><h4>什么是数组？</h4>
@@ -262,7 +262,7 @@ array[0][1] # 这是 2
 array[2][2] # 这是 9
 </pre></div>
 </figure>
-<h4>如何走访数组？</h4>
+<h4>如何遍历数组？</h4>
 <p>用 <code>for</code> 方法：</p>
 
 <figure class="figure-code code"><div class="highlight"><pre>for i in array
@@ -281,7 +281,7 @@ end
 </pre></div>
 </figure>
 
-<p>如果走访时，需要索引值，可以改用 <code>each_with_index</code> 方法：</p>
+<p>如果遍历时，需要索引值，可以改用 <code>each_with_index</code> 方法：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">array</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">|</span>
@@ -293,13 +293,13 @@ end
 </pre></div>
 </figure>
 <h4>如何操作数组？</h4>
-<p><code>array.size</code> 会回传数组长度</p>
+<p><code>array.size</code> 会响应数组长度</p>
 
 <p><code>array[1]</code> 会读取第二个元素</p>
 
 <p><code>array[1] = 999</code> 会更改第二的元素的值</p>
 
-<p><code>array[99999]</code> 读取一个不存在的值，会回传 <code>nil</code></p>
+<p><code>array[99999]</code> 读取一个不存在的值，会响应 <code>nil</code></p>
 
 <p><code>array[0]</code> 或 <code>array.first</code> 是数组的第一个元素</p>
 

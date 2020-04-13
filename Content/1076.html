@@ -208,8 +208,8 @@ var _hmt = _hmt || [];
       <p>Web API 测试的重点是：</p>
 
 <ol>
-<li>检查回传的 HTTP 状态码</li>
-<li>检查回传的 JSON</li>
+<li>检查响应的 HTTP 状态码</li>
+<li>检查响应的 JSON</li>
 <li>检查资料真的有被新建、修改或删除</li>
 </ol>
 
@@ -231,7 +231,7 @@ var _hmt = _hmt || [];
     <span class="n">new_user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">last</span>
     <span class="n">expect</span><span class="p">(</span><span class="n">new_user</span><span class="p">.</span><span class="nf">email</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="s2">"test2@example.com"</span><span class="p">)</span>
 
-    <span class="c1"># 检查回传的 JSON
+    <span class="c1"># 检查响应的 JSON
 </span>
     <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span> <span class="p">{</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="n">new_user</span><span class="p">.</span><span class="nf">id</span> <span class="p">}.</span><span class="nf">to_json</span> <span class="p">)</span>
   <span class="k">end</span>

@@ -251,7 +251,7 @@ var _hmt = _hmt || [];
 
 <p>本来是直接调用 <code>@import.process!</code>，现在改成调用 <code>ImportWorkerJob.perform_later(@import.id)</code> 就会变成异步。</p>
 
-<p>你可以回到 25-3 实战的数据导入，上传一个文件看看，你会发现服务器立即就回传了「导入已在背景执行，请稍候再来看结果」信息。之所以这么快，是因为它没有执行导入，它只是跟 Sidekiq 说有一个任务要执行而已。</p>
+<p>你可以回到 25-3 实战的数据导入，上传一个文件看看，你会发现服务器立即就响应了「导入已在背景执行，请稍候再来看结果」信息。之所以这么快，是因为它没有执行导入，它只是跟 Sidekiq 说有一个任务要执行而已。</p>
 
 <p><figure><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/zsarmhrZSnu7WEV9A3E0_26-1.png" title=""></figure></p>
 

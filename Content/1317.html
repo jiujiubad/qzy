@@ -230,14 +230,14 @@ var _hmt = _hmt || [];
 +     $.ajax({// 提交 Ajax
 +       url: url,
 +       method: 'DELETE',
-+       dataType: 'script' // 要求服务器回传 javascript
++       dataType: 'script' // 要求服务器响应 javascript
 +     })
 +   })
 </span><span class="err">  &lt;/script&gt;
 </span></pre></div>
 </figure>
 
-<p>一但需要自己在前端绑事件，就会觉得把 JavaScript 代码集中在前端的话，责任区分会比较清楚。因此我们来改成用 JSON 格式吧，把 <code>dataType</code> 改成 JSON，然后加一个 success 的回呼，服务器回传资料后，就会触发 success 的函式：</p>
+<p>一但需要自己在前端绑事件，就会觉得把 JavaScript 代码集中在前端的话，责任区分会比较清楚。因此我们来改成用 JSON 格式吧，把 <code>dataType</code> 改成 JSON，然后加一个 success 的回调，服务器响应资料后，就会触发 success 的函式：</p>
 
 <figure class="figure-code code"><figcaption><span>app/views/posts/index.html.erb
 </span></figcaption><div class="highlight"><pre>  &lt;script&gt;
@@ -250,8 +250,8 @@ var _hmt = _hmt || [];
         url: url,
         method: 'DELETE',
 <span class="gd">-       dataType: 'script'
-</span><span class="gi">+       dataType: 'json', // 要求服务器回传 json
-+       success: function(data){   // 请求成功时执行，data 就是服务器回传的 JSON 资料
+</span><span class="gi">+       dataType: 'json', // 要求服务器响应 json
++       success: function(data){   // 请求成功时执行，data 就是服务器响应的 JSON 资料
 +         $("#post-" + data["id"]).remove();
 +       }
 </span>      })
@@ -260,7 +260,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>修改 <code>app/controllers/posts_controller.rb</code> 改成直接回传 JSON</p>
+<p>修改 <code>app/controllers/posts_controller.rb</code> 改成直接响应 JSON</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
 </span></figcaption><div class="highlight"><pre>   def destroy
@@ -275,7 +275,7 @@ var _hmt = _hmt || [];
 <p>接着删除 <code>app/views/posts/destroy.js.erb</code> 样板，我们不需要 Remote JavaScript 了。</p>
 
 <p>如果团队中有专门的前端工程师，也会偏好这种方式。这样前后端的工作可以拆分的比较清楚。<br>
-后端处理数据库和回传 JSON 资料即可，页面怎么变化全由前端工程师负责。</p>
+后端处理数据库和响应 JSON 资料即可，页面怎么变化全由前端工程师负责。</p>
 
     </div>
   </div>

@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
 <span class="o">+</span>                                    <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">"12345678"</span> <span class="p">}</span>
 <span class="o">+</span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_http_status</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="o">+</span>    <span class="c1"># 检查回传的 JSON
+<span class="o">+</span>    <span class="c1"># 检查响应的 JSON
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span>
 <span class="o">+</span>      <span class="p">{</span>
@@ -250,7 +250,7 @@ var _hmt = _hmt || [];
 <span class="o">+</span>    <span class="n">post</span> <span class="s2">"/api/v1/login"</span><span class="p">,</span> <span class="ss">params: </span><span class="p">{</span> <span class="ss">:auth_token</span> <span class="o">=&gt;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">authentication_token</span><span class="p">,</span>
 <span class="o">+</span>                                    <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">"xxx"</span> <span class="p">}</span>
 <span class="o">+</span>
-<span class="o">+</span>    <span class="c1"># 检查登录失败回传 401
+<span class="o">+</span>    <span class="c1"># 检查登录失败响应 401
 </span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_http_status</span><span class="p">(</span><span class="mi">401</span><span class="p">)</span>
 <span class="o">+</span>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span>

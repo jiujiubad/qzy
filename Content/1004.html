@@ -225,7 +225,7 @@ response.body
 </pre></div>
 </figure>
 
-<p>哇，头晕了，这资料怎么这么乱。这是因为回传的内容 HTML 是给浏览器显示用的，包括各种排版颜色字号的等等资料。而我们只想到气温，在这里面比对出单纯的气温资料，是个苦逼工啊。让我们努力看看：</p>
+<p>哇，头晕了，这资料怎么这么乱。这是因为响应的内容 HTML 是给浏览器显示用的，包括各种排版颜色字号的等等资料。而我们只想到气温，在这里面比对出单纯的气温资料，是个苦逼工啊。让我们努力看看：</p>
 <figure class="figure-code code"><div class="highlight"><pre>require 'nokogiri'
 doc = Nokogiri::HTML.parse(response.body)
 doc.css(".today .tem").map{ |x| x.text }  # 得到 ["\n13°C\n", "\n2°C\n", "\n"] 

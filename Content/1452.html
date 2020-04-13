@@ -250,7 +250,7 @@ var _hmt = _hmt || [];
 
 <ul>
 <li>
-<code>SELECT user_id, COUNT(*) FROM events;</code> 这样不行，user_id 只会回传第一笔的 user_id</li>
+<code>SELECT user_id, COUNT(*) FROM events;</code> 这样不行，user_id 只会响应第一笔的 user_id</li>
 <li>
 <code>SELECT user_id, COUNT(*) FROM events GROUP BY user_id;</code> 还是不行，没有 user 的名字</li>
 <li>

@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
 </span></pre></div>
 </figure>
 
-<p>修改 <code>app/controllers/posts_controller.rb</code>，跟之前做分页一样，我们继续沿用了 index action，只是会根据 <code>params[:max_id]</code> 回传更早的资料：</p>
+<p>修改 <code>app/controllers/posts_controller.rb</code>，跟之前做分页一样，我们继续沿用了 index action，只是会根据 <code>params[:max_id]</code> 响应更早的资料：</p>
 
 <figure class="figure-code code"><figcaption><span>app/controllers/posts_controller.rb
 </span></figcaption><div class="highlight"><pre>
@@ -248,14 +248,14 @@ var _hmt = _hmt || [];
 +    end
 +
 +    respond_to do |format|
-+      format.html  # 如果客户端要求 HTML，则回传 index.html.erb
-+      format.js    # 如果客户端要求 JavaScript，回传 index.js.erb
++      format.html  # 如果客户端要求 HTML，则响应 index.html.erb
++      format.js    # 如果客户端要求 JavaScript，响应 index.js.erb
 +    end
 </span><span class="err">   end
 </span></pre></div>
 </figure>
 
-<p><code>respond_to</code> 可以让 Rails 根据 request 请求的格式(在 $ajax 中我们有指定了 dataType)，来回传不同格式。</p>
+<p><code>respond_to</code> 可以让 Rails 根据 request 请求的格式(在 $ajax 中我们有指定了 dataType)，来响应不同格式。</p>
 
 <p>新增 <code>app/views/posts/index.js.erb</code></p>
 

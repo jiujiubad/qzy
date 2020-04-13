@@ -206,15 +206,15 @@ var _hmt = _hmt || [];
   <div class="post group">
     <div class="post-content markdown">
       <p>现在你了解异常处理的语法了，我们回过头来思考一下，当程序发生错误时会如何处理? 程序发生错误其实是蛮常见的事情，但是并不是每种错误都会用异常处理功能来解决。</p>
-<h3>回传错误码 vs. 抛出异常</h3>
-<p>事实上有两种处理方式：第一种是回传某个代表错误的值(例如 nil, true/false 或错误数字码)，第二种才是抛出异常 Exception。</p>
+<h3>响应错误码 vs. 抛出异常</h3>
+<p>事实上有两种处理方式：第一种是响应某个代表错误的值(例如 nil, true/false 或错误数字码)，第二种才是抛出异常 Exception。</p>
 
 <p>例如从 Hash 或 Array 中取出一个值，如果该 key 不存在，其实也可以算是一种异常：</p>
 
 <figure class="figure-code code"><figcaption><span>
 </span></figcaption><div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s2">"123"</span> <span class="p">}</span>
 
-<span class="n">h</span><span class="p">[</span><span class="ss">:bar</span><span class="p">]</span> <span class="c1"># 回传 nil
+<span class="n">h</span><span class="p">[</span><span class="ss">:bar</span><span class="p">]</span> <span class="c1"># 响应 nil
 </span>
 
 <span class="n">h</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="ss">:bar</span><span class="p">)</span> <span class="c1"># 丢出 KeyError 异常
@@ -223,7 +223,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>其中 <code>:bar</code> 是一个不存在的 key，而 <code>h[:bar]</code> 默认回传 <code>nil</code> 代表了此值不存在。但 Ruby 也提供另一个 Hash#fetch 用法，如果该 key 不存在，会丢出错误异常 <code>KeyError</code>。同一件事情，Ruby 提供了两种 API 方法，但有不同的异常处理策略。</p>
+<p>其中 <code>:bar</code> 是一个不存在的 key，而 <code>h[:bar]</code> 默认响应 <code>nil</code> 代表了此值不存在。但 Ruby 也提供另一个 Hash#fetch 用法，如果该 key 不存在，会丢出错误异常 <code>KeyError</code>。同一件事情，Ruby 提供了两种 API 方法，但有不同的异常处理策略。</p>
 
 <p>在看 Ruby API 或是 gem 的 API 文档时，你可以注意一下它们是如何处理异常情况的。例如在 <a href="https://github.com/rest-client/rest-client">rest-client</a> gem 中(在 Web API 教程中，我们用这个 gem 来爬取第三方的信息)，如果爬取失败，就会抛出<a href="https://github.com/rest-client/rest-client#exceptions-see-httpwwww3orgprotocolsrfc2616rfc2616-sec10html">RestClient::ExceptionWithResponse 异常</a>。</p>
 <h3>何时用抛出异常？</h3>
@@ -274,7 +274,7 @@ var _hmt = _hmt || [];
 </pre></div>
 </figure>
 
-<p>在这个动作中，用了 <code>save!</code> 而不是 <code>save</code>。这是因为我们没有预期会发生 validation 失败，我们也没有打算要写 validation 失败了要怎么处理。在这种情况下，我们就会改用 <code>save!</code> 而不是 <code>save</code>。这样如果真的万一出事了，程序就会中断，用户会看到 500 错误画面，这个错误会被记录在 log 之中让我们程序员去检查这个错误。如果你用 <code>save</code> 的话，如果失败只会回传 <code>false</code> 然后就继续执行下去，用户只会觉得很奇怪为什么没有存成功，但是却没有任何错误记录。</p>
+<p>在这个动作中，用了 <code>save!</code> 而不是 <code>save</code>。这是因为我们没有预期会发生 validation 失败，我们也没有打算要写 validation 失败了要怎么处理。在这种情况下，我们就会改用 <code>save!</code> 而不是 <code>save</code>。这样如果真的万一出事了，程序就会中断，用户会看到 500 错误画面，这个错误会被记录在 log 之中让我们程序员去检查这个错误。如果你用 <code>save</code> 的话，如果失败只会响应 <code>false</code> 然后就继续执行下去，用户只会觉得很奇怪为什么没有存成功，但是却没有任何错误记录。</p>
 
     </div>
   </div>

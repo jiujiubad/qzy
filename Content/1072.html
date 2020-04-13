@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 
   <div class="post group">
     <div class="post-content markdown">
-      <p>做到这里，假设我们想回来修改一下 Model，这个 <code>calculate_amount</code> 其实可以放在回呼(callback)里面，这样只要 <code>save</code> 存进数据库时就会自动计算，不需要手动呼叫<code>calculate_amount</code>，也不需要检查 <code>amount</code> 必填了。然后我们有点故意地顺便改个方法名称：</p>
+      <p>做到这里，假设我们想回来修改一下 Model，这个 <code>calculate_amount</code> 其实可以放在回调(callback)里面，这样只要 <code>save</code> 存进数据库时就会自动计算，不需要手动呼叫<code>calculate_amount</code>，也不需要检查 <code>amount</code> 必填了。然后我们有点故意地顺便改个方法名称：</p>
 
 <figure class="figure-code code"><figcaption><span>app/models/parking.rb
 </span></figcaption><div class="highlight"><pre><span class="gi">+  before_validation :setup_amount

@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 <p>当我们把 Models、Views、Controllers 放在一起的时候，他们会遵循以下的模式：</p>
 
-<p>给一个 URL，Rails 会去检查要使用哪一个 Controller 里面的 method（又称为 "Action"）。Controller Action 会去呼叫 Model 里面对应的 methods。Model 会去读写资料库，然后把包含资料的 object 回传到 Controller。Controller 会拿到这个 object 并且丢到 View 里面。Action 通常会有对应的 View 文件，Rails 会自动寻找并使用之。）</p>
+<p>给一个 URL，Rails 会去检查要使用哪一个 Controller 里面的 method（又称为 "Action"）。Controller Action 会去呼叫 Model 里面对应的 methods。Model 会去读写资料库，然后把包含资料的 object 响应到 Controller。Controller 会拿到这个 object 并且丢到 View 里面。Action 通常会有对应的 View 文件，Rails 会自动寻找并使用之。）</p>
 
 <p>Models、Views、Controllers 有各自的工作。像这样把责任拆开来，会比较容易开发，尤其是它长得愈来愈大的时候。（每个文件都有清晰的责任，会比较容易处理问题、增加新功能。）</p>
 
