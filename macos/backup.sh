@@ -11,7 +11,6 @@ rsync -az $dirFrom/Mac-应用-app-chrome.md $dirTo
 rsync -az $dirFrom/Mac-重装.md $dirTo
 rsync -az $dirFrom/Markdown-语法.md $dirTo
 
-cd ..
 git add -A
 git commit -am "`date +%Y-%m-%d-%H:%M:%S`"
 git push origin
